@@ -2,7 +2,7 @@
 
 **Quanto custa o nosso peixe?** — ferramenta da comunidade (PEA Pescarte) · <https://nossopeixe.github.io/>
 
-Versão publicada: **Rev. 18 Comunidade** (11/11/2026).
+Versão publicada: **Rev. 18.1 Comunidade** (11/11/2026).
 
 ## O que há aqui
 
@@ -25,7 +25,8 @@ Cada aba de conta tem um **tutorial** passo a passo na tela e uma **cartilha** p
 
 ## Histórico
 
-- **Rev. 18** — aba Produtos prontos, da UPP Rio das Ostras (Projeção Econômica Rev. 0.9 e EVTEAS Rev. 0.6): os 11 produtos no semáforo, o mix, preços de atacado e de varejo, matéria-prima, perdas, energia, o primeiro ano com o capital de giro, as famílias e os turnos. Com os valores do estudo e sem a OCB, reproduz o mês do Anexo 7 (sobras de R$ 290.902,99). Tutorial e cartilha da aba. Nenhum número das outras abas muda.
+- **Rev. 18.1** — a aba Produtos prontos passa a seguir a «DRE Projetada» da planilha da UPP: sem a OCB, reproduz o mês cheio (sobras de R$ 259.791,73) e cada mês do primeiro ano. Regras seguidas: PIS da venda cobrado duas vezes (1,30%, sinalizado para conferência com a contabilidade), PIS de 1% só sobre a folha dos cooperados, encargo de 9% sobre a folha toda, custos operacionais do Subtotal I fixos e custos variáveis a 50% nos 6 primeiros meses. Nenhum número das outras abas muda.
+- **Rev. 18** — aba Produtos prontos, da UPP Rio das Ostras (Projeção Econômica Rev. 0.9 e EVTEAS Rev. 0.6): os 11 produtos no semáforo, o mix, preços de atacado e de varejo, matéria-prima, perdas, energia, o primeiro ano com o capital de giro, as famílias e os turnos. Com os valores do estudo e sem a OCB, reproduzia o mês do Anexo 7 (sobras de R$ 290.902,99). Tutorial e cartilha da aba. Nenhum número das outras abas muda.
 - **Rev. 17** — devolutivas dos grupos de trabalho (encontros de 6 a 8/11/2026): perdas no transporte, lotes recusados e clima; alevinos e ciclo do caixa; meta de sobras com cores; campo vermelho em erro de digitação; somas fechadas; porção pronta e algas na UPM; caderno de saídas; defeso da UBP-M com a fábrica a 20%; carga comprada de fora; energia entre CNPJs; partilha 40/60, barco cooperado e não cooperado, sobras com a cota do barco e a frequência; pesquisa de preços. Tutorial e cartilha de cada aba.
 - **Rev. 16** — aba da UPM Arraial do Cabo e sugestões do Grupo Beneficiamento.
 - **Rev. 15** — mix de produtos da UBP-M.
