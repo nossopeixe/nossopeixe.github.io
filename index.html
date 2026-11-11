@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quanto custa o nosso peixe? — Rev. 19 Comunidade</title>
+<title>Quanto custa o nosso peixe? — Rev. 20 Comunidade</title>
 <style>
 /* ================================================================
-   REV. 19 COMUNIDADE — versão para pescadores e aquicultores
+   REV. 20 COMUNIDADE — versão para pescadores e aquicultores
    Mesmo motor de cálculo da Rev. 14 técnica. Muda a apresentação:
    letras grandes, ícones, frases simples, botão de ouvir.
    ================================================================ */
@@ -65,6 +65,11 @@ main{max-width:1240px;margin:0 auto;padding:18px 16px 40px}
 .cab p{margin:6px 0 0;font-size:1.1rem;max-width:62ch}
 .cab .ouvir{margin-left:auto;flex:0 0 auto}
 
+.munis{display:block;margin-top:6px;font-size:.95rem;color:var(--tinta2)}
+.modelo-upa{background:#fff;border:2px solid var(--linha);border-radius:16px;padding:12px 14px;margin:0 0 16px}
+.modelo-upa .rot{font-weight:700;font-size:1.1rem;margin-bottom:8px}
+.modelo-upa .op{text-align:left;align-items:flex-start}
+.modelo-upa .dica{margin:8px 0 0}
 .passos{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px;padding:0;list-style:none;counter-reset:p}
 .passos li{flex:1 1 220px;background:var(--papel);border:2px solid var(--linha);border-radius:14px;
   padding:10px 12px 10px 52px;position:relative;font-size:1rem;counter-increment:p;min-height:56px;display:flex;align-items:center}
@@ -684,7 +689,7 @@ h5.upp-sub{margin:14px 0 0;font-size:1.05rem;color:var(--mar)}
       <span class="logo" aria-hidden="true">🐟</span>
       <div>
         <h1>Quanto custa o nosso peixe?</h1>
-        <p>Custo de 1 kg, preço de venda e sobras — ferramenta da comunidade · PEA Pescarte · Rev. 19</p>
+        <p>Custo de 1 kg, preço de venda e sobras — ferramenta da comunidade · PEA Pescarte · Rev. 20</p>
       </div>
     </div>
     <div class="util">
@@ -694,10 +699,10 @@ h5.upp-sub{margin:14px 0 0;font-size:1.05rem;color:var(--mar)}
     </div>
   </div>
   <nav class="abas" role="tablist" aria-label="Telas da ferramenta">
-    <button type="button" role="tab" id="aba-upa" onclick="irPara('upa')"><span class="ic" aria-hidden="true">🐟</span><b><span class="longo">Criação de tilápia</span><span class="curto">Tilápia</span></b><small>UPA Rio das Ostras/<wbr>Arraial&nbsp;do&nbsp;Cabo</small></button>
-    <button type="button" role="tab" id="aba-ubp" onclick="irPara('ubp')"><span class="ic" aria-hidden="true">🏭</span><b><span class="longo">Beneficiamento</span><span class="curto">Fábrica</span></b><small>UBP-M Cabo Frio/Macaé</small></button>
-    <button type="button" role="tab" id="aba-upp" onclick="irPara('upp')"><span class="ic" aria-hidden="true">🍤</span><b><span class="longo">Produtos prontos</span><span class="curto">Prontos</span></b><small>UPP Rio das Ostras</small></button>
-    <button type="button" role="tab" id="aba-upm" onclick="irPara('upm')"><span class="ic" aria-hidden="true">🐚</span><b><span class="longo">Criação de mariscos</span><span class="curto">Mariscos</span></b><small>UPM Arraial do Cabo</small></button>
+    <button type="button" role="tab" id="aba-upa" onclick="irPara('upa')"><span class="ic" aria-hidden="true">🐟</span><b><span class="longo">Criação de tilápia</span><span class="curto">Tilápia</span></b><small>UPA de 22 e de 38 postos</small></button>
+    <button type="button" role="tab" id="aba-ubp" onclick="irPara('ubp')"><span class="ic" aria-hidden="true">🏭</span><b><span class="longo">Beneficiamento</span><span class="curto">Fábrica</span></b><small>UBP-M · 4 municípios</small></button>
+    <button type="button" role="tab" id="aba-upp" onclick="irPara('upp')"><span class="ic" aria-hidden="true">🍤</span><b><span class="longo">Produtos prontos</span><span class="curto">Prontos</span></b><small>UPP · 4 municípios</small></button>
+    <button type="button" role="tab" id="aba-upm" onclick="irPara('upm')"><span class="ic" aria-hidden="true">🐚</span><b><span class="longo">Criação de mariscos</span><span class="curto">Mariscos</span></b><small>UPM · Arraial e Búzios</small></button>
     <button type="button" role="tab" id="aba-ubm" onclick="irPara('ubm')"><span class="ic" aria-hidden="true">🦪</span><b><span class="longo">Beneficiamento de mariscos</span><span class="curto">Moluscos</span></b><small>UBM Arraial do Cabo</small></button>
     <button type="button" role="tab" id="aba-pescador" onclick="irPara('pescador')"><span class="ic" aria-hidden="true">🎣</span><b><span class="longo">Minha pescaria</span><span class="curto">Pescaria</span></b><small>preço justo da saída</small></button>
     <button type="button" role="tab" id="aba-barco" onclick="irPara('barco')"><span class="ic" aria-hidden="true">🚤</span><b><span class="longo">Barco de pesca</span><span class="curto">Barco</span></b><small>exemplo de barco médio</small></button>
@@ -720,7 +725,7 @@ h5.upp-sub{margin:14px 0 0;font-size:1.05rem;color:var(--mar)}
   <details>
     <summary>Para o técnico — o que esta versão mostra e o que ela esconde</summary>
     <ul>
-      <li>O motor de cálculo é o da Rev. 14 técnica. A versão da comunidade muda a apresentação; a Rev. 15 acrescentou o mix de produtos da UBP-M; a Rev. 16 acrescentou a aba da UPM e as contribuições do Grupo Beneficiamento; a Rev. 17 acrescentou as devolutivas dos grupos (encontros de 6 a 8/11/2026) e o tutorial e a cartilha de cada aba; a Rev. 18 acrescentou a aba da UPP Rio das Ostras (produtos prontos), que na Rev. 18.1 passou a seguir a «DRE Projetada» da planilha; a Rev. 19 acrescenta a aba da UBM Arraial do Cabo (beneficiamento de mariscos). As extensões do motor na Rev. 16 (alíquota por produto, rateio da estrutura por peso, base do PIS e do encargo da folha, receita acessória fixa) só valem para quem as declara: nenhum número das outras abas muda.</li>
+      <li>O motor de cálculo é o da Rev. 14 técnica. A versão da comunidade muda a apresentação; a Rev. 15 acrescentou o mix de produtos da UBP-M; a Rev. 16 acrescentou a aba da UPM e as contribuições do Grupo Beneficiamento; a Rev. 17 acrescentou as devolutivas dos grupos (encontros de 6 a 8/11/2026) e o tutorial e a cartilha de cada aba; a Rev. 18 acrescentou a aba da UPP Rio das Ostras (produtos prontos), que na Rev. 18.1 passou a seguir a «DRE Projetada» da planilha; a Rev. 19 acrescentou a aba da UBM Arraial do Cabo (beneficiamento de mariscos); a Rev. 20 acrescenta a UPA de 38 postos de Carapebus e os municípios de cada tipologia. As extensões do motor na Rev. 16 (alíquota por produto, rateio da estrutura por peso, base do PIS e do encargo da folha, receita acessória fixa) só valem para quem as declara: nenhum número das outras abas muda.</li>
       <li>Mix da UBP-M (Rev. 15): cada linha (espécie, produto, % do total, rendimento, preço pago ao pescador, preço de venda) é resumida por grupo — camarão e peixe — em kg que entram, venda por kg que entra (Σ % × rendimento × preço de venda) e compra média; o motor recebe esses três números. Com o mix do estudo, os resultados são idênticos aos da Rev. 14.</li>
       <li>Valores sugeridos do mix: Projeção Econômica da UBP-M Cabo Frio/Macaé (Rev. 1) — preço de compra por espécie, preço de venda por produto, rendimentos (camarão inteiro 100%, sem cabeça 68%, filé com cauda 55%, filé fresco 45%, filé congelado 66%; peixe em filé 43%, inteiro limpo 84%) e CMS (17,55 t para 156 t de peixe, a R$ 12,00/kg). Onde o estudo não dá preço para a forma escolhida (filé × inteiro), o sugerido é o preço equivalente: a mesma venda por kg que entra. A capacidade segue em 220 t/mês (22 dias úteis), como na Rev. 14; a planilha usa 26 dias.</li>
       <li>Preço mínimo de venda de cada produto do mix = (compra + embalagem + parte dos gastos do mês por kg que entra − créditos − CMS líquida) ÷ ((1 − alíquota) × rendimento).</li>
@@ -734,6 +739,7 @@ h5.upp-sub{margin:14px 0 0;font-size:1.05rem;color:var(--mar)}
       <li>UPM Arraial do Cabo (Rev. 16): Projeção Econômica UPM Rev. 18 (Anexos 1, 3, 4, 6 e 7) e EVTEAS UPM Rev. 2 (dez/2024). Mês-tipo = 1/12 do ano cheio de colheita (meses 7 a 18 da DRE): com a OCB fora, 12 meses-tipo reproduzem a coluna «acumulado últimos 12 meses» (sobras de R$ 2.869.963,34) com diferença menor que R$ 1 no ano. Vieira e ostra por dúzia, mexilhão por kg.</li>
       <li>UPM — escolhas da ferramenta: embalagem (R$ 67.070,40 no ano) repartida na proporção das vendas; estrutura (pessoal, combustível, manutenção, depreciação, OCB) rateada pelas longlines de cada marisco (36 · 20 · 16), não por unidade vendida; combustível, manutenção, EPI, refeições e laboratório como gastos fixos (o manejo é diário com qualquer colheita); sementes, embalagem, mexilhoneiras, limpeza e energia como gastos que crescem com a colheita. PIS de 1% sobre a folha total e encargo de 9% só sobre a cooperada, como no Anexo 4. ICMS de 20% na vieira e na ostra e de 7% no mexilhão, mais 0,65% de PIS. OCB com cooperativista e taxa de manutenção, sobre o investimento fixo (R$ 6.553.799,53). Fundos separados sobre o resultado do ano (a planilha separa mês a mês).</li>
       <li>UPM — «Quando entra o dinheiro?»: as quantidades do ano repartidas mês a mês no ritmo da DRE (vieira em 5 meses, ostra em 6, mexilhão em todos, com meses de meia colheita; sementes compradas no 7º mês da lista). A soma dos 12 meses é igual a 12 meses-tipo.</li>
+      <li>UPA de 38 postos — Carapebus (Rev. 20): Projeção Econômica Aquicultura Carapebus Rev. 0.1 e Estudo de Viabilidade da UPA de Carapebus. Mesmo critério do modelo de 22 postos: mês-tipo em regime da DRE Projetada (Anexo 8), com ração (R$ 297.627,00) e alevinos (R$ 22.800,00) do Ano 2 a preços do Ano 1 (÷ 1,1175); impostos de 7% + PIS de 0,65%; PIS de 1% sobre a retirada e encargo de 9% sobre a folha toda. Sem a OCB, o mês dá R$ 179.398,37 de sobras antes dos fundos — o mesmo que o Ano 1 da planilha (R$ 499.825,37) menos a ração e os alevinos (o Ano 2 da planilha, R$ 208.950,47, já está corrigido pela Selic). 76 t por mês, 38 famílias × R$ 2.000,00; investimento de R$ 15.735.066,75, com o capital de giro (base da OCB, como no modelo de 22). Ressalvas: o Anexo 7 da mesma planilha cobra 2,5% a mais de imposto e não traz ração nem alevinos nos 14 meses que mostra; o frete (R$ 510,49 por t) foi calculado dividindo o custo da frota por 44 t e aplicado a 76 t; o texto do estudo ainda descreve 22 módulos e 132 tanques; a aba Mão de Obra lista 22 cooperados no quadro e 38 famílias no cálculo. Mesmas classificações de custo fixo e variável e a mesma biologia (lote de 2.000 kg por tanque, peixe de 800 g em 180 dias) do modelo de 22 postos. Municípios de cada tipologia: Painel PGTRs — Pescarte, consultado em 11/11/2026.</li>
       <li>UBM Arraial do Cabo (Rev. 19): Projeção Econômica UBM Rev. 3 (Anexos 2 a 7, DRE Projetada, fichas das conservas, Embalagens, Energia Elétrica) e Estudo de Viabilidade da UBM. Mês do motor = 1/12 do ano cheio (produção do Anexo 5, jan. a dez.), com as regras de folha da «DRE Projetada» (PIS de 1% só sobre a retirada dos cooperados; encargo de 9% sobre a folha toda), como na UPP: sobras de R$ 2.768.061,28 no ano, antes dos fundos e sem a OCB. O Anexo 7 dá R$ 2.811.477,04. Sem a OCB, a ferramenta reproduz cada mês do primeiro ano da DRE Projetada (linha 53; produção pela linha 74, cooperados pela linha 77). A DRE Projetada corrige o 2º ano em diante pela Selic; a ferramenta trabalha em valores de hoje. Divergência a resolver: o texto do estudo (Tabela 34) diz ICMS de 7% só para o mexilhão e de 18% + 2% para ostra e vieira; a planilha cobra 7% + 2,5% + PIS 0,65% de todos os produtos. A ferramenta parte da planilha e deixa trocar (passo 5): com os 20%, as sobras do ano caem cerca de R$ 3,28 milhões e o ano fecha no vermelho. Os 2,5% não são identificados na planilha. A planilha multiplica kg de ostra e de vieira pelo preço da dúzia (1 dúzia = 1 kg), na compra e na venda; a ferramenta segue. Escolhas da ferramenta: gastos da unidade rateados pelos kg de marisco com casca de cada produto; todos os custos operacionais fixos (na DRE são iguais todo mês); energia pelas seis contas da aba Energia Elétrica; fundos (10% + 5%) sobre as sobras do ano, e não mês a mês; OCB sobre o investimento fixo (R$ 9.856.140,57). O texto do estudo traz energia administrativa de R$ 1.789,28 (Tabela 36, total R$ 75.126,90); a planilha, R$ 3.452,36 (Subtotal I de R$ 76.789,98) — a ferramenta segue a planilha.</li>
       <li>UPP Rio das Ostras (Rev. 18; regras da «DRE Projetada» desde a Rev. 18.1): Projeção Econômica UPP Rev. 0.9 (Anexos 2 a 7, Embalagens, DRE Projetada, Anexo 11) e EVTEAS UPP Rev. 0.6. Mês-tipo = mês cheio da «DRE Projetada» (coluna N): sem a OCB, a ferramenta reproduz as sobras de R$ 259.791,73 do mês (deduções R$ 717.016,87; receita R$ 4.110.589,11, com o frete) e o resultado de cada mês do primeiro ano (linha 43). Regras da DRE Projetada seguidas: PIS da venda de 0,65% cobrado duas vezes (linha 13 e dentro da linha 14) — provável erro da planilha, a confirmar com a contabilidade (+ R$ 26.718,83 no mês se for uma vez só); PIS de 1% só sobre a folha dos cooperados; encargo de 9% sobre a folha toda; custos operacionais do Subtotal I do Anexo 3 fixos; custos operacionais variáveis (ETA, ETE, químicos, energia de processo) crescendo com a produção e, no primeiro ano, em 50% nos 6 primeiros meses (linha 36); produção pela linha 64; cooperados (50% nos 6 primeiros meses) e funções contratadas (70%, 80%, 90%) pela linha 65. A «DRE de 12 meses» (Anexo 7) dá R$ 290.902,99 no mês: PIS da venda uma vez só, PIS da folha sobre a folha toda e encargo de 9% só sobre os cooperados — é o que diz o texto do estudo (Tabela 33). Escolhas da ferramenta: custo de cada produto = custo da receita (Anexo 2, coluna E), sem separar pescado e ingredientes; embalagens (R$ 176.598,06 no mês) dadas a cada produto pelo tipo de pacote e a caixa de 20 kg dividida por todos os quilos; estrutura rateada por kg; frete = proposta da planilha (custo da frota ÷ 156 t = R$ 379,10 por t), que cresce com a produção; impostos = ICMS de 7% (peixe) e 20% (camarão) + 2,5% sobre toda a receita (tributo não identificado na planilha) + PIS; varejo = atacado × fator de venda varejo do Anexo 2. OCB sobre o investimento fixo (R$ 12.022.687,66). O EVTEAS Rev. 0.6 traz valores um pouco diferentes da planilha Rev. 0.9 (por exemplo, subtotal de custos fixos de R$ 91.509,41 na Tabela 36); a ferramenta segue a planilha.</li>
       <li>Grupo Beneficiamento (Rev. 16) — hipóteses declaradas: bandeira amarela entre a verde e a vermelha na proporção dos adicionais da ANEEL (R$ 1,885 e R$ 4,463 por 100 kWh, valores de 2026); com placa, verde e amarela na mesma proporção da vermelha. Gerador: potência, litros por kWh e tarifas de ponta e fora de ponta são exemplos. Varejo 25% mais caro que o atacado é exemplo. Rendimentos de posta (70%) e corpinho de peixe (50%) são exemplos; preços dessas formas são equivalentes (mesma venda por kg que entra). Ato não cooperado: o resultado é repartido na proporção das compras e tributado por IRPJ (15% + 10% acima de R$ 20 mil por mês) e CSLL (9%) — estimativa. Gastos que o estudo não traz (taxa de lixo, de incêndio, controle de pragas, combustível dos veículos) começam em zero.</li>
@@ -2890,8 +2896,8 @@ function precoEstudo(un, id){ SILENCIO++; try{ resetPreco(id); } finally{ SILENC
 function telaUnidade(un){
   const upa = un === 'upa';
   let h = upa
-    ? cabecalho('🐟', 'Criação de tilápia — UPA Rio das Ostras/Arraial do Cabo', 'Quanto custa produzir 1 kg de tilápia nos tanques da UPA de Rio das Ostras/Arraial do Cabo — e se o preço de venda paga esse custo.', 'cab-upa')
-    : cabecalho('🏭', 'Beneficiamento — UBP-M Cabo Frio/Macaé', 'Quanto custa limpar, preparar e embalar 1 kg de camarão e de peixe na UBP-M de Cabo Frio/Macaé — e se o preço de venda paga esse custo.', 'cab-ubp');
+    ? cabecalho('🐟', 'Criação de tilápia — ' + (COM.upaMod === 'p38' ? 'UPA Carapebus, 38 postos de trabalho' : 'UPA de 22 postos de trabalho'), 'Quanto custa produzir 1 kg de tilápia nos tanques da UPA — e se o preço de venda paga esse custo.' + munisHTML(COM.upaMod === 'p38' ? 'upa38' : 'upa22', COM.upaMod === 'p38' ? 'É a única UPA com 38 famílias.' : 'A UPA de Carapebus tem outro modelo, de 38 postos.'), 'cab-upa') + upaModeloHTML()
+    : cabecalho('🏭', 'Beneficiamento — UBP-M Cabo Frio/Macaé', 'Quanto custa limpar, preparar e embalar 1 kg de camarão e de peixe na UBP-M de Cabo Frio/Macaé — e se o preço de venda paga esse custo.' + munisHTML('ubp', 'Os números são os do estudo da UBP-M de Cabo Frio/Macaé.'), 'cab-ubp');
   h += passos([ upa ? 'Escolha quanto os tanques vão produzir no mês.' : 'Escolha quanto peixe e camarão a fábrica vai beneficiar no mês.',
                 upa ? 'Confira o preço de venda do kg ou digite outro.' : 'Escolha os peixes e camarões, como saem e por quanto vendem — ou fique com os valores do estudo.',
                 'Olhe a balança: o preço paga o gasto de 1 kg? Sobra ou falta dinheiro no mês?' ]);
@@ -3988,7 +3994,7 @@ function sincComb(){ (st.oper.upm || []).forEach(i => { if(i.comb) i.valor = i.l
 function litrosComb(tipo){ return (st.oper.upm || []).reduce((s, i) => s + (i.comb === tipo ? i.litros : 0), 0); }
 
 function telaUPM(){
-  let h = cabecalho('🐚', 'Criação de mariscos — UPM Arraial do Cabo', 'Quanto custa produzir 1 dúzia de vieiras, 1 dúzia de ostras e 1 kg de mexilhão nas longlines da UPM de Arraial do Cabo, no Saco do Cardeiro — e se o preço de venda paga esse custo.', 'cab-upm');
+  let h = cabecalho('🐚', 'Criação de mariscos — UPM Arraial do Cabo', 'Quanto custa produzir 1 dúzia de vieiras, 1 dúzia de ostras e 1 kg de mexilhão nas longlines da UPM de Arraial do Cabo, no Saco do Cardeiro — e se o preço de venda paga esse custo.' + munisHTML('upm', 'Os números são os do estudo da UPM de Arraial do Cabo.'), 'cab-upm');
   h += passos(['Escolha quanto da colheita planejada vai dar certo.', 'Confira o preço de venda de cada marisco ou digite outro.', 'Olhe as balanças e o ano da colheita: sobra ou falta dinheiro?']);
   h += guiaAba('upm');
   h += '<section class="painel" aria-label="Suas escolhas">' + escolhasUPM() + '</section>';
@@ -4253,7 +4259,7 @@ function whatsComunidade(){
     + '\nQuilos vendáveis: ' + pescKgApp(R.vendavel) + '\nPreço mínimo: ' + fB2(R.minimo) + '/kg' + '\nPreço sugerido: ' + fB2(R.sugerido) + '/kg'
     + (R.benefKg > 0 ? '\n\n*Se for beneficiado* (+' + fB2(R.benefKg) + '/kg de mão de obra, energia, água, ingredientes, higienização e embalagem)'
         + '\nPreço mínimo integrado: ' + fB2(R.minimoInt) + '/kg' + '\nPreço sugerido integrado: ' + fB2(R.sugeridoInt) + '/kg' : '')
-    + '\n\nCalculado com as contas do app Preço Justo — Pescador (Pescarte).' + '\nConferido na ferramenta da comunidade — Rev. 19.';
+    + '\n\nCalculado com as contas do app Preço Justo — Pescador (Pescarte).' + '\nConferido na ferramenta da comunidade — Rev. 20.';
   COM.msgPesc = ''; window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank', 'noopener'); }
 
 function resultadoPescador(){
@@ -4732,7 +4738,7 @@ function alevinosHTML(c){
     + 'Depois que a criação entra no ritmo, todo mês há tanque sendo povoado, tanque crescendo e tanque sendo despescado — e a conta do mês é a da balança, lá em cima.');
   h += nota('lei', '⚖️', '<b>E as sobras?</b> Sobra não é o dinheiro de cada despesca. As contas são fechadas no fim do ano; a Assembleia Geral Ordinária, nos 3 primeiros meses do ano seguinte, aprova as contas e decide o destino das sobras (Lei 5.764/71, art. 44). '
     + 'A mortalidade entra nessa conta como gasto de todos: quem perde peixe a mais divide o resultado menor com a cooperativa inteira. Por isso vale anotar, tanque por tanque, quantos alevinos entraram e quantos peixes saíram.');
-  h += nota('', '📋', 'Na oficina de novembro de 2026 falou-se em <b>232 tanques</b> no total, com <b>22 despescados por mês</b>. O estudo carregado nesta ferramenta bate com os 22 tanques por mês (44.000 kg ÷ 2.000 kg por tanque); o total de tanques não aparece na projeção econômica — confiram no projeto.');
+  h += upaNotaTanques();
   return h; }
 
 /* ================================================================
@@ -5097,7 +5103,7 @@ if(HAS_DOM) document.addEventListener('keydown', e => { if(!COM.tut) return; if(
    a tela nunca mostram valores diferentes.
    ================================================================ */
 COM.cart = null;
-const CART_REV = 'Rev. 19';
+const CART_REV = 'Rev. 20';
 /* PDFs prontos, com os valores do estudo, publicados na pasta cartilhas/ do site (só aparecem quando a ferramenta é aberta pela internet) */
 const CART_ARQ = { upa: 'Cartilha_aba_Criacao_de_tilapia', ubp: 'Cartilha_aba_Beneficiamento', upm: 'Cartilha_aba_Criacao_de_mariscos', pescador: 'Cartilha_aba_Minha_pescaria', barco: 'Cartilha_aba_Barco_de_pesca' }, CART_PDF_DATA = '11/11/2026';
 const cartNoSite = () => HAS_DOM && /^https?:$/.test(location.protocol);
@@ -5483,7 +5489,7 @@ function uppMp(b, v){ COM.upp.mp[b] = clamp(+v || 0, 0, 1000); aplicarUPP(); des
 
 /* ---------- a tela ---------- */
 function telaUPP(){
-  let h = cabecalho('🍤', 'Produtos prontos — UPP Rio das Ostras', 'Quanto custa fazer 1 kg de fishburguer, almôndega, quibe, linguiça, croquete, nuggets, hambúrguer, coxinha e bolinho na Unidade de Processamento de Pescado de Rio das Ostras — e se o preço de venda paga esse custo.', 'cab-upp');
+  let h = cabecalho('🍤', 'Produtos prontos — UPP Rio das Ostras', 'Quanto custa fazer 1 kg de fishburguer, almôndega, quibe, linguiça, croquete, nuggets, hambúrguer, coxinha e bolinho na Unidade de Processamento de Pescado de Rio das Ostras — e se o preço de venda paga esse custo.' + munisHTML('upp', 'Os números são os do estudo da UPP de Rio das Ostras.'), 'cab-upp');
   h += passos(['Escolha quanto a fábrica vai produzir e o que ela vai fazer.', 'Confira o preço de venda de cada produto ou digite outro.', 'Olhe as balanças e a lista dos 11 produtos: sobra ou falta dinheiro no mês?']);
   h += guiaAba('upp');
   h += '<section class="painel" aria-label="Suas escolhas">' + escolhasUPP() + '</section>';
@@ -5976,7 +5982,7 @@ function ubmIcms(k){ COM.ubm.icms = k; aplicarUBM(); desenharTela(); }
 
 /* ---------- a tela ---------- */
 function telaUBM(){
-  let h = cabecalho('🦪', 'Beneficiamento de mariscos — UBM Arraial do Cabo', 'Quanto custa depurar, embalar e fazer conserva de mexilhão, ostra e vieira na Unidade de Beneficiamento de Moluscos de Arraial do Cabo — e se o preço de venda paga esse custo.', 'cab-ubm');
+  let h = cabecalho('🦪', 'Beneficiamento de mariscos — UBM Arraial do Cabo', 'Quanto custa depurar, embalar e fazer conserva de mexilhão, ostra e vieira na Unidade de Beneficiamento de Moluscos de Arraial do Cabo — e se o preço de venda paga esse custo.' + munisHTML('ubm'), 'cab-ubm');
   h += passos(['Escolha quanto marisco das UPMs chega à unidade.', 'Confira os preços de venda e o preço pago às UPMs.', 'Olhe as balanças, a lista dos 9 produtos e o ano: sobra ou falta dinheiro?']);
   h += guiaAba('ubm');
   h += '<section class="painel" aria-label="Suas escolhas">' + escolhasUBM() + '</section>';
@@ -6356,6 +6362,120 @@ function cartUBM(){
   pg.push(cResp(['Lição 1: sobra R$ 2,50 · 140 kg', 'Lição 2: R$ 9,64 · R$ 26,78', 'Lição 3: R$ 2.950.000 · R$ 1.250.000', 'Lição 4: R$ 1.160.000', 'Lição 5: R$ 10.150 e R$ 23.150 · R$ 47.619,05']));
   return pg; }
 CART_FN.ubm = cartUBM;
+
+
+/* ================================================================
+   REV. 20 — DOIS MODELOS DE UPA E OS MUNICÍPIOS DE CADA TIPOLOGIA
+   ----------------------------------------------------------------
+   · UPA de 22 postos de trabalho: o estudo já carregado (Projeção
+     Econômica — Aquicultura — Rev. 1, Rio das Ostras/Arraial do Cabo),
+     44 t por mês. Vale para as UPAs de Arraial do Cabo, Campos dos
+     Goytacazes, Quissamã, Rio das Ostras e São João da Barra.
+   · UPA de 38 postos de trabalho: só Carapebus (Projeção Econômica —
+     Aquicultura Carapebus — Rev. 0.1), 76 t por mês.
+   A aba é a mesma; o botão troca o estudo inteiro (DATA.upa e
+   DATA_ORIG.upa) e volta as escolhas da tela ao estudo escolhido.
+   Mês-tipo do modelo de 38 postos: o mesmo critério do de 22 — regime
+   da DRE Projetada, com ração e alevinos do Ano 2 a preços do Ano 1
+   (÷ 1,1175): R$ 297.627,00 e R$ 22.800,00 por mês, os mesmos
+   R$ 3,92 e R$ 0,30 por kg do modelo de 22.
+   Municípios: Painel PGTRs — Pescarte (lista de empreendimentos),
+   consultado em 11/11/2026.
+   ================================================================ */
+const MUNIS = {
+  upa22: ['Arraial do Cabo', 'Campos dos Goytacazes', 'Quissamã', 'Rio das Ostras', 'São João da Barra'],
+  upa38: ['Carapebus'],
+  ubp: ['Cabo Frio', 'Campos dos Goytacazes', 'Macaé', 'São Francisco de Itabapoana'],
+  upp: ['Armação dos Búzios', 'Arraial do Cabo', 'Rio das Ostras', 'São João da Barra'],
+  upm: ['Armação dos Búzios', 'Arraial do Cabo (duas unidades)'],
+  ubm: ['Arraial do Cabo'] };
+function munisHTML(k, extra){ const L = MUNIS[k];
+  return ' <span class="munis">📍 <b>' + (L.length > 1 ? 'Municípios com esta tipologia' : 'Município com esta tipologia') + ':</b> ' + lista(L) + '.' + (extra ? ' ' + extra : '') + '</span>'; }
+
+const UPA_MOD = { p22: clone(DATA_ORIG.upa), p38: null };
+Object.assign(UPA_MOD.p22.folhaDRE, { nCoop: 22, retirada: 2000.00, nCoopConfirmado: true });
+UPA_MOD.p22.postos = 22; UPA_MOD.p22.ocbBase = 9653048.61;
+UPA_MOD.p38 = {
+  sigla: 'UPA-CAR', nome: 'UPA Carapebus', municipio: 'Carapebus/RJ', postos: 38, ocbBase: 15735066.752505671,
+  tipoTxt: 'Unidade de Produção Aquícola',
+  fonte: 'Projeção Econômica — Aquicultura Carapebus — Rev. 0.1 · DRE Projetada (Anexo 8)',
+  capTxt: '76 t/mês de tilápia · 3,17 t/dia · 24 dias úteis',
+  sazonal: 'operação contínua (mês-tipo em regime, com todos os custos correntes)',
+  produtos: [{ id: 'tilapia', nome: 'Tilápia (tanques suspensos)', kgMes: 76000, precoDRE: 10.00,
+    variaveis: [ ['Ração', 297627.00 / 76000], ['Alevinos de tilápia', 22800.00 / 76000], ['Gelo', 12666.666666666666 / 76000] ] }],
+  acess: { nome: 'Cobrança de frete', receita: 38797.47231818181, emb: 0 },
+  tribDRE: { modo: 'composta', impostos: 7.00, pisVenda: 0.65, acess: 0.65 },
+  /* 38 famílias × R$ 2.000,00 (R$ 1.600,00 de renda + 20% de INSS) — Anexo 4 */
+  folhaDRE: { nCoop: 38, retirada: 2000.00, nCoopConfirmado: true, folhaNC: 10105.20, pctPisFolha: 1.00, pctEncFolha: 9.00, pctEncNC: 65.00 },
+  estrutura: { modelo: [
+    ['Mão de obra — cooperados',             'coop',     76000.00],
+    ['Mão de obra — funções não cooperadas', 'folhaNC',  10105.20],
+    ['Encargos não cooperados',              'encNC',     6568.38],
+    ['PIS sobre a folha',                    'pisFolha',   760.00],
+    ['Encargos UPA',                         'encFolha',  7749.47],
+    ['Depreciação',                          'fixo',     72108.86639648529] ] },
+  operDRE: { itens: [
+    { id: 'telefonia',  nome: 'Telefonia e dados',                       valor: 500.00,   fixoPct: 100, grupo: 'I',  fonte: 'Anexo 3 · Subtotal I' },
+    { id: 'contabil',   nome: 'Contabilidade',                           valor: 1000.00,  fixoPct: 100, grupo: 'I',  fonte: 'Anexo 3 · Subtotal I' },
+    { id: 'seguro',     nome: 'Seguro (1% de capital + obras)',          valor: 7784.645524313531, fixoPct: 100, grupo: 'I', fonte: 'Anexo 3 · Subtotal I' },
+    { id: 'escritorio', nome: 'Material de escritório',                  valor: 500.00,   fixoPct: 100, grupo: 'I',  fonte: 'Anexo 3 · Subtotal I' },
+    { id: 'manutPred',  nome: 'Manutenção predial (1% de obras ao ano)', valor: 2838.8545451400005, fixoPct: 100, grupo: 'I', fonte: 'Anexo 3 · Subtotal I' },
+    { id: 'manutEquip', nome: 'Manutenção de equipamentos (3% do capital ao ano)', valor: 14837.372937520588, fixoPct: 0, grupo: 'I', fonte: 'Anexo 3 · Subtotal I · mesma classificação do modelo de 22 postos' },
+    { id: 'epi',        nome: 'Reposição de vestuários e EPIs',          valor: 5630.737000000001, fixoPct: 0, grupo: 'I', fonte: 'Anexo 3 · Subtotal I' },
+    { id: 'jardim',     nome: 'Manutenção de jardinagem e limpeza',      valor: 4000.00,  fixoPct: 0,   grupo: 'I',  fonte: 'Anexo 3 · Subtotal I' },
+    { id: 'frota',      nome: 'Manutenção da frota',                     valor: 11551.00, fixoPct: 0,   grupo: 'I',  fonte: 'Anexo 3 · Subtotal I' },
+    { id: 'energiaFix', nome: 'Energia elétrica — parcela fixa (2%)',    valor: 1279.5294000000001, fixoPct: 100, grupo: 'I', fonte: 'Anexo 3 · Subtotal I' },
+    { id: 'aguaFix',    nome: 'Água — parcela fixa',                     valor: 1200.00,  fixoPct: 100, grupo: 'I',  fonte: 'Anexo 3 · Subtotal I' },
+    { id: 'reagentes',  nome: 'Calcário, sal, kits e reagentes',         valor: 2999.20,  fixoPct: 0,   grupo: 'II', fonte: 'Anexo 3 · custos operacionais variáveis' },
+    { id: 'energiaVar', nome: 'Energia elétrica de processo',            valor: 500.00,   fixoPct: 0, energia: true, grupo: 'II', fonte: 'Anexo 3 · energia com kit fotovoltaico de 25 kWh' } ],
+    energia: [ ['Fotovoltaico 25 kWh', 500.00, 'cenário adotado na DRE Projetada'],
+               ['Bandeira verde',     63976.47, 'sem geração própria'],
+               ['Bandeira vermelha',  67518.80, 'sem geração própria, cenário de maior consumo'] ] },
+  refs: [ ['Ano 1 (M9–M12) — resultado antes dos fundos', 'R$ 499.825,37/mês (ração do 1º ciclo no capital de giro)'],
+          ['Ano 2 em regime (M17+) — resultado antes dos fundos', 'R$ 208.950,47/mês'],
+          ['Investimento inicial · capital de giro', 'R$ 15.735.066,75 · R$ 1.414.906,15'] ],
+  notas: [ 'Ração (R$ 297.627,00/mês) e alevinos (R$ 22.800,00/mês) a preços do Ano 1, obtidos deflacionando os valores de regime do Ano 2 da DRE Projetada (÷ 1,1175).' ] };
+COM.upaMod = 'p22';
+const upaPostos = () => UPA_MOD[COM.upaMod].postos;
+/* troca o estudo inteiro da aba e volta as escolhas ao estudo escolhido */
+function upaCarregar(k){
+  const M = UPA_MOD[k], D = DATA.upa, O = DATA_ORIG.upa;
+  [D, O].forEach(X => { Object.keys(X).forEach(c => delete X[c]); Object.assign(X, clone(M)); });
+  [D, O].forEach(X => { X.produtos.forEach(p => p.varKg = p.variaveis.reduce((s, v) => s + v[1], 0)); X.kgPleno = X.produtos.reduce((s, p) => s + p.kgMes, 0);
+    X.estrutura.dreTotal = X.estrutura.modelo.reduce((s, i) => s + i[2], 0); X.estrutura.dreFolha = X.estrutura.modelo.filter(i => i[1] !== 'fixo').reduce((s, i) => s + i[2], 0); });
+  COM.upaMod = k;
+  st.precos.upa = { tilapia: D.produtos[0].precoDRE }; st.folha.upa = Object.assign({}, D.folhaDRE);
+  st.oper.upa = clone(D.operDRE.itens); st.operCen.upa = 0;
+  st.trib.upa = Object.assign({ cenario: '', regime: 'atual', iva: Object.assign({}, IVA_ZERO) }, D.tribDRE);
+  st.ocbBase.upa = M.ocbBase;
+  COM.peso = PESO_BASE; COM.alev = { tanque: ALEV_TANQUE, vivos: VIVOS_TANQUE }; COM.perdas.upa = PERDAS0();
+  COM.alevPeixe = O.produtos[0].variaveis[1][1] * PESO_BASE; COM.precoRacao = O.produtos[0].variaveis[0][1] / CA_BASE;
+  COM.energia.upa = { placa: true, band: 'vermelha' }; COM.ocup.upa = 100; COM.meta.upa = null;
+  Object.keys(COM.editados).forEach(c => { if(c.split('|')[1] === 'upa') delete COM.editados[c]; });
+  aplicarPeso(); recalcEstrutura();
+  META0.upa = isolar(() => { st.un = 'upa'; st.ocup = 100; return calc().sobras; }); upaRotulos(); }
+function upaModelo(k){ if(k === COM.upaMod) return; upaCarregar(k); st.un = 'upa'; st.ocup = 100; desenharTela(); }
+function upaModeloHTML(){
+  const b = (k, n, onde) => '<button type="button" class="op" aria-pressed="' + (COM.upaMod === k) + '" onclick="upaModelo(\'' + k + '\')"><span class="e" aria-hidden="true">🏗️</span><span><b>UPA de ' + n + ' postos de trabalho</b><br><small style="font-weight:400">' + onde + '</small></span></button>';
+  return '<div class="modelo-upa"><div class="rot">🏗️ Qual UPA vocês querem ver?</div><div class="botoes">'
+    + b('p22', 22, lista(MUNIS.upa22) + ' — 44 t por mês') + b('p38', 38, 'só Carapebus — 76 t por mês') + '</div>'
+    + '<p class="dica">' + (COM.upaMod === 'p38'
+        ? 'A UPA de Carapebus é a única com <b>38 famílias</b>: 76 toneladas de tilápia por mês, 38 tanques despescados por mês. Os números são os da Projeção Econômica de Carapebus (Rev. 0.1).'
+        : 'O modelo de <b>22 famílias</b> produz 44 toneladas de tilápia por mês, com 22 tanques despescados por mês. Os números são os do estudo de Rio das Ostras/Arraial do Cabo; cada município pode ter diferenças no seu estudo.')
+    + ' Trocar de modelo volta as escolhas da tela para os valores do estudo.</p></div>'; }
+function upaNotaTanques(){ const D = DATA.upa, n = D.kgPleno / KG_TANQUE, p38 = COM.upaMod === 'p38';
+  return nota('', '📋', 'Neste modelo, a UPA despesca <b>' + fN(n, n % 1 ? 1 : 0) + ' tanques por mês</b> (' + KG(D.kgPleno) + ' ÷ ' + KG(KG_TANQUE) + ' por tanque) e tem <b>' + fN(upaPostos()) + ' famílias</b> cooperadas. '
+    + (p38 ? 'Com 6 tanques por família, são 228 tanques — perto dos 232 de que se falou na oficina de novembro de 2026. O texto do estudo de Carapebus ainda descreve 22 módulos familiares e 132 tanques; a planilha, mais nova, usa 38 famílias. Confiram no projeto.'
+           : 'Com 6 tanques por família, são 132 tanques. Na oficina de novembro de 2026 falou-se em 232 tanques, número que combina com a UPA de 38 famílias de Carapebus.')); }
+/* o modelo de 22 postos passa a mostrar as 22 famílias (o total da retirada não muda) */
+[DATA.upa, DATA_ORIG.upa].forEach(X => Object.assign(X.folhaDRE, { nCoop: 22, retirada: 2000.00, nCoopConfirmado: true }));
+Object.assign(st.folha.upa, { nCoop: 22, retirada: 2000.00, nCoopConfirmado: true });
+DATA.upa.postos = 22; DATA_ORIG.upa.postos = 22;
+TUT.upa.splice(1, 0, { alvo: '.modelo-upa', t: 'Qual UPA?', x: 'Há dois modelos de UPA. O de 22 postos de trabalho vale para Arraial do Cabo, Campos, Quissamã, Rio das Ostras e São João da Barra. O de 38 postos é só o de Carapebus, que produz mais: 76 toneladas por mês. Toquem no modelo da sua UPA.' });
+function upaRotulos(){ const p38 = COM.upaMod === 'p38';
+  ABAS_GUIA.upa[2] = p38 ? 'UPA Carapebus — 38 postos de trabalho' : 'UPA de 22 postos de trabalho';
+  CART_ARQ.upa = p38 ? 'Cartilha_aba_Criacao_de_tilapia_Carapebus_38_postos' : 'Cartilha_aba_Criacao_de_tilapia'; }
+upaRotulos();
 
 /* ---------- partida da Rev. 17: a meta e a errata usam os valores do ESTUDO (antes de qualquer troca) ---------- */
 ['upa', 'ubp', 'upm', 'upp', 'ubm'].forEach(un => { META0[un] = isolar(() => { st.un = un; st.ocup = 100; return calc().sobras; }); });
