@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quanto custa o nosso peixe? — Rev. 23 Comunidade</title>
+<title>Quanto custa o nosso peixe? — Rev. 24 Comunidade</title>
 <style>
 /* ================================================================
-   REV. 23 COMUNIDADE — versão para pescadores e aquicultores
+   REV. 24 COMUNIDADE — versão para pescadores e aquicultores
    Mesmo motor de cálculo da Rev. 14 técnica. Muda a apresentação:
    letras grandes, ícones, frases simples, botão de ouvir.
    ================================================================ */
@@ -99,6 +99,31 @@ main{max-width:1240px;margin:0 auto;padding:18px 16px 40px}
 .op:hover{border-color:var(--mar2)}
 .op[aria-pressed="true"]{background:var(--mar);border-color:var(--mar);color:#fff}
 .op .e{font-size:1.4rem;line-height:1}
+/* Rev. 24 — perda até vender: de 0% a 100%, do verde ao vermelho */
+.perda-ctl .leitura-grande .perda-num,.perda-ctl .leitura-grande .perda-faixa{color:var(--pc-tx)}
+.perda-ctl .leitura-grande small.perda-kg{display:block;line-height:1.35;margin-top:2px}
+.op.perda-op{border-color:var(--pc);background:var(--pc-bg);color:var(--pc-tx);min-width:64px;justify-content:center}
+.op.perda-op:hover{border-color:var(--pc);box-shadow:0 0 0 2px var(--pc)}
+.op.perda-op[aria-pressed="true"]{background:var(--pc);border-color:var(--pc);color:var(--pc-on);box-shadow:0 0 0 3px var(--pc-bg),0 0 0 5px var(--pc)}
+.perda-ctl .passo{border-color:var(--pc)}
+.perda-ctl .passo button{background:var(--pc-bg);color:var(--pc-tx)}
+.perda-ctl .passo input{color:var(--pc-tx)}
+input[type=range].trilho.perda{-webkit-appearance:none;appearance:none;background:transparent;accent-color:var(--pc)}
+input[type=range].trilho.perda::-webkit-slider-runnable-track{height:16px;border-radius:8px;border:1px solid rgba(0,0,0,.18);background:linear-gradient(to right,#17783F 0%,#E3B505 10%,#E07800 20%,#C62828 30%,#6D0F0F 100%)}
+input[type=range].trilho.perda::-moz-range-track{height:16px;border-radius:8px;border:1px solid rgba(0,0,0,.18);background:linear-gradient(to right,#17783F 0%,#E3B505 10%,#E07800 20%,#C62828 30%,#6D0F0F 100%)}
+input[type=range].trilho.perda::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:34px;height:34px;margin-top:-10px;border-radius:50%;background:#fff;border:7px solid var(--pc);box-shadow:0 1px 4px rgba(0,0,0,.4)}
+input[type=range].trilho.perda::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:#fff;border:7px solid var(--pc);box-shadow:0 1px 4px rgba(0,0,0,.4)}
+input[type=range].trilho.perda:focus-visible{outline:3px solid var(--mar);outline-offset:4px;border-radius:10px}
+/* Rev. 24 — UPA: tanques de 6 em 6 */
+.tq-upa{margin-top:12px;padding:12px;border:2px dashed var(--linha);border-radius:14px;background:var(--espuma)}
+.tq-upa .rot2{font-weight:700;font-size:1.05rem;margin:0 0 8px}
+.tq-upa .rot2 small{font-weight:400;color:var(--tinta2)}
+.tq-linha{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.tq-info{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(150px,100%),1fr));gap:8px;margin-top:10px}
+.tq-cx{background:#fff;border:1px solid var(--linha);border-radius:12px;padding:8px 10px}
+.tq-cx span{display:block;font-size:.88rem;color:var(--tinta2)}
+.tq-cx b{display:block;font-size:1.25rem;color:var(--mar)}
+.tq-cx small{display:block;color:var(--tinta2);font-size:.85rem}
 
 input[type=range].trilho{width:100%;height:44px;accent-color:var(--boia);margin:6px 0 0}
 .marcas{display:flex;justify-content:space-between;font-size:.85rem;color:var(--tinta2)}
@@ -693,7 +718,7 @@ h5.upp-sub{margin:14px 0 0;font-size:1.05rem;color:var(--mar)}
       <span class="logo" aria-hidden="true">🐟</span>
       <div>
         <h1>Quanto custa o nosso peixe?</h1>
-        <p>Custo de 1 kg, preço de venda e sobras — ferramenta da comunidade · PEA Pescarte · Rev. 23</p>
+        <p>Custo de 1 kg, preço de venda e sobras — ferramenta da comunidade · PEA Pescarte · Rev. 24</p>
       </div>
     </div>
     <div class="util">
@@ -732,7 +757,7 @@ h5.upp-sub{margin:14px 0 0;font-size:1.05rem;color:var(--mar)}
   <details>
     <summary>Para o técnico — o que esta versão mostra e o que ela esconde</summary>
     <ul>
-      <li>O motor de cálculo é o da Rev. 14 técnica. A versão da comunidade muda a apresentação; a Rev. 15 acrescentou o mix de produtos da UBP-M; a Rev. 16 acrescentou a aba da UPM e as contribuições do Grupo Beneficiamento; a Rev. 17 acrescentou as devolutivas dos grupos (encontros de 6 a 8/11/2026) e o tutorial e a cartilha de cada aba; a Rev. 18 acrescentou a aba da UPP Rio das Ostras (produtos prontos), que na Rev. 18.1 passou a seguir a «DRE Projetada» da planilha; a Rev. 19 acrescentou a aba da UBM Arraial do Cabo (beneficiamento de mariscos); a Rev. 20 acrescentou a UPA de 38 postos de Carapebus e os municípios de cada tipologia; a Rev. 21 acrescentou a aba da UPALE Carapebus (produção de alevinos); a Rev. 22 acrescentou a aba da UPS Armação dos Búzios (sementes de moluscos); a Rev. 23 acrescenta a aba da UPRFC Campos dos Goytacazes (fábrica de ração, farinha e tratamento de conchas). As extensões do motor na Rev. 16 (alíquota por produto, rateio da estrutura por peso, base do PIS e do encargo da folha, receita acessória fixa) só valem para quem as declara: nenhum número das outras abas muda.</li>
+      <li>O motor de cálculo é o da Rev. 14 técnica. A versão da comunidade muda a apresentação; a Rev. 15 acrescentou o mix de produtos da UBP-M; a Rev. 16 acrescentou a aba da UPM e as contribuições do Grupo Beneficiamento; a Rev. 17 acrescentou as devolutivas dos grupos (encontros de 6 a 8/11/2026) e o tutorial e a cartilha de cada aba; a Rev. 18 acrescentou a aba da UPP Rio das Ostras (produtos prontos), que na Rev. 18.1 passou a seguir a «DRE Projetada» da planilha; a Rev. 19 acrescentou a aba da UBM Arraial do Cabo (beneficiamento de mariscos); a Rev. 20 acrescentou a UPA de 38 postos de Carapebus e os municípios de cada tipologia; a Rev. 21 acrescentou a aba da UPALE Carapebus (produção de alevinos); a Rev. 22 acrescentou a aba da UPS Armação dos Búzios (sementes de moluscos); a Rev. 23 acrescentou a aba da UPRFC Campos dos Goytacazes (fábrica de ração, farinha e tratamento de conchas); a Rev. 24 leva a perda da aba Minha pescaria até 100%, com cores, divide as sobras da UBP-M em 40% · 40% · 10% · 10% e faz a capacidade da UPA seguir a densidade, com tanques de 6 em 6, e deixa a fábrica de farinha só com peixe. As extensões do motor na Rev. 16 (alíquota por produto, rateio da estrutura por peso, base do PIS e do encargo da folha, receita acessória fixa) só valem para quem as declara: nenhum número das outras abas muda.</li>
       <li>Mix da UBP-M (Rev. 15): cada linha (espécie, produto, % do total, rendimento, preço pago ao pescador, preço de venda) é resumida por grupo — camarão e peixe — em kg que entram, venda por kg que entra (Σ % × rendimento × preço de venda) e compra média; o motor recebe esses três números. Com o mix do estudo, os resultados são idênticos aos da Rev. 14.</li>
       <li>Valores sugeridos do mix: Projeção Econômica da UBP-M Cabo Frio/Macaé (Rev. 1) — preço de compra por espécie, preço de venda por produto, rendimentos (camarão inteiro 100%, sem cabeça 68%, filé com cauda 55%, filé fresco 45%, filé congelado 66%; peixe em filé 43%, inteiro limpo 84%) e CMS (17,55 t para 156 t de peixe, a R$ 12,00/kg). Onde o estudo não dá preço para a forma escolhida (filé × inteiro), o sugerido é o preço equivalente: a mesma venda por kg que entra. A capacidade segue em 220 t/mês (22 dias úteis), como na Rev. 14; a planilha usa 26 dias.</li>
       <li>Preço mínimo de venda de cada produto do mix = (compra + embalagem + parte dos gastos do mês por kg que entra − créditos − CMS líquida) ÷ ((1 − alíquota) × rendimento).</li>
@@ -746,6 +771,7 @@ h5.upp-sub{margin:14px 0 0;font-size:1.05rem;color:var(--mar)}
       <li>UPM Arraial do Cabo (Rev. 16): Projeção Econômica UPM Rev. 18 (Anexos 1, 3, 4, 6 e 7) e EVTEAS UPM Rev. 2 (dez/2024). Mês-tipo = 1/12 do ano cheio de colheita (meses 7 a 18 da DRE): com a OCB fora, 12 meses-tipo reproduzem a coluna «acumulado últimos 12 meses» (sobras de R$ 2.869.963,34) com diferença menor que R$ 1 no ano. Vieira e ostra por dúzia, mexilhão por kg.</li>
       <li>UPM — escolhas da ferramenta: embalagem (R$ 67.070,40 no ano) repartida na proporção das vendas; estrutura (pessoal, combustível, manutenção, depreciação, OCB) rateada pelas longlines de cada marisco (36 · 20 · 16), não por unidade vendida; combustível, manutenção, EPI, refeições e laboratório como gastos fixos (o manejo é diário com qualquer colheita); sementes, embalagem, mexilhoneiras, limpeza e energia como gastos que crescem com a colheita. PIS de 1% sobre a folha total e encargo de 9% só sobre a cooperada, como no Anexo 4. ICMS de 20% na vieira e na ostra e de 7% no mexilhão, mais 0,65% de PIS. OCB com cooperativista e taxa de manutenção, sobre o investimento fixo (R$ 6.553.799,53). Fundos separados sobre o resultado do ano (a planilha separa mês a mês).</li>
       <li>UPM — «Quando entra o dinheiro?»: as quantidades do ano repartidas mês a mês no ritmo da DRE (vieira em 5 meses, ostra em 6, mexilhão em todos, com meses de meia colheita; sementes compradas no 7º mês da lista). A soma dos 12 meses é igual a 12 meses-tipo.</li>
+      <li>Rev. 24 — escolhas declaradas. (1) Minha pescaria: perda de 0% a 100%; as cores (verde até 5%, amarelo em 10%, laranja em 20%, vermelho a partir de 30%) são um aviso, não uma regra; com 100% não há preço justo e os gastos da saída aparecem como prejuízo. (2) UBP-M: sobras líquidas divididas em 40% (cooperados que trabalham na unidade) · 40% (quem entrega peixe e camarão) · 10% (quem entrega tilápia) · 10% (alevinos que viraram as tilápias beneficiadas), editáveis; a regra antiga (⅓ · ⅓ · ⅓) continua como botão. Kg de tilápia = linha «Tilápia» do mix (5,4% no estudo); peixe e camarão = o resto do mix, incluindo o camarão-cinza de cativeiro (1,2%); milheiros de alevinos = kg de tilápia ÷ peso do peixe da aba Criação de tilápia ÷ 1.000 (um alevino por tilápia beneficiada, sem contar a mortalidade); só os kg de cooperados entram (ato não cooperado, art. 87). Até a Rev. 23, o grupo da aquicultura usava a produção da UPA (44.000 kg), e não a tilápia que entra na UBP-M. (3) UPA: 100% da capacidade = módulos × 1 tanque despescado por mês × 50 m³ × 40 kg/m³ (2.000 kg), para qualquer tamanho de peixe (até a Rev. 23 a produção caía com o peixe maior, pelos dias a mais no tanque). Tanques de 6 em 6: cada módulo soma 1 família (retirada do estudo), 2.000 kg por mês, 1.500 m² de área mínima, o frete por kg e o investimento de 6 tanques, decantadores, filtros, bombas, recirculação e tela (UPA de 22 postos: Tabela 4 do estudo, R$ 126.616,23 por módulo; Carapebus: Anexo 1 da planilha, R$ 117.260,51), com depreciação em 10 anos, manutenção de 3% e seguro de 1% ao ano e OCB sobre o investimento. Energia, água, galpão e terreno não mudam. Peixe que fica mais de 6 meses no tanque (1 kg ou mais) pede mais de 6 tanques por módulo para manter a despesca mensal: a tela avisa. (4) UPRFC: a farinha e o óleo de camarão saem do modelo (pedido da equipe). Só peixe: 8.580 kg de resíduo de peixe por dia = 100% (1.973,4 kg de farinha e 858 kg de óleo por dia, 22 dias), o ano todo, sem efeito do defeso do camarão; lenha, água e efluente na proporção do resíduo processado (8.580 ÷ 17.380 = 49%); retiradas, veículos, seguro, manutenção, energia, investimento e depreciação como no estudo (o estudo não separa a linha do camarão). A conta da planilha, com camarão e com o defeso, fica como botão de comparação no passo 2.</li>
       <li>UPRFC Campos dos Goytacazes (Rev. 23): Projeção econômica Fábrica de Farinha Rev. 9 (parcial) — abas Matéria Prima, Produção, Custo Operacional, Água/efluentes/lenha, Energia Elétrica, Frota, Mão de obra e impostos, Investimento, Res. Invest., DRE, PROJEÇÃO, Desp. Ope., Fluxo de Caixa C1 e Demonstrativos — e EVTEAS Rev. 9 (data-base do estudo econômico: novembro/2018). Mês-tipo = «mês padrão» da DRE (coluna C), igual ao mês em regime da PROJEÇÃO sem as despesas financeiras: 17.380 kg de resíduo/dia × 22 dias; farinha de peixe a R$ 7,04, óleo de peixe a R$ 7,00, farinha e óleo de camarão a R$ 5,00; PIS 0,65% + 5% (ISSQN pelo texto); resíduo a R$ 0,09/kg; 23 cooperados × R$ 1.250 (renda de R$ 1.000), PIS 1% e encargo 9% sobre a retirada — sobras de R$ 353.357,57 (mês comum) e R$ 835.204,26 (defeso), antes dos fundos e sem a OCB; os 12 meses da PROJEÇÃO (curva 10/60/70/80/90/100%, defeso em mar–mai, juros + amortização da aba Desp. Ope.) conferem. Erros e divergências da fonte: (1) defeso: DRE!E6:G6 = Produção!G27 = B27 + G5×G22 soma de novo a farinha de peixe do mês comum (+R$ 305.640,19 de venda por mês de defeso); a ferramenta reproduz a planilha e tem a «conta corrigida»; a Tabela 52 do texto repete o problema; (2) o investimento traz R$ 914.350 de equipamentos da ração e R$ 545.850 do tratamento de conchas, sem receita, insumo nem pessoal; (3) «Manutenção de equipamentos (3% ao ano)» usa 1% na fórmula; «Seguro (1% ao mês)» usa 1% ao ano; (4) a PROJEÇÃO lança juros + amortização do capital de giro como despesa financeira; (5) ISSQN de 5% sobre venda de produto (LC 116/2003, item 7.09, trata de serviço de coleta/tratamento de resíduos) — a confirmar; ICMS isento pelo texto (convênio CONFAZ de insumos agropecuários); (6) energia: 44 kits de 9,9 kWp (R$ 1.572.995,60) gerando 60.984 kWh contra 61.670 kWh de consumo — conta de R$ 775,94 na bandeira vermelha, sem a parcela da distribuidora (Lei 14.300/2022) e sem considerar o consumo noturno; verde e amarela com placa calculadas pela ferramenta com a mesma fórmula; (7) renda de R$ 1.000 (2018) contra R$ 1.600 das outras unidades; texto: 3,17 t de farinha e 0,69 t de óleo por dia e receita de R$ 490.873/mês (planilha: 3,97 t, 1,08 t e R$ 681.708); «Encargos UBPM» (rótulo copiado); (8) payback de 27 meses e TIR (MIRR) de 1,84% a.m. com o defeso da planilha e Selic de 6,5% a.a.; preço da farinha de peixe = preço de exportação FOB (o texto cita de R$ 2,00 a R$ 7,04). Escolhas da ferramenta: resíduo no custo da farinha (como no texto); lenha e água/efluente crescem com a produção; demais gastos fixos (na rampa, todo o custo operacional segue a curva, como na PROJEÇÃO); rateio por kg produzido; OCB sobre o investimento fixo (R$ 13.924.694,59); valores de hoje. Ligação com a UBP-M: 4 t/dia de camarão × (1 − 45%) = 2,2 t/dia de resíduo, igual aos 2.200 kg/dia por UBP da aba Matéria Prima. Normas citadas na aba (LC 116/2003; Lei 14.300/2022; NR-13; defeso do camarão no Sudeste de 1º/3 a 31/5) devem ser confirmadas antes de orientar a comunidade.</li>
       <li>UPS Armação dos Búzios (Rev. 22): Projeção Econômica UPS Armação dos Búzios Rev. 8.1 (Investimento, Anexos 3, 4, 6, 7, 8, 9 e 10) e Estudo de Viabilidade Técnica da UPS Rev. 7.4 (o arquivo diz «Revisão: 0, janeiro/2026»). Mês-tipo = mês em regime da «DRE Projetada» (coluna G em diante): 960 milheiros de vieira a R$ 166,40, 480 de ostra a R$ 36,40 e mexilhão a R$ 37,40, frete de R$ 34.200,52, ICMS de 7% sobre as sementes + PIS de 0,65% sobre tudo, PIS de 1% só sobre a retirada e encargo de 9% sobre cooperados + funcionários — sobras de R$ 77.917,86 antes dos fundos e sem a OCB; os 4 meses iniciais sem venda dão R$ −152.876,67 cada. O Anexo 7 dá R$ 73.757,58. Erros e divergências da fonte: (1) Faturamento!D14:O14 = D6×C14 usa a quantidade de VIEIRA (960 milheiros) no mexilhão — a receita do mexilhão sai R$ 35.904,00 em vez de R$ 17.952,00; D8 também usa $C$7 (sem efeito, ambos 25%); a ferramenta reproduz a planilha por padrão e tem a opção «conta corrigida» (480); (2) frete = custo da frota R$ 24.937,88 ÷ 700 (Custo Operacional!F19, «Quantidade de Alevinos mês», copiado da UPALE) × 960 milheiros de vieira = R$ 34.200,52, maior que o próprio custo; (3) ICMS: planilha 7% em tudo; texto 18% + 2% (FECP) na vieira e na ostra e 7% no mexilhão; Anexo 7 soma 2,5% sem nome; (4) energia da DRE = R$ 500,00 «com o kit fotovoltaico» (C20); a planilha usa 48.208 kWh (o mesmo número da UPA) e compra 168 kWp por R$ 350.000; o texto calcula 43.470 kWh e fala em 40 kWp; a geração de 168 kWp (~20 mil kWh/mês, estimativa da ferramenta) não cobre o consumo; Lei 14.300/2022 (geração distribuída) a confirmar; (5) água: 20,1 cargas de caminhão-pipa por mês (R$ 16.080,00) para um laboratório de água do mar com captação descrita no texto; (6) EPI = 10% de «Ferramentas» (G78), não de «Vestuário e EPI» (G76); bomba de alta pressão (R$ 2.635,44) lançada como consumo mensal; sem contabilidade, telefone, nutrientes das microalgas e reposição de reprodutores; (7) tanques de indução à desova de 500 L a R$ 226.957,66 cada (R$ 907.830,64); investimento do texto R$ 7.837.623,60 × planilha R$ 8.279.623,59 (caminhão-tanque e caminhão de carroceria só na planilha); «Analista de Controle de Qualidade» de R$ 6.980,57 na planilha = «Gerente de Produção» no texto; Demonstrativos!C7 «produção média de alevinos 750.000» (rótulo copiado); (8) payback de 77,8 meses e +R$ 2.060.943,45 em 8 anos com receitas e custos corrigidos pela Selic (11,75% a.a.) — sem a correção, as sobras líquidas de 96 meses não devolvem o investimento; a linha do Anexo 10 diz «05 (cinco) anos» e lê o mês 96; (9) o texto anuncia 960.000 sementes de vieira «por ano» (a planilha usa 960.000 por mês) e traz tabelas de mercado, receita, OPEX e investimento sem números, e uma DRE antiga (vieira a R$ 831.600/mês). Escolhas da ferramenta: rateio dos gastos do laboratório por milheiro (igual para as três espécies; a planilha não separa); todos os gastos fixos (a DRE Projetada não escala nenhum com a produção); linha de insumos por milheiro começando em zero; OCB sobre o investimento fixo (R$ 8.279.623,59); valores de hoje. A ligação com a UPM: o estudo da UPM compra sementes a R$ 166,40 (vieira, 630 milheiros/ano) e R$ 36,40 (ostra, 700 milheiros/ano), os mesmos preços. Normas citadas na aba (RGP — Lei 11.959/2009, art. 24; GTA; autorização para espécie não nativa — INEA/ICMBio; Lei 14.300/2022) devem ser confirmadas antes de orientar a comunidade.</li>
       <li>UPALE Carapebus (Rev. 21): Projeção Econômica UPALE Carapebus Consolidada Rev. 4.1 (Premissas, Investimento, Energia, Anexos 3, 4, 6, 7, 8 e 10) e Estudo de Viabilidade da UPALE Carapebus Rev. 5.3.1. Mês-tipo = mês em regime da «DRE Projetada» (coluna G em diante): 700 milheiros de alevinos de 5 g a R$ 300,00, frete de R$ 21.420,03, impostos de 7% sobre os alevinos + PIS de 0,65% sobre tudo, PIS de 1% só sobre a retirada e encargo de 9% sobre a folha toda — sobras de R$ 34.571,55 antes dos fundos e sem a OCB. A ferramenta reproduz também os 4 meses iniciais sem venda (R$ −180.644,25 cada). O Anexo 7 dá R$ 29.571,52 (2,5% a mais de imposto, não identificado, e outras bases de PIS e encargos). No motor, a unidade do produto é o milheiro. Divergências e ressalvas: (1) a aba Premissas (item 4) cita preço de R$ 250 por milheiro; o Faturamento usa R$ 300; (2) os estudos das UPAs pagam R$ 240 por milheiro (R$ 0,24 por alevino) e não preveem frete; (3) o frete proposto (R$ 30,60 por milheiro) inclui motorista e ajudante (R$ 7.410,69 com encargos), mas a DRE só lança o salário do analista (Mão de Obra!E8 = SOMA(E5:E5)); (4) a aba Premissas fala em 5 meses sem receita (capital de giro de R$ 740.015,99 = 5 × R$ 148.003,20) e a DRE Projetada tem receita a partir do M5; (5) o payback pelo resultado é de 148,6 meses e o fluxo acumulado em 8 anos é de R$ −2.658.877,58 (a linha do Anexo 10 diz «05 (cinco) anos», mas a célula lê o mês 96); (6) o kit fotovoltaico está com quantidade zero; a aba Miscelânea não bate com os totais de mobiliário e informática; a maior parte dos equipamentos está sem frete (pendências da própria planilha); (7) o texto do estudo não traz o capítulo 5 (análise econômica) que o sumário anuncia, cita a «COOPEBBR» na lista de tabelas e chama a unidade de «UPM» no item do licenciamento; descreve 6 tanques de larvicultura de 50 m³ que não aparecem com esse nome no investimento. Escolhas da ferramenta: energia dos sistemas de recirculação como gasto fixo (na DRE Projetada ela segue a linha 62, que vale 1 em todos os meses); ração, hormônio, álcool e reagentes crescem com a produção; OCB sobre o investimento fixo (R$ 6.770.960,53); valores de hoje, sem a correção pela Selic dos anos seguintes. Normas citadas na aba (licença ambiental municipal — Resolução INEA 233/2021 e NOP-INEA-46, como no estudo; RGP — Lei 11.959/2009, art. 24; GTA para o trânsito de peixe vivo) devem ser confirmadas com o órgão ambiental e a defesa agropecuária antes de orientar a comunidade.</li>
@@ -815,7 +841,17 @@ const DATA = {
       ['Encargos não cooperados',             'encNC',     6568.38],
       ['PIS sobre a folha',                   'pisFolha',    440.00],
       ['Encargos UPA',                        'encFolha',   4869.47],
-      ['Depreciação',                         'fixo',     85886.84] ] },
+      ['Depreciação',                         'fixo',     85886.84],
+      /* Rev. 24 — tanques a mais (ou a menos) que o estudo: começam em zero */
+      ['Depreciação dos módulos de tanques a mais (ou a menos)', 'fixo', 0],
+      ['Manutenção e seguro dos módulos de tanques a mais (ou a menos)', 'fixo', 0] ] },
+    /* Rev. 24 — tanques e investimento que crescem de 6 em 6 (1 módulo = 1 família).
+       Fonte: Estudo de Viabilidade da UPA (revisão Carapebus 2.1), Tabela 4 — 22 módulos,
+       132 tanques (138 com os de reserva). Valor de cada item × 6 ÷ 132 = parte de 1 módulo. */
+    tq:{ base:132, fonte:'Estudo de Viabilidade da UPA (Tabela 4, 22 módulos)',
+         itens:[ ['Tanques circulares de 50 m³ (138, com os de reserva, e o frete)', 1232000.00], ['Decantadores (132, com o frete)', 265200.00],
+                 ['Filtros rizosféricos (32, com o frete)', 691417.00], ['Bombas de recirculação (40, com o frete)', 141340.00],
+                 ['Sistemas de recirculação (32)', 41600.00], ['Tela anti-pássaros instalada (30.000 m²)', 414000.00] ] },
     /* Rev. 9 — CUSTOS OPERACIONAIS VARIÁVEIS
        Origem: Anexo 3, planilha «Custo Operacional», bloco «Custos
        operacionais Variáveis» (B19-B24). Até a Rev. 8 estas linhas
@@ -894,27 +930,31 @@ const DATA = {
       ['PIS sobre a folha',                   'pisFolha',  3060.00],
       ['Encargos UBPM',                       'encFolha', 33446.09],
       ['Depreciação',                         'fixo',    119562.55] ] },
-    /* ── Rev. 10 · PARTICIPAÇÃO NAS SOBRAS ────────────────────────────
+    /* ── Rev. 10 · PARTICIPAÇÃO NAS SOBRAS — Rev. 24: 4 grupos ─────────
        A UBP-M é uma cooperativa mista: reúne quem trabalha na unidade,
-       quem entrega o pescado do mar e quem entrega o cultivo. As sobras
-       líquidas do exercício — depois do Fundo de Reserva e do FATES —
-       são rateadas entre esses três grupos.
+       quem entrega o peixe e o camarão, quem entrega a tilápia e quem
+       produz os alevinos que viram essa tilápia. As sobras líquidas
+       do exercício — depois do Fundo de Reserva e do FATES — são
+       rateadas entre esses grupos.
 
-       O rateio de partida é ⅓ · ⅓ · ⅓, por decisão estatutária. NÃO é
-       o rateio proporcional às operações do art. 4º, VII da Lei
-       5.764/71: o painel calcula os dois e mostra a distância entre
-       eles, porque a diferença é a medida exata do subsídio cruzado
-       que o estatuto institui entre os grupos.                        */
+       Regra da Rev. 24 (pedido da equipe, 12/11/2026): 40% a quem
+       beneficia, 40% a quem entrega peixe e camarão, 10% a quem
+       entrega tilápia e 10% aos alevinos que viraram as tilápias
+       beneficiadas. Até a Rev. 23: ⅓ · ⅓ · ⅓ entre 3 grupos. NÃO é o
+       rateio proporcional às operações do art. 4º, VII da Lei
+       5.764/71: precisa de aprovação da assembleia (arts. 4º, VII, e
+       44, II). Quantidades: kg do mix — a tilápia é a linha «Tilápia»,
+       o resto é peixe e camarão; milheiros de alevinos = kg de tilápia
+       ÷ peso do peixe da aba Criação de tilápia ÷ 1.000.            */
     sobrasDRE:{ grupos:[
       { id:'benef', nome:'Cooperados beneficiadores — trabalho na unidade',
-        pct:100/3, base:'pessoas', qtd:null, auto:'coop',
-        rot:'cooperados na unidade', dica:'segue o nº de cooperados do controle ⑤' },
-      { id:'mar',   nome:'Cooperados pescadores — fornecedores do mar',
-        pct:100/3, base:'kg', qtd:null, auto:'mar',
-        rot:'kg de pescado e camarão entregues no mês', dica:'segue o volume processado do controle ①' },
-      { id:'aqui',  nome:'Cooperados de aquicultura — fornecedores de cultivo',
-        pct:100/3, base:'kg', qtd:null, auto:'upa',
-        rot:'kg de cultivo entregues no mês', dica:'segue a produção plena da UPA Rio das Ostras/Arraial do Cabo (44.000 kg/mês com peixe de 800 g; muda com o tamanho escolhido na UPA)' } ] },
+        pct:40, base:'pessoas', qtd:null, auto:'coop', rot:'cooperados na unidade' },
+      { id:'mar',   nome:'Cooperados que entregam peixe e camarão',
+        pct:40, base:'kg', qtd:null, auto:'mar', rot:'kg de peixe e camarão entregues no mês (sem a tilápia)' },
+      { id:'aqui',  nome:'Cooperados que entregam tilápia',
+        pct:10, base:'kg', qtd:null, auto:'til', rot:'kg de tilápia entregues no mês' },
+      { id:'alev',  nome:'Cooperados da produção de alevinos',
+        pct:10, base:'milheiro', qtd:null, auto:'alev', rot:'milheiros de alevinos que viraram as tilápias beneficiadas' } ] },
     /* Rev. 9 — CUSTOS OPERACIONAIS VARIÁVEIS
        Origem: Anexo 3, planilha «Custo Operacional», bloco «Custos
        operacionais Variáveis para a UBP/M» (B21-B31). O «Subtotal com
@@ -2077,7 +2117,7 @@ function operCalc(un,oc){
   const L=st.oper[un]||[], o=Math.max(0,oc);
   const itens=L.map(i=>{
     const base=Math.max(0,i.valor), pf=Math.min(100,Math.max(0,i.fixoPct)), f=pf/100;
-    const fator=f+(1-f)*o;
+    const fator=f+(1-f)*o*(DATA[un].operEsc!=null? DATA[un].operEsc : 1);   /* Rev. 24 — UPRFC só peixe: lenha e água seguem o resíduo */
     return { id:i.id, nome:i.nome, fonte:i.fonte, energia:!!i.energia, grupo:i.grupo||'II',
              base, fixoPct:pf, fator, valor:base*fator }; });
   const mes  = itens.reduce((s,i)=>s+i.valor,0);
@@ -2237,7 +2277,7 @@ PESC_APP.benef={ ativo:false, itens:{} };
 PESC_BENEF.forEach(([id])=>{ PESC_APP.benef.itens[id]={ usar:'sug', rs:0 }; });
 st.pesc=clone(PESC_DRE);
 
-const PESC_LIM={ capturado:[0,1e6], perdaPct:[0,99], taxaPct:[0,99],
+const PESC_LIM={ capturado:[0,1e6], perdaPct:[0,100], taxaPct:[0,99],   /* Rev. 24 — perda até 100% */
                  remun:[0,1e4], preco:[0,1e4], saidasMes:[0,60] };
 function setPesc(campo,v){
   const lim=PESC_LIM[campo];
@@ -2443,7 +2483,9 @@ function calc(){
 function sobrasAuto(un,c,g){
   switch(g.auto){
     case 'coop': return Math.max(0,st.folha[un].nCoop);
-    case 'mar':  return c? c.kgTot : kgTotal(un,1);
+    case 'mar':  return Math.max(0,(c? c.kgTot : kgTotal(un,1))-kgTilapiaUbp(c));   /* Rev. 24 — sem a tilápia */
+    case 'til':  return kgTilapiaUbp(c);
+    case 'alev': return kgTilapiaUbp(c)/Math.max(0.05,COM.peso)/1000;             /* milheiros que viraram tilápia */
     case 'upa':  return kgTotal('upa',1);
     default:     return 0; }
 }
@@ -2452,13 +2494,14 @@ function sobrasAuto(un,c,g){
 function sobrasOperacoes(c){
   const un=st.un, S=st.sobras[un]; if(!S) return null;
   const fo=EST[un].folha;
-  const mar=c.linhas.reduce((a,l)=>a+l.kg*(l.p.variaveis[0]? l.p.variaveis[0][1] : 0),0);
-  const g=S.grupos.find(x=>x.id==='aqui');
-  const kgAqui=g? ((g.qtd==null)? sobrasAuto(un,c,g) : Math.max(0,g.qtd)) : 0;
-  const aqui=kgAqui*Math.max(0,st.precos.upa.tilapia);
-  const val={ benef:fo.coop, mar, aqui }, tot=val.benef+val.mar+val.aqui;
-  return { val, tot, kgAqui, precoAqui:Math.max(0,st.precos.upa.tilapia),
-           pct: tot>0? { benef:100*val.benef/tot, mar:100*val.mar/tot, aqui:100*val.aqui/tot } : null };
+  const compra=c.linhas.reduce((a,l)=>a+l.kg*(l.p.variaveis[0]? l.p.variaveis[0][1] : 0),0);
+  const q=id=>{ const g=S.grupos.find(x=>x.id===id); return g? ((g.qtd==null)? sobrasAuto(un,c,g) : Math.max(0,g.qtd)) : 0; };
+  /* Rev. 24 — a tilápia é a compra da linha «Tilápia» do mix; os alevinos, pelo preço do milheiro da UPALE */
+  const kgAqui=q('aqui'), precoAqui=precoTilapiaUbp(), aqui=kgAqui*precoAqui, mar=Math.max(0,compra-aqui);
+  const alev=q('alev')*precoMilheiroUpale();
+  const val={ benef:fo.coop, mar, aqui, alev }, tot=val.benef+val.mar+val.aqui+val.alev;
+  return { val, tot, kgAqui, precoAqui,
+           pct: tot>0? { benef:100*val.benef/tot, mar:100*val.mar/tot, aqui:100*val.aqui/tot, alev:100*val.alev/tot } : null };
 }
 function sobrasCalc(c){
   const un=st.un, S=st.sobras[un]; if(!S) return null;
@@ -2795,6 +2838,20 @@ let SILENCIO = 0;                       /* desliga o redesenho durante simulaç�
                       a mais ou a menos (TAXA_RACAO × peso, dia a dia);
    - alevinos       = R$ 0,24 por peixe ÷ peso. */
 const PESO_BASE = 0.8, DIAS_BASE = 180, CA_BASE = 2373 / 2000;
+/* Rev. 24 — a capacidade da UPA vem da DENSIDADE, não do tamanho do peixe. Estudo: tanques de
+   50 m³ úteis com 40 kg de peixe por m³ na despesca = 2.000 kg por tanque; módulos familiares de
+   6 tanques, cada um despescando 1 tanque por mês (ciclo de 6 meses): 2.000 kg por módulo e por
+   mês. A UPA cresce de 6 em 6 tanques (1 módulo = 1 família), com área mínima de 1.500 m² por
+   módulo (pedido da equipe, 12/11/2026). Custos de cada módulo a mais: depreciação em 10 anos
+   (Anexo 1 de Carapebus: máquinas e móveis em 10 anos), manutenção de 3% e seguro de 1% ao ano
+   (Anexo 3). Energia, água, galpão e terreno não mudam na conta (ressalva na tela). */
+const TQ_VOL = 50, TQ_DENS = 40, TQ_MOD = 6, TQ_AREA = 1500, TQ_KG = TQ_VOL * TQ_DENS;
+const TQ_DEP_ANOS = 10, TQ_MANUT = 0.03, TQ_SEG = 0.01;
+const TQ_DEP_ROT = 'Depreciação dos módulos de tanques a mais (ou a menos)', TQ_MS_ROT = 'Manutenção e seguro dos módulos de tanques a mais (ou a menos)';
+function upaTq(){ const T = DATA.upa.tq, mods0 = T.base / TQ_MOD, mods = mods0 + (COM.upaTq ? COM.upaTq.mod : 0);
+  const inv = T.itens.reduce((a, x) => a + x[1], 0) * TQ_MOD / T.base;
+  return { T, mods0, mods, extra: mods - mods0, tanques: mods * TQ_MOD, invMod: inv,
+           depMod: inv / TQ_DEP_ANOS / 12, msMod: inv * (TQ_MANUT + TQ_SEG) / 12, area: mods * TQ_AREA }; }
 /* Curva de crescimento estimada da tilápia GIFT (dias de cultivo, g),
    enviada pela equipe em 04/11/2026. Só a diferença de dias entre os
    tamanhos entra na conta. Acima de 950 g segue a inclinação do último
@@ -2836,6 +2893,7 @@ const COM = {
   aberto: {}, editando: null, editados: {}, quiz: {}
 };
 TAMANHOS.forEach(w => COM.precoTam[String(w)] = st.precos.upa.tilapia);
+COM.upaTq = { mod: 0 };                 /* Rev. 24 — módulos de 6 tanques a mais (ou a menos) que o estudo */
 st.pesc.benef.ativo = false;            /* na comunidade o beneficiamento começa desligado */
 
 /* ---------- ganchos do motor: os setters chamam estas funções ---------- */
@@ -2904,6 +2962,7 @@ const GLOSS = {
   receitaLiq:{ ic:'💧', p:'Receita líquida', t:'É o valor que fica das vendas depois de tirar os impostos (as deduções). É com ele que se pagam os gastos.', ex:'Vendas R$ 1.000 − impostos R$ 70 = receita líquida R$ 930.' },
   aliquota:{ ic:'％', p:'Alíquota e base de cálculo', t:'Alíquota é a porcentagem do imposto. Base de cálculo é o valor sobre o qual essa porcentagem é cobrada.', ex:'Venda de R$ 1.000 (base de cálculo) × 7% (alíquota) = R$ 70 de imposto.' },
   iva:{ ic:'🧾', p:'IVA — Imposto sobre Valor Agregado (CBS + IBS)', t:'É o imposto da reforma tributária. Cobra só sobre o valor que cada etapa acrescenta (agrega ou adiciona): paga-se na venda e desconta-se o que já foi pago nas compras. CBS é a parte federal; IBS, a de estados e municípios. Entra aos poucos, de 2026 a 2033.', ex:'Comprou insumos com R$ 30 de imposto e vendeu com R$ 100 de imposto: paga só R$ 70.' },
+  densidade:{ ic:'🐟', p:'Densidade', t:'É quanto peixe cabe em cada m³ de água do tanque, em kg. O estudo usa 40 kg por m³: num tanque de 50 m³, são 2.000 kg de peixe na despesca, qualquer que seja o tamanho do peixe. Mais peixe por m³ pede mais oxigênio, mais troca de água e mais cuidado.', ex:'50 m³ × 40 kg por m³ = 2.000 kg em cada tanque.' },
   sobras:{ ic:'🤝', p:'Sobras', t:'É o resultado positivo da cooperativa. Depois de separar os fundos obrigatórios, a assembleia decide o destino: dividir entre os cooperados, conforme o que cada um entregou ou trabalhou, ou investir na própria cooperativa.', ex:'Sobras de R$ 100 mil − fundos de R$ 15 mil = R$ 85 mil para a assembleia decidir.' },
   lucroSobras:{ ic:'≠', p:'Lucro ≠ sobras', t:'Empresa tem lucro, que fica com os donos. Cooperativa não tem lucro: tem sobras, que voltam para os cooperados na proporção do que cada um operou com a cooperativa (Lei 5.764/71, art. 3º e art. 4º, inciso VII).', ex:'Quem entregou mais peixe recebe uma parte maior das sobras.' },
   reserva:{ ic:'🏦', p:'Fundo de Reserva', t:'São 10% das sobras, guardados para cobrir prejuízos e para o crescimento da cooperativa. É obrigatório (Lei 5.764/71, art. 28, inciso I).', ex:'Sobras de R$ 100 mil: R$ 10 mil vão para o Fundo de Reserva.' },
@@ -2980,9 +3039,13 @@ function recalcVar(un){ DATA[un].produtos.forEach(p => p.varKg = p.variaveis.red
 function aplicarPeso(){ const D = DATA.upa, P = D.produtos[0], t = TAM[String(COM.peso)], O = DATA_ORIG.upa;
   P.variaveis[0][1] = COM.precoRacao * t.ca;
   P.variaveis[1][1] = COM.alevPeixe / COM.peso;
-  P.kgMes = O.produtos[0].kgMes * DIAS_BASE / t.dias; D.kgPleno = P.kgMes;
-  D.capTxt = COM.peso === PESO_BASE ? O.capTxt
-    : fN(P.kgMes / 1000, 1) + ' t/mês de tilápia de ' + pesoTxt(COM.peso) + ' · ' + fN(P.kgMes / 24000, 2) + ' t/dia · 24 dias úteis';
+  /* Rev. 24 — a produção não muda com o tamanho do peixe: segue a densidade e o número de módulos */
+  const Q = upaTq(), kg0 = O.produtos[0].kgMes;
+  P.kgMes = kg0 * Q.mods / Q.mods0; D.kgPleno = P.kgMes;
+  D.acess.receita = O.acess.receita * P.kgMes / kg0;                 /* frete cobrado por kg vendido */
+  D.estrutura.modelo.forEach(m => { if(m[0] === TQ_DEP_ROT) m[2] = Q.extra * Q.depMod; else if(m[0] === TQ_MS_ROT) m[2] = Q.extra * Q.msMod; });
+  D.capTxt = Q.extra === 0 ? O.capTxt
+    : fN(P.kgMes / 1000, 1) + ' t/mês de tilápia · ' + fN(Q.tanques) + ' tanques (' + fN(Q.mods) + ' módulos de 6) · ' + fN(P.kgMes / 24000, 2) + ' t/dia · 24 dias úteis';
   recalcVar('upa'); }
 function snapDATA(){ const o = {}; Object.keys(DATA).forEach(un => { const D = DATA[un];
   o[un] = { v: D.produtos.map(p => p.variaveis.map(x => x[1])), m: D.estrutura.modelo.map(x => x[2]), a: D.acess.receita,
@@ -3053,7 +3116,7 @@ function voltarEstudo(un){
   if(un === 'uprfc'){ COM.uprfc.res = DATA_ORIG.uprfc.residuo.preco; COM.uprfc.lenha = 60; COM.perdas.uprfc = PERDAS0(); COM.energia.uprfc = { placa: true, band: 'vermelha' }; aplicarUPRFC(); }
   if(un === 'ups'){ COM.ups.ins = 0; COM.perdas.ups = PERDAS0(); COM.energia.ups = { placa: true, band: 'verde' }; aplicarUPS(); }
   if(un === 'upale'){ COM.upale.racao = 100; COM.perdas.upale = PERDAS0(); COM.energia.upale = { placa: false, band: 'verde' }; aplicarUPALE(); }
-  if(un === 'upa'){ COM.alev = { tanque: ALEV_TANQUE, vivos: VIVOS_TANQUE }; COM.perdas.upa = PERDAS0(); COM.alevPeixe = O.produtos[0].variaveis[1][1] * PESO_BASE; COM.precoRacao = O.produtos[0].variaveis[0][1] / CA_BASE; aplicarPeso(); }
+  if(un === 'upa'){ COM.alev = { tanque: ALEV_TANQUE, vivos: VIVOS_TANQUE }; COM.perdas.upa = PERDAS0(); COM.alevPeixe = O.produtos[0].variaveis[1][1] * PESO_BASE; COM.precoRacao = O.produtos[0].variaveis[0][1] / CA_BASE; COM.upaTq = { mod: 0 }; st.ocbBase.upa = UPA_MOD[COM.upaMod].ocbBase; aplicarPeso(); }
   SILENCIO++;
   try{ if(D.operDRE){ resetOper(); resetFolha(); }
        if(st.mare[un]){ ['dieselLpd','lubDia','ranchoDia','geloDia','iscaMare','geloEmbMare','taxasMare','aguaMare']
@@ -3155,6 +3218,8 @@ const NOME_VAR = [
   [/^Sementes/, '🌱', 'Sementes'],
   [/^Embalagem \(sacos/, '📦', 'Embalagem (sacos e caixas de isopor)'] ];
 const NOME_EST = [
+  [/^Depreciação dos módulos de tanques/, '🔧', 'Depreciação dos tanques somados (ou tirados)', 'depreciacao', 'módulos de 6 tanques a mais ou a menos que o estudo · investimento do módulo em 10 anos · mude no passo 1'],
+  [/^Manutenção e seguro dos módulos/, '🛠️', 'Manutenção e seguro dos tanques somados (ou tirados)', null, '3% de manutenção e 1% de seguro ao ano sobre o investimento do módulo'],
   [/— cooperados$/, '👥', 'Retirada dos cooperados que trabalham na unidade', 'retirada'],
   [/^Mão de obra — 18 funções/, '👷', 'Salários dos 18 funcionários (não cooperados)', null, 'gerentes, qualidade, vendas, administração, manutenção, estações de água e de esgoto, 4 motoristas e 4 ajudantes'],
   [/^Mão de obra — 14 funções/, '👷', 'Salários dos 14 funcionários (não cooperados)', null, 'gerentes, qualidade, vendas, administração, manutenção, estações de água e de esgoto, 2 motoristas e 2 ajudantes'],
@@ -3250,7 +3315,7 @@ function escolhasUnidade(un){
     + '<div class="marcas" aria-hidden="true"><span>0%</span><span>100% = capacidade total</span><span>200%</span></div>'
     + '<div class="botoes" style="margin-top:10px">' + [25, 50, 75, 100, 125, 150].map(o => '<button type="button" class="op" data-oc="' + o + '" aria-pressed="' + (st.ocup === o) + '" onclick="poeOcup(' + o + ')">' + o + '%</button>').join('') + '</div>'
     + campoExato(un)
-    + '<p class="dica">' + T('ocupacao', '100% da capacidade') + ' = ' + KG(D.kgPleno) + ' por mês, o máximo que ' + (upa ? 'os tanques produzem com peixe de ' + pesoTxt(COM.peso) : 'a fábrica beneficia (10 toneladas por dia, 22 dias por mês)') + '. Acima de 100% é preciso mais estrutura, mais gente e mais comprador.</p></div>';
+    + (upa ? upaCapHTML() : '<p class="dica">' + T('ocupacao', '100% da capacidade') + ' = ' + KG(D.kgPleno) + ' por mês, o máximo que a fábrica beneficia (10 toneladas por dia, 22 dias por mês). Acima de 100% é preciso mais estrutura, mais gente e mais comprador.</p>') + '</div>';
 
   if(!upa) h += '<div class="ctl"><div class="rot"><span class="n">2</span>🧺 O que vamos beneficiar? — o ' + T('mix', 'mix de produtos') + '</div>'
     + '<p class="dica" style="margin:0 0 10px">Escolham na setinha cada peixe e camarão, como ele sai da fábrica, o rendimento, o preço pago ao pescador e o preço de venda. Comece pelo mix do estudo e mude só o que vocês sabem.</p>'
@@ -3269,7 +3334,7 @@ function escolhasUnidade(un){
   if(upa){
     h += '<div class="ctl"><div class="rot"><span class="n">' + (n++) + '</span>⚖️ Com que tamanho o peixe sai do tanque?</div><div class="botoes">'
       + TAMANHOS.map(w => '<button type="button" class="op" aria-pressed="' + (COM.peso === w) + '" onclick="escolherPeso(' + w + ')"><span class="peixinho" aria-hidden="true" style="font-size:' + (0.75 + w * 0.95).toFixed(2) + 'rem">🐟</span>' + pesoTxt(w) + ' <small style="font-weight:400">· ' + fN(TAM[String(w)].dias) + ' dias</small></button>').join('')
-      + '</div><p class="dica">O estudo usa peixe de 800 g. Peixe menor sai antes do tanque: mais safras no ano e menos ração por kg, mas mais alevinos para comprar. Peixe maior fica mais dias e come mais ração por kg. A comparação completa está em «O tamanho do peixe muda o resultado?», mais abaixo.</p></div>';
+      + '</div><p class="dica">O estudo usa peixe de 800 g. A produção do mês não muda com o tamanho: quem manda é a densidade (kg de peixe por m³). Peixe menor sai antes e come menos ração por kg, mas pede mais alevinos. Peixe maior fica mais dias e come mais ração por kg. A comparação completa está em «O tamanho do peixe muda o resultado?», mais abaixo.</p></div>';
   }
   if(!upa) h += controleCanal(n++);
   if(upa) h += controlePerdas(un, n++);
@@ -3420,8 +3485,9 @@ function gastosHTML(c){
     if(oi.extra && i.id !== 'gerador'){ extras += row; tExtra += i.valor; }
     else if(i.fixoPct >= 100){ fixosOp += row; tFix += i.valor; } else { cres += row; tCres += i.valor; } });
   c.E.itens.forEach((it, idx) => {
+    const tq = it[0] === TQ_DEP_ROT || it[0] === TQ_MS_ROT; if(tq && Math.abs(it[1]) < 0.005) return;   /* Rev. 24 */
     const N = nomeEst(it[0]); let k = null;
-    if(it[2] === 'coop') k = 'coop|' + un; else if(it[2] === 'folhaNC') k = 'nc|' + un; else if(it[2] === 'fixo') k = 'estr|' + un + '|' + idx;
+    if(it[2] === 'coop') k = 'coop|' + un; else if(it[2] === 'folhaNC') k = 'nc|' + un; else if(it[2] === 'fixo' && !tq) k = 'estr|' + un + '|' + idx;
     fixos += linhaGasto(N.ic, N.nm, N.sub || (it[2] === 'coop' && (upm || upp || ubm || upl || ups || upr) ? fN(st.folha[un].nCoop) + ' famílias × ' + R2(st.folha[un].retirada) + ' (renda de ' + R2(st.folha[un].retirada * (1 - INSS_COOP)) + ' + 20% de INSS do cooperado)' : ''), it[1], k, !k, N.termo); tFix += it[1]; });
   const P = partesDinheiro(c), totGastos = tCres + tFix + tExtra;
   let h = nota('', '🔎', 'Estes valores vêm do ' + T('derivado', 'Estudo de Viabilidade') + ' — a projeção feita antes de a unidade funcionar. São estimativas. Se vocês sabem o valor real de algum gasto, toquem em <b>✏️ Trocar</b> e digitem: a ferramenta refaz todas as contas na hora.');
@@ -3501,7 +3567,7 @@ function tamanhoHTML(c){
     const s1 = roda(x.w, x.preco + 1).sobras, inc = s1 - x.sob;
     x.empate = inc > 0 ? x.preco + (base.sob - x.sob) / inc : NaN; });
   const atualTxt = x => x.w === COM.peso ? ' (escolhido)' : '';
-  let h = '<p style="margin:0 0 8px">Cada tanque despesca o mesmo peso de peixe. O que muda com o tamanho é o <b>tempo no tanque</b>. Quanto maior o peixe, mais dias ele fica, <b>mais ração come para cada kg</b> e menos safras o tanque dá no ano — o custo do kg sobe. O peixe menor sai antes e come menos ração por kg, mas pede mais alevinos.</p>';
+  let h = '<p style="margin:0 0 8px">A produção do mês <b>não muda com o tamanho</b>: cada tanque despesca o mesmo peso de peixe (' + KG(TQ_KG) + ', com ' + fN(TQ_DENS) + ' kg por m³) e quem manda é a ' + T('densidade', 'densidade') + '. O que muda é o <b>tempo no tanque</b> e a ração: quanto maior o peixe, mais dias ele fica e <b>mais ração come para cada kg</b> — o custo do kg sobe. O peixe menor sai antes e come menos ração por kg, mas pede mais alevinos para o mesmo peso.</p>';
   h += '<p style="margin:0 0 8px">O preço também conta: o estudo usa ' + R2(DATA_ORIG.upa.produtos[0].precoDRE) + ' para todos os tamanhos. Perguntem aos compradores e digitem o preço de cada tamanho em «Preço do kg».</p>';
   h += '<div class="rolagem so-largo"><table class="tab tam"><thead><tr><th>Tamanho</th><th class="v">Dias no<br>tanque</th><th class="v">Produção<br>do mês</th><th class="v">Ração para<br>1 kg de peixe</th><th class="v">Alevinos<br>para 1 kg</th><th class="v">Custo<br>de 1 kg</th><th class="v">Preço<br>do kg</th><th class="v">Sobra em<br>cada kg</th><th class="v">Sobras<br>do mês</th></tr></thead><tbody>';
   linhas.forEach(x => {
@@ -3528,6 +3594,11 @@ function tamanhoHTML(c){
     + outros.map(x => '<b>' + pesoTxt(x.w) + '</b> ' + (x.cu >= base.cu ? '+ ' : '') + R2(x.cu - base.cu)).join(' · ') + '. '
     + 'Para deixar pelo menos a mesma sobra do mês que o peixe de ' + pesoTxt(base.w) + ', o kg precisa ser vendido a: '
     + outros.map(x => '<b>' + pesoTxt(x.w) + ': ' + R2(x.empate) + ' ou mais</b>').join(' · ') + '.');
+  /* Rev. 24 — o módulo tem 6 tanques: o ciclo precisa caber em 6 meses para haver despesca todo mês */
+  const longos = linhas.filter(x => x.dias > 6 * 365 / 12 + 0.5);
+  if(longos.length) h += nota('atencao', '🗓️', 'A tabela mantém <b>1 tanque despescado por mês em cada módulo</b> para todos os tamanhos, porque quem limita a produção é a densidade. Mas o módulo tem 6 tanques: para despescar todo mês, o ciclo precisa caber em 6 meses (cerca de 182 dias). '
+    + longos.map(x => '<b>' + pesoTxt(x.w) + '</b>: ' + fN(x.dias) + ' dias — cerca de ' + fN(Math.ceil(x.dias / (365 / 12) - 0.1)) + ' tanques por módulo').join(' · ')
+    + '. Sem esses tanques a mais, haverá meses sem despesca e a produção do ano cai. Outra saída é comprar juvenis maiores (o estudo avaliou alevinos de 5, 10 e 20 g). Confiram o manejo com o técnico de campo.');
   const r810 = racaoEntre(800, 1000);
   h += nota('atencao', '⚠️', 'De onde vêm estes números: o estudo usa peixe de ' + pesoTxt(PESO_BASE) + ' em ' + DIAS_BASE + ' dias, com ' + fN(CA_BASE, 2) + ' kg de ração para cada kg de peixe. '
     + 'Os dias a mais ou a menos de cada tamanho vêm da curva de crescimento da tilápia GIFT, e a ração comida nesses dias, da tabela de alimentação da Embrapa (de 1,8% a 1,2% do peso do peixe por dia). '
@@ -3564,25 +3635,7 @@ function anoHTML(c){
   return h;
 }
 
-function divisaoHTML(c){
-  const S = sobrasCalc(c); if(!S) return '';
-  if(!S.haSobras) return nota('alerta', '🔴', 'Neste cenário não há sobras para dividir no mês.');
-  const IC = { benef:['👷','Cooperados que trabalham na UBP-M'], mar:['🎣','Pescadores que entregam peixe e camarão'], aqui:['🐟','Aquicultores que entregam peixe de cultivo'] };
-  let h = '<p style="margin:0">As ' + T('sobras', 'sobras líquidas') + ' do mês (' + R0(S.base) + ') são divididas em <b>3 partes iguais</b>, uma para cada grupo:</p><div class="partes">';
-  const s = c.dest ? c.dest.s : 1;
-  S.grupos.forEach(g => {
-    const unit = (g.id === 'mar' && g.auto) ? (g.qtd * s > 0 ? g.valor / (g.qtd * s) : null) : g.unit;
-    const det = g.id === 'benef' ? 'dividido entre os cooperados da unidade' : (unit != null ? 'cerca de <b>' + R2(unit) + '</b> a mais por kg entregue no mês' + (g.id === 'mar' && s < 1 ? ' por cooperado' : '') : '');
-    h += '<div class="parte"><div class="ic" aria-hidden="true">' + IC[g.id][0] + '</div><h5>' + IC[g.id][1] + '</h5><b>' + R0(g.valor) + '</b><span class="det">por mês — ' + det + '</span></div>'; });
-  h += '</div>';
-  h += nota('lei', '⚖️', 'A divisão em 3 partes iguais é a regra de partida do estatuto. A Lei das Cooperativas prevê devolver as sobras conforme o que cada um operou com a cooperativa (Lei 5.764/71, art. 4º, VII). '
-    + 'Mudar a regra do estatuto exige Assembleia Geral Extraordinária (art. 46). É uma conversa importante: veja que o kg entregue rende valores bem diferentes para cada grupo.');
-  if(s < 1) h += nota('', '🧾', 'Como ' + fN(100 - COM.ato.pctCoop) + '% das compras vêm de quem não é cooperado, só os kg dos cooperados entram na divisão: o pescador de fora recebe o preço, mas não recebe sobras.');
-  h += nota('', '🙋', '<b>Ser cooperado é participar.</b> A cooperativa é dos cooperados: quem vai às assembleias, entrega a produção e trabalha na unidade decide junto e recebe as sobras na proporção do que fez. '
-    + 'O estatuto pode fixar uma frequência mínima e prever a eliminação de quem não cumpre os deveres (Lei 5.764/71, art. 21, III, e art. 33). Cooperado ausente enfraquece a cooperativa — e a sua própria parte nas sobras.');
-  h += notaTerceiros();
-  return h;
-}
+/* Rev. 24 — divisaoHTML: ver o bloco da Rev. 24 */
 
 
 /* ================================================================
@@ -4287,7 +4340,7 @@ function anoUBP(c){
 function setTripCom(i, campo, s){ SILENCIO++; try{ setTrip(i, campo, s); } finally{ SILENCIO--; } desenharTela(); }
 function sobraPorKgMar(){
   return isolar(() => { st.un = 'ubp'; st.ocup = COM.ocup.ubp; const c = calc(), S = sobrasCalc(c);
-    const g = S && S.grupos.find(x => x.id === 'mar'), kg = c.kgTot * c.dest.s;
+    const g = S && S.grupos.find(x => x.id === 'mar'), kg = (g ? g.qtd : c.kgTot) * c.dest.s;
     return (g && S.haSobras && kg > 0) ? g.valor / kg : null; }); }
 function partilhaBarco(c){
   const P = st.partilha.barco, PES = c.PES, M = c.MC.M, mares = M.maresMes;
@@ -4574,9 +4627,7 @@ function telaPescador(){
     + '<div class="item"><span>📅 Dia da saída</span><input class="campo" type="date" value="' + esc(P.data) + '" onchange="pescTexto(\'data\',this.value)" aria-label="Dia da saída"></div></div></div>';
   h += '<div class="ctl"><div class="rot"><span class="n">3</span>' + Q.kg + '</div>'
     + passo('capt', { nome:'Quilos ' + Q.verbo, get:() => st.pesc.capturado, set:v => { st.pesc.capturado = v; }, step:5, min:0, max:1e6, dec:0, un:'kg', curto:true }) + '</div>';
-  h += '<div class="ctl"><div class="rot"><span class="n">4</span>' + Q.perda + '</div><div class="botoes">'
-    + [0, 5, 10, 15, 20].map(o => '<button type="button" class="op" aria-pressed="' + (P.perdaPct === o) + '" onclick="pescPct(\'perdaPct\',' + o + ')">' + o + '%</button>').join('')
-    + passo('perda', { nome:'Perda em porcentagem', get:() => st.pesc.perdaPct, set:v => { st.pesc.perdaPct = v; }, step:1, min:0, max:99, dec:1, un:'%', curto:true }) + '</div></div>';
+  h += perdaCtlHTML(4);   /* Rev. 24 — de 0% a 100%, com cores do verde ao vermelho */
   h += '<div class="ctl"><div class="rot"><span class="n">5</span>💸 Quanto você gastou nesta saída?</div><div class="precos">';
   PESC_CUSTOS.forEach(([id, rot]) => {
     h += '<div class="item"><span>' + rot + '</span>' + passo('pc-' + id, { nome:rot.replace(/^\S+\s/, ''), get:() => st.pesc.custos[id] || 0, set:v => { st.pesc.custos[id] = v; }, step:5, min:0, max:1e6, dec:2, pre:'R$' }) + '</div>'; });
@@ -4592,30 +4643,32 @@ function telaPescador(){
 
 function whatsComunidade(){
   const P = st.pesc, R = precoJusto();
-  if(!R.vendavel || !R.sugerido){ COM.msgPesc = 'Digite os quilos pescados e os gastos da saída antes de mandar.'; desenharResultados(); return; }
+  if(!R.vendavel || !R.sugerido){ COM.msgPesc = P.capturado > 0 && !(R.vendavel > 0) ? 'Com 100% de perda não há preço para mandar: não sobra nada para vender.' : 'Digite os quilos pescados e os gastos da saída antes de mandar.'; desenharResultados(); return; }
   const msg = '*Preço justo do peixe* 🐟'
     + '\nPeixe: ' + (P.pescado || 'Peixe') + '\nPescador: ' + (P.pescador || '—') + '\nData: ' + (P.data || '—')
     + '\nQuilos vendáveis: ' + pescKgApp(R.vendavel) + '\nPreço mínimo: ' + fB2(R.minimo) + '/kg' + '\nPreço sugerido: ' + fB2(R.sugerido) + '/kg'
     + (R.benefKg > 0 ? '\n\n*Se for beneficiado* (+' + fB2(R.benefKg) + '/kg de mão de obra, energia, água, ingredientes, higienização e embalagem)'
         + '\nPreço mínimo integrado: ' + fB2(R.minimoInt) + '/kg' + '\nPreço sugerido integrado: ' + fB2(R.sugeridoInt) + '/kg' : '')
-    + '\n\nCalculado com as contas do app Preço Justo — Pescador (Pescarte).' + '\nConferido na ferramenta da comunidade — Rev. 23.';
+    + '\n\nCalculado com as contas do app Preço Justo — Pescador (Pescarte).' + '\nConferido na ferramenta da comunidade — Rev. 24.';
   COM.msgPesc = ''; window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank', 'noopener'); }
 
 function resultadoPescador(){
   const P = st.pesc, R = precoJusto();
-  const vazio = !(R.vendavel > 0) || !(R.total > 0);
-  const fala = vazio ? 'Digite quantos quilos você pescou e quanto gastou na saída.'
+  const tudo = P.capturado > 0 && !(R.vendavel > 0), vazio = !tudo && (!(R.vendavel > 0) || !(R.total > 0));
+  const fala = tudo ? 'Com cem por cento de perda, não sobra nada para vender.' + (R.total > 0 ? ' Os gastos da saída, ' + falaR(R.total) + ', viram prejuízo.' : '')
+    : vazio ? 'Digite quantos quilos você pescou e quanto gastou na saída.'
     : 'Você vai vender ' + falaKg(R.vendavel) + '. Cada quilo custou ' + falaR(R.custoKg) + '. O preço mínimo é ' + falaR(R.minimo)
       + '. Abaixo disso, você paga para pescar. O preço justo, com o seu ganho, é ' + falaR(R.sugerido) + ' o quilo.';
-  let h = '<section class="resultado" aria-label="Resultado da saída"><div class="veredito"><span class="sinal" aria-hidden="true">⭐</span><div>'
-    + (vazio ? 'Digite os quilos pescados e os gastos da saída para ver o preço justo.'
+  let h = '<section class="resultado" aria-label="Resultado da saída"><div class="veredito"><span class="sinal" aria-hidden="true">' + (tudo ? '🔴' : '⭐') + '</span><div>'
+    + (tudo ? 'Com 100% de perda, não sobra nada para vender' + (R.total > 0 ? ': os ' + R2(R.total) + ' gastos na saída viram prejuízo.' : '.')
+       : vazio ? 'Digite os quilos pescados e os gastos da saída para ver o preço justo.'
              : 'Seu preço justo é ' + R2(R.sugerido) + ' o kg. Abaixo de ' + R2(R.minimo) + ', você paga para pescar.')
     + '<small>Contas iguais às do app Preço Justo — Pescador.</small></div>' + ouvir('res-pesc', fala) + '</div>';
   h += '<div class="cartoes">';
-  h += cartao('🛡️', T('precoMin', 'Preço mínimo'), R2(R.minimo), 'paga só os gastos da saída');
-  h += cartao('⭐', T('precoJusto', 'Preço justo'), R2(R.sugerido), 'paga os gastos e o seu ganho de ' + R2(P.remun) + ' por kg', 'verde');
+  h += cartao('🛡️', T('precoMin', 'Preço mínimo'), tudo ? '—' : R2(R.minimo), tudo ? 'não há peixe para vender' : 'paga só os gastos da saída');
+  h += cartao('⭐', T('precoJusto', 'Preço justo'), tudo ? '—' : R2(R.sugerido), tudo ? 'não há peixe para vender' : 'paga os gastos e o seu ganho de ' + R2(P.remun) + ' por kg', tudo ? '' : 'verde');
   h += cartao('⚖️', 'Quilos para vender', KG(R.vendavel, 1), 'de ' + KG(P.capturado) + ' ' + PQ().verbo + ', ' + KG(R.perdaKg, 1) + ' se perdem');
-  h += cartao('🧮', T('custoUnit', 'Custo de 1 kg'), R2(R.custoKg), 'gastos ' + R2(R.total) + ' ÷ ' + KG(R.vendavel, 1));
+  h += cartao('🧮', T('custoUnit', 'Custo de 1 kg'), tudo ? '—' : R2(R.custoKg), tudo ? 'gastos de ' + R2(R.total) + ' e nenhum kg para vender' : 'gastos ' + R2(R.total) + ' ÷ ' + KG(R.vendavel, 1));
   h += '</div><div class="botoes" style="margin-top:14px">'
     + '<button type="button" class="btn zap" onclick="whatsComunidade()">📲 Mandar no WhatsApp</button>'
     + '<button type="button" class="btn" onclick="cadGuardar()">📓 Guardar esta saída no caderno</button>'
@@ -4653,11 +4706,12 @@ function secoesPescador(){
 function contaPescador(R){
   const P = st.pesc;
   const l = (ic, t, conta) => '<tr><td class="ic" aria-hidden="true">' + ic + '</td><td>' + t + '<span class="ex">' + conta + '</span></td></tr>';
+  const sem = !(R.vendavel > 0), semTxt = 'sem quilos para vender, não dá para fazer esta conta';
   return '<table class="conta"><tbody>'
     + l('⚖️', '<b>Quilos para vender</b> = quilos pescados − perdas', fN(P.capturado) + ' kg − ' + fN(P.perdaPct, 1) + '% = ' + KG(R.vendavel, 1))
-    + l('🧮', '<b>Custo de 1 kg</b> = gastos da saída ÷ quilos para vender', R2(R.total) + ' ÷ ' + KG(R.vendavel, 1) + ' = ' + R2(R.custoKg))
-    + l('🛡️', '<b>Preço mínimo</b> = custo de 1 kg ÷ (1 − taxa)', R2(R.custoKg) + ' ÷ (1 − ' + fN(P.taxaPct, 1) + '%) = ' + R2(R.minimo))
-    + l('⭐', '<b>Preço justo</b> = (custo de 1 kg + seu ganho) ÷ (1 − taxa)', '(' + R2(R.custoKg) + ' + ' + R2(P.remun) + ') ÷ (1 − ' + fN(P.taxaPct, 1) + '%) = ' + R2(R.sugerido))
+    + l('🧮', '<b>Custo de 1 kg</b> = gastos da saída ÷ quilos para vender', sem ? semTxt + (R.total > 0 ? ': os ' + R2(R.total) + ' gastos são prejuízo' : '') : R2(R.total) + ' ÷ ' + KG(R.vendavel, 1) + ' = ' + R2(R.custoKg))
+    + l('🛡️', '<b>Preço mínimo</b> = custo de 1 kg ÷ (1 − taxa)', sem ? semTxt : R2(R.custoKg) + ' ÷ (1 − ' + fN(P.taxaPct, 1) + '%) = ' + R2(R.minimo))
+    + l('⭐', '<b>Preço justo</b> = (custo de 1 kg + seu ganho) ÷ (1 − taxa)', sem ? semTxt : '(' + R2(R.custoKg) + ' + ' + R2(P.remun) + ') ÷ (1 − ' + fN(P.taxaPct, 1) + '%) = ' + R2(R.sugerido))
     + '</tbody></table>'
     + nota('', '💡', 'Por que dividir pela taxa, e não somar? Porque a taxa é cobrada sobre o preço de venda. Se o comprador fica com 10% de cada venda, você precisa pedir um preço que, tirados os 10%, ainda pague o seu custo.'); }
 
@@ -4669,7 +4723,7 @@ function melhorarPescador(R){
     { ic:'🏷️', t:'Vender o kg R$ 1,00 mais caro', p:'Vender direto, para a cooperativa ou para quem paga melhor.', f:p => { p.preco += 1; } },
     { ic:'🎣', t:'Trazer 10% mais peixe na mesma saída', p:'Escolher melhor o pesqueiro e cuidar das redes.', f:p => { p.capturado *= 1.1; } } ];
   const cards = L.map(a => { const r = simPesc(a.f);
-    return Object.assign(a, { d: temPreco ? r.sobra - R.sobra : 0, extra: 'Preço justo: de ' + R2(R.sugerido) + ' para ' + R2(r.sugerido) }); })
+    return Object.assign(a, { d: temPreco ? r.sobra - R.sobra : 0, extra: 'Preço justo: de ' + pjTxt(R) + ' para ' + pjTxt(r) }); })
     .sort((a, b) => Math.abs(b.d) - Math.abs(a.d));
   let h = '<p style="margin:0 0 10px">' + (temPreco ? 'Cada cartão mostra quanto a sobra desta saída muda com uma ação:' : 'Digite o preço oferecido (lá em cima) para ver quanto cada ação aumenta a sobra. Por enquanto, veja como muda o preço justo:') + '</p>';
   h += '<div class="alavancas">' + cards.map(a => temPreco ? cartaoAlavanca(a, a.extra)
@@ -4712,7 +4766,7 @@ PESC_DRE.pescado = 'Peixe misto da saída'; if(st.pesc.pescado === 'Pescado mist
 function coopPescador(R){
   const ubpPes = DATA.ubp.produtos[1].variaveis[0][1], ubpCam = DATA.ubp.produtos[0].variaveis[0][1];
   const porKg = isolar(() => { st.un = 'ubp'; st.ocup = COM.ocup.ubp; const c = calc(), S = sobrasCalc(c);
-    const g = S && S.grupos.find(x => x.id === 'mar'), kg = c.kgTot * c.dest.s; return (g && S.haSobras && kg > 0) ? g.valor / kg : null; });
+    const g = S && S.grupos.find(x => x.id === 'mar'), kg = (g ? g.qtd : c.kgTot) * c.dest.s; return (g && S.haSobras && kg > 0) ? g.valor / kg : null; });
   let h = '<div class="cartoes" style="margin-top:0">'
     + '<div class="cartao" style="border:2px solid var(--linha)"><span class="ic">🎣</span><div><span class="r">A UBP-M paga pelo kg de peixe</span><b>' + R2(ubpPes) + '</b><span class="det">' + detMixUbp('pei') + '</span></div></div>'
     + '<div class="cartao" style="border:2px solid var(--linha)"><span class="ic">🦐</span><div><span class="r">A UBP-M paga pelo kg de camarão</span><b>' + R2(ubpCam) + '</b><span class="det">' + detMixUbp('cam') + '</span></div></div>'
@@ -4872,7 +4926,7 @@ function atividadesHTML(){
     ['⚖️', 'Pesar o rendimento', ['Na fábrica ou em casa, pesem 5 kg de camarão ou de peixe antes de limpar.', 'Limpem do jeito que vocês vendem (corpinho, limpo, filé, posta) e pesem de novo o que ficou pronto.', 'Dividam o peso pronto pelo peso que entrou: esse é o rendimento. Na aba Beneficiamento, digitem o número em «Nosso valor» e vejam o preço mínimo mudar.']],
     ['🧾', 'Cooperado ou não cooperado?', ['Na aba Beneficiamento, escolham 100%, 75% e 50% de compras de cooperados.', 'Em «Para onde vai o dinheiro do mês», vejam quanto vai para a divisão e quanto vai para o FATES e o imposto.', 'Conversem: o que a cooperativa ganha trazendo os pescadores de fora para dentro?']],
     ['🐚', 'O ano da colheita', ['Na aba Criação de mariscos, abram «Quando entra o dinheiro?».', 'Contem os meses no vermelho e vejam quanto é preciso guardar dos meses de colheita.', 'Testem a vieira mais barata. Quantos meses ficam no vermelho?']],
-    ['♻️', 'O resíduo que vira farinha', ['Na aba Fábrica de farinha, coloquem a farinha de peixe a R$ 4,00 o kg. Quanto sobra ou falta no mês?', 'Agora escolham o mês de defeso do camarão e toquem em «Conta corrigida». O resultado muda quanto?', 'Na aba Beneficiamento, quanto resíduo a UBP gera por dia? Quem leva esse resíduo até Campos? Conversem.']],
+    ['♻️', 'O resíduo que vira farinha', ['Na aba Fábrica de farinha, coloquem a farinha de peixe a R$ 4,00 o kg. Quanto sobra ou falta no mês?', 'Agora toquem em «Peixe e camarão, como na planilha», no passo 2. Quanto a farinha de camarão mudava as sobras do mês?', 'Na aba Beneficiamento, quanto resíduo a UBP gera por dia? Quem leva esse resíduo até Campos? Conversem.']],
     ['🐚', 'A semente e a criação de mariscos', ['Na aba Sementes de moluscos, no passo 3, coloquem o milheiro de vieira a R$ 140,00. Quanto sobra ou falta no mês?', 'Agora toquem em «Conta corrigida», no passo 2. O resultado muda quanto?', 'Se a semente ficar mais cara, a UPS ganha e a criação de mariscos paga mais. Quem decide o preço? Conversem.']],
     ['🐠', 'O alevino e a criação fecham juntos?', ['Na aba Produção de alevinos, no passo 2, coloquem o milheiro a R$ 240,00. Quanto sobra ou falta no mês?', 'Na aba Criação de tilápia, em «Os gastos do mês», troquem o gasto com alevinos pelo valor com o milheiro a R$ 300,00 (25% a mais). Quanto as sobras da criação caem?', 'Qual preço deixa as duas unidades no azul? Conversem: quem decide esse preço?']],
     ['🦪', 'A criação e a unidade de mariscos fecham juntas?', ['Na aba Criação de mariscos, anotem as sobras do ano.', 'Na aba Beneficiamento de mariscos, no passo 4, aumentem em R$ 2,00 o preço pago às UPMs. Quanto as sobras da unidade caem?', 'Qual preço deixa as duas no azul? Conversem: quem decide esse preço?']],
@@ -5268,7 +5322,7 @@ COM.caderno = [];
 try{ if(HAS_DOM && window.localStorage){ const s = JSON.parse(localStorage.getItem(CAD_CHAVE) || '[]'); if(Array.isArray(s)) COM.caderno = s.slice(0, 400); } }catch(e){}
 function cadGrava(){ try{ if(HAS_DOM && window.localStorage) localStorage.setItem(CAD_CHAVE, JSON.stringify(COM.caderno)); }catch(e){} }
 function cadGuardar(){ const P = st.pesc, R = precoJusto();
-  if(!(R.vendavel > 0) || !(R.total > 0)){ COM.msgPesc = 'Digite os quilos e os gastos da saída antes de guardar.'; desenharResultados(); return; }
+  if(!(R.vendavel > 0) || !(R.total > 0)){ COM.msgPesc = P.capturado > 0 && !(R.vendavel > 0) ? 'Com 100% de perda não há preço justo para guardar: não sobra nada para vender.' : 'Digite os quilos e os gastos da saída antes de guardar.'; desenharResultados(); return; }
   COM.caderno.push({ data: P.data || '', nome: P.pescado || PQ().rot, kg: P.capturado, vend: R.vendavel, gastos: R.total, custoKg: R.custoKg, min: R.minimo, justo: R.sugerido,
     preco: R.preco > 0 ? R.preco : 0, sobra: R.preco > 0 ? R.sobra : null });
   if(COM.caderno.length > 400) COM.caderno.shift();
@@ -5316,7 +5370,7 @@ const ctlN = n => '.painel .ctl:nth-of-type(' + n + ')';
 const TUT = {
   upa: [
     { alvo: '.cab', t: 'Para que serve esta aba', x: 'Aqui vocês descobrem quanto custa produzir 1 kg de tilápia nos tanques da UPA, e se o preço de venda paga esse custo. Os números de partida são os do Estudo de Viabilidade. O botão Ouvir lê a tela em voz alta.' },
-    { alvo: ctlN(1), t: 'Passo 1: quanto vamos produzir', x: 'Arrastem a barra ou toquem num botão de 25% a 150%. 100% é a capacidade total dos tanques. Embaixo da barra há um campo para digitar a quantidade exata, em kg. Se o número digitado estiver errado, o campo fica vermelho.' },
+    { alvo: ctlN(1), t: 'Passo 1: quanto vamos produzir', x: 'Arrastem a barra ou toquem num botão de 25% a 150%. 100% é a capacidade total dos tanques: 2.000 kg por módulo de 6 tanques, com 40 kg de peixe por m³ — o tamanho do peixe não muda essa conta. Embaixo há um campo para digitar a quantidade exata, em kg, e o número de tanques, que cresce de 6 em 6: cada módulo é de uma família e pede pelo menos 1.500 m².' },
     { alvo: ctlN(2), t: 'Passo 2: por quanto vamos vender', x: 'O preço do estudo é R$ 10,00 o kg. Toquem em menos ou em mais, ou digitem o preço que o comprador de vocês paga. Para voltar ao preço do estudo, toquem em «voltar».' },
     { alvo: ctlN(3), t: 'Passo 3: o tamanho do peixe', x: 'O estudo usa peixe de 800 g, que fica 180 dias no tanque. Peixe menor sai antes; peixe maior fica mais tempo e come mais ração para cada kg.' },
     { alvo: '#ctl-perdas', t: 'Passo 4: o que se perde no caminho', x: 'Pedido do Grupo de Aquicultura. Coloquem aqui o peixe que estraga no transporte, o lote que o comprador recusa e os tanques perdidos por causa do clima. Tudo começa em zero, porque o estudo não traz essas perdas.' },
@@ -5348,7 +5402,7 @@ const TUT = {
     { sec: 'gas-ubp', t: 'Os gastos, um por um', x: 'No fim da lista estão os gastos que o estudo não traz: taxa de lixo, taxa de incêndio, controle de pragas, combustível dos veículos e coleta dos resíduos em veículo separado. Começam em zero: toquem em Trocar.' },
     { sec: 'ano-ubp', t: 'O ano inteiro, com o defeso', x: 'A tela abre como o grupo descreveu: de março a maio, a fábrica a 20% da capacidade. Quem quiser, muda para o defeso de cada espécie.' },
     { sec: 'ger', t: 'Gerador e energia entre as unidades', x: 'O gerador só compensa quando o kWh da Enel custa mais que o kWh do gerador. No fim da seção está a regra para mandar a sobra de energia solar de uma unidade para outra.' },
-    { sec: 'div', t: 'Como as sobras são divididas', x: 'As três partes do estatuto, a regra da carga comprada de fora e a nota sobre a participação do cooperado.' },
+    { sec: 'div', t: 'Como as sobras são divididas', x: 'A regra proposta: 40% para quem beneficia, 40% para quem entrega peixe e camarão, 10% para quem entrega tilápia e 10% para os alevinos que viraram tilápia. A tabela mostra quanto cada kg e cada milheiro recebe, e a assembleia pode mudar as porcentagens.' },
     { alvo: '.guia', t: 'Para levar para a comunidade', x: 'O botão Cartilha desta aba abre o material para imprimir, com os números da tela, exercícios e as respostas.' } ],
   upm: [
     { alvo: '.cab', t: 'Para que serve esta aba', x: 'Aqui vocês descobrem quanto custa produzir 1 dúzia de vieiras, 1 dúzia de ostras e 1 kg de mexilhão, e se o preço de venda paga esse custo.' },
@@ -5370,7 +5424,7 @@ const TUT = {
     { alvo: '.cab', t: 'Para que serve esta aba', x: 'Aqui cada pescador, pescadora ou marisqueira descobre o preço justo da sua saída. As contas são as mesmas do aplicativo Preço Justo.' },
     { alvo: ctlN(1), t: 'Quem está fazendo a conta', x: 'Escolham pescador ou marisqueira. As perguntas da tela mudam de palavras; a conta é a mesma.' },
     { alvo: ctlN(3), t: 'Quantos kg', x: 'Digitem os quilos pescados ou catados. Se o número estiver errado, o campo fica vermelho.' },
-    { alvo: ctlN(4), t: 'Quanto se perde até vender', x: 'O que estraga, quebra ou some antes da venda. Cada ponto de perda encarece o kg que sobra.' },
+    { alvo: ctlN(4), t: 'Quanto se perde até vender', x: 'O que estraga, quebra ou some antes da venda. Cada ponto de perda encarece o kg que sobra. Arrastem a barra de 0% a 100% ou toquem num botão: a cor vai do verde, pouca perda, ao vermelho, perda alta.' },
     { alvo: ctlN(5), t: 'Os gastos da saída', x: 'Combustível, gelo, rancho, manutenção, transporte, embalagem e outros. Coloquem só os gastos desta saída.' },
     { alvo: ctlN(6), t: 'A taxa de quem vende', x: 'A comissão do atravessador ou a taxa do entreposto, em porcentagem do preço.' },
     { alvo: ctlN(7), t: 'Quanto você quer ganhar por kg', x: 'É o seu ganho, depois de pagar tudo. Ele faz a diferença entre o preço mínimo e o preço justo.' },
@@ -5445,7 +5499,7 @@ if(HAS_DOM) document.addEventListener('keydown', e => { if(!COM.tut) return; if(
    a tela nunca mostram valores diferentes.
    ================================================================ */
 COM.cart = null;
-const CART_REV = 'Rev. 23';
+const CART_REV = 'Rev. 24';
 /* PDFs prontos, com os valores do estudo, publicados na pasta cartilhas/ do site (só aparecem quando a ferramenta é aberta pela internet) */
 const CART_ARQ = { upa: 'Cartilha_aba_Criacao_de_tilapia', ubp: 'Cartilha_aba_Beneficiamento', upm: 'Cartilha_aba_Criacao_de_mariscos', pescador: 'Cartilha_aba_Minha_pescaria', barco: 'Cartilha_aba_Barco_de_pesca' }, CART_PDF_DATA = '11/11/2026';
 const cartNoSite = () => HAS_DOM && /^https?:$/.test(location.protocol);
@@ -5515,11 +5569,12 @@ function cartUPA(){
     + cVez(['Gasto de 1 kg: R$ 9,50. Preço: R$ 10,00. Sobra ou falta? ' + cBr + ' Quanto em 1.000 kg? R$ ' + cBr, 'Gastos fixos de R$ 6.000 e R$ 4,00 por kg de gasto que cresce. Custo de 1 kg com 1.000 kg: R$ ' + cBr + ' Com 2.000 kg: R$ ' + cBr]));
   const tam = TAMANHOS.map(w => [w, simular(() => { COM.peso = w; aplicarPeso(); st.precos.upa.tilapia = COM.precoTam[String(w)]; }).c]);
   pg.push(cCab(3, '🐣', 'Tamanho do peixe, alevinos e mortalidade', 'Lição 3')
-    + cIdeia('Cada tanque despesca o mesmo peso de peixe. O que muda com o tamanho é o <b>tempo no tanque</b> e a <b>ração para cada kg</b>.')
+    + cIdeia('A produção do mês não muda com o tamanho: cada tanque despesca o mesmo peso de peixe (40 kg por m³ de água). O que muda é o <b>tempo no tanque</b> e a <b>ração para cada kg</b>.')
     + cCaixa('👀 Do menor ao maior', cTab(['Tamanho', 'Dias no tanque', 'Ração para 1 kg', 'Custo de 1 kg', 'Sobras do mês'], tam.map(([w, r]) => [pesoTxt(w), fN(TAM[String(w)].dias), fN(TAM[String(w)].ca, 2) + ' kg', R2(r.linhas[0].cu), R0(r.sobras)]), TAMANHOS.indexOf(COM.peso))
       + '<p>A tabela usa o preço de cada tamanho que está na tela. Perguntem aos compradores quanto pagam por cada tamanho e digitem na ferramenta. Para 1,2 kg e 1,5 kg os números são estimativa.</p>')
     + cCaixa('🐣 Os alevinos', '<p>Em cada tanque entram <b>' + fN(COM.alev.tanque) + ' alevinos</b>; chegam à despesca <b>' + fN(COM.alev.vivos) + ' peixes</b>. A perda de ' + fN(COM.alev.tanque - COM.alev.vivos) + ' peixes (' + fN(100 * (COM.alev.tanque - COM.alev.vivos) / COM.alev.tanque, 1) + '%) já está no custo: '
       + fN(COM.alev.tanque) + ' × ' + R2(alevPreco()) + ' ÷ ' + fN(COM.alev.vivos) + ' = <b>' + R2(COM.alevPeixe) + ' por peixe despescado</b>.</p><p>Com ' + fN(kg / KG_TANQUE, 1) + ' tanques despescados por mês, são ' + fN(kg / KG_TANQUE * COM.alev.tanque) + ' alevinos para comprar todo mês.</p>')
+    + cCaixa('🏗️ Tanques de 6 em 6', '<p>1 módulo = 6 tanques = 1 família = ' + KG(TQ_KG) + ' por mês = ' + fN(TQ_AREA) + ' m² no mínimo. Esta UPA: <b>' + fN(upaTq().tanques) + ' tanques</b>, ' + fN(upaTq().area) + ' m². Some módulos no passo 1.</p>', 'cinza')
     + cCaixa('📋 Anote em cada tanque', cTab(['Tanque', 'Dia do povoamento', 'Alevinos que entraram', 'Dia da despesca', 'Peixes que saíram', 'Kg despescados'], [['', '', '', '', '', ''], ['', '', '', '', '', ''], ['', '', '', '', '', '']], null, 'branco'), 'cinza')
     + cVez(['Entraram 3.000 alevinos e saíram 2.300 peixes. Perda: ' + cBr + ' peixes.', 'Alevino a R$ 0,20. Custo do alevino por peixe despescado: 3.000 × 0,20 ÷ 2.300 = R$ ' + cBr])
     + cFer('abra «Alevinos, mortalidade e o ciclo do tanque» e troque os números pelos dos tanques de vocês.'));
@@ -5593,12 +5648,12 @@ function cartUBP(){
     + cIdeia('Comprar de <b>cooperado</b> é ato cooperado: o resultado volta para os cooperados. Comprar de <b>quem não é cooperado</b> é ato não cooperado: o resultado não é dividido.')
     + cCaixa('🚢 Exemplo do encontro: 40 toneladas compradas de traineira de fora', '<p>Com ' + KG(c.kgTot) + ' por mês, 40 t são ' + fN(100 - pct40, 1) + '% das compras. O resultado dessa parte — <b>' + R0(d40.nc) + '</b> — paga ' + R0(d40.irpj + d40.csll) + ' de imposto (estimativa) e o resto, ' + R0(d40.fatesNC) + ', vai para o FATES (Lei 5.764/71, arts. 87 e 111). '
       + 'Para dividir entre os cooperados ficam ' + R0(d40.liq) + ', depois dos fundos.</p><p>O pescador cooperado que não pescou essa carga não recebe sobras dela. Quem beneficiou recebe pelo trabalho: a retirada por produção é gasto da fábrica, antes das sobras.</p>')
-    + (S && S.haSobras ? cCaixa('👀 A divisão das sobras do mês', cTab(['Grupo', 'Recebe por mês'], S.grupos.map(g => [({ benef: '👷 Cooperados que trabalham na UBP-M', mar: '🎣 Pescadores que entregam peixe e camarão', aqui: '🐟 Aquicultores que entregam peixe de cultivo' })[g.id], R0(g.valor)]).concat([['<b>Sobras líquidas do mês</b>', '<b>' + R0(S.base) + '</b>']]), -1)
-      + '<p>Três partes iguais é a regra de partida do estatuto. A lei manda devolver as sobras conforme o que cada um operou com a cooperativa, salvo decisão da assembleia (Lei 5.764/71, art. 4º, VII). Mudar a regra exige Assembleia Geral Extraordinária (art. 46).</p>') : cCaixa('🔴 Sem sobras', '<p>Neste cenário não há sobras para dividir no mês.</p>'))
+    + (S && S.haSobras ? cCaixa('👀 A divisão das sobras do mês', cTab(['Grupo', 'Parte', 'Recebe por mês', 'Por unidade entregue'], S.grupos.map(g => [DIV_UBP[g.id][0] + ' ' + DIV_UBP[g.id][2], fN(100 * g.frac, 0) + '%', R0(g.valor), divUnid(g, c.dest ? c.dest.s : 1).curto]).concat([['<b>Sobras líquidas do mês</b>', '', '<b>' + R0(S.base) + '</b>', '']]), -1)
+      + '<p>Regra proposta: 40% · 40% · 10% · 10%. A lei manda devolver as sobras conforme o que cada um operou com a cooperativa, salvo decisão da assembleia (Lei 5.764/71, art. 4º, VII): a regra precisa ser aprovada em assembleia (art. 44) e, se for para o estatuto, em Assembleia Geral Extraordinária (art. 46).</p>') : cCaixa('🔴 Sem sobras', '<p>Neste cenário não há sobras para dividir no mês.</p>'))
     + cCaixa('🏛️ OCB', '<p>Organização das Cooperativas Brasileiras: registra e representa as cooperativas. A contribuição anual entra na conta do mês, 1/12 por vez. A tabela completa está em «Para onde vai o dinheiro do mês».</p>', 'cinza')
-    + cVez(['Sobras líquidas de R$ 90.000, em 3 partes iguais. Cada grupo recebe R$ ' + cBr, 'A fábrica comprou 100 t no mês: 80 t de cooperados e 20 t de fora. Que parte do resultado não entra na divisão? ' + cBr + '%']));
+    + cVez(['Sobras líquidas de R$ 90.000. Quem entrega peixe e camarão fica com 40%. Quanto recebe esse grupo? R$ ' + cBr, 'A fábrica comprou 100 t no mês: 80 t de cooperados e 20 t de fora. Que parte do resultado não entra na divisão? ' + cBr + '%']));
   pg.push(cComoUsar('ubp'));
-  pg.push(cResp(['Lição 1: 33% · 100 kg · resposta de cada um', 'Lição 2: R$ 12,00 · sobra R$ 0,60', 'Lição 3: R$ 20,00 · R$ 1,80; não compensa', 'Lição 4: R$ 22.500 · R$ 500', 'Lição 5: R$ 30.000 · 20%']));
+  pg.push(cResp(['Lição 1: 33% · 100 kg · resposta de cada um', 'Lição 2: R$ 12,00 · sobra R$ 0,60', 'Lição 3: R$ 20,00 · R$ 1,80; não compensa', 'Lição 4: R$ 22.500 · R$ 500', 'Lição 5: R$ 36.000 · 20%']));
   return pg; }
 
 /* ---------- 🐚 Criação de mariscos ---------- */
@@ -6755,7 +6810,14 @@ UPA_MOD.p38 = {
     ['Encargos não cooperados',              'encNC',     6568.38],
     ['PIS sobre a folha',                    'pisFolha',   760.00],
     ['Encargos UPA',                         'encFolha',  7749.47],
-    ['Depreciação',                          'fixo',     72108.86639648529] ] },
+    ['Depreciação',                          'fixo',     72108.86639648529],
+    ['Depreciação dos módulos de tanques a mais (ou a menos)', 'fixo', 0],
+    ['Manutenção e seguro dos módulos de tanques a mais (ou a menos)', 'fixo', 0] ] },
+  /* Rev. 24 — Anexo 1 (Investimento) da planilha de Carapebus: 228 tanques em produção */
+  tq: { base: 228, fonte: 'Anexo 1 da Projeção Econômica de Carapebus (228 tanques)',
+        itens: [ ['Tanques circulares de 50 m³ (240, com os de reserva, e o frete)', 2142608.695652174], ['Decantadores (228, com o frete)', 458072.7272727273],
+                 ['Filtros rizosféricos (40, com o frete)', 865872.96875], ['Bombas de recirculação (70, com o frete)', 247345.00],
+                 ['Sistemas de recirculação (40)', 52000.00], ['Tela anti-pássaros instalada (50.000 m²)', 690000.00] ] },
   operDRE: { itens: [
     { id: 'telefonia',  nome: 'Telefonia e dados',                       valor: 500.00,   fixoPct: 100, grupo: 'I',  fonte: 'Anexo 3 · Subtotal I' },
     { id: 'contabil',   nome: 'Contabilidade',                           valor: 1000.00,  fixoPct: 100, grupo: 'I',  fonte: 'Anexo 3 · Subtotal I' },
@@ -6794,7 +6856,7 @@ function upaCarregar(k){
   COM.alevPeixe = O.produtos[0].variaveis[1][1] * PESO_BASE; COM.precoRacao = O.produtos[0].variaveis[0][1] / CA_BASE;
   COM.energia.upa = { placa: true, band: 'vermelha' }; COM.ocup.upa = 100; COM.meta.upa = null;
   Object.keys(COM.editados).forEach(c => { if(c.split('|')[1] === 'upa') delete COM.editados[c]; });
-  aplicarPeso(); recalcEstrutura();
+  COM.upaTq = { mod: 0 }; aplicarPeso(); recalcEstrutura();
   META0.upa = isolar(() => { st.un = 'upa'; st.ocup = 100; return calc().sobras; }); upaRotulos(); }
 function upaModelo(k){ if(k === COM.upaMod) return; upaCarregar(k); st.un = 'upa'; st.ocup = 100; desenharTela(); }
 function upaModeloHTML(){
@@ -6805,10 +6867,10 @@ function upaModeloHTML(){
         ? 'A UPA de Carapebus é a única com <b>38 famílias</b>: 76 toneladas de tilápia por mês, 38 tanques despescados por mês. Os números são os da Projeção Econômica de Carapebus (Rev. 0.1).'
         : 'O modelo de <b>22 famílias</b> produz 44 toneladas de tilápia por mês, com 22 tanques despescados por mês. Os números são os do estudo de Rio das Ostras/Arraial do Cabo; cada município pode ter diferenças no seu estudo.')
     + ' Trocar de modelo volta as escolhas da tela para os valores do estudo.</p></div>'; }
-function upaNotaTanques(){ const D = DATA.upa, n = D.kgPleno / KG_TANQUE, p38 = COM.upaMod === 'p38';
-  return nota('', '📋', 'Neste modelo, a UPA despesca <b>' + fN(n, n % 1 ? 1 : 0) + ' tanques por mês</b> (' + KG(D.kgPleno) + ' ÷ ' + KG(KG_TANQUE) + ' por tanque) e tem <b>' + fN(upaPostos()) + ' famílias</b> cooperadas. '
-    + (p38 ? 'Com 6 tanques por família, são 228 tanques — perto dos 232 de que se falou na oficina de novembro de 2026. O texto do estudo de Carapebus ainda descreve 22 módulos familiares e 132 tanques; a planilha, mais nova, usa 38 famílias. Confiram no projeto.'
-           : 'Com 6 tanques por família, são 132 tanques. Na oficina de novembro de 2026 falou-se em 232 tanques, número que combina com a UPA de 38 famílias de Carapebus.')); }
+function upaNotaTanques(){ const Q = upaTq(), p38 = COM.upaMod === 'p38';
+  return nota('', '📋', 'Neste modelo, a UPA tem <b>' + fN(Q.tanques) + ' tanques</b> — ' + fN(Q.mods) + ' módulos de 6, um por família — e despesca <b>' + fN(Q.mods) + ' tanques por mês</b> (' + KG(DATA.upa.kgPleno) + ' ÷ ' + KG(TQ_KG) + ' por tanque). Área mínima dos tanques: ' + fN(Q.area) + ' m², ' + fN(TQ_AREA) + ' m² por módulo. '
+    + (p38 ? 'O texto do estudo de Carapebus ainda descreve 22 módulos familiares e 132 tanques; a planilha, mais nova, usa 38 famílias e 228 tanques (240 com os de reserva) — perto dos 232 de que se falou na oficina de novembro de 2026. Confiram no projeto.'
+           : 'Na oficina de novembro de 2026 falou-se em 232 tanques, número que combina com a UPA de 38 famílias de Carapebus.')); }
 /* o modelo de 22 postos passa a mostrar as 22 famílias (o total da retirada não muda) */
 [DATA.upa, DATA_ORIG.upa].forEach(X => Object.assign(X.folhaDRE, { nCoop: 22, retirada: 2000.00, nCoopConfirmado: true }));
 Object.assign(st.folha.upa, { nCoop: 22, retirada: 2000.00, nCoopConfirmado: true });
@@ -7675,11 +7737,20 @@ CART_FN.ups = cartUPS;
      lenha — preço do m³ de lenha (estudo: R$ 60,00).
    Com tudo no padrão, a tela reproduz o mês padrão da DRE e cada mês
    do primeiro ano da PROJEÇÃO (mais a OCB).
+
+   Rev. 24 — SÓ PEIXE (pedido da equipe, 12/11/2026): a farinha e o
+   óleo de camarão saem do modelo. COM.uprfc.cam = false (padrão): a
+   fábrica processa só o resíduo de peixe das UBPs, 8.580 kg por dia,
+   o ano todo (o defeso do camarão não muda a conta); 100% da
+   capacidade = 8.580 kg/dia; a lenha, a água e o efluente caem na
+   proporção do resíduo processado (8.580 ÷ 17.380); os demais
+   gastos ficam como no estudo. COM.uprfc.cam = true: a conta da
+   planilha, com camarão e com o defeso, para comparar.
    ================================================================ */
 const UPRFC_IDS = ['farPeixe', 'oleoPeixe', 'farCamarao', 'oleoCamarao'];
 PROD.farPeixe = ['🐟', 'Farinha de peixe']; PROD.oleoPeixe = ['🛢️', 'Óleo de peixe']; PROD.farCamarao = ['🦐', 'Farinha de camarão']; PROD.oleoCamarao = ['🛢️', 'Óleo de camarão'];
 MUNIS.uprfc = ['Campos dos Goytacazes'];
-function UPRFC0(){ return { mes: 'normal', def: 'planilha', res: DATA_ORIG.uprfc.residuo.preco, lenha: 60 }; }
+function UPRFC0(){ return { cam: false, mes: 'normal', def: 'planilha', res: DATA_ORIG.uprfc.residuo.preco, lenha: 60 }; }
 COM.uprfc = UPRFC0();
 COM.ocup.uprfc = 100;
 COM.energia.uprfc = { placa: true, band: 'vermelha' };
@@ -7693,34 +7764,44 @@ const T_ = v => fN(v / 1000, 1) + ' t';
 
 /* as escolhas da tela entram no motor */
 const uprfcModo = () => COM.uprfc.mes === 'defeso' ? (COM.uprfc.def === 'corrigida' ? 'defCorr' : 'defPlan') : 'normal';
+const uprfcDefeso = () => COM.uprfc.cam && COM.uprfc.mes === 'defeso';
 function aplicarUPRFC(){
-  const D = DATA.uprfc, O = DATA_ORIG.uprfc, U = COM.uprfc, K = O.mesKg[uprfcModo()], R = O.residuo, dias = R.dias, res = Math.max(0, U.res);
+  const D = DATA.uprfc, O = DATA_ORIG.uprfc, U = COM.uprfc, R = O.residuo, dias = R.dias, res = Math.max(0, U.res);
+  /* Rev. 24 — só peixe: o mês comum sem a farinha e o óleo de camarão */
+  const K = U.cam ? O.mesKg[uprfcModo()] : Object.assign({}, O.mesKg.normal, { farCamarao: 0, oleoCamarao: 0 });
   D.produtos.forEach(p => { p.kgMes = K[p.id] * dias; p.variaveis[0][1] = 0; });
   const fp = D.produtos[0], fc = D.produtos[2];
-  if(U.mes === 'defeso'){ if(fp.kgMes > 0) fp.variaveis[0][1] = R.total * dias * res / fp.kgMes; }
+  if(uprfcDefeso()){ if(fp.kgMes > 0) fp.variaveis[0][1] = R.total * dias * res / fp.kgMes; }
   else { if(fp.kgMes > 0) fp.variaveis[0][1] = R.peixe * dias * res / fp.kgMes; if(fc.kgMes > 0) fc.variaveis[0][1] = R.camarao * dias * res / fc.kgMes; }
   const it = (st.oper.uprfc || []).find(i => i.id === 'lenha'), o0 = O.operDRE.itens.find(i => i.id === 'lenha');
   if(it && o0) it.valor = o0.valor * Math.max(0, U.lenha) / 60;
   recalcVar('uprfc'); }
 Object.defineProperty(DATA.uprfc, 'kgPleno', { get: () => DATA.uprfc.produtos.reduce((s, p) => s + p.kgMes, 0), set: () => {}, configurable: true });
+/* Rev. 24 — a lenha, a água e o efluente acompanham o resíduo processado: com só peixe, 8.580 de 17.380 kg por dia */
+const uprfcResDia = () => COM.uprfc.cam ? DATA_ORIG.uprfc.residuo.total : DATA_ORIG.uprfc.residuo.peixe;
+Object.defineProperty(DATA.uprfc, 'operEsc', { get: () => uprfcResDia() / DATA_ORIG.uprfc.residuo.total, configurable: true });
+Object.defineProperty(DATA.uprfc, 'capTxt', { get: () => COM.uprfc.cam ? DATA_ORIG.uprfc.capTxt : '8.580 kg de resíduo de peixe por dia · 22 dias por mês · farinha e óleo de peixe (sem camarão)', set: () => {}, configurable: true });
 aplicarUPRFC();
 
-const uprfcResMes = oc => DATA_ORIG.uprfc.residuo.total * DATA_ORIG.uprfc.residuo.dias * oc;     /* kg de resíduo no mês */
+const uprfcResMes = oc => uprfcResDia() * DATA_ORIG.uprfc.residuo.dias * oc;     /* kg de resíduo no mês */
 function lerUPRFCTxt(){ const oc = st.ocup / 100;
   return T_(uprfcResMes(oc)) + ' <small>de resíduo por mês — ' + pOc(st.ocup) + ' da capacidade · saem ' + T_(kgTotal('uprfc', oc)) + ' de farinha e óleo</small>'; }
 function uprfcSet(k, v){ COM.uprfc[k] = v; aplicarUPRFC(); desenharTela(); }
+const uprfcPeixe = () => !COM.uprfc.cam;
 function uprfcMedia(c){
   const q = c.kgTot, fv = c.fv == null ? 1 : c.fv, s = f => c.linhas.reduce((a, l) => a + l.kg * f(l), 0) / Math.max(q, 1e-9);
   return { q, cu: s(l => l.cu), imp: s(l => l.preco * fv * l.deb), perda: s(l => l.preco * (1 - fv)), preco: s(l => l.preco), sobra: s(l => l.sobraKg), mc: s(l => l.mcKg) }; }
 const uprfcNivel = l => l.sobraKg >= -0.004 ? 'v' : (l.mcKg >= 0 ? 'a' : 'r');
 /* resultado de um tipo de mês, com o resto da tela igual */
 function uprfcMesTipo(mes, def){ return simular(() => { COM.uprfc.mes = mes; if(def) COM.uprfc.def = def; aplicarUPRFC(); }).c; }
+/* Rev. 24 — a conta da planilha (com camarão) ou só peixe, com o resto da tela igual */
+function uprfcCom(cam, mes, def){ return simular(() => { COM.uprfc.cam = cam; COM.uprfc.mes = mes || 'normal'; if(def) COM.uprfc.def = def; aplicarUPRFC(); }).c; }
 
 /* ---------- a tela ---------- */
 function telaUPRFC(){
-  let h = cabecalho('♻️', 'Fábrica de farinha — UPRFC Campos dos Goytacazes', 'Quanto custa transformar o resíduo do peixe e do camarão — cabeça, casca, espinha e vísceras — em farinha e óleo, e se o preço de venda paga esse custo.'
+  let h = cabecalho('♻️', 'Fábrica de farinha — UPRFC Campos dos Goytacazes', 'Quanto custa transformar o resíduo do peixe — cabeça, espinha, pele e vísceras — em farinha e óleo de peixe, e se o preço de venda paga esse custo. A farinha de camarão saiu do modelo; a conta da planilha, com camarão, fica no passo 2 para comparar.'
     + munisHTML('uprfc', 'O resíduo vem das quatro UBPs do PEA Pescarte: Cabo Frio, Macaé, Farol de São Thomé/Barra do Furado e Guaxindiba.'), 'cab-uprfc');
-  h += passos(['Escolha quanto resíduo a fábrica vai processar e qual mês olhar.', 'Confira os preços da farinha, do óleo, do resíduo e da lenha.', 'Olhe a balança e os quatro produtos: sobra ou falta dinheiro no mês?']);
+  h += passos(['Escolha quanto resíduo a fábrica vai processar e qual mês olhar.', 'Confira os preços da farinha, do óleo, do resíduo e da lenha.', 'Olhe a balança e os produtos: sobra ou falta dinheiro no mês?']);
   h += guiaAba('uprfc');
   h += '<section class="painel" aria-label="Suas escolhas">' + escolhasUPRFC() + '</section>';
   return h + '<div id="rgResultado"></div><div id="rgSecoes"></div>'; }
@@ -7735,10 +7816,16 @@ function escolhasUPRFC(){
     + '<div class="botoes" style="margin-top:10px">' + [25, 50, 75, 100, 125].map(o => '<button type="button" class="op" data-oc="' + o + '" aria-pressed="' + (st.ocup === o) + '" onclick="poeOcup(' + o + ')">' + o + '%</button>').join('') + '</div>'
     + '<div class="exato"><span>⌨️ Ou digite as toneladas de resíduo:</span>'
     + passo('qtdExata', { nome: 'Toneladas de resíduo processadas no mês', get: () => uprfcResMes(st.ocup / 100) / 1000, set: v => { const o = clamp(100 * v * 1000 / uprfcResMes(1), 0, 200); st.ocup = o; COM.ocup[un] = o; }, step: 10, min: 0, max: uprfcResMes(2) / 1000, dec: 1, un: 't de resíduo' }) + '</div>'
-    + '<p class="dica">' + T('ocupacao', '100% da capacidade') + ' = ' + fN(R.total) + ' kg de resíduo por dia (' + fN(R.camarao) + ' de camarão e ' + fN(R.peixe) + ' de peixe), em 2 turnos de 8 horas, 22 dias por mês: ' + T_(uprfcResMes(1)) + ' por mês. '
-    + 'De cada 100 kg de resíduo de peixe saem 23 kg de farinha e 10 kg de óleo; de camarão, 22,7 kg de farinha e 2,5 kg de óleo. O resto é água e efluente.</p></div>';
+    + (U.cam ? '<p class="dica">' + T('ocupacao', '100% da capacidade') + ' = ' + fN(R.total) + ' kg de resíduo por dia (' + fN(R.camarao) + ' de camarão e ' + fN(R.peixe) + ' de peixe), em 2 turnos de 8 horas, 22 dias por mês: ' + T_(uprfcResMes(1)) + ' por mês. '
+      + 'De cada 100 kg de resíduo de peixe saem 23 kg de farinha e 10 kg de óleo; de camarão, 22,7 kg de farinha e 2,5 kg de óleo. O resto é água e efluente.</p>'
+      : '<p class="dica">' + T('ocupacao', '100% da capacidade') + ' = ' + fN(R.peixe) + ' kg de resíduo de peixe por dia — o que as quatro UBPs entregam —, 22 dias por mês: ' + T_(uprfcResMes(1)) + ' por mês. De cada 100 kg de resíduo de peixe saem 23 kg de farinha e 10 kg de óleo; o resto é água e efluente. '
+      + 'A planta do estudo é para ' + fN(R.total) + ' kg por dia, com o camarão: só com peixe, ela usa ' + fP(R.peixe / R.total, 0) + ' da capacidade. Acima de 100%, é resíduo de peixe comprado de frigoríficos e entrepostos da região.</p>') + '</div>';
 
-  h += '<div class="ctl"><div class="rot"><span class="n">2</span>📅 Qual mês vamos olhar?</div><div class="botoes">'
+  h += '<div class="ctl"><div class="rot"><span class="n">2</span>♻️ Que resíduo a fábrica processa?</div><div class="botoes">'
+    + [[false, '🐟', 'Só peixe', 'o modelo da ferramenta'], [true, '🦐', 'Peixe e camarão, como na planilha', 'para comparar']].map(([v, ic, t, s]) =>
+        '<button type="button" class="op" aria-pressed="' + (U.cam === v) + '" onclick="uprfcSet(\'cam\',' + v + ')"><span class="e" aria-hidden="true">' + ic + '</span>' + t + ' <small style="font-weight:400">· ' + s + '</small></button>').join('') + '</div>';
+  if(!U.cam) h += '<p class="dica">A farinha e o óleo de camarão <b>saíram do modelo</b>: a fábrica processa só o resíduo de peixe das UBPs, o ano todo — o defeso do camarão (março a maio) não muda a conta. O segundo botão mostra a conta da planilha, com camarão e com o defeso, para comparar.</p></div>';
+  else h += '<div class="rot" style="margin-top:12px">📅 Qual mês vamos olhar?</div><div class="botoes">'
     + [['normal', '🦐', 'Mês comum', 'com peixe e camarão'], ['defeso', '🚫', 'Mês de defeso do camarão', 'março a maio: só peixe']].map(([v, ic, t, s]) =>
         '<button type="button" class="op" aria-pressed="' + (U.mes === v) + '" onclick="uprfcSet(\'mes\',\'' + v + '\')"><span class="e" aria-hidden="true">' + ic + '</span>' + t + ' <small style="font-weight:400">· ' + s + '</small></button>').join('')
     + '</div>' + (U.mes === 'defeso' ? '<div class="botoes" style="margin-top:8px">'
@@ -7748,7 +7835,7 @@ function escolhasUPRFC(){
     + (U.mes === 'defeso' ? '<b>A planilha soma duas vezes a farinha de peixe do mês comum</b> na conta do defeso; a «conta corrigida» tira a dupla contagem. Vejam «O ano e o defeso do camarão».' : 'Vejam o ano inteiro em «O ano e o defeso do camarão».') + '</p></div>';
 
   h += '<div class="ctl"><div class="rot"><span class="n">3</span>🏷️ Por quanto vamos vender cada kg?</div><div class="precos">'
-    + D.produtos.map(p => '<div class="item"><span>' + PROD[p.id][0] + ' ' + PROD[p.id][1] + '</span>'
+    + D.produtos.filter(p => U.cam || !/Camarao$/.test(p.id)).map(p => '<div class="item"><span>' + PROD[p.id][0] + ' ' + PROD[p.id][1] + '</span>'
         + passo('uprfcPreco-' + p.id, { nome: 'Preço do kg de ' + PROD[p.id][1].toLowerCase(), get: () => st.precos.uprfc[p.id], set: v => { st.precos.uprfc[p.id] = v; }, step: 0.1, min: 0, max: 100, dec: 2, pre: 'R$', un: 'o kg' })
         + '<span class="dica" style="margin:0">estudo: ' + R2(p.precoDRE) + ' o kg</span></div>').join('')
     + '</div><p class="dica">A farinha de peixe a R$ 7,04 é o preço médio de exportação usado no estudo. O texto do estudo cita preços de farinha entre R$ 2,00 e R$ 7,04 o kg: é o preço que mais pesa na conta.</p></div>';
@@ -7774,7 +7861,7 @@ function c0Res(){ return DATA.uprfc.produtos.reduce((s, p) => s + p.kgMes * p.va
 /* ---------- o resultado ---------- */
 function resultadoUPRFC(c){
   const un = 'uprfc', sob = c.sobras, O = eqUn(c), F = st.folha.uprfc, fv = c.fv == null ? 1 : c.fv, M = uprfcMedia(c), q = c.kgTot, U = COM.uprfc;
-  const mesTxt = U.mes === 'defeso' ? 'mês de defeso do camarão' + (U.def === 'corrigida' ? ' (conta corrigida)' : ' (como a planilha)') : 'mês comum';
+  const mesTxt = !U.cam ? 'mês' : U.mes === 'defeso' ? 'mês de defeso do camarão' + (U.def === 'corrigida' ? ' (conta corrigida)' : ' (como a planilha)') : 'mês comum da planilha';
   const ver = sob >= 0 ? 'Neste cenário, o dinheiro das vendas paga todos os gastos e sobram ' + R0(sob) + ' no ' + mesTxt + '.'
                        : 'Neste cenário, falta dinheiro: os gastos passam das vendas em ' + R0(-sob) + ' no ' + mesTxt + '.';
   const n = M.sobra >= -0.004 ? 'v' : (M.mc >= 0 ? 'a' : 'r');
@@ -7782,7 +7869,7 @@ function resultadoUPRFC(c){
   if(q > 0){
     h += '<div class="balancas">' + balanca('📦 1 kg de farinha ou óleo <small>(a média dos produtos)</small>', M.cu + M.imp + M.perda, detGasto(M.cu, M.imp, M.perda), M.preco, 'Preço médio de 1 kg', M.sobra, n,
       n === 'a' ? 'O preço médio paga o resíduo e os impostos, mas não paga todos os gastos da fábrica.' : (n === 'r' ? 'O preço médio não paga nem o resíduo e os impostos.' : ''), 'Gasto médio de 1 kg', 'kg') + '</div>';
-    h += '<div class="upp-lista"><h4>🚦 Cada produto: sobra ou falta em 1 kg?</h4>' + c.linhas.map(l => { if(!(l.kg > 0)) return '<div class="upp-it"><span class="luz" aria-hidden="true">⚪</span><span class="nm">' + PROD[l.p.id][0] + ' ' + PROD[l.p.id][1] + ' <small>· sem produção neste mês</small></span><b>—</b></div>';
+    h += '<div class="upp-lista"><h4>🚦 Cada produto: sobra ou falta em 1 kg?</h4>' + c.linhas.map(l => { if(!(l.kg > 0) && !U.cam) return ''; if(!(l.kg > 0)) return '<div class="upp-it"><span class="luz" aria-hidden="true">⚪</span><span class="nm">' + PROD[l.p.id][0] + ' ' + PROD[l.p.id][1] + ' <small>· sem produção neste mês</small></span><b>—</b></div>';
         const k = uprfcNivel(l);
         return '<div class="upp-it ' + k + '"><span class="luz" aria-hidden="true">' + LUZ[k] + '</span><span class="nm">' + PROD[l.p.id][0] + ' ' + PROD[l.p.id][1] + ' <small>· ' + R2(l.preco) + ' o kg</small></span><b>' + (l.sobraKg >= -0.004 ? 'sobra ' + R2(Math.max(0, l.sobraKg)) : 'falta ' + R2(-l.sobraKg)) + '</b></div>'; }).join('')
       + '<p class="leg">Os gastos da fábrica são divididos por quilo produzido, igual para farinha e óleo; o resíduo comprado entra no custo da farinha, como no estudo.</p></div>';
@@ -7794,10 +7881,10 @@ function resultadoUPRFC(c){
     + '<small>' + T_(uprfcResMes(st.ocup / 100)) + ' de resíduo — ' + pOc(st.ocup) + ' da capacidade.</small></div>' + ouvir('res-' + un, fala) + '</div>'
     + '<div class="res-corpo res-upp res-ups">' + h + '<div class="cartoes">';
   r += cartao('📦', 'Produção do mês', T_(q), c.linhas.filter(l => l.kg > 0).map(l => T_(l.kg) + ' de ' + PROD[l.p.id][1].toLowerCase()).join(' · '));
-  r += cartao('💵', 'Vendas do mês', R0(c.rb), U.mes === 'defeso' ? 'só produtos de peixe — defeso do camarão' : 'farinha e óleo de peixe e de camarão');
+  r += cartao('💵', 'Vendas do mês', R0(c.rb), !U.cam ? 'farinha e óleo de peixe' : U.mes === 'defeso' ? 'só produtos de peixe — defeso do camarão' : 'farinha e óleo de peixe e de camarão');
   if(q > 0) r += cartao('🧮', T('custoUnit', 'Custo médio de 1 kg'), R2(M.cu), 'resíduo, lenha, pessoas, veículos, depreciação e os demais gastos');
   const A = uprfcAno(c);
-  r += cartao('📅', 'O ano inteiro', R0(A.ano), '9 meses comuns e 3 de defeso, com a produção e os preços da tela' + (U.def === 'planilha' ? ' (defeso como a planilha)' : ' (defeso corrigido)'), corSaldo(A.ano) === 'vermelho' ? 'vermelho' : '');
+  r += cartao('📅', 'O ano inteiro', R0(A.ano), !U.cam ? '12 meses iguais, com a produção e os preços da tela' : '9 meses comuns e 3 de defeso, com a produção e os preços da tela' + (U.def === 'planilha' ? ' (defeso como a planilha)' : ' (defeso corrigido)'), corSaldo(A.ano) === 'vermelho' ? 'vermelho' : '');
   r += cartao('💰', T('sobras', 'Sobras do mês'), R0(sob), sob >= 0 ? 'depois dos fundos obrigatórios: ' + R0(c.liq) + ' — ' + R0(c.liq / Math.max(1, F.nCoop)) + ' por família' : 'com prejuízo, não há fundos a separar', corMeta(sob, un));
   if(O && O.kgEq != null)
     r += cartao('🎯', T('equilibrio', 'Produção mínima para não ter prejuízo'), fN(O.ocEq, 0) + '% da capacidade', T_(uprfcResMes(O.ocEq / 100)) + ' de resíduo no mês — ' + (st.ocup >= O.ocEq ? 'vocês estão acima ✅' : 'vocês estão abaixo ⚠️'));
@@ -7807,12 +7894,14 @@ function resultadoUPRFC(c){
   return r + '</section>'; }
 
 /* o ano: 9 meses comuns + 3 de defeso, com o resto da tela igual */
-function uprfcAno(c){ const N = uprfcMesTipo('normal').sobras, Dp = uprfcMesTipo('defeso').sobras; return { N, D: Dp, ano: 9 * N + 3 * Dp }; }
+function uprfcAno(c){ const N = uprfcMesTipo('normal').sobras;
+  if(!COM.uprfc.cam) return { N, D: N, ano: 12 * N };                       /* Rev. 24 — só peixe: 12 meses iguais */
+  const Dp = uprfcMesTipo('defeso').sobras; return { N, D: Dp, ano: 9 * N + 3 * Dp }; }
 
 /* ---------- seções ---------- */
 function secoesUPRFC(c){
   let h = secao('din-uprfc', '💸', 'Para onde vai o dinheiro do mês', null, dinheiroUPRFC(c), true);
-  h += secao('ano-uprfc', '📅', 'O ano e o defeso do camarão', null, anoUPRFC(c));
+  h += secao('ano-uprfc', '📅', COM.uprfc.cam ? 'O ano e o defeso do camarão' : 'O ano inteiro e a conta da planilha, com camarão', null, anoUPRFC(c));
   h += secao('res-uprfc', '♻️', 'De onde vem o resíduo', null, residuoUPRFC(c));
   h += secao('rac-uprfc', '🐚', 'E a ração e o pó de concha?', null, racaoUPRFC(c));
   h += secao('ini-uprfc', '🚀', 'O primeiro ano e o investimento', null, inicioUPRFC(c));
@@ -7851,13 +7940,16 @@ function dinheiroUPRFC(c){
   const sIss = simular(() => { DATA.uprfc.produtos.forEach(p => p.aliq = 0); }).c.sobras - sob;
   h += nota('', '✂️', '<b>Os impostos:</b> a planilha cobra 5% de ISS (imposto municipal sobre serviços) e 0,65% de PIS sobre a venda. O texto do estudo diz que a farinha e o óleo são isentos de ICMS, como insumos da ração animal. '
     + 'O ISS é imposto de <b>serviço</b>: a lista de serviços da Lei Complementar 116/2003 (item 7.09) fala de coleta, tratamento e reciclagem de resíduos. Mas aqui a cooperativa <b>compra</b> o resíduo e <b>vende</b> um produto. Se a contabilidade confirmar que o ISS não incide, as sobras do mês mudam <b>+ ' + R0(sIss) + '</b>.');
-  h += nota('', '📗', 'Com os valores do estudo, esta conta reproduz o «mês padrão» da DRE da planilha: sobras de ' + R0(E.sobrasMes) + ' no mês comum e ' + R0(E.sobrasDefeso) + ' no mês de defeso, antes da OCB. A ferramenta acrescenta a OCB/RJ, como nas outras abas.');
+  h += COM.uprfc.cam ? nota('', '📗', 'Com os valores do estudo, esta conta reproduz o «mês padrão» da DRE da planilha: sobras de ' + R0(E.sobrasMes) + ' no mês comum e ' + R0(E.sobrasDefeso) + ' no mês de defeso, antes da OCB. A ferramenta acrescenta a OCB/RJ, como nas outras abas.')
+    : nota('', '📗', 'Esta é a conta da planilha <b>sem o camarão</b>: saem a venda da farinha e do óleo de camarão e a compra do resíduo de camarão; a lenha, a água e o efluente caem na proporção do resíduo processado (' + fP(DATA.uprfc.operEsc, 0) + '); os outros gastos — retiradas, veículos, seguro, manutenção, energia e depreciação — ficam como no estudo. '
+      + 'Com camarão (passo 2), a conta reproduz o «mês padrão» da planilha: sobras de ' + R0(E.sobrasMes) + ' antes da OCB.');
   h += nota('', '≠', '<b>' + T('lucroSobras', 'Lucro não é sobra.') + '</b> Na cooperativa, o que sobra volta para os cooperados, conforme o trabalho de cada um — não fica com um dono.');
   h += ocbHTML('uprfc');
   return h; }
 
 /* ---------- o ano ---------- */
 function anoUPRFC(c){
+  if(!COM.uprfc.cam) return anoUPRFCpeixe(c);
   const P = uprfcMesTipo('normal'), Dp = uprfcMesTipo('defeso', 'planilha'), Dc = uprfcMesTipo('defeso', 'corrigida'), K = DATA_ORIG.uprfc.mesKg, d = 22;
   const anoP = 9 * P.sobras + 3 * Dp.sobras, anoC = 9 * P.sobras + 3 * Dc.sobras;
   let h = '<p style="margin:0 0 8px">O ano tem <b>9 meses comuns</b>, com resíduo de peixe e de camarão, e <b>3 meses de defeso do camarão</b> (março, abril e maio), em que só há resíduo de peixe. Com a produção e os preços da tela:</p>';
@@ -7876,15 +7968,33 @@ function anoUPRFC(c){
   h += nota('lei', '⚖️', 'O defeso do camarão no Sudeste (1º de março a 31 de maio) é regra federal de ordenamento da pesca; a captura, o transporte e a venda de camarão capturado nesse período são proibidos. O resíduo usado pela fábrica no defeso precisa ter origem comprovada — nota fiscal ou guia de cada UBP ou fornecedor —, para não comprar resíduo de pesca irregular.');
   return h; }
 
+/* Rev. 24 — só peixe: os 12 meses iguais e a comparação com a planilha */
+function anoUPRFCpeixe(c){
+  const S = uprfcCom(false), Pn = uprfcCom(true, 'normal'), Pd = uprfcCom(true, 'defeso', 'planilha'), Pc = uprfcCom(true, 'defeso', 'corrigida');
+  const anoS = 12 * S.sobras, anoP = 9 * Pn.sobras + 3 * Pd.sobras, anoC = 9 * Pn.sobras + 3 * Pc.sobras, cam = Pn.linhas.filter(l => /Camarao$/.test(l.p.id));
+  let h = '<p style="margin:0 0 8px">Só com peixe, <b>todos os meses são iguais</b>: o resíduo de peixe das UBPs chega o ano todo, e o defeso do camarão (março a maio) não muda a conta da fábrica. Com a produção e os preços da tela:</p>';
+  h += '<div class="rolagem"><table class="tab"><thead><tr><th>Conta</th><th class="v">Vendas<br>no mês</th><th class="v">Sobras<br>no mês</th><th class="v">Sobras<br>no ano</th></tr></thead><tbody>'
+    + '<tr class="atual"><td>🐟 Só peixe — o modelo da ferramenta (12 meses iguais)</td><td class="v">' + R0(S.rb) + '</td><td class="v ' + corSaldo(S.sobras) + '">' + R0(S.sobras) + '</td><td class="v ' + corSaldo(anoS) + '"><b>' + R0(anoS) + '</b></td></tr>'
+    + '<tr><td>🦐 Planilha, com camarão — mês comum (9 no ano)</td><td class="v">' + R0(Pn.rb) + '</td><td class="v ' + corSaldo(Pn.sobras) + '">' + R0(Pn.sobras) + '</td><td class="v" rowspan="2">' + R0(anoP) + '<br><small>como a planilha</small></td></tr>'
+    + '<tr><td>🚫 Planilha — mês de defeso do camarão (3 no ano)</td><td class="v">' + R0(Pd.rb) + '</td><td class="v ' + corSaldo(Pd.sobras) + '">' + R0(Pd.sobras) + '</td></tr>'
+    + '<tr><td>✔️ Planilha — defeso com a conta corrigida</td><td class="v">' + R0(Pc.rb) + '</td><td class="v ' + corSaldo(Pc.sobras) + '">' + R0(Pc.sobras) + '</td><td class="v">' + R0(anoC) + '</td></tr>'
+    + '</tbody></table></div>';
+  h += nota('atencao', '🦐', '<b>O que muda sem o camarão.</b> A fábrica deixa de vender ' + T_(cam.reduce((a, l) => a + l.kg, 0)) + ' de farinha e óleo de camarão por mês (' + R0(cam.reduce((a, l) => a + l.kg * l.preco, 0)) + ') e de comprar ' + fN(DATA_ORIG.uprfc.residuo.camarao) + ' kg de cabeça e casca de camarão por dia. '
+    + 'As sobras do mês passam de ' + R0(Pn.sobras) + ' (mês comum da planilha) para ' + R0(S.sobras) + '. <b>As UBPs precisam de outro destino para o resíduo de camarão</b> — 2,2 toneladas por dia em cada uma —, senão ele volta a ser lixo, e elas deixam de receber por ele.');
+  h += nota('', '🏭', 'Só com peixe, a planta usa ' + fP(DATA.uprfc.operEsc, 0) + ' da capacidade do estudo: uma das duas linhas fica parada. A ferramenta mantém o investimento, a depreciação, as 23 famílias, os veículos e a energia do estudo. Se a linha do camarão não for construída, o investimento e a depreciação caem — o estudo não separa esses valores, e é preciso pedi-los à equipe do projeto.');
+  return h; }
+
 /* ---------- o resíduo ---------- */
 function residuoUPRFC(c){
   const R = DATA_ORIG.uprfc.residuo, oc = st.ocup / 100, U = COM.uprfc;
-  let h = '<p style="margin:0 0 8px">A matéria-prima da fábrica é o que sobra do beneficiamento: cabeça e casca de camarão, cabeça, espinha, pele e vísceras de peixe. O estudo conta com o resíduo de quatro UBPs, todo dia de trabalho:</p>';
+  let h = '<p style="margin:0 0 8px">A matéria-prima da fábrica é o que sobra do beneficiamento: ' + (U.cam ? 'cabeça e casca de camarão, cabeça, espinha, pele e vísceras de peixe' : 'cabeça, espinha, pele e vísceras de peixe — no modelo só com peixe, a cabeça e a casca de camarão ficam de fora') + '. O estudo conta com o resíduo de quatro UBPs, todo dia de trabalho:</p>';
   h += '<div class="rolagem"><table class="tab"><thead><tr><th>De onde vem</th><th class="v">Camarão<br>(kg/dia)</th><th class="v">Tilápia<br>(kg/dia)</th><th class="v">Peixe do mar<br>(kg/dia)</th><th class="v">Total<br>(kg/dia)</th></tr></thead><tbody>'
     + R.ubps.map(([n, a, b, d]) => '<tr><td>' + n + '</td><td class="v">' + fN(a) + '</td><td class="v">' + fN(b) + '</td><td class="v">' + fN(d) + '</td><td class="v">' + fN(a + b + d) + '</td></tr>').join('')
     + '<tr class="atual"><td>Total</td><td class="v">' + fN(R.camarao) + '</td><td class="v">' + fN(4632) + '</td><td class="v">' + fN(3948) + '</td><td class="v">' + fN(R.total) + '</td></tr></tbody></table></div>';
-  h += nota('bom', '🤝', '<b>A conta bate com a aba Beneficiamento.</b> A UBP-M beneficia 4 toneladas de camarão por dia; com rendimento de 45%, sobram 2,2 toneladas de cabeça e casca — exatamente os 2.200 kg por dia que a fábrica espera de cada UBP. '
-    + 'Ao preço de ' + R2(U.res) + ' o kg, cada UBP recebe ' + R0(4345 * 22 * U.res) + ' por mês pelo resíduo que antes ia para o lixo — e deixa de pagar para descartá-lo.');
+  h += U.cam ? nota('bom', '🤝', '<b>A conta bate com a aba Beneficiamento.</b> A UBP-M beneficia 4 toneladas de camarão por dia; com rendimento de 45%, sobram 2,2 toneladas de cabeça e casca — exatamente os 2.200 kg por dia que a fábrica espera de cada UBP. '
+    + 'Ao preço de ' + R2(U.res) + ' o kg, cada UBP recebe ' + R0(4345 * 22 * U.res) + ' por mês pelo resíduo que antes ia para o lixo — e deixa de pagar para descartá-lo.')
+    : nota('', '🤝', 'Só com peixe, cada UBP entrega ' + fN(2145) + ' kg de resíduo de peixe por dia e recebe ' + R0(2145 * 22 * U.res) + ' por mês, ao preço de ' + R2(U.res) + ' o kg. '
+    + '<b>A cabeça e a casca de camarão ficam com as UBPs:</b> a UBP-M beneficia 4 toneladas de camarão por dia e, com rendimento de 45%, sobram 2,2 toneladas. Esse resíduo precisa de outro destino licenciado — compostagem, outra fábrica de farinha ou de ração, aterro —, e o custo do descarte fica com a UBP.');
   h += nota('atencao', '🚚', '<b>A distância pesa.</b> Cabo Frio e Macaé ficam a mais de 100 km de Campos dos Goytacazes. O resíduo estraga rápido e precisa viajar refrigerado, em caminhão separado do peixe e do gelo. '
     + 'Os 3 caminhões frigoríficos, o caminhão de carga, a Saveiro e o trator custam ' + R0(uprfcOper(c, ['frotaUprfc'])) + ' por mês, mais ' + R0(47564.98) + ' de depreciação dos veículos. Vale combinar com cada UBP como guardar o resíduo até a coleta.');
   h += nota('', '♻️', 'Com ' + pOc(st.ocup) + ' da capacidade, a fábrica tira ' + T_(uprfcResMes(oc)) + ' de resíduo por mês do caminho dos aterros e do mar. É o ganho ambiental que o estudo destaca.');
@@ -7913,22 +8023,22 @@ function inicioUPRFC(c){
     return { m, f: R.fator[m], t: R.tipo[m], sob, cx, ac, acCx }; });
   const maxP = Math.max(1, ...X.map(x => Math.max(0, x.sob))), maxN = Math.max(0, ...X.map(x => Math.max(0, -x.sob))), zero = 100 * maxN / (maxP + maxN);
   let h = nota('', '🚀', 'A fábrica começa devagar: na planilha, ela produz <b>10% no 1º mês, 60% no 2º, 70% no 3º, 80% no 4º e 90% no 5º</b>, e chega a 100% no 6º mês. Os gastos de operação acompanham essa curva; as retiradas e a depreciação vêm cheias desde o começo. '
-    + 'O 1º mês da planilha é janeiro, por isso o 3º, o 4º e o 5º meses caem no defeso do camarão.');
+    + (COM.uprfc.cam ? 'O 1º mês da planilha é janeiro, por isso o 3º, o 4º e o 5º meses caem no defeso do camarão.' : 'Só com peixe, o defeso do camarão não muda os meses: a curva é a mesma, sem o camarão.'));
   h += '<div class="colheita" role="img" aria-label="Resultado de cada mês do primeiro ano. ' + X.filter(x => x.sob >= 0).length + ' meses fecham no azul.">';
   X.forEach(x => { const neg = x.sob < 0, w = 100 * Math.abs(x.sob) / (maxP + maxN);
-    h += '<div class="col-lin"><span class="m">' + (x.m + 1) + 'º<span class="so-largo"> mês</span></span><span class="ic">' + (x.t === 'defeso' ? '🚫' : '🦐') + '</span>'
+    h += '<div class="col-lin"><span class="m">' + (x.m + 1) + 'º<span class="so-largo"> mês</span></span><span class="ic">' + (!COM.uprfc.cam ? '🐟' : x.t === 'defeso' ? '🚫' : '🦐') + '</span>'
       + '<span class="col-trilho" style="--zero:' + zero.toFixed(2) + '%"><span class="col-barra ' + (neg ? 'neg' : 'pos') + '" style="' + (neg ? 'right:' + (100 - zero).toFixed(2) + '%' : 'left:' + zero.toFixed(2) + '%') + ';width:' + w.toFixed(2) + '%"></span></span>'
       + '<span class="v ' + corSaldo(x.sob) + '">' + R0(x.sob) + '</span></div>'; });
-  h += '</div><p class="dica" style="margin-top:4px">🦐 mês comum · 🚫 mês de defeso do camarão. Barra verde: sobra no mês. Barra vermelha: falta no mês.</p>';
+  h += '</div><p class="dica" style="margin-top:4px">' + (COM.uprfc.cam ? '🦐 mês comum · 🚫 mês de defeso do camarão. ' : '🐟 mês só com peixe. ') + 'Barra verde: sobra no mês. Barra vermelha: falta no mês.</p>';
   h += '<div class="rolagem"><table class="tab"><thead><tr><th>Mês</th><th class="v">Produção</th><th class="v">Juros e<br>amortização</th><th class="v">Sobra ou falta<br>no mês</th><th class="v">Caixa<br>acumulado</th></tr></thead><tbody>'
-    + X.map(x => '<tr' + (x.m === mPior ? ' class="atual"' : '') + '><td>' + (x.m + 1) + 'º mês' + (x.t === 'defeso' ? ' 🚫' : '') + '</td><td class="v">' + fN(100 * x.f, 0) + '%</td><td class="v">' + (R.juros[x.m] > 0 ? R0(-R.juros[x.m]) : '—') + '</td><td class="v ' + corSaldo(x.sob) + '">' + R0(x.sob) + '</td><td class="v ' + corSaldo(x.acCx) + '">' + R0(x.acCx) + '</td></tr>').join('')
+    + X.map(x => '<tr' + (x.m === mPior ? ' class="atual"' : '') + '><td>' + (x.m + 1) + 'º mês' + (COM.uprfc.cam && x.t === 'defeso' ? ' 🚫' : '') + '</td><td class="v">' + fN(100 * x.f, 0) + '%</td><td class="v">' + (R.juros[x.m] > 0 ? R0(-R.juros[x.m]) : '—') + '</td><td class="v ' + corSaldo(x.sob) + '">' + R0(x.sob) + '</td><td class="v ' + corSaldo(x.acCx) + '">' + R0(x.acCx) + '</td></tr>').join('')
     + '</tbody></table></div>';
   h += '<div class="ano">'
     + '<div class="mes"><span class="ic" aria-hidden="true">🔴</span><span class="r">Meses que fecham no vermelho</span><b>' + X.filter(x => x.sob < 0).length + ' de 12</b><span class="r">somam ' + R0(X.filter(x => x.sob < 0).reduce((s, x) => s + x.sob, 0)) + '</span></div>'
     + '<div class="mes"><span class="ic" aria-hidden="true">🧰</span><span class="r">O pior momento do caixa</span><b class="' + corSaldo(pior) + '">' + R0(pior) + '</b><span class="r">' + (mPior >= 0 ? 'no ' + (mPior + 1) + 'º mês' : 'o caixa não fica negativo') + '</span></div>'
     + '<div class="mes"><span class="ic" aria-hidden="true">📅</span><span class="r">O primeiro ano inteiro</span><b class="' + corSaldo(ac) + '">' + R0(ac) + '</b><span class="r">de sobras; no caixa, ' + R0(acCx) + '</span></div></div>';
   const ocbM = EST.uprfc.ocb.mes, igual = X.every((x, m) => Math.abs(x.sob + ocbM - R.dre[m]) < 1);
-  h += nota(igual ? 'bom' : '', '📗', (igual ? '<b>Conferido com a planilha:</b> sem a OCB (' + R0(ocbM) + ' por mês), cada mês desta tabela é igual ao da aba PROJEÇÃO. ' : 'Com as escolhas da tela, os meses ficam diferentes dos da planilha. ')
+  h += nota(igual ? 'bom' : '', '📗', (igual ? '<b>Conferido com a planilha:</b> sem a OCB (' + R0(ocbM) + ' por mês), cada mês desta tabela é igual ao da aba PROJEÇÃO. ' : COM.uprfc.cam ? 'Com as escolhas da tela, os meses ficam diferentes dos da planilha. ' : 'Sem o camarão, os meses ficam diferentes dos da planilha, que tem camarão; com o botão «Peixe e camarão» do passo 2, a tabela volta a ser igual à aba PROJEÇÃO, mais a OCB. ')
     + 'A planilha financia ' + R0(E.capitalGiro) + ' de capital de giro (aba «Desp. Ope.») e lança como «despesa financeira» os juros <b>e também a amortização</b> do empréstimo — mas devolver o dinheiro emprestado não é despesa: é pagamento da dívida. A coluna «caixa» desta tabela soma a depreciação de volta, porque ela não sai do caixa no mês.');
   const A = uprfcAno(c), anosPag = A.ano > 0 ? E.investimento / A.ano : null;
   h += '<h4 style="margin:18px 0 6px;font-size:1.12rem">🏗️ E o investimento?</h4>';
@@ -8010,20 +8120,20 @@ function familiasUPRFC(c){
 GLOSS.residuo = { ic: '♻️', p: 'Resíduo', t: 'É o que sobra quando o peixe e o camarão são limpos: cabeça, casca, espinha, pele e vísceras. Na fábrica, vira farinha e óleo.', ex: 'De 100 kg de resíduo de peixe saem 23 kg de farinha e 10 kg de óleo.' };
 ABAS_GUIA.uprfc = ['♻️', 'Fábrica de farinha', 'UPRFC Campos dos Goytacazes'];
 TUT.uprfc = [
-  { alvo: '.cab', t: 'Para que serve esta aba', x: 'Aqui vocês descobrem quanto custa transformar o resíduo do peixe e do camarão em farinha e óleo, na fábrica de Campos dos Goytacazes, e se o preço de venda paga esse custo. Os números de partida são os do estudo.' },
-  { alvo: ctlN(1), t: 'Passo 1: quanto resíduo', x: 'Arrastem a barra ou toquem num botão. 100% são 17 toneladas de resíduo por dia, de quatro UBPs. Embaixo dá para digitar as toneladas do mês.' },
-  { alvo: ctlN(2), t: 'Passo 2: qual mês', x: 'No mês comum há peixe e camarão. No defeso do camarão, de março a maio, só há peixe. A planilha tem um erro na conta do defeso: escolham conta corrigida para ver a diferença.' },
-  { alvo: ctlN(3), t: 'Passo 3: os preços', x: 'Farinha e óleo de peixe e de camarão. A farinha de peixe é a que mais pesa: o estudo usa 7 reais e 4 centavos o quilo.' },
+  { alvo: '.cab', t: 'Para que serve esta aba', x: 'Aqui vocês descobrem quanto custa transformar o resíduo do peixe em farinha e óleo, na fábrica de Campos dos Goytacazes, e se o preço de venda paga esse custo. Os números de partida são os do estudo, sem a farinha de camarão.' },
+  { alvo: ctlN(1), t: 'Passo 1: quanto resíduo', x: 'Arrastem a barra ou toquem num botão. 100% são 8,6 toneladas de resíduo de peixe por dia, de quatro UBPs. Embaixo dá para digitar as toneladas do mês.' },
+  { alvo: ctlN(2), t: 'Passo 2: que resíduo', x: 'Só peixe é o modelo da ferramenta: a farinha de camarão saiu da conta. O segundo botão mostra a conta da planilha, com camarão e com o defeso de março a maio, para comparar.' },
+  { alvo: ctlN(3), t: 'Passo 3: os preços', x: 'Farinha e óleo de peixe. A farinha de peixe é a que mais pesa: o estudo usa 7 reais e 4 centavos o quilo.' },
   { alvo: ctlN(4), t: 'Passo 4: resíduo e lenha', x: 'O preço do quilo de resíduo pago às UBPs e o preço do metro cúbico de lenha da caldeira.' },
   { alvo: '#ctl-perdas', t: 'Passo 5: o que se perde', x: 'Produto que estraga no transporte, lote recusado e produção perdida. Tudo começa em zero.' },
   { alvo: ctlN(6), t: 'Passo 6: a energia', x: 'O estudo conta com placas solares que geram quase toda a energia. Vejam quanto fica sem as placas.' },
   { alvo: '.veredito', t: 'O resultado: a frase e o sinal', x: 'Verde: sobras na meta ou perto dela. Amarelo: sobra, mas abaixo da meta. Vermelho: falta dinheiro.' },
   { alvo: '.balancas', t: 'A balança do quilo', x: 'De um lado, o gasto médio de 1 quilo, com os impostos. Do outro, o preço médio dos produtos.' },
-  { alvo: '.upp-lista', t: 'Os quatro produtos no semáforo', x: 'Cada produto com a sua luz: farinha e óleo de peixe, farinha e óleo de camarão.' },
+  { alvo: '.upp-lista', t: 'Os produtos no semáforo', x: 'Cada produto com a sua luz: farinha de peixe e óleo de peixe.' },
   { alvo: '.cartoes', t: 'Os cartões', x: 'Produção, vendas, custo médio de 1 quilo, o ano inteiro, as sobras do mês e a produção mínima para não ter prejuízo.' },
   { alvo: '.meta-faixa', t: 'A meta de sobras', x: 'A meta começa na sobra do mês comum com 100% da capacidade. Vocês podem digitar outra.' },
   { sec: 'din-uprfc', t: 'Para onde vai o dinheiro do mês', x: 'A barra de cada 100 reais, a conta do mês e a pergunta sobre o imposto.' },
-  { sec: 'ano-uprfc', t: 'O ano e o defeso do camarão', x: 'O mês comum, o mês de defeso como a planilha e o mês de defeso corrigido, e o ano inteiro.' },
+  { sec: 'ano-uprfc', t: 'O ano inteiro e a planilha', x: 'Só com peixe, os 12 meses são iguais. A tabela compara com a planilha, que tem camarão e o defeso, e mostra o que muda sem o camarão.' },
   { sec: 'res-uprfc', t: 'De onde vem o resíduo', x: 'As quatro UBPs, quanto cada uma entrega por dia e o caminho até Campos.' },
   { sec: 'rac-uprfc', t: 'A ração e o pó de concha', x: 'Estão no investimento, mas não na conta de vendas e gastos.' },
   { sec: 'ini-uprfc', t: 'O primeiro ano e o investimento', x: 'A fábrica começa com 10% e chega a 100% no 6º mês. E em quanto tempo as sobras pagariam o investimento.' },
@@ -8037,18 +8147,18 @@ CART_ARQ.uprfc = 'Cartilha_aba_Fabrica_de_farinha';
 function cartUPRFC(){
   const c = calc(), D = c.D, E = D.estudo, F = st.folha.uprfc, U = COM.uprfc, M = uprfcMedia(c), P = partesDinheiro(c), q = c.kgTot, pg = [], qq = Math.max(q, 1e-9);
   const A = uprfcAno(c);
-  pg.push(cCapa('uprfc', ['O quilo e o custo de 1 kg', 'Para onde vai o dinheiro do mês', 'O ano e o defeso do camarão', 'O resíduo, a ração e as conchas', 'As famílias e as sobras', 'Como usar a aba, passo a passo'],
-    '<b>' + T_(uprfcResMes(st.ocup / 100)) + ' de resíduo por mês</b> (' + pOc(st.ocup) + ' da capacidade), ' + (U.mes === 'defeso' ? 'mês de defeso do camarão' : 'mês comum') + ': farinha de peixe a ' + R2(st.precos.uprfc.farPeixe) + ' o kg, resíduo a ' + R2(U.res) + ' o kg, lenha a ' + R2(U.lenha) + ' o m³. '
+  pg.push(cCapa('uprfc', ['O quilo e o custo de 1 kg', 'Para onde vai o dinheiro do mês', U.cam ? 'O ano e o defeso do camarão' : 'O ano e o camarão que saiu da conta', 'O resíduo, a ração e as conchas', 'As famílias e as sobras', 'Como usar a aba, passo a passo'],
+    '<b>' + T_(uprfcResMes(st.ocup / 100)) + ' de resíduo por mês</b> (' + pOc(st.ocup) + ' da capacidade), ' + (!U.cam ? 'só peixe' : U.mes === 'defeso' ? 'conta da planilha, mês de defeso do camarão' : 'conta da planilha, mês comum') + ': farinha de peixe a ' + R2(st.precos.uprfc.farPeixe) + ' o kg, resíduo a ' + R2(U.res) + ' o kg, lenha a ' + R2(U.lenha) + ' o m³. '
     + 'Base: Projeção econômica Fábrica de Farinha (Rev. 9, parcial) e EVTEAS Rev. 9 da Fábrica de ração, farinha e tratamento de conchas.'));
   const comp = fechar([P.v0 / qq, (P.varTot - P.v0) / qq, P.pessoal / qq, P.dep / qq, M.cu - P.varTot / qq - P.pessoal / qq - P.dep / qq], 2, M.cu);
   pg.push(cCab(1, '🐟', 'O quilo e o custo de 1 kg', 'Lição 1')
-    + cIdeia('A fábrica compra o <b>resíduo</b> do peixe e do camarão e vende <b>farinha e óleo</b>. Cada quilo produzido paga o resíduo, a lenha da caldeira e uma parte dos gastos fixos: pessoas, veículos, manutenção, depreciação.')
+    + cIdeia('A fábrica compra o <b>resíduo</b> ' + (U.cam ? 'do peixe e do camarão' : 'do peixe') + ' e vende <b>farinha e óleo</b>. Cada quilo produzido paga o resíduo, a lenha da caldeira e uma parte dos gastos fixos: pessoas, veículos, manutenção, depreciação.')
     + cCaixa('👀 Na fábrica, 1 kg (a média)', cTab(['', 'Por kg'], [
         ['🐟 Resíduo comprado', R2(comp[0])], ['🪵 Lenha, água e efluente', R2(comp[1])], ['👥 Retiradas e encargos', R2(comp[2])], ['🔧 Depreciação', R2(comp[3])], ['🔒 Veículos, seguro, manutenção e outros', R2(comp[4])], ['<b>Custo</b>', '<b>' + R2(M.cu) + '</b>']])
       + cTab(['Produto', 'Preço', 'Sobra ou falta'], c.linhas.filter(l => l.kg > 0).map(l => [PROD[l.p.id][1], R2(l.preco), R2(l.sobraKg)]), null, 'c-tab-mini'))
     + cCaixa('💰 O mês', '<p>Vendas de <b>' + R0(c.rb) + '</b> e sobras de <b>' + R0(c.sobras) + '</b> no mês. Depois dos fundos obrigatórios, ' + R0(c.liq) + ' para a assembleia decidir.</p>', 'cinza')
     + cVez(['De 100 kg de resíduo de peixe saem 23 kg de farinha. Quantos kg de farinha saem de 1.000 kg de resíduo? ' + cBr, 'O kg de farinha custa R$ 2,50 para produzir e paga R$ 0,40 de impostos. Vendido a R$ 7,04, sobra quanto? R$ ' + cBr])
-    + cFer('olhem a balança e os quatro produtos no semáforo.'));
+    + cFer('olhem a balança e os produtos no semáforo.'));
   const tot = c.rb - c.sobras, pc = v => fN(100 * v / Math.max(1, tot), 0) + '%', util = uprfcOper(c, ['lenha', 'aguaEflu']);
   pg.push(cCab(2, '💸', 'Para onde vai o dinheiro do mês', 'Lição 2')
     + cIdeia('Antes de sobrar, o dinheiro da venda paga os <b>impostos</b>, os gastos que <b>crescem</b> com a produção (resíduo e lenha) e os gastos <b>fixos</b>. Na fábrica de farinha, a lenha da caldeira é o maior gasto.')
@@ -8057,9 +8167,17 @@ function cartUPRFC(){
         ['👥 Retiradas e encargos', R0(P.pessoal), pc(P.pessoal)], ['🔒 Veículos, seguro, manutenção, energia, OCB', R0(P.outFix + P.outVar - util), pc(P.outFix + P.outVar - util)], ['🔧 Depreciação', R0(P.dep), pc(P.dep)],
         ['<b>Total</b>', '<b>' + R0(tot) + '</b>', '<b>100%</b>']]))
     + cCaixa('✂️ O imposto', '<p>A planilha cobra 5% de ISS sobre a venda. O ISS é imposto de serviço, e a fábrica vende produto: é uma pergunta para a contabilidade.</p>', 'cinza')
-    + cVez(['Venda de R$ 600.000 com 5,65% de impostos: R$ ' + cBr, 'A caldeira queima 2,7 m³ de lenha por hora, 16 horas por dia, 22 dias. Quantos m³ no mês? ' + cBr])
+    + cVez(['Venda de R$ 600.000 com 5,65% de impostos: R$ ' + cBr, 'Cada linha da caldeira queima cerca de 1,4 m³ de lenha por hora, 16 horas por dia, 22 dias. Quantos m³ no mês? ' + cBr])
     + cFer('abram «Para onde vai o dinheiro do mês» e «Os gastos do mês».'));
-  pg.push(cCab(3, '📅', 'O ano e o defeso do camarão', 'Lição 3')
+  if(!U.cam){ const Pn = uprfcCom(true, 'normal');
+    pg.push(cCab(3, '📅', 'O ano e o camarão que saiu da conta', 'Lição 3')
+    + cIdeia('Só com peixe, <b>os 12 meses são iguais</b>: o resíduo de peixe chega o ano todo, e o defeso do camarão (março a maio) não muda a conta. A farinha e o óleo de camarão saíram do modelo.')
+    + cCaixa('👀 O ano na fábrica', cTab(['Conta', 'Sobras no mês', 'No ano'], [['🐟 Só peixe (a ferramenta)', R0(A.N), '<b>' + R0(A.ano) + '</b>'], ['🦐 Planilha, com camarão — mês comum', R0(Pn.sobras), '—']])
+      + '<p>Sem o camarão, as UBPs ficam com 2,2 toneladas de cabeça e casca por dia, cada uma: esse resíduo precisa de outro destino licenciado.</p>')
+    + cCaixa('🏗️ O investimento', '<p>' + R0(E.investimento) + ', com a linha do camarão. Só com peixe, a planta usa metade da capacidade: se a linha do camarão não for construída, o investimento cai — o estudo não separa esse valor.</p>', 'cinza')
+    + cVez(['O mês só com peixe deixa R$ 170.000. Quanto sobra no ano (12 meses iguais)? R$ ' + cBr, 'Com camarão, a planilha deixa R$ 350.000 no mês comum. Quanto o mês só com peixe deixa a menos? R$ ' + cBr])
+    + cFer('abram «O ano inteiro e a conta da planilha».')); }
+  else pg.push(cCab(3, '📅', 'O ano e o defeso do camarão', 'Lição 3')
     + cIdeia('De março a maio é <b>defeso do camarão</b>: não há resíduo de camarão. Para não parar, a fábrica precisa achar <b>mais resíduo de peixe</b>. O ano tem 9 meses comuns e 3 de defeso.')
     + cCaixa('👀 O ano na fábrica', cTab(['Tipo de mês', 'Sobras no mês'], [['Mês comum', R0(A.N)], ['Mês de defeso' + (U.def === 'corrigida' ? ' (conta corrigida)' : ' (como a planilha)'), R0(A.D)], ['<b>O ano</b> (9 + 3)', '<b>' + R0(A.ano) + '</b>']])
       + '<p>A planilha soma duas vezes a farinha de peixe no mês de defeso: são cerca de R$ 305 mil a mais de venda em cada um desses meses. Na ferramenta, escolham «conta corrigida».</p>')
@@ -8068,9 +8186,10 @@ function cartUPRFC(){
     + cFer('abram «O ano e o defeso do camarão».'));
   pg.push(cCab(4, '♻️', 'O resíduo, a ração e as conchas', 'Lição 4')
     + cIdeia('O que antes ia para o lixo vira produto. A fábrica depende do resíduo das <b>quatro UBPs</b> do PEA Pescarte, todo dia. A ração e o pó de concha estão no investimento, mas <b>não na conta</b>.')
-    + cCaixa('👀 De onde vem o resíduo (por dia)', cTab(['UBP', 'Camarão', 'Peixe', 'Total'], DATA_ORIG.uprfc.residuo.ubps.map(([n, a, b, d]) => [n.replace('UBP/M ', ''), fN(a) + ' kg', fN(b + d) + ' kg', fN(a + b + d) + ' kg'])))
+    + cCaixa('👀 De onde vem o resíduo (por dia)', U.cam ? cTab(['UBP', 'Camarão', 'Peixe', 'Total'], DATA_ORIG.uprfc.residuo.ubps.map(([n, a, b, d]) => [n.replace('UBP/M ', ''), fN(a) + ' kg', fN(b + d) + ' kg', fN(a + b + d) + ' kg']))
+      : cTab(['UBP', 'Peixe (na conta)', 'Camarão (fica na UBP)'], DATA_ORIG.uprfc.residuo.ubps.map(([n, a, b, d]) => [n.replace('UBP/M ', ''), fN(b + d) + ' kg', fN(a) + ' kg'])))
     + cCaixa('🍽️ Ração e conchas', '<p>Equipamentos da ração (' + R0(E.racao) + ') e do tratamento de conchas (' + R0(E.conchas) + ') estão no investimento, sem venda e sem gastos na planilha. Falta um estudo dessas duas linhas.</p>', 'cinza')
-    + cVez(['Cada UBP entrega 4.345 kg de resíduo por dia, a R$ 0,09 o kg. Quanto ela recebe por dia? R$ ' + cBr + ' E em 22 dias? R$ ' + cBr])
+    + cVez(['Cada UBP entrega ' + (U.cam ? '4.345 kg de resíduo' : '2.145 kg de resíduo de peixe') + ' por dia, a R$ 0,09 o kg. Quanto ela recebe por dia? R$ ' + cBr + ' E em 22 dias? R$ ' + cBr])
     + cFer('abram «De onde vem o resíduo» e «E a ração e o pó de concha?».'));
   const al = alavancasUPRFC(c).slice(0, 4);
   pg.push(cCab(5, '👪', 'As famílias e as sobras', 'Lição 5')
@@ -8080,9 +8199,161 @@ function cartUPRFC(){
     + cCaixa('⚖️ As sobras', '<p>Voltam para os cooperados na proporção do trabalho de cada um (Lei 5.764/71, art. 4º, VII). Antes, a lei manda separar 10% para o Fundo de Reserva e 5% para o FATES (art. 28). Dividir, guardar ou investir é decisão da Assembleia Geral (art. 44).</p>', 'cinza')
     + cVez(['A renda passa de R$ 1.000 para R$ 1.600 para 23 famílias. Quanto a mais de renda por mês, no total? R$ ' + cBr, 'Escolha três ações para melhorar o resultado da fábrica: ' + cBr + cBr + cBr]));
   pg.push(cComoUsar('uprfc'));
-  pg.push(cResp(['Lição 1: 230 kg · sobra R$ 4,14', 'Lição 2: R$ 33.900 · cerca de 950 m³ (2,7 × 16 × 22 = 950,4)', 'Lição 3: R$ 4.800.000 · R$ 3.450.000', 'Lição 4: R$ 391,05 · R$ 8.603,10', 'Lição 5: R$ 13.800 · resposta de cada um']));
+  pg.push(cResp(['Lição 1: 230 kg · sobra R$ 4,14', 'Lição 2: R$ 33.900 · cerca de 493 m³ (1,4 × 16 × 22 = 492,8)', U.cam ? 'Lição 3: R$ 4.800.000 · R$ 3.450.000' : 'Lição 3: R$ 2.040.000 · R$ 180.000', U.cam ? 'Lição 4: R$ 391,05 · R$ 8.603,10' : 'Lição 4: R$ 193,05 · R$ 4.247,10', 'Lição 5: R$ 13.800 · resposta de cada um']));
   return pg; }
 CART_FN.uprfc = cartUPRFC;
+
+/* ================================================================
+   REV. 24 — três pedidos da equipe (12/11/2026)
+   (1) Minha pescaria: a perda até vender vai de 0% a 100%, com cores
+       do verde ao amarelo e ao vermelho.
+   (2) UBP-M: sobras divididas em 40% · 40% · 10% · 10% — quem
+       beneficia, quem entrega peixe e camarão, quem entrega tilápia e
+       os alevinos que viraram as tilápias beneficiadas.
+   (3) UPA: a capacidade segue a DENSIDADE (kg de peixe por m³), não o
+       tamanho do peixe; a UPA pode crescer de 6 em 6 tanques, com
+       área mínima de 1.500 m² por módulo.
+   ================================================================ */
+
+/* ---------- (1) perda até vender: cores ----------
+   As cores são um aviso, não uma regra: verde é pouca perda, amarelo
+   pede atenção, laranja e vermelho são perda alta. */
+const PERDA_CORES = [[0, [23, 120, 63]], [10, [227, 181, 5]], [20, [224, 120, 0]], [30, [198, 40, 40]], [100, [109, 15, 15]]];
+const PERDA_OPS = [0, 5, 10, 15, 20, 30, 50, 100];
+function perdaRGB(p){ p = clamp(+p || 0, 0, 100); const C = PERDA_CORES;
+  for(let i = 1; i < C.length; i++) if(p <= C[i][0]){ const a = C[i - 1][0], ca = C[i - 1][1], b = C[i][0], cb = C[i][1], t = (p - a) / (b - a);
+    return ca.map((x, j) => Math.round(x + (cb[j] - x) * t)); }
+  return C[C.length - 1][1].slice(); }
+const hexRGB = c => '#' + c.map(x => x.toString(16).padStart(2, '0')).join('').toUpperCase();
+const misturaRGB = (c, d, t) => c.map((x, j) => Math.round(x + (d[j] - x) * t));
+function luzRGB(c){ const f = v => { v /= 255; return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); };
+  return 0.2126 * f(c[0]) + 0.7152 * f(c[1]) + 0.0722 * f(c[2]); }
+function perdaVars(p){ const c = perdaRGB(p), L = luzRGB(c);
+  let tx = c; for(let i = 0; i < 12 && luzRGB(tx) > 0.15; i++) tx = misturaRGB(tx, [0, 0, 0], 0.12);   /* texto legível sobre o branco */
+  const brancoC = 1.05 / (L + 0.05), escuroC = (L + 0.05) / 0.058;                                    /* contraste do texto sobre a cor */
+  return '--pc:' + hexRGB(c) + ';--pc-bg:' + hexRGB(misturaRGB(c, [255, 255, 255], 0.86)) + ';--pc-tx:' + hexRGB(tx) + ';--pc-on:' + (escuroC > brancoC ? '#1F1600' : '#FFFFFF'); }
+function perdaFaixa(p){ return p <= 5 ? ['🟢', 'pouca perda'] : p <= 10 ? ['🟡', 'atenção'] : p < 30 ? ['🟠', 'perda alta'] : p < 100 ? ['🔴', 'perda muito alta'] : ['🔴', 'perde tudo']; }
+function lerPerdaTxt(){ const P = st.pesc, p = clamp(+P.perdaPct || 0, 0, 100), f = perdaFaixa(p), kg = Math.max(0, P.capturado) * p / 100;
+  return '<b class="perda-num">' + fN(p, p % 1 ? 1 : 0) + '%</b> ' + f[0] + ' <span class="perda-faixa">' + f[1] + '</span> <small class="perda-kg">'
+    + (P.capturado > 0 ? KG(kg, 1) + ' de ' + KG(P.capturado) + ' ' + PQ().verbo + (p >= 100 ? ': não sobra nada para vender' : ' se perdem até a venda') : 'digite os quilos no passo 3') + '</small>'; }
+function mexerPerda(v){ v = clamp(Math.round(+v || 0), 0, 100); st.pesc.perdaPct = v; delete COM.erro.perda;
+  const box = document.getElementById('ctl-perda-pesc'); if(box) box.setAttribute('style', perdaVars(v));
+  const l = document.getElementById('lerPerda'); if(l) l.innerHTML = lerPerdaTxt();
+  const x = document.getElementById('aj-perda'); if(x) x.value = fmtIn(v, 1);
+  document.querySelectorAll('[data-perda]').forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.perda === v)));
+  desenharResultados(); }
+function perdaCtlHTML(n){ const P = st.pesc, Q = PQ(), v = clamp(+P.perdaPct || 0, 0, 100);
+  return '<div class="ctl perda-ctl" id="ctl-perda-pesc" style="' + perdaVars(v) + '"><div class="rot"><span class="n">' + n + '</span>' + Q.perda + '</div>'
+    + '<div class="leitura-grande" id="lerPerda">' + lerPerdaTxt() + '</div>'
+    + '<input type="range" class="trilho perda" id="rgPerda" min="0" max="100" step="1" value="' + Math.round(v) + '" oninput="mexerPerda(this.value)" aria-label="Perda até vender, em porcentagem, de 0 a 100">'
+    + '<div class="marcas" aria-hidden="true"><span>0%</span><span>50%</span><span>100%</span></div>'
+    + '<div class="botoes" style="margin-top:10px">'
+    + PERDA_OPS.map(o => '<button type="button" class="op perda-op" data-perda="' + o + '" style="' + perdaVars(o) + '" aria-pressed="' + (P.perdaPct === o) + '" onclick="pescPct(\'perdaPct\',' + o + ')">' + o + '%</button>').join('')
+    + passo('perda', { nome:'Perda em porcentagem', get:() => st.pesc.perdaPct, set:v => { st.pesc.perdaPct = v; }, step:1, min:0, max:100, dec:1, un:'%', curto:true }) + '</div>'
+    + '<p class="dica">A cor mostra o tamanho da perda: 🟢 até 5% · 🟡 até 10% · 🟠 de 10% a 30% · 🔴 30% ou mais. Com 100%, tudo se perde e não sobra nada para vender.</p></div>'; }
+const pjTxt = R => R.vendavel > 0 ? R2(R.sugerido) : '— (nada para vender)';
+
+/* ---------- (2) UBP-M: divisão das sobras em 4 grupos ---------- */
+const DIV_UBP = { benef:['👷', 'Beneficiadores', 'Cooperados que trabalham na UBP-M'], mar:['🎣', 'Peixe e camarão', 'Quem entrega peixe e camarão'],
+                  aqui:['🐟', 'Tilápia', 'Quem entrega tilápia'], alev:['🐣', 'Alevinos', 'Alevinos que viraram tilápia beneficiada'] };
+const DIV_REGRAS = { proposta:{ benef:40, mar:40, aqui:10, alev:10 }, terco:{ benef:100 / 3, mar:100 / 3, aqui:100 / 3, alev:0 } };
+function divGarante(){ const S = st.sobras.ubp; if(!S || !S.grupos.some(g => g.id === 'alev')) st.sobras.ubp = clone(DATA.ubp.sobrasDRE); return st.sobras.ubp; }
+function ubpRegra(k){ const S = divGarante(), R = DIV_REGRAS[k]; if(!R) return; S.grupos.forEach(g => { if(g.id in R) g.pct = R[g.id]; });
+  Object.keys(COM.erro).forEach(e => { if(/^div-/.test(e)) delete COM.erro[e]; }); desenharTela(); }
+const ubpRegraAtual = (S, k) => S.grupos.every(g => Math.abs(g.pct - (DIV_REGRAS[k][g.id] || 0)) < 0.05);
+/* kg de tilápia que entram na UBP-M (a linha «Tilápia» do mix) e o preço pago por ela */
+function mixPesoTil(){ let w = 0, tot = 0;
+  COM.mix.itens.forEach(it => { if(!MP_BY[it.mp]) return; const x = Math.max(0, +it.w || 0); tot += x; if(it.mp === 'pei:Tilapia') w += x; });
+  return { w, tot }; }
+function kgTilapiaUbp(c){ const m = mixPesoTil(), kg = c ? c.kgTot : kgTotal('ubp', 1); return m.tot > 0 ? kg * m.w / m.tot : 0; }
+function precoTilapiaUbp(){ const its = COM.mix.itens.filter(it => it.mp === 'pei:Tilapia' && Math.max(0, +it.w || 0) > 0), w = its.reduce((s, it) => s + Math.max(0, +it.w || 0), 0);
+  return w > 0 ? its.reduce((s, it) => s + Math.max(0, +it.w || 0) * mixVal(it).compra, 0) / w : MP_BY['pei:Tilapia'].compra; }
+function precoMilheiroUpale(){ const u = DATA.upale, p = u && st.precos.upale ? st.precos.upale[u.produtos[0].id] : null; return p > 0 ? p : 300; }
+/* quanto cada grupo recebe por unidade entregue (só os kg de cooperados entram) */
+function divUnid(g, s){
+  if(g.id === 'benef') return { u:null, curto:'—', det: st.folha.ubp.nCoopConfirmado && g.qtd > 1 ? 'cerca de <b>' + R0(g.valor / g.qtd) + '</b> para cada um dos ' + fN(g.qtd) + ' cooperados'
+    : 'dividido entre os cooperados que trabalham na unidade, conforme o trabalho de cada um' };
+  const q = g.qtd * s;
+  if(!(q > 0)) return { u:null, curto:'ninguém entregou', det:'neste mix ninguém entrega ' + (g.id === 'mar' ? 'peixe nem camarão' : 'tilápia') + ': esta parte fica para a assembleia decidir' };
+  const u = g.valor / q;
+  return g.id === 'alev' ? { u, curto: R0(u) + ' por milheiro', det:'cerca de <b>' + R0(u) + '</b> por milheiro de alevinos que virou tilápia (' + R2(u / 1000) + ' por alevino)' }
+    : { u, curto: R2(u) + ' por kg', det:'cerca de <b>' + R2(u) + '</b> a mais por kg entregue' + (s < 1 ? ' por cooperado' : '') };
+}
+function divisaoHTML(c){
+  divGarante(); const S = sobrasCalc(c); if(!S) return '';
+  const s = c.dest ? c.dest.s : 1, G = id => S.grupos.find(g => g.id === id) || { qtd:0, valor:0, frac:0 };
+  let h = '<p style="margin:0 0 6px">Regra proposta para a UBP-M: <b>40%</b> das ' + T('sobras', 'sobras líquidas') + ' para quem beneficia, <b>40%</b> para quem entrega peixe e camarão, <b>10%</b> para quem entrega tilápia e <b>10%</b> para os alevinos que viraram as tilápias beneficiadas. A assembleia pode mudar as porcentagens aqui:</p>';
+  h += '<div class="botoes" style="margin:6px 0 10px">'
+    + [['proposta', '🤝', '40 · 40 · 10 · 10 — regra proposta'], ['terco', '↩️', '⅓ · ⅓ · ⅓ — regra antiga, sem os alevinos']].map(([k, e, t]) =>
+      '<button type="button" class="op" aria-pressed="' + ubpRegraAtual(S, k) + '" onclick="ubpRegra(\'' + k + '\')"><span class="e" aria-hidden="true">' + e + '</span>' + t + '</button>').join('') + '</div>';
+  h += '<div class="precos">' + S.grupos.map(g => '<div class="item"><span>' + DIV_UBP[g.id][0] + ' ' + DIV_UBP[g.id][1] + '</span>'
+    + passo('div-' + g.id, { nome:'Porcentagem das sobras — ' + DIV_UBP[g.id][1], get:() => (divGarante().grupos.find(x => x.id === g.id) || {}).pct || 0,
+        set:v => { const x = divGarante().grupos.find(y => y.id === g.id); if(x) x.pct = v; }, step:5, min:0, max:100, dec:1, un:'%', curto:true }) + '</div>').join('') + '</div>';
+  if(S.normaliza) h += nota('atencao', '➗', 'As porcentagens somam <b>' + fN(S.soma, 1) + '%</b>, não 100%. A ferramenta reparte na proporção dos números digitados: '
+    + S.grupos.map(g => DIV_UBP[g.id][1].toLowerCase() + ' ' + fN(100 * g.frac, 1) + '%').join(' · ') + '.');
+  if(!S.haSobras) return h + nota('alerta', '🔴', 'Neste cenário não há sobras para dividir no mês.');
+  h += '<p style="margin:12px 0 0">As sobras líquidas do mês (' + R0(S.base) + ') ficam assim:</p><div class="partes">';
+  S.grupos.forEach(g => { const U = divUnid(g, s);
+    h += '<div class="parte"><div class="ic" aria-hidden="true">' + DIV_UBP[g.id][0] + '</div><h5>' + DIV_UBP[g.id][2] + ' <small>(' + fN(100 * g.frac, 1) + '%)</small></h5><b>' + R0(g.valor) + '</b><span class="det">por mês — ' + U.det + '</span></div>'; });
+  h += '</div>';
+  /* quanto cada unidade entregue recebe, comparado com o preço pago por ela */
+  const compra = c.linhas.reduce((a, l) => a + l.kg * (l.p.variaveis[0] ? l.p.variaveis[0][1] : 0), 0);
+  const gM = G('mar'), gA = G('aqui'), gL = G('alev'), pTil = precoTilapiaUbp(), pMil = precoMilheiroUpale();
+  const pMar = gM.qtd > 0 ? Math.max(0, compra - gA.qtd * pTil) / gM.qtd : 0;
+  const uM = divUnid(gM, s).u, uA = divUnid(gA, s).u, uL = divUnid(gL, s).u;
+  const pctDe = (u, p) => u != null && p > 0 ? fN(100 * u / p, 0) + '% do preço' : '—';
+  h += '<div class="rolagem"><table class="tab"><thead><tr><th>Quem entrega</th><th class="v">Entregou<br>no mês</th><th class="v">Recebe a mais<br>de sobras</th><th class="v">Preço pago pela<br>unidade entregue</th><th class="v">As sobras<br>valem</th></tr></thead><tbody>'
+    + '<tr><td>🎣 Peixe e camarão</td><td class="v">' + KG(gM.qtd * s) + '</td><td class="v">' + (uM != null ? R2(uM) + ' por kg' : '—') + '</td><td class="v">' + R2(pMar) + ' o kg <small>(média)</small></td><td class="v">' + pctDe(uM, pMar) + '</td></tr>'
+    + '<tr><td>🐟 Tilápia</td><td class="v">' + KG(gA.qtd * s) + '</td><td class="v">' + (uA != null ? R2(uA) + ' por kg' : '—') + '</td><td class="v">' + R2(pTil) + ' o kg</td><td class="v">' + pctDe(uA, pTil) + '</td></tr>'
+    + '<tr><td>🐣 Alevinos que viraram tilápia</td><td class="v">' + fN(gL.qtd * s, 2) + ' milheiros<br><small>' + fN(gL.qtd * s * 1000) + ' alevinos</small></td><td class="v">' + (uL != null ? R0(uL) + ' por milheiro' : '—') + '</td><td class="v">' + R2(pMil) + ' o milheiro <small>(UPALE)</small></td><td class="v">' + pctDe(uL, pMil) + '</td></tr>'
+    + '</tbody></table></div>';
+  h += '<p class="dica">Os kg vêm do mix do passo 2: a tilápia é a linha «Tilápia» (' + fN(100 * (gA.qtd + gM.qtd > 0 ? gA.qtd / (gA.qtd + gM.qtd) : 0), 1) + '% do que entra na fábrica); o resto é peixe e camarão. '
+    + 'Os alevinos são contados pelas tilápias: ' + KG(gA.qtd * s) + ' ÷ ' + pesoTxt(COM.peso) + ' por peixe (o tamanho escolhido na aba Criação de tilápia) = ' + fN(gL.qtd * s * 1000) + ' tilápias, cada uma de um alevino.</p>';
+  if(uM != null && uA != null && uA > 1.5 * uM){
+    const kgF = (gM.qtd + gA.qtd) * s, fF = gM.frac + gA.frac, uIg = kgF > 0 ? S.base * fF / kgF : 0;
+    h += nota('atencao', '⚖️', '<b>Atenção para a conta antes de votar.</b> Com estas porcentagens, cada kg de tilápia recebe <b>' + fN(uA / uM, 1) + ' vezes</b> o que recebe cada kg de peixe e camarão'
+      + (uL != null ? ', e cada milheiro de alevino recebe ' + R0(uL) + ' — ' + fN(uL / pMil, 0) + ' vezes o preço do milheiro' : '') + '. '
+      + 'Isso acontece porque a tilápia é uma parte pequena do que a fábrica beneficia. Se os ' + fN(100 * fF, 0) + '% de quem entrega peixe, camarão e tilápia fossem divididos pelos kg, cada kg receberia ' + R2(uIg) + ' e a tilápia ficaria com ' + fN(100 * fF * (gA.qtd * s) / Math.max(1e-9, kgF), 1) + '% das sobras.');
+  }
+  h += nota('lei', '⚖️', '<b>O que a lei diz.</b> As sobras voltam aos cooperados na proporção do que cada um operou com a cooperativa, <b>salvo decisão diferente da Assembleia Geral</b> (Lei 5.764/71, art. 4º, VII). A regra 40 · 40 · 10 · 10 é uma decisão desse tipo: precisa ser aprovada na assembleia, que decide o destino das sobras (art. 44, II). Se for escrita no estatuto, a mudança é na Assembleia Geral Extraordinária (art. 46). '
+    + 'Só cooperado recebe sobras: quem entrega tilápia e quem produz os alevinos precisa ser cooperado da mesma cooperativa da UBP-M. Se a UPA ou a UPALE forem outra cooperativa, a UBP-M não divide sobras com elas — o caminho é um preço combinado em contrato ou uma cooperativa central que reúna as cooperativas (arts. 6º, II, 8º e 79). '
+    + 'O resultado do peixe ou da tilápia comprados de quem não é cooperado não entra na divisão: vai para o FATES (art. 87).');
+  if(s < 1) h += nota('', '🧾', 'Como ' + fN(100 - COM.ato.pctCoop) + '% das compras vêm de quem não é cooperado, só os kg dos cooperados entram na divisão: quem é de fora recebe o preço, mas não recebe sobras.');
+  h += nota('', '🙋', '<b>Ser cooperado é participar.</b> A cooperativa é dos cooperados: quem vai às assembleias, entrega a produção e trabalha na unidade decide junto e recebe as sobras conforme a regra aprovada. '
+    + 'O estatuto pode fixar uma frequência mínima e prever a eliminação de quem não cumpre os deveres (Lei 5.764/71, art. 21, III, e art. 33). Cooperado ausente enfraquece a cooperativa — e a sua própria parte nas sobras.');
+  h += notaTerceiros();
+  return h;
+}
+
+/* ---------- (3) UPA: tanques de 6 em 6 ---------- */
+COM_ISOLA.push('upaTq');
+function upaPoeTanques(v){ const Q = upaTq(), alvo = Math.max(TQ_MOD, Math.round((+v || 0) / TQ_MOD) * TQ_MOD), mod = (alvo - Q.T.base) / TQ_MOD, d = mod - COM.upaTq.mod;
+  if(!d) return;
+  COM.upaTq.mod = mod;
+  const F = st.folha.upa; F.nCoop = Math.max(1, F.nCoop + d);                 /* cada módulo é de uma família */
+  st.ocbBase.upa = Math.max(0, st.ocbBase.upa + d * Q.invMod);               /* a OCB é sobre o investimento */
+  aplicarPeso(); recalcEstrutura(); }
+function upaTanquesEstudo(){ upaPoeTanques(upaTq().T.base); desenharTela(); }
+const tqCx = (ic, r, v, d) => '<div class="tq-cx"><span>' + ic + ' ' + r + '</span><b>' + v + '</b>' + (d ? '<small>' + d + '</small>' : '') + '</div>';
+function upaCapHTML(){ const Q = upaTq(), D = DATA.upa, igual = Q.extra === 0;
+  let h = '<p class="dica">' + T('ocupacao', '100% da capacidade') + ' = <b>' + KG(D.kgPleno) + ' por mês</b>: ' + fN(Q.tanques) + ' tanques de ' + fN(TQ_VOL) + ' m³, em ' + fN(Q.mods) + ' módulos de 6. Cada módulo despesca 1 tanque por mês, com '
+    + fN(TQ_DENS) + ' kg de peixe em cada m³ de água: ' + fN(TQ_VOL) + ' m³ × ' + fN(TQ_DENS) + ' kg = ' + KG(TQ_KG) + '. <b>O tamanho do peixe não muda essa conta</b>: quem manda é a ' + T('densidade', 'densidade') + '. Para produzir mais, aumentem os tanques aqui embaixo.</p>';
+  h += '<div class="tq-upa"><div class="rot2">🏗️ Quantos tanques? <small>de 6 em 6 — cada módulo de 6 tanques é de uma família</small></div>'
+    + '<div class="tq-linha">' + passo('upaTq', { nome:'Número de tanques da UPA', get:() => upaTq().tanques, set:v => upaPoeTanques(v), step:TQ_MOD, min:TQ_MOD, max:1200, dec:0, un:'tanques', curto:true })
+    + (igual ? '<span class="dica" style="margin:0">Estudo: ' + fN(Q.T.base) + ' tanques</span>' : '<button type="button" class="lapis" onclick="upaTanquesEstudo()">↺ voltar aos ' + fN(Q.T.base) + ' tanques do estudo</button>') + '</div>'
+    + '<div class="tq-info">'
+    + tqCx('🧩', 'Módulos e famílias', fN(Q.mods), fN(Q.mods) + (Q.mods > 1 ? ' famílias' : ' família') + ', 6 tanques cada')
+    + tqCx('🐟', 'Produção a 100%', KG(D.kgPleno), 'por mês · ' + fN(Q.mods) + ' tanques despescados')
+    + tqCx('📐', 'Área mínima dos tanques', fN(Q.area) + ' m²', fN(Q.mods) + ' × ' + fN(TQ_AREA) + ' m² · ' + fN(Q.area / 10000, 2) + ' ha')
+    + '</div>';
+  if(!igual){ const d = Q.extra, a = Math.abs(d), sg = d > 0 ? '+ ' : '− ';
+    h += nota(d > 0 ? 'bom' : '', '🏗️', 'Com <b>' + fN(a) + (a > 1 ? ' módulos' : ' módulo') + (d > 0 ? ' a mais' : ' a menos') + '</b> que o estudo (' + sg + fN(a * TQ_MOD) + ' tanques): '
+      + sg + KG(a * TQ_KG) + ' de peixe por mês a 100%, ' + sg + fN(a) + (a > 1 ? ' famílias' : ' família') + ' (' + sg + R0(a * st.folha.upa.retirada) + ' de retirada por mês), '
+      + sg + fN(a * TQ_AREA) + ' m² de área e ' + sg + R0(a * Q.invMod) + ' de investimento estimado. Na conta do mês entram ' + sg + R0(a * (Q.depMod + Q.msMod)) + ' de depreciação, manutenção e seguro desses tanques.')
+      + '<p class="dica" style="margin-top:6px">Investimento de cada módulo: <b>' + R0(Q.invMod) + '</b> — tanques, decantadores, filtros rizosféricos, bombas, sistemas de recirculação e tela anti-pássaros, pelos preços do ' + Q.T.fonte + '. '
+      + 'Depreciação em 10 anos; manutenção de 3% e seguro de 1% ao ano. A ferramenta <b>não</b> aumenta a conta de luz, a água nem o galpão: confiram se o kit solar, os poços, o terreno e a licença ambiental dão conta dos tanques a mais.</p>';
+  }
+  return h + '</div>'; }
 
 /* ---------- partida da Rev. 17: a meta e a errata usam os valores do ESTUDO (antes de qualquer troca) ---------- */
 ['upa', 'ubp', 'upm', 'upp', 'ubm', 'upale', 'ups', 'uprfc'].forEach(un => { META0[un] = isolar(() => { st.un = un; st.ocup = 100; return calc().sobras; }); });
