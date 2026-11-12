@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quanto custa o nosso peixe? — Rev. 41 Comunidade</title>
+<title>Quanto custa o nosso peixe? — Rev. 42 Comunidade</title>
 <style>
 /* ================================================================
-   REV. 41 COMUNIDADE — versão para pescadores e aquicultores
+   REV. 42 COMUNIDADE — versão para pescadores e aquicultores
    Mesmo motor de cálculo da Rev. 14 técnica. Muda a apresentação:
    letras grandes, ícones, frases simples, botão de ouvir.
    ================================================================ */
@@ -824,7 +824,7 @@ details.sob-hist{margin-top:8px}
       <span class="logo" aria-hidden="true">🐟</span>
       <div>
         <h1>Quanto custa o nosso peixe?</h1>
-        <p>Custo de 1 kg, preço de venda e sobras — ferramenta da comunidade · PEA Pescarte · Rev. 41</p>
+        <p>Custo de 1 kg, preço de venda e sobras — ferramenta da comunidade · PEA Pescarte · Rev. 42</p>
       </div>
     </div>
     <div class="util">
@@ -879,6 +879,7 @@ details.sob-hist{margin-top:8px}
       <li>UPM Arraial do Cabo (Rev. 16): Projeção Econômica UPM Rev. 18 (Anexos 1, 3, 4, 6 e 7) e EVTEAS UPM Rev. 2 (dez/2024). Mês-tipo = 1/12 do ano cheio de colheita (meses 7 a 18 da DRE): com a OCB fora, 12 meses-tipo reproduzem a coluna «acumulado últimos 12 meses» (sobras de R$ 2.869.963,34) com diferença menor que R$ 1 no ano. Vieira e ostra por dúzia, mexilhão por kg.</li>
       <li>UPM — escolhas da ferramenta: embalagem (R$ 67.070,40 no ano) repartida na proporção das vendas; estrutura (pessoal, combustível, manutenção, depreciação, OCB) rateada pelas longlines de cada marisco (36 · 20 · 16), não por unidade vendida; combustível, manutenção, EPI, refeições e laboratório como gastos fixos (o manejo é diário com qualquer colheita); sementes, embalagem, mexilhoneiras, limpeza e energia como gastos que crescem com a colheita. PIS de 1% sobre a folha total e encargo de 9% só sobre a cooperada, como no Anexo 4. ICMS de 20% na vieira e na ostra e de 7% no mexilhão, mais 0,65% de PIS. OCB com cooperativista e taxa de manutenção, sobre o investimento fixo (R$ 6.553.799,53). Fundos separados sobre o resultado do ano (a planilha separa mês a mês).</li>
       <li>UPM — «Quando entra o dinheiro?»: as quantidades do ano repartidas mês a mês no ritmo da DRE (vieira em 5 meses, ostra em 6, mexilhão em todos, com meses de meia colheita; sementes compradas no 7º mês da lista). A soma dos 12 meses é igual a 12 meses-tipo.</li>
+      <li>Rev. 42 — na «Divisão das sobras», sai <b>Auxiliar administrativo(a)</b> das funções de todas as tipologias. Quem já tinha essa função continua com ela, marcada «(fora da lista)».</li>
       <li>Rev. 41 — na «Divisão das sobras», o <b>motorista e a entrega do peixe não entram como cooperado</b>: saem das funções e das atividades de todas as tipologias (na UPA, «Motorista e entrega do peixe» e «Transporte e entrega do peixe»; nas outras, «Expedição e entrega» vira «Expedição», o trabalho de separar e carregar os pedidos dentro da unidade; na UPALE, a despesca fica sem a entrega). E saem <b>Secretário(a)</b> e <b>Diretor(a) administrativo-financeiro(a)</b> da direção, em todas as tipologias: ficam Presidente, Conselheiro(a) de administração e Conselheiro(a) fiscal. Quem já tinha uma função que saiu continua com ela, marcada «(fora da lista)».</li>
       <li>Rev. 40 — na «Divisão das sobras», a <b>função</b> de cada cooperado em «Quem trabalha» sai de uma lista suspensa <b>específica da tipologia</b> (UPA: piscicultor, alimentação, qualidade da água, despesca...; UBP-M: conferente, eviscerador, filetadora...; barco: dono, mestre, motorista, pescador...), mais a direção e o conselho fiscal que toda cooperativa tem (Lei 5.764/71, arts. 47 e 56), com «➕ Adicionar função» na própria lista e abaixo dela — a função acrescentada passa a aparecer para todos. E as listas já vêm de acordo com a tipologia: escolher a aba de onde vem o valor (passo 1) muda a tipologia das atividades e das funções (as atividades com horas registradas ficam).</li>
       <li>Rev. 39 — na «Divisão das sobras», quando a divisão é do barco (o valor vem do «Barco de pesca» ou a tipologia é «Embarcação»), o passo 2 ganha a forma <b>«Pelo pescado entregue»</b>: cada cooperado recebe na proporção do pescado que entregou à cooperativa no ano, em kg ou em número de peixes (todos na mesma medida). A lista «Quem trabalha» ganha a coluna «Pescado entregue no ano»; o resultado diz quanto vale cada kg ou cada peixe; a comparação, o resumo, a planilha e as simulações salvas trazem a quarta forma. Na pesca, a operação do cooperado é a entrega do pescado (Lei 5.764/71, art. 4º, VII).</li>
@@ -4740,7 +4741,7 @@ function whatsComunidade(){
     + '\nQuilos vendáveis: ' + pescKgApp(R.vendavel) + '\nPreço mínimo: ' + fB2(R.minimo) + '/kg' + '\nPreço sugerido: ' + fB2(R.sugerido) + '/kg'
     + (R.benefKg > 0 ? '\n\n*Se for beneficiado* (+' + fB2(R.benefKg) + '/kg de mão de obra, energia, água, ingredientes, higienização e embalagem)'
         + '\nPreço mínimo integrado: ' + fB2(R.minimoInt) + '/kg' + '\nPreço sugerido integrado: ' + fB2(R.sugeridoInt) + '/kg' : '')
-    + '\n\nCalculado com as contas do app Preço Justo — Pescador (Pescarte).' + '\nConferido na ferramenta da comunidade — Rev. 41.';
+    + '\n\nCalculado com as contas do app Preço Justo — Pescador (Pescarte).' + '\nConferido na ferramenta da comunidade — Rev. 42.';
   COM.msgPesc = ''; window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank', 'noopener'); }
 
 function resultadoPescador(){
@@ -5590,7 +5591,7 @@ if(HAS_DOM) document.addEventListener('keydown', e => { if(!COM.tut) return; if(
    a tela nunca mostram valores diferentes.
    ================================================================ */
 COM.cart = null;
-const CART_REV = 'Rev. 41';
+const CART_REV = 'Rev. 42';
 /* PDFs prontos, com os valores do estudo, publicados na pasta cartilhas/ do site (só aparecem quando a ferramenta é aberta pela internet) */
 const CART_ARQ = { upa: 'Cartilha_aba_Criacao_de_tilapia', ubp: 'Cartilha_aba_Beneficiamento', upm: 'Cartilha_aba_Criacao_de_mariscos', pescador: 'Cartilha_aba_Minha_pescaria', barco: 'Cartilha_aba_Barco_de_pesca' }, CART_PDF_DATA = '11/11/2026';
 const cartNoSite = () => HAS_DOM && /^https?:$/.test(location.protocol);
@@ -9168,7 +9169,7 @@ const SB_TIPO_ATIV = {
   barco: [['Mestre (comando do barco)', 12], ['Saída de pesca (pescaria)', 10], ['Motorista (máquinas do barco)', 10], ['Gelo e conservação do pescado a bordo', 8], ['Desembarque e entrega do pescado', 8], ['Manutenção do barco e das redes', 8], ['Administração e registros', 6]] };
 /* Rev. 40 — as funções na cooperativa, específicas de cada tipologia (proposta de partida: o regimento interno define),
    mais a direção e o conselho fiscal, que toda cooperativa tem (Lei 5.764/71, arts. 47 e 56). Na UBP-M ficam as funções do exemplo. */
-const SB_TIPO_FUNC = {"upa": ["Piscicultor(a) — trato dos tanques", "Responsável pela alimentação dos peixes", "Responsável pela qualidade da água", "Manutenção de tanques e aeradores", "Despescador(a)", "Auxiliar administrativo(a)"], "upale": ["Técnico(a) de reprodução (matrizes)", "Tratador(a) de alevinos", "Responsável pela qualidade da água", "Classificador(a) de alevinos", "Despescador(a) de alevinos", "Limpeza e manutenção", "Auxiliar administrativo(a)"], "ubp": ["Conferente do pescado (recepção)", "Eviscerador", "Filetadora de peixe", "Classificadora", "Embaladora", "Operador de câmara fria", "Controle de qualidade", "Higienização do setor", "Expedição", "Auxiliar administrativo(a)"], "uprfc": ["Recepção de resíduos e conchas", "Operador(a) de cozimento", "Operador(a) de secagem e moagem", "Ensacador(a)", "Controle de qualidade", "Expedição", "Auxiliar administrativo(a)"], "upp": ["Cozinheiro(a) — preparo das receitas", "Operador(a) de filé e CMS", "Empanamento e porcionamento", "Embalador(a)", "Operador(a) de câmara fria", "Controle de qualidade", "Expedição", "Auxiliar administrativo(a)"], "upm": ["Maricultor(a)", "Coletor(a) de sementes", "Manutenção de cordas e lanternas", "Colheita dos mariscos", "Depuração e limpeza", "Barqueiro(a) — transporte no mar", "Auxiliar administrativo(a)"], "ups": ["Técnico(a) de produção de sementes", "Manejo de coletores", "Monitoramento do cultivo", "Colheita das sementes", "Barqueiro(a) — transporte no mar", "Auxiliar administrativo(a)"], "ubm": ["Recepção do marisco", "Operador(a) de depuração", "Abridor(a) — beneficiamento do marisco", "Embalador(a)", "Controle de qualidade", "Expedição", "Auxiliar administrativo(a)"], "barco": ["Dono do barco (armador)", "Mestre (comando do barco)", "Motorista (máquinas do barco)", "Pescador(a) — tripulante", "Gelador(a) — gelo e pescado a bordo", "Cozinheiro(a) de bordo"]};   /* Rev. 41: sem motorista e entrega (não entram como cooperado) */
+const SB_TIPO_FUNC = {"upa": ["Piscicultor(a) — trato dos tanques", "Responsável pela alimentação dos peixes", "Responsável pela qualidade da água", "Manutenção de tanques e aeradores", "Despescador(a)"], "upale": ["Técnico(a) de reprodução (matrizes)", "Tratador(a) de alevinos", "Responsável pela qualidade da água", "Classificador(a) de alevinos", "Despescador(a) de alevinos", "Limpeza e manutenção"], "ubp": ["Conferente do pescado (recepção)", "Eviscerador", "Filetadora de peixe", "Classificadora", "Embaladora", "Operador de câmara fria", "Controle de qualidade", "Higienização do setor", "Expedição"], "uprfc": ["Recepção de resíduos e conchas", "Operador(a) de cozimento", "Operador(a) de secagem e moagem", "Ensacador(a)", "Controle de qualidade", "Expedição"], "upp": ["Cozinheiro(a) — preparo das receitas", "Operador(a) de filé e CMS", "Empanamento e porcionamento", "Embalador(a)", "Operador(a) de câmara fria", "Controle de qualidade", "Expedição"], "upm": ["Maricultor(a)", "Coletor(a) de sementes", "Manutenção de cordas e lanternas", "Colheita dos mariscos", "Depuração e limpeza", "Barqueiro(a) — transporte no mar"], "ups": ["Técnico(a) de produção de sementes", "Manejo de coletores", "Monitoramento do cultivo", "Colheita das sementes", "Barqueiro(a) — transporte no mar"], "ubm": ["Recepção do marisco", "Operador(a) de depuração", "Abridor(a) — beneficiamento do marisco", "Embalador(a)", "Controle de qualidade", "Expedição"], "barco": ["Dono do barco (armador)", "Mestre (comando do barco)", "Motorista (máquinas do barco)", "Pescador(a) — tripulante", "Gelador(a) — gelo e pescado a bordo", "Cozinheiro(a) de bordo"]};   /* Rev. 41: sem motorista e entrega (não entram como cooperado); Rev. 42: sem auxiliar administrativo */
 const SB_FUNC_DIRECAO = ["Presidente", "Conselheiro(a) de administração", "Conselheiro(a) fiscal"];   /* Rev. 41: sem secretário e diretor */
 /* Rev. 35 — o barco (fornecedor): função de cada pessoa do barco */
 const SB_FUNCOES = [['dono', '⛵ Dono do barco'], ['dono_trip', '⛵ Dono e tripulante'], ['trip', '⚓ Tripulante']];
