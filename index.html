@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quanto custa o nosso peixe? — Rev. 25.1 Comunidade</title>
+<title>Quanto custa o nosso peixe? — Rev. 26 Comunidade</title>
 <style>
 /* ================================================================
-   REV. 25.1 COMUNIDADE — versão para pescadores e aquicultores
+   REV. 26 COMUNIDADE — versão para pescadores e aquicultores
    Mesmo motor de cálculo da Rev. 14 técnica. Muda a apresentação:
    letras grandes, ícones, frases simples, botão de ouvir.
    ================================================================ */
@@ -415,6 +415,14 @@ body{padding-bottom:calc(min(100vw - 24px, 496px) * .1211 + 18px + env(safe-area
 .mix-val{font-size:1.08rem;color:var(--mar);min-height:1.6rem}
 .mix-esp{display:flex;align-items:center;gap:6px}
 .mix-esp .e{font-size:1.4rem;line-height:1}
+/* Rev. 26 — desenho de cada espécie; tocar fala o nome */
+.esp-ic{position:relative;flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;background:#fff;border:2px solid var(--linha);border-radius:12px;padding:2px 4px;min-width:54px;min-height:44px;cursor:pointer}
+.esp-ic:hover{border-color:var(--mar2);background:var(--mar-claro)}
+.esp-ic:focus-visible{outline:3px solid var(--boia);outline-offset:2px}
+.esp-ic .esp-svg{display:block}
+.esp-ic .esp-nada{font-size:1.4rem}
+.esp-ic .esp-som{position:absolute;right:-7px;bottom:-7px;width:22px;height:22px;border-radius:50%;background:var(--mar);display:flex;align-items:center;justify-content:center;font-size:.72rem;line-height:1;box-shadow:0 1px 3px rgba(0,0,0,.3)}
+@container (max-width:40rem){.mix-a{padding-right:0}.mix-a .rot-m{padding-right:3.4rem}.mix-esp{flex-wrap:wrap}.mix-esp .sel{flex:1 1 100%;max-width:none}}
 .mix-esp input[type=checkbox]{width:24px;height:24px;accent-color:var(--mar)}
 .mix-inp{display:inline-flex;align-items:center;gap:5px;font-weight:600}
 .mix-vazio{justify-content:center;color:var(--mar2);font-weight:600}
@@ -431,7 +439,7 @@ body{padding-bottom:calc(min(100vw - 24px, 496px) * .1211 + 18px + env(safe-area
   .barra-viva span:nth-child(2){display:none}
 }
 @container (min-width:71rem){
-  .mix-cab,.mix-item{grid-template-columns:minmax(15.5rem,1.6fr) minmax(11.2rem,1.1fr) 5.6rem minmax(7.2rem,.75fr) minmax(8.2rem,.85fr) minmax(8.2rem,.85fr) minmax(8.2rem,.85fr) 2.8rem;gap:8px}
+  .mix-cab,.mix-item{grid-template-columns:minmax(16.8rem,1.6fr) minmax(11rem,1.05fr) 5.6rem minmax(7.2rem,.75fr) minmax(7.6rem,.8fr) minmax(7.6rem,.8fr) minmax(7.6rem,.8fr) 2.8rem;gap:8px}   /* Rev. 26 — espaço para o desenho da espécie */
   .mix-topo{background:var(--papel)}
   .barra-viva{margin-bottom:0}
   .mix-cab{display:grid;background:var(--papel);font-size:.82rem;font-weight:700;color:var(--tinta2);padding:8px 6px 6px;border-bottom:2px solid var(--linha);align-items:end;white-space:nowrap}
@@ -479,8 +487,8 @@ body{padding-bottom:calc(min(100vw - 24px, 496px) * .1211 + 18px + env(safe-area
   .abas{grid-template-columns:repeat(6,minmax(0,1fr));gap:2px}
   .abas button{padding:8px 0 10px;min-height:72px}
   .abas button .ic{font-size:1.6rem}
-  .abas button b{font-size:.7rem;text-align:center;line-height:1.15;overflow-wrap:anywhere}
-  .abas .longo{display:none} .abas .curto{display:inline}
+  .abas button b{font-size:.72rem;text-align:center;line-height:1.15;overflow-wrap:normal;hyphens:manual}
+  .abas .longo{display:inline} .abas .curto{display:none}   /* Rev. 26 — os mesmos nomes do computador */
   .marca p{font-size:.8rem}
   .util button{min-height:40px;padding:6px 10px}
   .bal-braco{left:24%;right:24%}
@@ -684,12 +692,12 @@ h5.upp-sub{margin:14px 0 0;font-size:1.05rem;color:var(--mar)}
   .res-corpo.res-upp .upp-lista{margin-top:0}
   .res-corpo.res-upp .cartoes{grid-column:1/-1;grid-template-columns:repeat(3,minmax(0,1fr))}
 }
-/* 11 abas: no celular, três fileiras (4 + 4 + 3) para os nomes não quebrarem no meio */
+/* 11 abas: no celular, os nomes completos em três colunas (3 + 3 + 3 + 2) */
 @media (max-width:600px){
-  .abas{grid-template-columns:repeat(4,minmax(0,1fr));row-gap:4px}
-  #aba-ups .curto{letter-spacing:-.04em}
-  .abas button{min-height:60px;padding:6px 0 8px;border-radius:12px}
-  .abas button b{font-size:.74rem}
+  .abas{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:4px}
+  .abas button{min-height:62px;padding:6px 2px 8px;border-radius:12px}
+  .abas button .ic{font-size:1.45rem}
+  .abas button b{font-size:.78rem}
   .upp-it{font-size:.92rem}
 }
 .so-estreito .tam-lin b{white-space:nowrap}
@@ -730,7 +738,7 @@ h5.upp-sub{margin:14px 0 0;font-size:1.05rem;color:var(--mar)}
       <span class="logo" aria-hidden="true">🐟</span>
       <div>
         <h1>Quanto custa o nosso peixe?</h1>
-        <p>Custo de 1 kg, preço de venda e sobras — ferramenta da comunidade · PEA Pescarte · Rev. 25.1</p>
+        <p>Custo de 1 kg, preço de venda e sobras — ferramenta da comunidade · PEA Pescarte · Rev. 26</p>
       </div>
     </div>
     <div class="util">
@@ -769,7 +777,7 @@ h5.upp-sub{margin:14px 0 0;font-size:1.05rem;color:var(--mar)}
   <details>
     <summary>Para o técnico — o que esta versão mostra e o que ela esconde</summary>
     <ul>
-      <li>O motor de cálculo é o da Rev. 14 técnica. A versão da comunidade muda a apresentação; a Rev. 15 acrescentou o mix de produtos da UBP-M; a Rev. 16 acrescentou a aba da UPM e as contribuições do Grupo Beneficiamento; a Rev. 17 acrescentou as devolutivas dos grupos (encontros de 6 a 8/11/2026) e o tutorial e a cartilha de cada aba; a Rev. 18 acrescentou a aba da UPP Rio das Ostras (produtos prontos), que na Rev. 18.1 passou a seguir a «DRE Projetada» da planilha; a Rev. 19 acrescentou a aba da UBM Arraial do Cabo (beneficiamento de mariscos); a Rev. 20 acrescentou a UPA de 38 postos de Carapebus e os municípios de cada tipologia; a Rev. 21 acrescentou a aba da UPALE Carapebus (produção de alevinos); a Rev. 22 acrescentou a aba da UPS Armação dos Búzios (sementes de moluscos); a Rev. 23 acrescentou a aba da UPRFC Campos dos Goytacazes (fábrica de ração, farinha e tratamento de conchas); a Rev. 24 leva a perda da aba Minha pescaria até 100%, com cores, divide as sobras da UBP-M em 40% · 40% · 10% · 10% e faz a capacidade da UPA seguir a densidade, com tanques de 6 em 6, e deixa a fábrica de farinha só com peixe; a Rev. 25 deixa escolher quanto de cada tamanho de tilápia vender e calcula o melhor mix. As extensões do motor na Rev. 16 (alíquota por produto, rateio da estrutura por peso, base do PIS e do encargo da folha, receita acessória fixa) só valem para quem as declara: nenhum número das outras abas muda.</li>
+      <li>O motor de cálculo é o da Rev. 14 técnica. A versão da comunidade muda a apresentação; a Rev. 15 acrescentou o mix de produtos da UBP-M; a Rev. 16 acrescentou a aba da UPM e as contribuições do Grupo Beneficiamento; a Rev. 17 acrescentou as devolutivas dos grupos (encontros de 6 a 8/11/2026) e o tutorial e a cartilha de cada aba; a Rev. 18 acrescentou a aba da UPP Rio das Ostras (produtos prontos), que na Rev. 18.1 passou a seguir a «DRE Projetada» da planilha; a Rev. 19 acrescentou a aba da UBM Arraial do Cabo (beneficiamento de mariscos); a Rev. 20 acrescentou a UPA de 38 postos de Carapebus e os municípios de cada tipologia; a Rev. 21 acrescentou a aba da UPALE Carapebus (produção de alevinos); a Rev. 22 acrescentou a aba da UPS Armação dos Búzios (sementes de moluscos); a Rev. 23 acrescentou a aba da UPRFC Campos dos Goytacazes (fábrica de ração, farinha e tratamento de conchas); a Rev. 24 leva a perda da aba Minha pescaria até 100%, com cores, divide as sobras da UBP-M em 40% · 40% · 10% · 10% e faz a capacidade da UPA seguir a densidade, com tanques de 6 em 6, e deixa a fábrica de farinha só com peixe; a Rev. 25 deixa escolher quanto de cada tamanho de tilápia vender e calcula o melhor mix; a Rev. 26 põe o desenho de cada espécie no mix da UBP-M, com o nome falado, e mostra no celular os mesmos nomes de aba do computador. As extensões do motor na Rev. 16 (alíquota por produto, rateio da estrutura por peso, base do PIS e do encargo da folha, receita acessória fixa) só valem para quem as declara: nenhum número das outras abas muda.</li>
       <li>Mix da UBP-M (Rev. 15): cada linha (espécie, produto, % do total, rendimento, preço pago ao pescador, preço de venda) é resumida por grupo — camarão e peixe — em kg que entram, venda por kg que entra (Σ % × rendimento × preço de venda) e compra média; o motor recebe esses três números. Com o mix do estudo, os resultados são idênticos aos da Rev. 14.</li>
       <li>Valores sugeridos do mix: Projeção Econômica da UBP-M Cabo Frio/Macaé (Rev. 1) — preço de compra por espécie, preço de venda por produto, rendimentos (camarão inteiro 100%, sem cabeça 68%, filé com cauda 55%, filé fresco 45%, filé congelado 66%; peixe em filé 43%, inteiro limpo 84%) e CMS (17,55 t para 156 t de peixe, a R$ 12,00/kg). Onde o estudo não dá preço para a forma escolhida (filé × inteiro), o sugerido é o preço equivalente: a mesma venda por kg que entra. A capacidade segue em 220 t/mês (22 dias úteis), como na Rev. 14; a planilha usa 26 dias.</li>
       <li>Preço mínimo de venda de cada produto do mix = (compra + embalagem + parte dos gastos do mês por kg que entra − créditos − CMS líquida) ÷ ((1 − alíquota) × rendimento).</li>
@@ -3724,7 +3732,7 @@ function mixRedesenhar(foco){
 /* ---------- mudanças feitas na tela ---------- */
 function mixMuda(i, campo, valor){
   const it = COM.mix.itens[i]; if(!it) return; let foco = null;
-  if(campo === 'mp'){ COM.mix.itens[i] = novoItem(valor, it.w); const mp = MP_BY[valor]; foco = (mp && mp.outro) ? 'mix-nome-' + i : 'mix-mp-' + i; }
+  if(campo === 'mp'){ COM.mix.itens[i] = novoItem(valor, it.w); const mp = MP_BY[valor]; foco = (mp && mp.outro) ? 'mix-nome-' + i : 'mix-mp-' + i; falarEsp(i); }   /* Rev. 26 — fala a espécie escolhida */
   else if(campo === 'prod'){ it.prod = valor; }
   else if(campo === 'w'){ const v = numIn(valor); it.w = isNaN(v) ? 0 : clamp(v, 0, 100); }
   else if(campo === 'nome'){ it.nome = String(valor || '').slice(0, 40); }
@@ -3794,7 +3802,7 @@ function mixLinhaHTML(r){
         .map(([g, o, rot]) => '<optgroup label="' + rot + '">' + MP_CAT.filter(m => m.grupo === g && !m.outro && origemDe(m) === o).map(op).join('') + '</optgroup>').join('')
     + '<optgroup label="➕ Outro — de rio, de lagoa ou fora da lista">' + MP_CAT.filter(m => m.outro).map(op).join('') + '</optgroup>';
   let h = '<div class="mix-item' + (r.x && r.abaixo ? ' abaixo' : '') + '">';
-  h += '<div class="mix-campo mix-a"><span class="rot-m">Peixe ou camarão que entra</span><span class="mix-esp"><span class="e" aria-hidden="true">' + (mp ? (mp.grupo === 'cam' ? '🦐' : '🐟') : '❔') + '</span>'
+  h += '<div class="mix-campo mix-a"><span class="rot-m">Peixe ou camarão que entra</span><span class="mix-esp"><button type="button" class="esp-ic" onclick="falarEsp(' + i + ')" title="Ouvir o nome" aria-label="' + (mp ? 'Ouvir o nome: ' + esc(espNome(it)) : 'Ouvir: escolha o peixe ou o camarão na setinha') + '">' + espIcone(mp) + '<span class="esp-som" aria-hidden="true">🔊</span></button>'
     + '<select class="sel" id="mix-mp-' + i + '" aria-label="Peixe ou camarão da linha ' + (i + 1) + '" onchange="mixMuda(' + i + ',\'mp\',this.value)">' + opts + '</select></span>'
     + (mp && mp.outro ? '<input type="text" class="inp" id="mix-nome-' + i + '" style="margin-top:4px" placeholder="Nome e de onde vem (ex.: traíra da lagoa)" value="' + esc(it.nome) + '" aria-label="Nome do ' + (mp.grupo === 'cam' ? 'camarão' : 'peixe') + '" onchange="mixMuda(' + i + ',\'nome\',this.value)">' : '') + '</div>';
   if(!r.x) return h + '<div class="mix-campo mix-vazio">⬅️ Toque na setinha e escolha o peixe ou o camarão.</div><button type="button" class="mix-tira" id="mix-tira-' + i + '" onclick="mixTira(' + i + ')" aria-label="Tirar a linha ' + (i + 1) + '">🗑️</button></div>';
@@ -4606,7 +4614,7 @@ function whatsComunidade(){
     + '\nQuilos vendáveis: ' + pescKgApp(R.vendavel) + '\nPreço mínimo: ' + fB2(R.minimo) + '/kg' + '\nPreço sugerido: ' + fB2(R.sugerido) + '/kg'
     + (R.benefKg > 0 ? '\n\n*Se for beneficiado* (+' + fB2(R.benefKg) + '/kg de mão de obra, energia, água, ingredientes, higienização e embalagem)'
         + '\nPreço mínimo integrado: ' + fB2(R.minimoInt) + '/kg' + '\nPreço sugerido integrado: ' + fB2(R.sugeridoInt) + '/kg' : '')
-    + '\n\nCalculado com as contas do app Preço Justo — Pescador (Pescarte).' + '\nConferido na ferramenta da comunidade — Rev. 25.1.';
+    + '\n\nCalculado com as contas do app Preço Justo — Pescador (Pescarte).' + '\nConferido na ferramenta da comunidade — Rev. 26.';
   COM.msgPesc = ''; window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank', 'noopener'); }
 
 function resultadoPescador(){
@@ -5456,7 +5464,7 @@ if(HAS_DOM) document.addEventListener('keydown', e => { if(!COM.tut) return; if(
    a tela nunca mostram valores diferentes.
    ================================================================ */
 COM.cart = null;
-const CART_REV = 'Rev. 25.1';
+const CART_REV = 'Rev. 26';
 /* PDFs prontos, com os valores do estudo, publicados na pasta cartilhas/ do site (só aparecem quando a ferramenta é aberta pela internet) */
 const CART_ARQ = { upa: 'Cartilha_aba_Criacao_de_tilapia', ubp: 'Cartilha_aba_Beneficiamento', upm: 'Cartilha_aba_Criacao_de_mariscos', pescador: 'Cartilha_aba_Minha_pescaria', barco: 'Cartilha_aba_Barco_de_pesca' }, CART_PDF_DATA = '11/11/2026';
 const cartNoSite = () => HAS_DOM && /^https?:$/.test(location.protocol);
@@ -8471,6 +8479,126 @@ function tamanhoHTML(c){
   document.addEventListener('visibilitychange', () => { if(document.visibilityState === 'visible') checa(); });
   window.addEventListener('focus', checa);
 })();
+
+/* ================================================================
+   REV. 26 — ÍCONE DE CADA ESPÉCIE NO MIX DA UBP-M, COM SOM
+   (pedido da equipe, 12/11/2026). Cada peixe e camarão da lista tem
+   um desenho próprio, inspirado na espécie (forma do corpo, cor,
+   listras, pintas, olho, cauda). Ao tocar no desenho — ou ao escolher
+   a espécie na setinha — a ferramenta fala o nome e como o produto
+   sai, com a voz do aparelho (a mesma do botão Ouvir).
+   Os desenhos são feitos aqui mesmo, em SVG: não usam imagem de fora.
+   ================================================================ */
+/* f: forma (ponta · romba · alta · losango · sapo) · a: altura do corpo · c1: dorso · c2: ventre · cd: nadadeiras
+   ca: cauda (bif · lua · red · reta) · p: desenho no corpo · pc: cor do desenho · o: olho · e: escala (tamanho P, M, G) */
+const ESP_PEIXE = {
+  'Tilapia':              { f:'romba', a:1.10, c1:'#4F5D4A', c2:'#C9C7B0', cd:'#6E6A57', ca:'reta', p:'barras', pc:'#2F3A2C' },
+  'Robalo':               { f:'ponta', a:0.82, c1:'#5F7280', c2:'#E4E9EC', cd:'#8A98A2', ca:'bif', p:'linha', pc:'#1C1C1C' },
+  'Pargo P':              { f:'romba', a:1.15, c1:'#C9384B', c2:'#F5A9B0', cd:'#E06A78', ca:'bif', p:'pintas', pc:'#5DA9E9', e:0.86 },
+  'Pargo M':              { f:'romba', a:1.15, c1:'#C9384B', c2:'#F5A9B0', cd:'#E06A78', ca:'bif', p:'pintas', pc:'#5DA9E9' },
+  'Pargo G':              { f:'romba', a:1.15, c1:'#C9384B', c2:'#F5A9B0', cd:'#E06A78', ca:'bif', p:'pintas', pc:'#5DA9E9', e:1.12 },
+  'Tainha':               { f:'romba', a:0.78, c1:'#3F5566', c2:'#DCE3E8', cd:'#7D8E9A', ca:'bif', p:'listras', pc:'#3F5566' },
+  'Xerelete':             { f:'romba', a:1.05, c1:'#2F6A7D', c2:'#E1E9EC', cd:'#E3C14B', ca:'bif2', p:'', pc:'' },
+  'Corvinha':             { f:'ponta', a:0.95, c1:'#8A7A4C', c2:'#EADFC0', cd:'#B79E57', ca:'red', p:'obliq', pc:'#5B4E2C', barba:true },
+  'Olho de cão P':        { f:'romba', a:1.12, c1:'#C0392B', c2:'#EF8A78', cd:'#D9584A', ca:'red', p:'', pc:'', o:3.6, e:0.86 },
+  'Olho de cão M':        { f:'romba', a:1.12, c1:'#C0392B', c2:'#EF8A78', cd:'#D9584A', ca:'red', p:'', pc:'', o:3.6 },
+  'Olho de cao G':        { f:'romba', a:1.12, c1:'#C0392B', c2:'#EF8A78', cd:'#D9584A', ca:'red', p:'', pc:'', o:3.6, e:1.12 },
+  'Anchova':              { f:'ponta', a:0.88, c1:'#25697C', c2:'#D7E5E9', cd:'#4E8C9C', ca:'bif', p:'', pc:'', boca:true },
+  'Olhete':               { f:'ponta', a:0.85, c1:'#33557D', c2:'#E7EDF2', cd:'#F2C318', ca:'bif2', p:'faixa', pc:'#F2C318' },
+  'Pescada Perna de Moça':{ f:'ponta', a:0.80, c1:'#8C969C', c2:'#F0F2F3', cd:'#E3C46D', ca:'red', p:'', pc:'' },
+  'Badejo':               { f:'romba', a:1.05, c1:'#6B4E3D', c2:'#B99B80', cd:'#7D5D48', ca:'red', p:'manchas', pc:'#3D2A20' },
+  'Cavalinha':            { f:'ponta', a:0.82, c1:'#2A6A5C', c2:'#E5ECE8', cd:'#4C8B7C', ca:'bif2', p:'ondas', pc:'#123B33' },
+  'Namorado P':           { f:'romba', a:0.85, c1:'#5D5348', c2:'#BDB2A5', cd:'#6F6457', ca:'red', p:'pintasB', pc:'#F4F1EC', e:0.86 },
+  'Namorado M':           { f:'romba', a:0.85, c1:'#5D5348', c2:'#BDB2A5', cd:'#6F6457', ca:'red', p:'pintasB', pc:'#F4F1EC' },
+  'Namorado G':           { f:'romba', a:0.85, c1:'#5D5348', c2:'#BDB2A5', cd:'#6F6457', ca:'red', p:'pintasB', pc:'#F4F1EC', e:1.12 },
+  'Namorado Batata':      { f:'alta',  a:0.95, c1:'#C9866A', c2:'#F3D6C6', cd:'#E3A688', ca:'red', p:'pintas', pc:'#F2C94C' },
+  'Batata da Pedra':      { f:'alta',  a:0.95, c1:'#B9775C', c2:'#F1D2C2', cd:'#D79C80', ca:'red', p:'pintas', pc:'#F2C94C' },
+  'Palombeta':            { f:'romba', a:1.25, c1:'#7F8C6C', c2:'#EFEAC8', cd:'#E4C95A', ca:'bif2', p:'mancha', pc:'#1E1E1E' },
+  'Pescada Maria Mole':   { f:'ponta', a:0.86, c1:'#9AA3A8', c2:'#F3F4F5', cd:'#E9CF85', ca:'red', p:'', pc:'' },
+  'Pescada Bicuda':       { f:'bico',  a:0.70, c1:'#7F8A90', c2:'#EEF1F2', cd:'#E3C46D', ca:'red', p:'', pc:'' },
+  'Dourado':              { f:'alta',  a:1.05, c1:'#2F9157', c2:'#F2D24B', cd:'#2F7FC1', ca:'bif2', p:'pintas', pc:'#2F7FC1', dorsal:'longa' },
+  'Atum/Bonito Listrado': { f:'ponta', a:1.00, c1:'#1F3A5F', c2:'#D5DBE3', cd:'#28466F', ca:'lua', p:'ventre', pc:'#46566E' },
+  'Peruá':                { f:'losango', a:1, c1:'#767B66', c2:'#B9BBA6', cd:'#8C907B', ca:'reta', p:'', pc:'' },
+  'Pescadinha':           { f:'ponta', a:0.80, c1:'#A2AAAF', c2:'#F4F5F6', cd:'#E9CF85', ca:'red', p:'', pc:'', e:0.86 },
+  'Sardinha Maromba':     { f:'ponta', a:0.72, c1:'#2E5C8A', c2:'#E8EEF4', cd:'#7E9DBC', ca:'bif2', p:'', pc:'', e:0.9 },
+  'Peixe-sapo':           { f:'sapo',  a:1, c1:'#6E5A45', c2:'#C4B092', cd:'#7E6A54', ca:'red', p:'manchas', pc:'#4A3A2B' } };
+const ESP_CAM = {
+  'Barba Russa': { c:'#D2483F', c2:'#8E2A24', ant:1.25 },
+  '7 barbas':    { c:'#E8C9A0', c2:'#A88458', ant:1.6, e:0.86 },
+  'Rosa':        { c:'#F08AA0', c2:'#B9506A', ant:1.15 },
+  'VG':          { c:'#E39B7B', c2:'#A35C3D', ant:1.15, e:1.12 },
+  'Cinza':       { c:'#A9B5BA', c2:'#66757C', ant:1.1 },
+  'VM':          { c:'#C0533C', c2:'#7E2F1E', ant:1.15 } };
+/* desenho de um peixe: viewBox 0 0 64 40, corpo de 5 a 47, cauda até 60 */
+function svgPeixe(k, s){
+  const id = 'ep' + String(k).replace(/[^A-Za-z0-9]/g, ''), H = 10 * (s.a || 1), y = 20, xt = 47, cl = 'url(#' + id + 'c)';
+  let corpo;
+  if(s.f === 'losango') corpo = 'M6,21 C9,13 20,5 29,4 C37,6 43,13 ' + xt + ',18 L' + xt + ',23 C43,28 36,34 29,36 C20,35 9,28 6,21 Z';
+  else if(s.f === 'sapo') corpo = 'M3,23 C3,9 21,7 29,13 C37,17 43,18 ' + xt + ',18.5 L' + xt + ',22.5 C39,24 31,28 23,31 C12,34 3,31 3,23 Z';
+  else if(s.f === 'alta') corpo = 'M8,24 C5,' + (y - H * 1.35) + ' 14,' + (y - H * 1.3) + ' 22,' + (y - H * 1.15) + ' C32,' + (y - H * 1.02) + ' 41,' + (y - H * 0.62) + ' ' + xt + ',' + (y - H * 0.3) + ' L' + xt + ',' + (y + H * 0.32) + ' C36,' + (y + H * 1.05) + ' 14,' + (y + H * 1.05) + ' 8,24 Z';
+  else { const x0 = s.f === 'romba' ? 7 : s.f === 'bico' ? 2 : 5, c0 = s.f === 'romba' ? 6 : 9;
+    corpo = 'M' + x0 + ',' + (y + 1) + ' C' + c0 + ',' + (y - H * 1.05) + ' ' + (xt - 16) + ',' + (y - H * 1.2) + ' ' + xt + ',' + (y - H * 0.32)
+      + ' L' + xt + ',' + (y + H * 0.32) + ' C' + (xt - 16) + ',' + (y + H * 1.12) + ' ' + c0 + ',' + (y + H * 0.98) + ' ' + x0 + ',' + (y + 1) + ' Z'; }
+  const Hc = s.f === 'losango' || s.f === 'sapo' ? 7 : H;
+  const cauda = s.ca === 'red' ? 'M' + (xt - 1) + ',' + (y - Hc * 0.35) + ' C' + (xt + 13) + ',' + (y - Hc * 1.15) + ' ' + (xt + 13) + ',' + (y + Hc * 1.15) + ' ' + (xt - 1) + ',' + (y + Hc * 0.35) + ' Z'
+    : s.ca === 'reta' ? 'M' + (xt - 1) + ',' + (y - Hc * 0.35) + ' L' + (xt + 11) + ',' + (y - Hc * 0.95) + ' L' + (xt + 11) + ',' + (y + Hc * 0.95) + ' L' + (xt - 1) + ',' + (y + Hc * 0.35) + ' Z'
+    : s.ca === 'lua' ? 'M' + (xt - 1) + ',' + y + ' Q' + (xt + 6) + ',' + (y - Hc * 0.3) + ' ' + (xt + 13) + ',' + (y - Hc * 1.3) + ' Q' + (xt + 8) + ',' + y + ' ' + (xt + 13) + ',' + (y + Hc * 1.3) + ' Q' + (xt + 6) + ',' + (y + Hc * 0.3) + ' ' + (xt - 1) + ',' + y + ' Z'
+    : s.ca === 'bif2' ? 'M' + (xt - 1) + ',' + y + ' L' + (xt + 14) + ',' + (y - Hc * 1.25) + ' L' + (xt + 7) + ',' + y + ' L' + (xt + 14) + ',' + (y + Hc * 1.25) + ' Z'
+    : 'M' + (xt - 1) + ',' + y + ' L' + (xt + 12) + ',' + (y - Hc * 1.05) + ' L' + (xt + 8.5) + ',' + y + ' L' + (xt + 12) + ',' + (y + Hc * 1.05) + ' Z';
+  const top = s.f === 'losango' ? 5 : s.f === 'sapo' ? 13 : y - H * 1.08;
+  let fins = s.dorsal === 'longa' ? '<path d="M10,' + (y - H * 1.15) + ' Q28,' + (y - H * 1.85) + ' ' + (xt - 1) + ',' + (y - H * 0.5) + ' L' + (xt - 2) + ',' + (y - H * 0.25) + ' Q28,' + (y - H * 1.05) + ' 10,' + (y - H * 1.15) + ' Z" fill="' + s.cd + '"/>'
+    : s.f === 'losango' ? '<path d="M24,6 L22,-1 L28,4 Z M34,8 Q42,4 44,14 Z M34,34 Q42,38 44,27 Z" fill="' + s.cd + '"/>'
+    : '<path d="M22,' + (top + 0.6) + ' L29,' + (top - H * 0.55) + ' L36,' + (top + 1.2) + ' Z" fill="' + s.cd + '"/><path d="M31,' + (y + H * 0.92) + ' L36,' + (y + H * 1.38) + ' L40,' + (y + H * 0.7) + ' Z" fill="' + s.cd + '"/>';
+  fins += '<path d="M15,' + (y + 3) + ' Q20,' + (y + 6) + ' 22,' + (y + 2.5) + ' Z" fill="' + s.cd + '" opacity=".85"/>';
+  let pad = '';
+  if(s.p === 'barras') pad = [17, 23, 29, 35, 41].map(x => '<rect x="' + x + '" y="0" width="2.4" height="40" fill="' + s.pc + '" opacity=".38"/>').join('');
+  else if(s.p === 'linha') pad = '<path d="M11,' + (y - 1) + ' Q28,' + (y - 3) + ' ' + xt + ',' + y + '" stroke="' + s.pc + '" stroke-width="1.3" fill="none"/>';
+  else if(s.p === 'listras') pad = '<path d="M10,' + (y - H * 0.45) + ' L' + xt + ',' + (y - H * 0.2) + ' M10,' + (y - H * 0.05) + ' L' + xt + ',' + (y + H * 0.05) + '" stroke="' + s.pc + '" stroke-width="1" opacity=".55"/>';
+  else if(s.p === 'pintas' || s.p === 'pintasB') pad = [[18, -0.45], [24, -0.7], [30, -0.45], [36, -0.6], [42, -0.25], [21, 0.05], [27, -0.15], [33, 0.05], [39, 0.1]].map(([x, f]) => '<circle cx="' + x + '" cy="' + (y + H * f) + '" r="' + (s.p === 'pintasB' ? 1.1 : 1.25) + '" fill="' + s.pc + '"/>').join('');
+  else if(s.p === 'ondas') pad = [0, 1, 2, 3].map(j => '<path d="M' + (16 + j * 7) + ',' + (y - H) + ' q2,3 0,5 q-2,3 0,5" stroke="' + s.pc + '" stroke-width="1.2" fill="none"/>').join('');
+  else if(s.p === 'manchas') pad = [[16, -4, 3], [25, 1, 3.4], [33, -5, 2.8], [38, 2, 2.6], [21, -7, 2.2]].map(([x, d, r]) => '<ellipse cx="' + x + '" cy="' + (y + d) + '" rx="' + r + '" ry="' + (r * 0.75) + '" fill="' + s.pc + '" opacity=".55"/>').join('');
+  else if(s.p === 'obliq') pad = [15, 20, 25, 30, 35, 40].map(x => '<path d="M' + x + ',' + (y - H) + ' L' + (x + 4) + ',' + (y - 1) + '" stroke="' + s.pc + '" stroke-width=".9" opacity=".6"/>').join('');
+  else if(s.p === 'ventre') pad = [0.25, 0.5, 0.75].map(f => '<path d="M16,' + (y + H * f) + ' Q30,' + (y + H * f - 1) + ' ' + xt + ',' + (y + H * f * 0.35) + '" stroke="' + s.pc + '" stroke-width="1.3" fill="none"/>').join('');
+  else if(s.p === 'faixa') pad = '<path d="M9,' + (y - 1) + ' Q28,' + (y - 3) + ' ' + xt + ',' + (y - 0.5) + '" stroke="' + s.pc + '" stroke-width="2.4" fill="none"/>';
+  else if(s.p === 'mancha') pad = '<circle cx="' + (xt - 3) + '" cy="' + (y - 1) + '" r="1.8" fill="' + s.pc + '"/>';
+  const ex = s.f === 'sapo' ? 13 : s.f === 'bico' ? 10 : s.f === 'alta' ? 13 : s.f === 'losango' ? 15 : 12, ey = s.f === 'sapo' ? 13 : s.f === 'losango' ? 15 : y - H * 0.28, er = s.o || 1.9;
+  let rosto = '<circle cx="' + ex + '" cy="' + ey + '" r="' + er + '" fill="#fff"/><circle cx="' + (ex - er * 0.15) + '" cy="' + ey + '" r="' + (er * 0.55) + '" fill="#111"/>';
+  if(s.f === 'sapo') rosto += '<path d="M3,24 Q14,27 24,21" stroke="#2B2118" stroke-width="1.4" fill="none"/><path d="M6,24.5 l1,-2 l1,2 l1,-2 l1,2 l1,-2 l1,2" stroke="#fff" stroke-width=".7" fill="none"/>'
+    + '<path d="M11,9 Q9,2 15,1.5" stroke="#2B2118" stroke-width=".9" fill="none"/><circle cx="15.5" cy="1.8" r="1.4" fill="#F2C94C"/>';
+  else if(s.f === 'bico') rosto += '<path d="M2,21 L8,21.6" stroke="#5A6266" stroke-width=".9"/>';
+  else rosto += '<path d="M' + (s.f === 'romba' ? 7 : 5) + ',' + (y + 1) + ' l' + (s.boca ? 5 : 3) + ',' + (s.boca ? 1.6 : 1) + '" stroke="#333" stroke-width=".9"/>';
+  if(s.barba) rosto += '<path d="M8,' + (y + 4) + ' l-1,3 M10,' + (y + 4.5) + ' l0,3" stroke="#5B4E2C" stroke-width=".7"/>';
+  return '<defs><linearGradient id="' + id + 'g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="' + s.c1 + '"/><stop offset=".58" stop-color="' + s.c1 + '" stop-opacity=".92"/><stop offset="1" stop-color="' + s.c2 + '"/></linearGradient>'
+    + '<clipPath id="' + id + 'c"><path d="' + corpo + '"/></clipPath></defs>'
+    + fins + '<path d="' + cauda + '" fill="' + s.cd + '"/><path d="' + corpo + '" fill="url(#' + id + 'g)" stroke="rgba(0,0,0,.35)" stroke-width=".6"/>'
+    + (pad ? '<g clip-path="' + cl + '">' + pad + '</g>' : '') + rosto; }
+/* desenho de um camarão */
+function svgCamarao(s){
+  const a = s.ant || 1.2;
+  return '<path d="M5,17 C' + (18) + ',' + (4 - 6 * (a - 1)) + ' ' + (40) + ',' + (-2 - 6 * (a - 1)) + ' ' + (62) + ',' + (6 - 4 * (a - 1)) + '" stroke="' + s.c2 + '" stroke-width=".8" fill="none"/>'
+    + '<path d="M5,18.5 C' + (22) + ',' + (9 - 5 * (a - 1)) + ' ' + (44) + ',' + (7 - 5 * (a - 1)) + ' ' + (63) + ',' + (15 - 3 * (a - 1)) + '" stroke="' + s.c2 + '" stroke-width=".8" fill="none"/>'
+    + '<path d="M12,26 l-2,6 M16,27 l-1,6 M20,27 l0,6 M24,27 l1,5 M28,26 l2,5" stroke="' + s.c2 + '" stroke-width="1" stroke-linecap="round"/>'
+    + '<path d="M20,19 C28,8 44,8 49,18 C52,24 49,31 42,32" stroke="' + s.c + '" stroke-width="9" fill="none" stroke-linecap="round"/>'
+    + '<path d="M26,12.6 q2,4 0,8 M32,10.5 q2,4.5 0,9 M38,10.8 q2,4.5 0,9 M44,13.2 q2,4 0,8 M47.5,19 q-2.2,3 -1,6.6" stroke="' + s.c2 + '" stroke-width=".9" fill="none" opacity=".75"/>'
+    + '<path d="M43,30 L35,38 L41,36.2 L45,39.5 L47,31 Z" fill="' + s.c2 + '"/>'
+    + '<ellipse cx="15" cy="20" rx="10" ry="6.6" fill="' + s.c + '" stroke="rgba(0,0,0,.3)" stroke-width=".6"/>'
+    + '<path d="M7,17 L1,13.5" stroke="' + s.c2 + '" stroke-width="1.6" stroke-linecap="round"/>'
+    + '<circle cx="8.6" cy="17.2" r="1.7" fill="#111"/>'; }
+/* o desenho da espécie de uma linha do mix */
+function espIcone(mp){
+  if(!mp) return '<span class="esp-svg esp-nada" aria-hidden="true">❔</span>';
+  const cam = mp.grupo === 'cam', k = mp.ref || String(mp.id).split(':')[1] || '', s = cam ? ESP_CAM[k] : ESP_PEIXE[k];
+  const sx = s ? (s.e || 1) : 1;
+  const corpo = cam ? svgCamarao(s || { c:'#F0A07A', c2:'#A86345', ant:1.2 }) : svgPeixe(k || 'outro', s || { f:'ponta', a:0.95, c1:'#7E8A90', c2:'#E3E7E9', cd:'#9AA4A9', ca:'bif', p:'', pc:'' });
+  return '<svg class="esp-svg" viewBox="-2 -3 68 46" width="' + Math.round(46 * sx) + '" height="' + Math.round(31 * sx) + '" aria-hidden="true" focusable="false">' + corpo
+    + (s ? '' : '<text x="32" y="25" text-anchor="middle" font-size="14" font-weight="700" fill="#fff" stroke="#333" stroke-width=".6">?</text>') + '</svg>'; }
+/* a voz: o nome da espécie e como sai */
+function espNome(it){ const mp = MP_BY[it.mp]; if(!mp) return '';
+  return mp.outro ? (it.nome || (mp.grupo === 'cam' ? 'Outro camarão' : 'Outro peixe')) : mp.nome.replace(/\s*[—(].*$/, ''); }
+function falarEsp(i){ const it = COM.mix.itens[i]; if(!it) return; const mp = MP_BY[it.mp];
+  if(!mp){ falar('Escolha o peixe ou o camarão na setinha.'); return; }
+  const x = mixVal(it), pr = x && x.pr ? x.pr.nome : '';
+  falar(espNome(it) + (pr ? '. Sai como ' + pr.replace(/\s*\(([^)]*)\)/g, ', $1').replace(/\s*—\s*/g, ', ') + '.' : '.')); }
 
 /* ---------- partida da Rev. 17: a meta e a errata usam os valores do ESTUDO (antes de qualquer troca) ---------- */
 ['upa', 'ubp', 'upm', 'upp', 'ubm', 'upale', 'ups', 'uprfc'].forEach(un => { META0[un] = isolar(() => { st.un = un; st.ocup = 100; return calc().sobras; }); });
