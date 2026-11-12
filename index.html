@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quanto custa o nosso peixe? — Rev. 25 Comunidade</title>
+<title>Quanto custa o nosso peixe? — Rev. 25.1 Comunidade</title>
 <style>
 /* ================================================================
-   REV. 25 COMUNIDADE — versão para pescadores e aquicultores
+   REV. 25.1 COMUNIDADE — versão para pescadores e aquicultores
    Mesmo motor de cálculo da Rev. 14 técnica. Muda a apresentação:
    letras grandes, ícones, frases simples, botão de ouvir.
    ================================================================ */
@@ -126,6 +126,10 @@ input[type=range].trilho.perda:focus-visible{outline:3px solid var(--mar);outlin
 .tq-cx small{display:block;color:var(--tinta2);font-size:.85rem}
 /* Rev. 25 — mix de tamanhos da UPA */
 .tam-soma{margin:8px 0 0;font-weight:700}
+/* Rev. 25.1 — aviso de versão nova */
+.aviso-versao{position:fixed;top:10px;left:50%;transform:translateX(-50%);z-index:9999;width:max-content;max-width:calc(100% - 32px);display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;background:var(--mar);color:#fff;padding:10px 14px;border-radius:14px;box-shadow:0 4px 18px rgba(0,0,0,.35);font-weight:600;font-size:1rem}
+.aviso-versao button{background:#fff;color:var(--mar);border:0;border-radius:10px;padding:8px 12px;font-weight:700;font-size:1rem;cursor:pointer}
+.aviso-versao button.fecha{background:transparent;color:#fff;padding:4px 8px}
 .tam-soma.ok{color:var(--verde)}
 .tam-soma.erro{color:var(--vermelho)}
 #ctl-tam .item.tam-usado>span{color:var(--mar)}
@@ -726,7 +730,7 @@ h5.upp-sub{margin:14px 0 0;font-size:1.05rem;color:var(--mar)}
       <span class="logo" aria-hidden="true">🐟</span>
       <div>
         <h1>Quanto custa o nosso peixe?</h1>
-        <p>Custo de 1 kg, preço de venda e sobras — ferramenta da comunidade · PEA Pescarte · Rev. 25</p>
+        <p>Custo de 1 kg, preço de venda e sobras — ferramenta da comunidade · PEA Pescarte · Rev. 25.1</p>
       </div>
     </div>
     <div class="util">
@@ -4602,7 +4606,7 @@ function whatsComunidade(){
     + '\nQuilos vendáveis: ' + pescKgApp(R.vendavel) + '\nPreço mínimo: ' + fB2(R.minimo) + '/kg' + '\nPreço sugerido: ' + fB2(R.sugerido) + '/kg'
     + (R.benefKg > 0 ? '\n\n*Se for beneficiado* (+' + fB2(R.benefKg) + '/kg de mão de obra, energia, água, ingredientes, higienização e embalagem)'
         + '\nPreço mínimo integrado: ' + fB2(R.minimoInt) + '/kg' + '\nPreço sugerido integrado: ' + fB2(R.sugeridoInt) + '/kg' : '')
-    + '\n\nCalculado com as contas do app Preço Justo — Pescador (Pescarte).' + '\nConferido na ferramenta da comunidade — Rev. 25.';
+    + '\n\nCalculado com as contas do app Preço Justo — Pescador (Pescarte).' + '\nConferido na ferramenta da comunidade — Rev. 25.1.';
   COM.msgPesc = ''; window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank', 'noopener'); }
 
 function resultadoPescador(){
@@ -5452,7 +5456,7 @@ if(HAS_DOM) document.addEventListener('keydown', e => { if(!COM.tut) return; if(
    a tela nunca mostram valores diferentes.
    ================================================================ */
 COM.cart = null;
-const CART_REV = 'Rev. 25';
+const CART_REV = 'Rev. 25.1';
 /* PDFs prontos, com os valores do estudo, publicados na pasta cartilhas/ do site (só aparecem quando a ferramenta é aberta pela internet) */
 const CART_ARQ = { upa: 'Cartilha_aba_Criacao_de_tilapia', ubp: 'Cartilha_aba_Beneficiamento', upm: 'Cartilha_aba_Criacao_de_mariscos', pescador: 'Cartilha_aba_Minha_pescaria', barco: 'Cartilha_aba_Barco_de_pesca' }, CART_PDF_DATA = '11/11/2026';
 const cartNoSite = () => HAS_DOM && /^https?:$/.test(location.protocol);
@@ -8441,6 +8445,32 @@ function tamanhoHTML(c){
     + 'Confiram com o técnico de campo: em água fria o peixe cresce mais devagar e come mais ração para cada kg.');
   return h;
 }
+
+/* ================================================================
+   REV. 25.1 — AVISO DE VERSÃO NOVA. Uma aba aberta antes de uma
+   atualização continua mostrando a versão velha (o navegador guarda a
+   página). Ao abrir e ao voltar para a aba, a ferramenta busca o
+   arquivo publicado, sem cache, e compara a revisão do título. Se a
+   publicada for outra, aparece uma faixa com o botão «Atualizar
+   agora». No arquivo salvo no aparelho (sem internet) não faz nada.
+   ================================================================ */
+(function(){
+  if(!HAS_DOM || !/^https?:$/.test(location.protocol) || !window.fetch) return;
+  const minha = (document.title.match(/Rev\. ([\d.]+)/) || [])[1];
+  let mostrado = false, ultima = 0;
+  const checa = () => { const agora = Date.now(); if(mostrado || agora - ultima < 60000) return; ultima = agora;
+    fetch(location.pathname + '?v=' + agora, { cache: 'no-store' }).then(r => r.ok ? r.text() : '').then(t => {
+      const pub = (t.match(/<title>[^<]*Rev\. ([\d.]+)/) || [])[1];
+      if(!pub || !minha || pub === minha || mostrado) return; mostrado = true;
+      const d = document.createElement('div'); d.className = 'aviso-versao nao-imprimir'; d.setAttribute('role', 'status');
+      d.innerHTML = '<span>🔄 Há uma versão nova da ferramenta (<b>Rev. ' + pub + '</b>). Esta tela ainda é a Rev. ' + minha + '.</span>'
+        + '<button type="button" onclick="location.replace(location.pathname + \'?v=' + pub + '-' + agora + '\')">Atualizar agora</button>'
+        + '<button type="button" class="fecha" aria-label="Fechar o aviso" onclick="this.parentNode.remove()">✕</button>';
+      document.body.appendChild(d); }).catch(() => {}); };
+  window.addEventListener('load', () => setTimeout(checa, 1200));
+  document.addEventListener('visibilitychange', () => { if(document.visibilityState === 'visible') checa(); });
+  window.addEventListener('focus', checa);
+})();
 
 /* ---------- partida da Rev. 17: a meta e a errata usam os valores do ESTUDO (antes de qualquer troca) ---------- */
 ['upa', 'ubp', 'upm', 'upp', 'ubm', 'upale', 'ups', 'uprfc'].forEach(un => { META0[un] = isolar(() => { st.un = un; st.ocup = 100; return calc().sobras; }); });
