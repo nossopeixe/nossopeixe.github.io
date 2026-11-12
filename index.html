@@ -749,10 +749,49 @@ h5.upp-sub{margin:14px 0 0;font-size:1.05rem;color:var(--mar)}
 .cad-campo{display:grid;gap:3px;font-size:.86rem;color:var(--tinta2)}
 .cad-n{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .cad-n small{font-size:.82rem;font-weight:700}
-/* Rev. 33 — 13 abas: «Aprender» ocupa a última linha quando as abas quebram */
-@media (max-width:1100px){.abas button:last-child{grid-column:1/-1}}
-@media (max-width:760px){.abas{grid-template-columns:repeat(3,minmax(0,1fr))}.abas button:last-child{grid-column:1/-1}}
-.sr{position:absolute;left:0;top:0;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* Rev. 34 — 13 abas: uma fileira só em tela larga; 7 + 6 até 1180 px; 5 + 5 + 3 até 860 px; no celular, 3 colunas e a última aba na largura toda */
+.abas{grid-template-columns:repeat(13,minmax(0,1fr))}
+@media (max-width:1180px){.abas{grid-template-columns:repeat(7,minmax(0,1fr));row-gap:4px}.abas button{border-radius:12px}}
+@media (max-width:860px){.abas{grid-template-columns:repeat(5,minmax(0,1fr))}}
+@media (max-width:600px){.abas{grid-template-columns:repeat(3,minmax(0,1fr))}.abas button:last-child{grid-column:1/-1;min-height:52px;flex-direction:row;justify-content:center;gap:8px}}
+/* Rev. 34 — divisão das sobras */
+.sob-sub{margin:14px 0 8px;font-weight:700;color:var(--mar)}
+.op.sob-op{flex:1 1 250px;text-align:left;align-items:flex-start}
+.op.sob-op b{display:block}
+.op.sob-op small{display:block;font-weight:400;font-size:.86rem;line-height:1.35;color:var(--tinta2);margin-top:2px}
+.op.sob-op[aria-pressed="true"] small{color:#DCEBF3}
+.sob-tab td{padding:6px}
+.inp.sob-txt{width:8.5rem;text-align:left}
+.inp.sob-larga{width:15rem}
+.inp.sob-num{width:5.2rem}
+.sel.sob-sel{width:auto;min-width:10rem;max-width:19rem}
+.btn.sob-x{min-height:40px;padding:6px 10px;white-space:nowrap}
+.btn.sob-x.pede{background:var(--vermelho-bg);border-color:var(--vermelho);color:var(--vermelho)}
+.sob-aviso{margin:12px 0 0;font-weight:700;background:rgba(255,255,255,.14);border-radius:12px;padding:8px 12px}
+.sob-res small.sob-fn{display:block;font-size:.85rem;color:var(--tinta2)}
+.sob-barra{display:block;height:8px;background:var(--linha2);border-radius:4px;margin-top:4px;min-width:6rem;overflow:hidden}
+.sob-barra i{display:block;height:100%;background:var(--boia);border-radius:4px}
+.tab td.esc,.tab th.esc{background:var(--boia-bg)} .tab th.esc{color:var(--mar);font-weight:700}
+.tab.sob-comp th.v{white-space:normal}
+details.sob-hist{margin-top:8px}
+.inp.sob-nome{flex:1 1 15rem;width:auto;max-width:24rem;text-align:left}
+.sob-cartoes{grid-template-columns:repeat(auto-fit,minmax(min(235px,100%),1fr))}.sob-cartoes .cartao>div{min-width:0}.sob-cartoes .cartao b{font-size:1.32rem}
+.btn.sob-salvar{background:var(--boia);border-color:var(--boia)}
+/* no celular, cada linha das listas vira um cartão, com o nome de cada campo */
+@media (max-width:600px){
+  .sob-tab thead{display:none}
+  .sob-tab,.sob-tab tbody{display:block}
+  .sob-tab tr{display:grid;grid-template-columns:1fr 1fr;gap:8px 12px;align-items:end;border:2px solid var(--linha);border-radius:14px;padding:10px 12px;margin:0 0 10px;background:#fff}
+  .sob-tab td{display:block;border:0;padding:0;text-align:left!important;white-space:normal!important}
+  .sob-tab td[data-r]::before{content:attr(data-r);display:block;font-size:.8rem;font-weight:400;color:var(--tinta2);margin-bottom:2px}
+  .sob-tab td.larga{grid-column:1/-1}
+  .sob-tab td.sob-tira{grid-column:-2/-1;justify-self:end}
+  .sob-tab td.sob-tira:empty{display:none}
+  .sob-tab .inp.sob-txt,.sob-tab .inp.sob-larga,.sob-tab .sel.sob-sel{width:100%;max-width:none;min-width:0}
+  .sob-tab tr.tot{border-style:dashed;background:var(--espuma)}
+  .sob-tab tr.tot td[colspan]{grid-column:1/-1}
+}
+@media print{.sob-x,#sob-acoes,.sob-fontes{display:none!important}}
 </style>
 </head>
 <body>
@@ -782,8 +821,8 @@ h5.upp-sub{margin:14px 0 0;font-size:1.05rem;color:var(--mar)}
     <button type="button" role="tab" id="aba-ubm" onclick="irPara('ubm')"><span class="ic" aria-hidden="true">🦪</span><b><span class="longo">Beneficia&shy;mento de mariscos</span><span class="curto">Moluscos</span></b><small>UBM</small></button>
     <button type="button" role="tab" id="aba-pescador" onclick="irPara('pescador')"><span class="ic" aria-hidden="true">🎣</span><b><span class="longo">Minha pescaria</span><span class="curto">Pescaria</span></b><small>preço justo da saída</small></button>
     <button type="button" role="tab" id="aba-barco" onclick="irPara('barco')"><span class="ic" aria-hidden="true">🚤</span><b><span class="longo">Barco de pesca</span><span class="curto">Barco</span></b><small>exemplo de barco médio</small></button>
-    <button type="button" role="tab" id="aba-sobras" onclick="irPara('sobras')"><span class="ic" aria-hidden="true">💰</span><b><span class="longo">Sobras</span><span class="curto">Sobras</span></b><small>por tipologia</small></button>
     <button type="button" role="tab" id="aba-cadastro" onclick="irPara('cadastro')"><span class="ic" aria-hidden="true">🪪</span><b><span class="longo">Cadastro de cooperados</span><span class="curto">Cadastro</span></b><small>por tipologia</small></button>
+    <button type="button" role="tab" id="aba-sobras" onclick="irPara('sobras')"><span class="ic" aria-hidden="true">🤝</span><b><span class="longo">Divisão das sobras</span><span class="curto">Sobras</span></b><small>entre quem trabalha</small></button>
     <button type="button" role="tab" id="aba-aprender" onclick="irPara('aprender')"><span class="ic" aria-hidden="true">📚</span><b><span class="longo">Aprender</span><span class="curto">Aprender</span></b><small>palavras e atividades</small></button>
   </nav>
 </header>
@@ -817,8 +856,8 @@ h5.upp-sub{margin:14px 0 0;font-size:1.05rem;color:var(--mar)}
       <li>UPM Arraial do Cabo (Rev. 16): Projeção Econômica UPM Rev. 18 (Anexos 1, 3, 4, 6 e 7) e EVTEAS UPM Rev. 2 (dez/2024). Mês-tipo = 1/12 do ano cheio de colheita (meses 7 a 18 da DRE): com a OCB fora, 12 meses-tipo reproduzem a coluna «acumulado últimos 12 meses» (sobras de R$ 2.869.963,34) com diferença menor que R$ 1 no ano. Vieira e ostra por dúzia, mexilhão por kg.</li>
       <li>UPM — escolhas da ferramenta: embalagem (R$ 67.070,40 no ano) repartida na proporção das vendas; estrutura (pessoal, combustível, manutenção, depreciação, OCB) rateada pelas longlines de cada marisco (36 · 20 · 16), não por unidade vendida; combustível, manutenção, EPI, refeições e laboratório como gastos fixos (o manejo é diário com qualquer colheita); sementes, embalagem, mexilhoneiras, limpeza e energia como gastos que crescem com a colheita. PIS de 1% sobre a folha total e encargo de 9% só sobre a cooperada, como no Anexo 4. ICMS de 20% na vieira e na ostra e de 7% no mexilhão, mais 0,65% de PIS. OCB com cooperativista e taxa de manutenção, sobre o investimento fixo (R$ 6.553.799,53). Fundos separados sobre o resultado do ano (a planilha separa mês a mês).</li>
       <li>UPM — «Quando entra o dinheiro?»: as quantidades do ano repartidas mês a mês no ritmo da DRE (vieira em 5 meses, ostra em 6, mexilhão em todos, com meses de meia colheita; sementes compradas no 7º mês da lista). A soma dos 12 meses é igual a 12 meses-tipo.</li>
-      <li>Rev. 34 — na aba «Sobras», a atividade de cada participação sai de uma lista suspensa própria de cada tipologia (UPA: povoar, alimentar o peixe, monitorar a água, despescar...; nas demais unidades, as etapas de cada processo), com os pontos já preenchidos e editáveis — os pontos são proposta inicial para a equipe validar. Nova parte do barco (fornecedor): uma porcentagem do valor (20%, editável) vai para o barco, e dela uma parte para o dono (50%, editável) e o resto para a tripulação, na proporção de dias × horas. Só recebe quem é cooperado: o dono cooperado recebe a parte do dono; o dono que também é tripulante recebe as duas; o tripulante cooperado recebe pela tripulação; quem não é cooperado não recebe, e a parte dele volta para os demais cooperados. A referência da tela passa a ser o 3º princípio do cooperativismo, participação econômica dos membros (OCB), como em Afonso, «O cooperativismo pode auxiliar a cadeia ranícola?», Aquaculture Brasil, 2022, e a Lei 5.764/71, art. 4º, VII; o barco como contrato de fornecimento a confirmar com o jurídico.</li>
-      <li>Rev. 33 — nova aba «Sobras», por tipologia. Para cada tipologia: o valor total a dividir e uma linha por participação (código do cooperado, atividade, pontos, dias e horas por dia). Três modelos lado a lado: A igualitário, B por participação e C ponderado (pontos × dias × horas), com a conferência de que a soma dá o valor. Simulações salvas neste aparelho (só códigos, sem nomes). A aba só simula; a escolha do modelo é da assembleia (Lei 5.764/71, art. 4º, VII e art. 44, II).</li>
+      <li>Rev. 34 — a aba «Sobras» vira «Divisão das sobras», com a parametrização do protótipo UBP_Sobras_SFI (CoopManager): cooperados (nº de matrícula ou apelido e função — sem nomes, como combinado na Rev. 32), atividades com pontos, registro de participação (dias trabalhados × horas por dia) e três formas de dividir — igual para todos (a forma padrão, como no protótipo), pelas horas trabalhadas (o «por participação» do protótipo divide pelas horas, e não pelo número de participações, como estava na Rev. 33) e pelas horas × pontos da atividade. Com o exemplo do protótipo (5 cooperados, 5 atividades, 5 registros, R$ 10.000,00), reproduz os valores dele nas três formas. Os centavos vão pelo maior resto: a soma é sempre o valor dividido. O valor pode ser digitado ou vir das abas — as sobras líquidas do mês (depois de 10% de Fundo de Reserva e 5% de FATES) ou, na UBP-M, a parte de quem trabalha na unidade pela divisão escolhida na aba Beneficiamento —, do mês ou do ano (× 12), e acompanha o que mudar na aba. Salvar (até 30 simulações), copiar, WhatsApp, planilha CSV com as três formas, tutorial e cartilha da aba. Notas da Lei 5.764/71 (arts. 4º, VII; 22; 28; 44, II; 89), do Código Civil (art. 1.094, VII — ponto em que os juristas divergem) e da Lei 12.690/2012 (art. 7º, I). As participações guardadas na Rev. 33 são trazidas automaticamente. Tudo fica só no aparelho. Os números das outras abas não mudam.</li>
+      <li>Rev. 33 — nova aba «Sobras», por tipologia, inspirada na «Simulação de Sobras Anuais» do Firebase. Para cada tipologia: o valor total a dividir e uma linha por participação (código do cooperado, atividade, pontos, dias e horas por dia). Três modelos lado a lado: A igualitário, B por participação e C ponderado (pontos × dias × horas), com a conferência de que a soma dá o valor. Simulações salvas neste aparelho (só códigos, sem nomes). A aba só simula; a escolha do modelo é da assembleia (Lei 5.764/71, art. 4º, VII e art. 44, II).</li>
       <li>Rev. 32 — aba «Cadastro de cooperados»: combinado com a supervisão, os nomes não entram agora. A aba traz a mensagem pronta para o grupo da supervisão (copiar ou abrir no WhatsApp) pedindo, para cada tipologia e município, a situação (em conversa, em formação ou formada), se já há pessoa responsável com acesso e o número de cooperados; um quadro para marcar as respostas — só números, guardado só no aparelho (localStorage) — com o resumo para mandar de volta e o mínimo de 20 pessoas (Lei 5.764/71, art. 6º, I); a planilha modelo (CSV) e a ficha em branco do Livro de Matrícula (arts. 22 e 23) para quando a cooperativa existir; e por que nenhum dado pessoal passa pelo site (LGPD). Grupos: um por tipologia e município, pela lista do Painel PGTRs (21 grupos).</li>
       <li>Rev. 31 — na divisão das sobras da UBP-M em cima do que cada um entregou, os dois lotes (peixe e camarão · tilápia) seguem a sobra que cada linha do mix deixa — a mesma «sobra por kg que entra» da linha, vezes os kg dela; gelo e frete vão para os lotes pelos kg. Mudou uma linha do mix (quanto do total, como sai, rendimento, preço pago ou preço de venda), muda a divisão. Até a Rev. 30, os lotes eram só pelos kg. No estudo, a tilápia é 5,4% dos kg e 2,8% da sobra. Botão «Ver a sobra de cada linha do mix» com a tabela por lote; aviso quando um lote dá prejuízo (o lote fica zerado e o outro cobre).</li>
       <li>Rev. 30 — na divisão das sobras da UBP-M, as porcentagens (40 · 40 · 10 · 10) só aparecem ao tocar em «Mudar as porcentagens», e só no modo «em cima do que cada um entregou»; nas alternativas, elas não aparecem. Sai a regra antiga ⅓ · ⅓ · ⅓.</li>
@@ -3232,7 +3271,7 @@ function desenharTela(){ if(!HAS_DOM) return; const t = document.getElementById(
   else if(a === 'ups') t.innerHTML = telaUPS();
   else if(a === 'uprfc') t.innerHTML = telaUPRFC();
   else if(a === 'pescador') t.innerHTML = telaPescador();
-  else if(a === 'sobras') t.innerHTML = telaSobras();   /* Rev. 33 */
+  else if(a === 'sobras') t.innerHTML = telaSobras();   /* Rev. 33; Rev. 34 — divisão das sobras */
   else if(a === 'cadastro') t.innerHTML = telaCadastro();   /* Rev. 32 */
   else t.innerHTML = telaAprender();
   desenharResultados(); }
@@ -3247,7 +3286,8 @@ function desenharResultados(){ if(!HAS_DOM) return;
   else if(a === 'upale'){ const c = calc(); r.innerHTML = resultadoUPALE(c); s.innerHTML = secoesUPALE(c); }
   else if(a === 'ups'){ const c = calc(); r.innerHTML = resultadoUPS(c); s.innerHTML = secoesUPS(c); }
   else if(a === 'uprfc'){ const c = calc(); r.innerHTML = resultadoUPRFC(c); s.innerHTML = secoesUPRFC(c); }
-  else if(a === 'pescador'){ r.innerHTML = resultadoPescador(); s.innerHTML = secoesPescador(); } }
+  else if(a === 'pescador'){ r.innerHTML = resultadoPescador(); s.innerHTML = secoesPescador(); }
+  else if(a === 'sobras'){ r.innerHTML = resultadoSobras(); s.innerHTML = secoesSobras(); } }
 
 /* ---------- a balança: gasto de 1 kg × preço de 1 kg ---------- */
 function balanca(nome, gasto, gastoDet, preco, precoRot, saldo, nivel, frase, gastoRot, un){
@@ -8945,233 +8985,417 @@ function telaCadastro(){
   return h; }
 
 /* ================================================================
-   REV. 34 — ABA SOBRAS, por tipologia. Base: 3º princípio do cooperativismo, participação econômica
-   dos membros (OCB, em Afonso, Aquaculture Brasil, 2022) e Lei 5.764/71, art. 4º, VII
-     A · igualitário:      o valor é dividido igualmente entre os cooperados
-     B · por participação: proporcional ao número de participações
-     C · ponderado:        proporcional à soma de pontos × dias × horas de cada cooperado
-   Rev. 34: cada participação escolhe uma atividade da lista da tipologia (os pontos vêm
-   preenchidos e podem ser mudados); e há a parte do BARCO (fornecedor): só recebe quem for
-   cooperado — o dono (uma parte) e o dono que também trabalha (as duas partes); os tripulantes
-   cooperados recebem pelo tempo de trabalho; quem não é cooperado não recebe.
-   Só códigos (nunca nomes). Os dados ficam só neste aparelho (localStorage).
+   REV. 34 — DIVISÃO DAS SOBRAS ENTRE QUEM TRABALHA (pedido de 12/11/2026)
+   Substitui a primeira aba «Sobras» (Rev. 33): o modelo «por participação»
+   do protótipo divide pelas HORAS (dias × horas por dia), e não pelo
+   número de participações — conferido na própria tela do protótipo.
+   Parametrização inspirada no protótipo «UBP_Sobras_SFI» (CoopManager,
+   Firebase Studio): cooperados com a sua função, atividades com pontos,
+   o registro de participação (dias trabalhados × horas por dia) e a
+   simulação com três formas de dividir — igual para todos (a forma
+   padrão do protótipo), pelas horas trabalhadas («por participação») e
+   pelas horas × pontos da atividade («ponderado») —, com salvar, limpar
+   e o histórico das simulações.
+   O exemplo de partida é o do protótipo, sem os nomes (Rev. 32: os nomes
+   não entram neste site): 5 cooperados, 5 atividades, 5 registros e
+   R$ 10.000,00. Com ele, as três formas dão os mesmos valores do
+   protótipo — igual: R$ 2.000,00 para cada um; pelas horas: R$ 3.648,65 ·
+   2.972,97 · 3.378,38 · 0 · 0; pelas horas e pontos: R$ 4.355,30 ·
+   2.206,30 · 3.438,40 · 0 · 0. Os centavos fecham: a soma é sempre o
+   valor dividido (maior resto).
+   O valor a dividir pode ser digitado ou vir de uma aba: as sobras
+   líquidas do mês (depois do Fundo de Reserva e do FATES, art. 28) ou,
+   na UBP-M, a parte de quem trabalha na unidade, pela divisão escolhida
+   na aba Beneficiamento. O valor acompanha a aba: mudou lá, muda aqui.
+   Tudo fica guardado só neste aparelho.
    ================================================================ */
-const SBR_CHAVE = 'nossopeixe.sobras.v1';
-let SBR = {};
-try { SBR = JSON.parse(localStorage.getItem(SBR_CHAVE) || '{}') || {}; } catch(e){ SBR = {}; }
-if(!SBR || typeof SBR !== 'object') SBR = {};
-COM.sbrUn = 'upa22'; COM.sbrAviso = null; COM.sbrLimpar = false;
+const SB_CHAVE = 'nossopeixe.sobras.v2', SB_CHAVE_V1 = 'nossopeixe.sobras.v1';   /* v1 = formato da primeira aba Sobras (por tipologia) — fica intacta */
+const SB_MODELOS = [
+  ['igual', '🟰', 'Igual para todos', 'o valor é dividido em partes iguais entre todos os cooperados da lista, trabalhem quanto trabalharem («igualitário»)'],
+  ['horas', '⏱️', 'Pelas horas trabalhadas', 'cada um recebe na proporção das suas horas (dias × horas por dia), em qualquer atividade («por participação»)'],
+  ['pontos', '⭐', 'Pelas horas e pelos pontos', 'cada hora vale os pontos da atividade: o trabalho mais pesado ou de mais responsabilidade vale mais por hora («ponderado»)'] ];
+const SB_LIM = { coops: 200, ativs: 50, parts: 600, hist: 30, pontos: [0, 1000], dias: [0, 366], horas: [0, 24] };
+const SB_FONTES = ['upa', 'upale', 'ubp', 'uprfc', 'upp', 'upm', 'ups', 'ubm'];
+function SB0(){ return {
+  valor: 10000, fonte: null, ano: false, modelo: 'igual', seq: 30,
+  coops: [ { id: 1, q: 'Nº 1', f: 'Filetadora de peixe' }, { id: 2, q: 'Nº 2', f: 'Embaladora' }, { id: 3, q: 'Nº 3', f: 'Operador de câmara fria' },
+           { id: 4, q: 'Nº 4', f: 'Eviscerador' }, { id: 5, q: 'Nº 5', f: 'Classificadora' } ],
+  ativs: [ { id: 11, n: 'Filetagem de tilápia', p: 12 }, { id: 12, n: 'Evisceração de peixe', p: 8 }, { id: 13, n: 'Embalagem a vácuo', p: 7 },
+           { id: 14, n: 'Controle de qualidade do pescado', p: 15 }, { id: 15, n: 'Armazenamento em câmara fria', p: 10 } ],
+  parts: [ { id: 21, c: 1, a: 11, d: 22, h: 8 }, { id: 22, c: 1, a: 12, d: 10, h: 4 }, { id: 23, c: 2, a: 13, d: 22, h: 8 },
+           { id: 24, c: 3, a: 15, d: 20, h: 8 }, { id: 25, c: 3, a: 12, d: 10, h: 4 } ],
+  hist: [] }; }
+/* o que vem do aparelho é conferido: números viram números, textos viram textos, ids repetidos saem */
+function sbNormaliza(x){
+  const o = SB0(), num = (v, lim) => { v = +v; return isFinite(v) ? clamp(v, lim[0], lim[1]) : 0; }, txt = (v, n) => String(v == null ? '' : v).slice(0, n);
+  if(!x || !Array.isArray(x.coops) || !Array.isArray(x.ativs) || !Array.isArray(x.parts)) return o;
+  const visto = new Set(), novo = id => { id = Math.round(+id); if(!(id > 0) || visto.has(id)) return 0; visto.add(id); return id; };
+  o.coops = x.coops.map(c => ({ id: novo(c.id), q: txt(c.q, 30) || 'Nº ?', f: txt(c.f, 40) })).filter(c => c.id).slice(0, SB_LIM.coops);
+  o.ativs = x.ativs.map(a => ({ id: novo(a.id), n: txt(a.n, 50) || 'Atividade', p: num(a.p, SB_LIM.pontos) })).filter(a => a.id).slice(0, SB_LIM.ativs);
+  o.parts = x.parts.map(p => ({ id: novo(p.id), c: Math.round(+p.c) || 0, a: Math.round(+p.a) || 0, d: num(p.d, SB_LIM.dias), h: num(p.h, SB_LIM.horas) })).filter(p => p.id).slice(0, SB_LIM.parts);
+  o.valor = num(x.valor, [0, 1e9]); o.fonte = SB_FONTES.includes(x.fonte) ? x.fonte : null; o.ano = !!x.ano;
+  o.modelo = SB_MODELOS.some(m => m[0] === x.modelo) ? x.modelo : 'igual';
+  o.hist = Array.isArray(x.hist) ? x.hist.filter(e => e && Array.isArray(e.L)).slice(0, SB_LIM.hist) : [];
+  o.seq = Math.max(30, ...visto) + 1;
+  return o; }
+/* a primeira aba Sobras guardava, por tipologia, linhas «código · atividade · pontos · dias · horas»:
+   vira a lista de quem trabalha, a de atividades e o registro de horas (a primeira tipologia com linhas) */
+function sbDaV1(x){
+  if(!x || typeof x !== 'object') return null;
+  const k = CC_TIPOS.map(t => t[0]).find(k => x[k] && Array.isArray(x[k].linhas) && x[k].linhas.some(r => r && String(r.cod || '').trim()));
+  if(!k) return null;
+  const o = SB0(), C = {}, A = {}; let id = 1; o.coops = []; o.ativs = []; o.parts = [];
+  x[k].linhas.forEach(r => { const cod = String(r.cod || '').trim().slice(0, 30); if(!cod) return;
+    const nm = String(r.ativ || '').trim().slice(0, 40) || 'Atividade', pts = clamp(+r.pts || 0, 0, 1000), ka = nm + '|' + pts;
+    if(!C[cod]){ C[cod] = id++; o.coops.push({ id: C[cod], q: cod, f: '' }); }
+    if(!A[ka]){ A[ka] = id++; o.ativs.push({ id: A[ka], n: o.ativs.some(a => a.n === nm) ? nm + ' (' + pts + ' pts)' : nm, p: pts }); }
+    o.parts.push({ id: id++, c: C[cod], a: A[ka], d: clamp(+r.dias || 0, 0, 366), h: clamp(+r.horas || 0, 0, 24) }); });
+  o.valor = Math.max(0, +x[k].valor || 0); o.seq = id + 1; o.tipoV1 = k;
+  return o; }
+let SB = SB0();
+COM.sbAviso = null; COM.sbConfirma = null;
+try { const x = JSON.parse(localStorage.getItem(SB_CHAVE) || 'null');
+  if(x) SB = sbNormaliza(x);
+  else { const v = sbDaV1(JSON.parse(localStorage.getItem(SB_CHAVE_V1) || 'null'));
+    if(v){ const T0 = CC_TIPOS.find(t => t[0] === v.tipoV1); SB = sbNormaliza(v);
+      COM.sbAviso = '📥 Trouxemos as participações que estavam na versão anterior desta aba' + (T0 ? ' (' + T0[2] + ' — ' + T0[3] + ')' : '') + '. Confiram as listas.'; } } }
+catch(e){ SB = SB0(); }
+function sbSalva(){ try { localStorage.setItem(SB_CHAVE, JSON.stringify(SB)); } catch(e){} }
+const sbH = h => fN(h, Math.abs(h - Math.round(h)) > 1e-9 ? 1 : 0);
+const sbIn = v => Number(v).toLocaleString('pt-BR', { maximumFractionDigits: 2, useGrouping: false });
+const sbModeloDe = k => SB_MODELOS.find(m => m[0] === k) || SB_MODELOS[0];
 
-/* atividades de cada tipologia: [nome, pontos de partida]. Os pontos são proposta inicial, editável. */
-const SBR_ATIV = {
-  upa: [['Preparar e povoar o tanque', 4], ['Alimentar o peixe (ração)', 3], ['Monitorar a água (oxigênio e temperatura)', 3], ['Manutenção de tanques e aeradores', 2], ['Despescar (despesca)', 5], ['Transporte e entrega do peixe', 4], ['Administração e registros', 2]],
-  upale: [['Manejo de matrizes e reprodução', 5], ['Alimentar os alevinos', 3], ['Monitorar a água', 3], ['Classificar e contar alevinos', 3], ['Despesca e entrega de alevinos', 4], ['Limpeza e manutenção', 2], ['Administração e registros', 2]],
-  ubp: [['Recepção do pescado', 3], ['Evisceração e limpeza', 4], ['Filetagem e porcionamento', 5], ['Embalagem', 3], ['Congelamento e câmara fria', 3], ['Expedição', 3], ['Higienização do setor', 2]],
-  uprfc: [['Recepção de resíduos e conchas', 3], ['Cozimento', 4], ['Secagem e moagem', 4], ['Ensacamento', 3], ['Expedição', 3], ['Limpeza e higienização', 2]],
-  upp: [['Preparo de receitas', 4], ['Empanamento e porcionamento', 4], ['Embalagem', 3], ['Congelamento', 3], ['Expedição', 3], ['Higienização', 2]],
-  upm: [['Manejo de reprodutores', 4], ['Coleta de sementes', 4], ['Manutenção de cordas, lanternas e tanques', 3], ['Colheita dos mariscos', 5], ['Depuração e limpeza', 3], ['Transporte', 3], ['Administração e registros', 2]],
-  ups: [['Captação e coleta de sementes', 4], ['Manejo de coletores', 3], ['Monitoramento do cultivo', 3], ['Colheita', 4], ['Transporte', 3], ['Administração e registros', 2]],
-  ubm: [['Recepção do marisco', 3], ['Depuração', 4], ['Abertura e beneficiamento', 5], ['Embalagem (in natura ou conserva)', 3], ['Expedição', 3], ['Higienização', 2]]
-};
-const SBR_GRUPO = { upa22: 'upa', upa38: 'upa', upale: 'upale', ubp: 'ubp', uprfc: 'uprfc', upp: 'upp', upm: 'upm', ups: 'ups', ubm: 'ubm' };
-const SBR_FUNCOES = [['dono', '⛵ Dono do barco'], ['dono_trip', '⛵ Dono e tripulante'], ['trip', '⚓ Tripulante']];
+/* ---------- de onde vem o valor: uma aba de unidade, com as escolhas feitas nela ---------- */
+function sbFonteCalc(un){
+  return isolar(() => { st.un = un; st.ocup = COM.ocup[un]; const c = calc(), F = st.folha[un];
+    if(un === 'ubp'){ const s = sobrasCalc(c), g = s && s.grupos.find(x => x.id === 'benef');
+      return { v: g ? g.valor : 0, liq: c.liq, parte: true, nf: F.nCoopConfirmado ? F.nCoop : null }; }
+    return { v: c.liq, liq: c.liq, parte: false, nf: F.nCoop }; }); }
+function sbFonteRot(un){ const G = ABAS_GUIA[un]; return G[0] + ' ' + G[1] + ' (' + (un === 'upa' ? G[2].replace(' de trabalho', '') : G[2]) + ')'; }
+function sbFonteTxt(un, F){ return sbFonteRot(un) + ' — ' + (F.parte ? 'parte de quem trabalha na unidade' : 'sobras líquidas'); }
+function sbValor(){
+  if(!SB.fonte) return { v: Math.max(0, SB.valor), bruto: SB.valor, txt: 'valor digitado', F: null };
+  const F = sbFonteCalc(SB.fonte), m = SB.ano ? 12 : 1, v = Math.round(F.v * m * 100) / 100;
+  return { v: Math.max(0, v), bruto: v, F, txt: sbFonteTxt(SB.fonte, F) + (SB.ano ? ', 12 meses' : ', do mês') }; }
 
-function sbrSalva(){ try { localStorage.setItem(SBR_CHAVE, JSON.stringify(SBR)); } catch(e){} }
-function sbrBarcoPadrao(){ return { pct: 20, dono: 50, linhas: [] }; }
-function sbrDados(un){
-  const d = SBR[un] || (SBR[un] = { valor: 0, linhas: [], barco: sbrBarcoPadrao() });
-  if(!Array.isArray(d.linhas)) d.linhas = [];
-  if(!d.barco || typeof d.barco !== 'object') d.barco = sbrBarcoPadrao();
-  if(!Array.isArray(d.barco.linhas)) d.barco.linhas = [];
-  if(typeof d.barco.pct !== 'number') d.barco.pct = 20;
-  if(typeof d.barco.dono !== 'number') d.barco.dono = 50;
-  return d; }
-function sbrNumero(v){ const x = numIn(v); return (String(v).trim() === '' || isNaN(x)) ? 0 : x; }
-function sbrEscolhe(k){ COM.sbrUn = k; COM.sbrAviso = null; COM.sbrLimpar = false; desenharTela(); }
-function sbrValor(v){ sbrDados(COM.sbrUn).valor = Math.max(0, sbrNumero(v)); sbrSalva(); desenharTela(); }
-function sbrAtivLista(un){ return SBR_ATIV[SBR_GRUPO[un]] || []; }
+/* ---------- a conta: peso de cada cooperado e os centavos que fecham ---------- */
+function sbConta(V, modelo){
+  const A = {}; SB.ativs.forEach(a => { A[a.id] = a; });
+  const L = SB.coops.map(c => ({ c, h: 0, w: 0, n: 0 })), ix = {}; L.forEach((l, i) => { ix[l.c.id] = i; });
+  SB.parts.forEach(p => { const i = ix[p.c], a = A[p.a]; if(i == null || !a) return; const h = Math.max(0, p.d) * Math.max(0, p.h);
+    L[i].h += h; L[i].w += h * Math.max(0, a.p); L[i].n++; });
+  const peso = l => modelo === 'igual' ? 1 : modelo === 'horas' ? l.h : l.w;
+  const tot = L.reduce((s, l) => s + peso(l), 0), cents = Math.round(Math.max(0, V) * 100), ok = tot > 0 && cents > 0;
+  const bruto = L.map(l => ok ? cents * peso(l) / tot : 0), base = bruto.map(x => Math.floor(x + 1e-7));
+  let resto = ok ? cents - base.reduce((s, x) => s + x, 0) : 0;
+  const ord = bruto.map((x, i) => [x - base[i], i]).filter(r => peso(L[r[1]]) > 0).sort((a, b) => b[0] - a[0] || a[1] - b[1]);
+  for(let k = 0; resto > 0 && ord.length; k++, resto--) base[ord[k % ord.length][1]]++;
+  L.forEach((l, i) => { l.peso = peso(l); l.v = base[i] / 100; l.fr = tot > 0 ? l.peso / tot : 0; });
+  return { L, tot, ok, V, modelo, total: ok ? cents / 100 : 0,
+    H: L.reduce((s, l) => s + l.h, 0), W: L.reduce((s, l) => s + l.w, 0), nRec: L.filter(l => l.v > 0).length }; }
+const sbTres = V => ({ igual: sbConta(V, 'igual'), horas: sbConta(V, 'horas'), pontos: sbConta(V, 'pontos') });
+const sbHorasCoop = id => SB.parts.filter(p => p.c === id && SB.ativs.some(a => a.id === p.a)).reduce((s, p) => s + p.d * p.h, 0);
+const sbHorasAtiv = id => SB.parts.filter(p => p.a === id && SB.coops.some(c => c.id === p.c)).reduce((s, p) => s + p.d * p.h, 0);
 
-/* participações */
-function sbrAdd(){ const a = sbrAtivLista(COM.sbrUn)[0] || ['Atividade', 1];
-  sbrDados(COM.sbrUn).linhas.push({ cod:'', ativ:a[0], pts:a[1], dias:1, horas:8 }); sbrSalva(); desenharTela(); }
-function sbrAtiv(i, v){ const r = sbrDados(COM.sbrUn).linhas[i]; if(!r) return;
-  if(v === 'o'){ if(sbrAtivLista(COM.sbrUn).some(a => a[0] === r.ativ)) r.ativ = 'Outra atividade'; }
-  else { const a = sbrAtivLista(COM.sbrUn)[+v]; if(a){ r.ativ = a[0]; r.pts = a[1]; } }
-  sbrSalva(); desenharTela(); }
-function sbrEdita(i, campo, v){ const L = sbrDados(COM.sbrUn).linhas; if(!L[i]) return;
-  L[i][campo] = (campo === 'cod' || campo === 'ativ') ? String(v).trim().slice(0, 30) : Math.max(0, sbrNumero(v));
-  sbrSalva(); desenharTela(); }
-function sbrRemove(i){ sbrDados(COM.sbrUn).linhas.splice(i, 1); sbrSalva(); desenharTela(); }
+/* ---------- mudanças ---------- */
+const sbLista = k => k === 'c' ? SB.coops : k === 'a' ? SB.ativs : SB.parts;
+const sbAchar = (k, id) => sbLista(k).find(x => x.id === id);
+function sbFonte(un){ SB.fonte = SB.fonte === un ? null : un; COM.sbConfirma = null; delete COM.erro['sob-valor']; sbSalva(); desenharTela(); }
+function sbAno(b){ SB.ano = !!b; sbSalva(); desenharTela(); }
+function sbModelo(k){ SB.modelo = sbModeloDe(k)[0]; COM.sbConfirma = null; sbSalva(); desenharTela(); }
+function sbTxt(el, k, id, campo){ const o = sbAchar(k, id); if(!o) return;
+  const t = String(el.value).replace(/\s+/g, ' ').trim().slice(0, campo === 'f' ? 40 : campo === 'n' ? 50 : 30);
+  if(!t && campo !== 'f'){ el.value = o[campo]; return; }          /* sem identificação não fica: volta o que era */
+  o[campo] = t; el.value = t; COM.sbConfirma = null; sbSalva();
+  if(campo !== 'f') sbRedesenha('parts'); desenharResultados(); }
+function sbNum(el, k, id, campo){ const o = sbAchar(k, id); if(!o) return;
+  const lim = SB_LIM[{ p: 'pontos', d: 'dias', h: 'horas' }[campo]], v = numBR(el.value);
+  if(isNaN(v)){ el.classList.add('erro'); COM.sbAviso = '🔴 «' + esc(String(el.value).slice(0, 20)) + '» não é um número. Digite só algarismos — por exemplo, ' + sbIn(o[campo]) + '.'; desenharResultados(); return; }
+  const x = Math.round(clamp(v, lim[0], lim[1]) * 100) / 100; o[campo] = x; el.value = sbIn(x); el.classList.remove('erro');
+  COM.sbAviso = x !== v ? '⚠️ ' + (campo === 'p' ? 'Os pontos vão' : campo === 'd' ? 'Os dias trabalhados vão' : 'As horas por dia vão') + ' de ' + lim[0] + ' a ' + fN(lim[1]) + ': a ferramenta usou ' + sbIn(x) + '.' : null;
+  COM.sbConfirma = null; sbSalva(); if(k === 'a') sbRedesenha('parts'); sbCelulas(); desenharResultados(); }
+function sbSel(el, id, campo){ const o = sbAchar('p', id); if(!o) return; o[campo] = Math.round(+el.value) || 0; COM.sbConfirma = null; sbSalva(); sbCelulas(); desenharResultados(); }
+function sbNovo(k){
+  const L = sbLista(k), lim = SB_LIM[{ c: 'coops', a: 'ativs', p: 'parts' }[k]];
+  if(L.length >= lim){ COM.sbAviso = '⚠️ Chegou ao limite de ' + lim + ' linhas nesta lista.'; desenharTela(); return; }
+  const id = SB.seq++;
+  if(k === 'c'){ const n = SB.coops.reduce((m, c) => Math.max(m, +((String(c.q).match(/\d+/) || [0])[0])), 0) + 1; L.push({ id, q: 'Nº ' + n, f: '' }); COM.aberto['sob-coops'] = true; }
+  else if(k === 'a'){ L.push({ id, n: 'Nova atividade', p: 10 }); COM.aberto['sob-ativs'] = true; }
+  else { if(!SB.coops.length || !SB.ativs.length) return; const ult = SB.parts[SB.parts.length - 1];
+    L.push({ id, c: ult && SB.coops.some(c => c.id === ult.c) ? ult.c : SB.coops[0].id, a: SB.ativs[0].id, d: 0, h: 0 }); COM.aberto['sob-parts'] = true; }
+  COM.sbConfirma = null; sbSalva(); desenharTela();
+  setTimeout(() => { const e = document.getElementById(k === 'c' ? 'sob-q-' + id : k === 'a' ? 'sob-an-' + id : 'sob-in-d-' + id); if(e){ e.focus(); if(e.select) e.select(); } }, 0); }
+/* tirar uma linha pede dois toques: o primeiro só avisa */
+function sbTira(k, id){ const chave = k + id;
+  if(COM.sbConfirma !== chave){ COM.sbConfirma = chave; desenharTela(); return; }
+  COM.sbConfirma = null;
+  if(k === 'c'){ SB.coops = SB.coops.filter(x => x.id !== id); SB.parts = SB.parts.filter(p => p.c !== id); }
+  else if(k === 'a'){ SB.ativs = SB.ativs.filter(x => x.id !== id); SB.parts = SB.parts.filter(p => p.a !== id); }
+  else SB.parts = SB.parts.filter(x => x.id !== id);
+  sbSalva(); desenharTela(); }
+function sbBtnTira(k, id, rot){ const pede = COM.sbConfirma === k + id;
+  return '<button type="button" class="btn claro sob-x' + (pede ? ' pede' : '') + '" onclick="sbTira(\'' + k + '\',' + id + ')" aria-label="' + esc(pede ? 'Toque de novo para tirar ' + rot : 'Tirar ' + rot) + '">' + (pede ? '⚠️ Toque de novo' : '🗑️') + '</button>'; }
+function sbRecomeca(qual){ const chave = 'r' + qual;
+  if(COM.sbConfirma !== chave){ COM.sbConfirma = chave; desenharResultados(); return; }
+  const h = SB.hist; SB = SB0(); SB.hist = h;
+  if(qual === 'zero'){ SB.coops = []; SB.ativs = []; SB.parts = []; SB.valor = 0; }
+  COM.sbConfirma = null; delete COM.erro['sob-valor'];
+  COM.sbAviso = qual === 'zero' ? '🧹 Listas vazias. Comecem por «Quem trabalha» e «As atividades e os pontos». As simulações salvas continuam guardadas.' : '↺ De volta ao exemplo. As simulações salvas continuam guardadas.';
+  sbSalva(); desenharTela(); }
+/* atualiza só os números calculados das tabelas — quem está digitando não perde o lugar */
+function sbCelulas(){ if(!HAS_DOM) return; const put = (id, t) => { const e = document.getElementById(id); if(e) e.textContent = t; };
+  const A = {}; SB.ativs.forEach(a => { A[a.id] = a; });
+  SB.parts.forEach(p => { const h = p.d * p.h, a = A[p.a]; put('sob-ph-' + p.id, sbH(h)); put('sob-pw-' + p.id, a ? fN(h * a.p) : '—'); });
+  SB.coops.forEach(c => put('sob-ch-' + c.id, sbH(sbHorasCoop(c.id))));
+  SB.ativs.forEach(a => put('sob-ah-' + a.id, sbH(sbHorasAtiv(a.id))));
+  const R = sbConta(0, 'pontos'); put('sob-pt-h', sbH(R.H)); put('sob-pt-w', fN(R.W)); }
+function sbRedesenha(parte){ if(!HAS_DOM) return; const e = document.getElementById('sob-' + parte + '-c'); if(!e) return;
+  e.innerHTML = parte === 'coops' ? sbCoopsHTML() : parte === 'ativs' ? sbAtivsHTML() : sbPartsHTML(); }
 
-/* barco (fornecedor) */
-function sbrBarCfg(campo, v){ const b = sbrDados(COM.sbrUn).barco; b[campo] = Math.min(100, Math.max(0, sbrNumero(v))); sbrSalva(); desenharTela(); }
-function sbrBarAdd(){ sbrDados(COM.sbrUn).barco.linhas.push({ cod:'', funcao:'trip', coop:true, dias:1, horas:8 }); sbrSalva(); desenharTela(); }
-function sbrBarEdita(i, campo, v){ const L = sbrDados(COM.sbrUn).barco.linhas; const r = L[i]; if(!r) return;
-  if(campo === 'cod') r.cod = String(v).trim().slice(0, 30);
-  else if(campo === 'funcao') r.funcao = v;
-  else if(campo === 'coop') r.coop = (v === 'sim');
-  else r[campo] = Math.max(0, sbrNumero(v));
-  sbrSalva(); desenharTela(); }
-function sbrBarRemove(i){ sbrDados(COM.sbrUn).barco.linhas.splice(i, 1); sbrSalva(); desenharTela(); }
-
-/* cálculo */
-function sbrCalc(L, V){
-  const porCod = {};
-  L.forEach(r => { const c = String(r.cod || '').trim(); if(!c) return;
-    const o = porCod[c] || (porCod[c] = { cod:c, n:0, pts:0 });
-    o.n++; o.pts += (r.pts || 0) * (r.dias || 0) * (r.horas || 0); });
-  const cods = Object.values(porCod);
-  const n = cods.length, totN = cods.reduce((s, o) => s + o.n, 0), totP = cods.reduce((s, o) => s + o.pts, 0);
-  cods.forEach(o => { o.A = n ? V / n : 0; o.B = totN ? V * o.n / totN : 0; o.C = totP ? V * o.pts / totP : 0; });
-  return { lista: cods, n, totN, totP }; }
-/* parte do barco: só cooperados recebem. Parte que não tem a quem ir volta para os demais cooperados */
-function sbrBarco(B, V){
-  const pool = V * B.pct / 100, parteDono = pool * B.dono / 100, parteTrip = pool - parteDono;
-  const ok = r => r.coop && String(r.cod || '').trim() !== '';
-  const donos = B.linhas.filter(r => ok(r) && (r.funcao === 'dono' || r.funcao === 'dono_trip'));
-  const tripul = B.linhas.filter(r => ok(r) && (r.funcao === 'trip' || r.funcao === 'dono_trip'));
-  const peso = r => (r.dias || 0) * (r.horas || 0);
-  const totPeso = tripul.reduce((s, r) => s + peso(r), 0);
-  const por = {}; let usado = 0;
-  if(donos.length){ donos.forEach(r => { const c = String(r.cod).trim(); por[c] = (por[c] || 0) + parteDono / donos.length; }); usado += parteDono; }
-  if(totPeso > 0){ tripul.forEach(r => { const x = parteTrip * peso(r) / totPeso; if(x > 0){ const c = String(r.cod).trim(); por[c] = (por[c] || 0) + x; } }); usado += parteTrip; }
-  return { pool, parteDono, parteTrip, usado, por, donoPago: donos.length > 0, tripPago: totPeso > 0 }; }
-function sbrTudo(d, V){
-  const Bp = sbrBarco(d.barco, V);
-  const Vr = Math.max(0, V - Bp.usado);
-  const R = sbrCalc(d.linhas, Vr);
-  const mapa = {};
-  R.lista.forEach(o => { mapa[o.cod] = { cod:o.cod, n:o.n, pts:o.pts, A:o.A, B:o.B, C:o.C, bar:0 }; });
-  Object.keys(Bp.por).forEach(c => { const o = mapa[c] || (mapa[c] = { cod:c, n:0, pts:0, A:0, B:0, C:0, bar:0 });
-    o.bar = Bp.por[c]; o.A += o.bar; o.B += o.bar; o.C += o.bar; });
-  const lista = Object.values(mapa).sort((a, b) => a.cod.localeCompare(b.cod, 'pt-BR', { numeric:true }));
-  return { lista, Vr, Bp, n: R.n, totN: R.totN, totP: R.totP, semDestino: Vr > 0 && R.n === 0 }; }
-
-/* simulações salvas */
-function sbrSalvarSim(){
-  const inp = document.getElementById('sbr-nome'), nome = ((inp && inp.value.trim()) || ('Simulação de ' + hojeTxt())).slice(0, 60);
-  const d = sbrDados(COM.sbrUn);
-  SBR.salvas = Array.isArray(SBR.salvas) ? SBR.salvas : [];
-  SBR.salvas.unshift({ nome: nome, un: COM.sbrUn, data: hojeTxt(), valor: d.valor, linhas: JSON.parse(JSON.stringify(d.linhas)), barco: JSON.parse(JSON.stringify(d.barco)) });
-  SBR.salvas = SBR.salvas.slice(0, 20); sbrSalva();
-  COM.sbrAviso = '✅ Simulação salva neste aparelho.'; desenharTela(); }
-function sbrAbre(i){ const s = (SBR.salvas || [])[i]; if(!s) return;
-  SBR[s.un] = { valor: s.valor, linhas: JSON.parse(JSON.stringify(s.linhas)), barco: s.barco ? JSON.parse(JSON.stringify(s.barco)) : sbrBarcoPadrao() };
-  COM.sbrUn = s.un; sbrSalva(); COM.sbrAviso = '📂 Simulação aberta.'; desenharTela(); }
-function sbrApagaSim(i){ (SBR.salvas || []).splice(i, 1); sbrSalva(); desenharTela(); }
-function sbrLimpa(){ if(!COM.sbrLimpar){ COM.sbrLimpar = true; desenharTela(); return; }
-  const d = sbrDados(COM.sbrUn); d.valor = 0; d.linhas = []; d.barco = sbrBarcoPadrao(); sbrSalva();
-  COM.sbrLimpar = false; COM.sbrAviso = '🧹 Apagado nesta tipologia.'; desenharTela(); }
+/* ---------- salvar, copiar, mandar, planilha ---------- */
+function sbAgora(){ const d = new Date(), z = n => String(n).padStart(2, '0'); return hojeTxt() + ' ' + z(d.getHours()) + ':' + z(d.getMinutes()); }
+function sbFoto(nome){ const V = sbValor(), R = sbConta(V.v, SB.modelo);
+  return { t: Date.now(), quando: sbAgora(), nome: String(nome || '').replace(/\s+/g, ' ').trim().slice(0, 60), txt: V.txt, modelo: SB.modelo, total: R.total, ok: R.ok,
+    snap: clone({ valor: SB.valor, fonte: SB.fonte, ano: SB.ano, coops: SB.coops, ativs: SB.ativs, parts: SB.parts }),
+    L: R.L.map(l => ({ q: l.c.q, f: l.c.f, h: Math.round(l.h * 100) / 100, w: Math.round(l.w * 100) / 100, v: l.v })) }; }
+function sbResumoTxt(o){ const M = sbModeloDe(o.modelo), soma = o.L.reduce((s, l) => s + Math.round(l.v * 100), 0) / 100;
+  return '*Divisão das sobras — ' + (o.nome ? o.nome + ' — ' : '') + 'simulação de ' + o.quando + '*\n'
+    + 'Valor a dividir: ' + R2(o.total) + ' (' + o.txt + ')\n'
+    + 'Forma: ' + M[1] + ' ' + M[2].toLowerCase() + '\n\n'
+    + o.L.map(l => '• ' + l.q + (l.f ? ' (' + l.f + ')' : '') + ': *' + R2(l.v) + '*' + (o.modelo === 'igual' ? '' : ' — ' + sbH(l.h) + ' h' + (o.modelo === 'pontos' ? ', ' + fN(l.w) + ' pontos × horas' : ''))).join('\n')
+    + '\n\nTotal: ' + R2(soma) + '\n'
+    + 'É uma simulação: quem decide a divisão das sobras é a assembleia (Lei 5.764/71, art. 44, II).\n'
+    + 'Feita na ferramenta «Quanto custa o nosso peixe?» — nossopeixe.github.io'; }
+function sbGuardar(){ const el = HAS_DOM && document.getElementById('sob-nome'), o = sbFoto(el ? el.value : '');
+  if(!o.ok){ COM.sbAviso = '⚠️ Ainda não há divisão para salvar: confiram o valor (passo 1), a lista de quem trabalha e as horas.'; desenharResultados(); return; }
+  SB.hist.unshift(o); SB.hist = SB.hist.slice(0, SB_LIM.hist); sbSalva(); COM.aberto['sob-hist'] = true;
+  COM.sbAviso = '💾 Simulação salva neste aparelho (' + SB.hist.length + (SB.hist.length > 1 ? ' salvas' : ' salva') + '). Ela está em «Simulações salvas», mais abaixo.'; desenharResultados(); }
+function sbHistAbre(t){ const e = SB.hist.find(x => x.t === t); if(!e || !e.snap) return;
+  const h = SB.hist; SB = sbNormaliza(Object.assign({}, e.snap, { modelo: e.modelo, hist: [] })); SB.hist = h;
+  COM.sbConfirma = null; delete COM.erro['sob-valor']; sbSalva();
+  COM.sbAviso = '📂 Simulação de ' + esc(e.quando) + (e.nome ? ' («' + esc(e.nome) + '»)' : '') + ' aberta: as listas, o valor e a forma de dividir voltaram para a tela.';
+  desenharTela(); const r = HAS_DOM && document.getElementById('rgResultado'); if(r) r.scrollIntoView({ block: 'start' }); }
+function sbHistTira(t){ const chave = 'h' + t;
+  if(COM.sbConfirma !== chave){ COM.sbConfirma = chave; desenharResultados(); return; }
+  SB.hist = SB.hist.filter(e => e.t !== t); COM.sbConfirma = null; sbSalva(); desenharResultados(); }
+function sbCopiaTxt(t){
+  const ok = () => { COM.sbAviso = '✅ Copiado. Agora é só colar no grupo.'; desenharResultados(); };
+  const velho = () => { try { const a = document.createElement('textarea'); a.value = t; a.setAttribute('readonly', ''); a.style.position = 'fixed'; a.style.opacity = '0';
+      document.body.appendChild(a); a.select(); const r = document.execCommand('copy'); a.remove(); if(!r) throw 0; ok(); }
+    catch(e){ COM.sbAviso = '⚠️ Não deu para copiar sozinho. Usem «Mandar no WhatsApp» ou a planilha.'; desenharResultados(); } };
+  if(navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(t).then(ok, velho); else velho(); }
+function sbCopia(t){ const o = t ? SB.hist.find(e => e.t === t) : sbFoto(); if(o) sbCopiaTxt(sbResumoTxt(o)); }
+function sbWhats(){ window.open('https://wa.me/?text=' + encodeURIComponent(sbResumoTxt(sbFoto())), '_blank', 'noopener'); }
+function sbPlanilha(){
+  const V = sbValor(), R = sbTres(V.v), n = x => String(Math.round(x * 100) / 100).replace('.', ','), q = s => '"' + String(s).replace(/"/g, '""') + '"';
+  const L = [['Quem (nº de matrícula ou apelido)', 'Função', 'Total de horas', 'Pontos × horas', 'Igual para todos (R$)', 'Pelas horas trabalhadas (R$)', 'Pelas horas e pelos pontos (R$)']];
+  R.igual.L.forEach((l, i) => L.push([l.c.q, l.c.f, n(l.h), n(l.w), n(l.v), n(R.horas.L[i].v), n(R.pontos.L[i].v)]));
+  L.push(['Total', '', n(R.igual.H), n(R.igual.W), n(R.igual.total), n(R.horas.total), n(R.pontos.total)]);
+  L.push([]); L.push(['Valor a dividir (R$)', n(V.v), V.txt]); L.push(['Forma escolhida na tela', sbModeloDe(SB.modelo)[2]]); L.push(['Simulação de', sbAgora()]);
+  L.push(['É uma simulação: quem decide a divisão das sobras é a assembleia (Lei 5.764/71, art. 44, II).']);
+  const csv = '﻿' + L.map(r => r.map(q).join(';')).join('\r\n') + '\r\n';
+  try { const b = new Blob([csv], { type: 'text/csv;charset=utf-8' }), a = document.createElement('a');
+    a.href = URL.createObjectURL(b); a.download = 'divisao-das-sobras-' + hojeTxt().split('/').reverse().join('-') + '.csv'; document.body.appendChild(a); a.click();
+    setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 800);
+    COM.sbAviso = '⬇️ Planilha baixada, com as três formas lado a lado. Abre no Excel e no Google Planilhas.'; }
+  catch(e){ COM.sbAviso = '⚠️ O navegador não deixou baixar. Tentem pelo computador.'; }
+  desenharResultados(); }
 
 /* ---------- a tela ---------- */
-function sbrAtivCel(r, i, n){
-  const L = sbrAtivLista(COM.sbrUn), idx = L.findIndex(a => a[0] === r.ativ), outra = idx < 0;
-  return '<select class="sel" style="min-width:10rem" aria-label="Atividade, linha ' + n + '" onchange="sbrAtiv(' + i + ',this.value)">'
-    + L.map((a, k) => '<option value="' + k + '"' + (k === idx ? ' selected' : '') + '>' + esc(a[0]) + ' (' + a[1] + ' pts)</option>').join('')
-    + '<option value="o"' + (outra ? ' selected' : '') + '>Outra (digitar)</option></select>'
-    + (outra ? '<input class="inp" style="min-width:10rem;margin-top:4px" value="' + esc(r.ativ) + '" maxlength="30" aria-label="Nome da outra atividade, linha ' + n + '" onchange="sbrEdita(' + i + ',\'ativ\',this.value)">' : ''); }
-
 function telaSobras(){
-  const av = COM.sbrAviso; COM.sbrAviso = null;
-  const aviso = av ? '<p class="cad-aviso" role="status">' + av + '</p>' : '';
-  const d = sbrDados(COM.sbrUn), V = d.valor, L = d.linhas, B = d.barco, T = sbrTudo(d, V);
-  const sem = L.filter(r => !String(r.cod || '').trim()).length;
-  const semB = B.linhas.filter(r => !String(r.cod || '').trim()).length;
-  const lista = T.lista;
-  const somaA = lista.reduce((s, o) => s + o.A, 0), somaB = lista.reduce((s, o) => s + o.B, 0), somaC = lista.reduce((s, o) => s + o.C, 0);
-  let h = cabecalho('💰', 'Sobras', 'Simulação da divisão das sobras anuais de cada tipologia, em três modelos: <b>A</b> igualitário, <b>B</b> por participação e <b>C</b> ponderado (pontos × dias × horas). Escolham a atividade de cada participação na lista; o barco entra à parte. Base: o princípio da participação econômica dos membros e a Lei 5.764/71. Usem um código por cooperado, nunca o nome. Tudo fica só neste aparelho.', 'cab-sobras');
+  const V = sbValor();
+  let h = cabecalho('🤝', 'Divisão das sobras entre quem trabalha', 'Quanto cada cooperado recebe das ' + T('sobras', 'sobras') + ', conforme a forma de dividir: <b>igual para todos</b>, <b>pelas horas trabalhadas</b> ou <b>pelas horas e pelos pontos de cada atividade</b>. Os nomes não entram: usem o nº de matrícula ou um apelido. Tudo fica guardado só neste aparelho.', 'cab-sob',
+    'Divisão das sobras entre quem trabalha. Quanto cada cooperado recebe das sobras, conforme a forma de dividir: igual para todos, pelas horas trabalhadas ou pelas horas e pelos pontos de cada atividade. Os nomes não entram: usem o número de matrícula ou um apelido.');
+  h += passos(['Digitem o valor a dividir ou tragam as sobras de uma aba.', 'Anotem quem trabalha, as atividades com os pontos e as horas de cada um no mês.', 'Escolham a forma de dividir, comparem as três e salvem a simulação.']);
+  h += guiaAba('sobras');
+  h += '<section class="painel" aria-label="A conta da divisão"><h3><span class="ic" aria-hidden="true">🧮</span>A conta da divisão</h3>';
+  h += '<div class="ctl" id="sob-valor"><div class="rot"><span class="n">1</span>💰 Quanto vai ser dividido?</div>'
+    + passo('sob-valor', { nome: 'Valor a dividir', get: () => sbValor().v, set: v => { SB.valor = v; SB.fonte = null; COM.sbConfirma = null; sbSalva(); }, step: 500, min: 0, max: 1e9, dec: 2, pre: 'R$' })
+    + '<p class="dica">De onde vem: <b>' + esc(V.txt) + '</b>.' + (V.F && V.bruto < 0 ? ' <span class="neg">Esta unidade fecha o mês no vermelho: não há sobras.</span>' : '') + '</p>'
+    + '<p class="sob-sub">Ou tragam as sobras de uma aba — o valor acompanha o que estiver escolhido nela:</p><div class="botoes sob-fontes">'
+    + SB_FONTES.map(un => { const F = sbFonteCalc(un), G = ABAS_GUIA[un], liq = F.liq > 0 ? F.v / F.liq : null;
+        return '<button type="button" class="op sob-op" aria-pressed="' + (SB.fonte === un) + '" onclick="sbFonte(\'' + un + '\')"><span class="e" aria-hidden="true">' + G[0] + '</span><span><b>' + esc(sbFonteRot(un).slice(G[0].length + 1)) + '</b><small>'
+          + (F.v > 0 ? (F.parte ? 'parte de quem trabalha: ' + R0(F.v) + (liq != null ? ' (' + fP(liq, 0) + ' das sobras líquidas)' : '') : 'sobras líquidas: ' + R0(F.v)) + ' por mês' : '🔴 não sobra no mês')
+          + ' · ' + (F.nf ? fN(F.nf) + ' famílias' : 'nº de cooperados a confirmar') + '</small></span></button>'; }).join('')
+    + '</div>' + (SB.fonte ? '<div class="botoes" style="margin-top:10px">'
+      + [[false, '📅', 'Do mês'], [true, '🗓️', 'Do ano (12 meses)']].map(([b, ic, t]) => '<button type="button" class="op" aria-pressed="' + (SB.ano === b) + '" onclick="sbAno(' + b + ')"><span class="e" aria-hidden="true">' + ic + '</span>' + t + '</button>').join('') + '</div>' : '')
+    + '<p class="dica">As sobras líquidas das abas já tiraram 10% do ' + T('reserva', 'Fundo de Reserva') + ' e 5% do ' + T('fates', 'FATES') + ' (Lei 5.764/71, art. 28). Na UBP-M, vem só a parte de quem trabalha na unidade, pela divisão escolhida na aba Beneficiamento. A ' + T('retirada', 'retirada') + ' do mês já está nos gastos: as sobras são a mais.</p></div>';
+  h += '<div class="ctl" id="sob-modelo"><div class="rot"><span class="n">2</span>⚖️ Como dividir?</div><div class="botoes">'
+    + SB_MODELOS.map(([k, ic, t, d]) => '<button type="button" class="op sob-op" aria-pressed="' + (SB.modelo === k) + '" onclick="sbModelo(\'' + k + '\')"><span class="e" aria-hidden="true">' + ic + '</span><span><b>' + t + '</b><small>' + d + '</small></span></button>').join('')
+    + '</div><p class="dica">A forma de dividir é decidida pela assembleia. Sem decisão, a lei manda dividir na proporção do que cada um trabalhou (Lei 5.764/71, art. 4º, VII) — veja «O que diz a lei», no fim da tela.</p></div>';
+  h += '</section><div id="rgResultado"></div>';
+  h += secao('sob-coops', '👥', 'Quem trabalha — ' + SB.coops.length + (SB.coops.length === 1 ? ' cooperado' : ' cooperados'), null, '<div id="sob-coops-c">' + sbCoopsHTML() + '</div>', false);
+  h += secao('sob-ativs', '⭐', 'As atividades e os pontos — ' + SB.ativs.length + (SB.ativs.length === 1 ? ' atividade' : ' atividades'), null, '<div id="sob-ativs-c">' + sbAtivsHTML() + '</div>', false);
+  h += secao('sob-parts', '🗓️', 'Quem fez o quê no mês — ' + SB.parts.length + (SB.parts.length === 1 ? ' registro' : ' registros') + ' de horas', null, '<div id="sob-parts-c">' + sbPartsHTML() + '</div>', false);
+  return h + '<div id="rgSecoes"></div>'; }
 
-  h += '<section class="painel" aria-label="Tipologia e valor"><h3><span class="ic" aria-hidden="true">🏷️</span>Tipologia e valor a dividir</h3>'
-    + '<div class="cad-lista">'
-    + '<label class="cad-campo"><span>Tipologia</span><select class="sel" id="sbr-tipo" onchange="sbrEscolhe(this.value)">'
-    + CC_TIPOS.map(([k, ic, sig, nome]) => '<option value="' + k + '"' + (k === COM.sbrUn ? ' selected' : '') + '>' + ic + ' ' + sig + ' — ' + esc(nome) + '</option>').join('')
-    + '</select></label>'
-    + '<label class="cad-campo"><span>Valor total a dividir (R$)</span><input type="text" inputmode="decimal" class="inp" id="sbr-valor" value="' + (V ? fN(V, 2) : '') + '" placeholder="0,00" onfocus="this.select()" onchange="sbrValor(this.value)" aria-label="Valor total a dividir"></label>'
-    + '</div>'
-    + '<p style="margin:8px 0 0">É a sobra líquida que a equipe quer dividir nesta tipologia no período (a sobra que a assembleia decidiu distribuir, depois dos fundos obrigatórios: Lei 5.764/71, art. 28).</p></section>';
+function sbCoopsHTML(){
+  return '<p class="dica" style="margin:0 0 6px">Uma linha para cada cooperado: o <b>nº de matrícula ou um apelido</b> e a função. <b>Sem nome completo, sem CPF e sem telefone</b> — os nomes não entram neste site (aba Cadastro de cooperados).</p>'
+    + (SB.coops.length ? '<div class="rolagem"><table class="tab sob-tab"><thead><tr><th>Quem</th><th>Função</th><th class="v">Total de horas</th><th><span class="oculto">Tirar</span></th></tr></thead><tbody>'
+      + SB.coops.map(c => '<tr><td data-r="Quem"><input class="inp sob-txt" type="text" id="sob-q-' + c.id + '" maxlength="30" value="' + esc(c.q) + '" aria-label="Nº de matrícula ou apelido" onchange="sbTxt(this,\'c\',' + c.id + ',\'q\')"></td>'
+        + '<td data-r="Função"><input class="inp sob-txt sob-larga" type="text" maxlength="40" value="' + esc(c.f) + '" placeholder="ex.: filetadora" aria-label="Função de ' + esc(c.q) + '" onchange="sbTxt(this,\'c\',' + c.id + ',\'f\')"></td>'
+        + '<td class="v num" data-r="Total de horas" id="sob-ch-' + c.id + '">' + sbH(sbHorasCoop(c.id)) + '</td><td class="sob-tira">' + sbBtnTira('c', c.id, c.q) + '</td></tr>').join('') + '</tbody></table></div>'
+      : '<p><b>Ninguém na lista ainda.</b></p>')
+    + (COM.sbConfirma && COM.sbConfirma[0] === 'c' ? '<p class="cad-aviso" role="status">⚠️ Tirar o cooperado tira também os registros de horas dele.</p>' : '')
+    + '<div class="botoes" style="margin-top:10px"><button type="button" class="btn" onclick="sbNovo(\'c\')">➕ Novo cooperado</button></div>'; }
+function sbAtivsHTML(){
+  return '<p class="dica" style="margin:0 0 6px">Cada atividade tem os seus <b>pontos</b>: mais pontos para o trabalho mais pesado, de mais risco ou de mais responsabilidade. Os pontos só contam na forma «pelas horas e pelos pontos». Quem decide os pontos é a assembleia — e eles vão para o regimento interno.</p>'
+    + (SB.ativs.length ? '<div class="rolagem"><table class="tab sob-tab"><thead><tr><th>Atividade</th><th class="v">Pontos</th><th class="v">Total de horas</th><th><span class="oculto">Tirar</span></th></tr></thead><tbody>'
+      + SB.ativs.map(a => '<tr><td class="larga" data-r="Atividade"><input class="inp sob-txt sob-larga" type="text" id="sob-an-' + a.id + '" maxlength="50" value="' + esc(a.n) + '" aria-label="Nome da atividade" onchange="sbTxt(this,\'a\',' + a.id + ',\'n\')"></td>'
+        + '<td class="v" data-r="Pontos"><input class="inp sob-num" type="text" inputmode="decimal" value="' + sbIn(a.p) + '" aria-label="Pontos de ' + esc(a.n) + '" onchange="sbNum(this,\'a\',' + a.id + ',\'p\')" onfocus="this.select()"></td>'
+        + '<td class="v num" data-r="Total de horas" id="sob-ah-' + a.id + '">' + sbH(sbHorasAtiv(a.id)) + '</td><td class="sob-tira">' + sbBtnTira('a', a.id, a.n) + '</td></tr>').join('') + '</tbody></table></div>'
+      : '<p><b>Nenhuma atividade ainda.</b></p>')
+    + (COM.sbConfirma && COM.sbConfirma[0] === 'a' ? '<p class="cad-aviso" role="status">⚠️ Tirar a atividade tira também os registros de horas dela.</p>' : '')
+    + '<div class="botoes" style="margin-top:10px"><button type="button" class="btn" onclick="sbNovo(\'a\')">➕ Nova atividade</button></div>'; }
+function sbPartsHTML(){
+  if(!SB.coops.length || !SB.ativs.length) return '<p><b>Primeiro, a lista de quem trabalha e a das atividades.</b> Depois, aqui, as horas de cada um.</p>';
+  const A = {}; SB.ativs.forEach(a => { A[a.id] = a; });
+  const R = sbConta(0, 'pontos');
+  const sel = (p, campo, L, rot, txt) => '<select class="sel sob-sel" onchange="sbSel(this,' + p.id + ',\'' + campo + '\')" aria-label="' + rot + '">'
+    + (L.some(x => x.id === p[campo]) ? '' : '<option value="0" selected>— escolha —</option>')
+    + L.map(x => '<option value="' + x.id + '"' + (x.id === p[campo] ? ' selected' : '') + '>' + esc(txt(x)) + '</option>').join('') + '</select>';
+  const num = (p, campo, rot) => '<input class="inp sob-num" type="text" inputmode="decimal" id="sob-in-' + campo + '-' + p.id + '" value="' + sbIn(p[campo]) + '" aria-label="' + rot + '" onchange="sbNum(this,\'p\',' + p.id + ',\'' + campo + '\')" onfocus="this.select()">';
+  return '<p class="dica" style="margin:0 0 6px">Uma linha para cada pessoa em cada atividade: os <b>dias trabalhados</b> e as <b>horas por dia</b>. A ferramenta faz o total. Quem trabalhou em duas atividades tem duas linhas. Usem o mesmo período para todos — o mês (ou o ano, se o valor for do ano).</p>'
+    + (SB.parts.length ? '<div class="rolagem"><table class="tab sob-tab"><thead><tr><th>Quem</th><th>Atividade</th><th class="v">Dias trabalhados</th><th class="v">Horas por dia</th><th class="v">Total de horas</th><th class="v">Pontos × horas</th><th><span class="oculto">Tirar</span></th></tr></thead><tbody>'
+      + SB.parts.map(p => { const a = A[p.a], hh = p.d * p.h;
+          return '<tr><td class="larga" data-r="Quem">' + sel(p, 'c', SB.coops, 'Quem', c => c.q + (c.f ? ' — ' + c.f : '')) + '</td><td class="larga" data-r="Atividade">' + sel(p, 'a', SB.ativs, 'Atividade', x => x.n + ' (' + sbIn(x.p) + ' pts)') + '</td>'
+            + '<td class="v" data-r="Dias trabalhados">' + num(p, 'd', 'Dias trabalhados') + '</td><td class="v" data-r="Horas por dia">' + num(p, 'h', 'Horas por dia') + '</td>'
+            + '<td class="v num" data-r="Total de horas" id="sob-ph-' + p.id + '">' + sbH(hh) + '</td><td class="v num" data-r="Pontos × horas" id="sob-pw-' + p.id + '">' + (a ? fN(hh * a.p) : '—') + '</td><td class="sob-tira">' + sbBtnTira('p', p.id, 'este registro') + '</td></tr>'; }).join('')
+      + '<tr class="tot"><td colspan="4">Total</td><td class="v num" data-r="Total de horas" id="sob-pt-h">' + sbH(R.H) + '</td><td class="v num" data-r="Pontos × horas" id="sob-pt-w">' + fN(R.W) + '</td><td class="sob-tira"></td></tr></tbody></table></div>'
+      : '<p><b>Nenhum registro de horas ainda.</b></p>')
+    + '<div class="botoes" style="margin-top:10px"><button type="button" class="btn" onclick="sbNovo(\'p\')">➕ Novo registro de horas</button></div>'; }
 
-  h += '<section class="painel" aria-label="Participações"><h3><span class="ic" aria-hidden="true">🧾</span>Participações</h3>'
-    + '<p style="margin:6px 0 10px">Uma linha por participação: o código do cooperado, a atividade (escolham na lista; os pontos vêm preenchidos e podem ser mudados), os dias trabalhados e as horas por dia. No modelo C, cada participação vale pontos × dias × horas.</p>';
-  if(L.length){
-    h += '<div class="rolagem"><table class="tab tab-lin"><thead><tr><th>Código</th><th>Atividade</th><th class="v">Pontos</th><th class="v">Dias</th><th class="v">Horas/dia</th><th class="v">Pts × dias × h</th><th><span class="sr">Apagar</span></th></tr></thead><tbody>'
-      + L.map((r, i) => { const n = i + 1;
-          return '<tr><td><input class="inp" style="min-width:5.5rem" value="' + esc(r.cod) + '" maxlength="30" aria-label="Código do cooperado, linha ' + n + '" onchange="sbrEdita(' + i + ',\'cod\',this.value)"></td>'
-          + '<td>' + sbrAtivCel(r, i, n) + '</td>'
-          + '<td class="v"><input class="inp" style="width:5rem" inputmode="decimal" value="' + r.pts + '" aria-label="Pontos, linha ' + n + '" onfocus="this.select()" onchange="sbrEdita(' + i + ',\'pts\',this.value)"></td>'
-          + '<td class="v"><input class="inp" style="width:4.5rem" inputmode="decimal" value="' + r.dias + '" aria-label="Dias, linha ' + n + '" onfocus="this.select()" onchange="sbrEdita(' + i + ',\'dias\',this.value)"></td>'
-          + '<td class="v"><input class="inp" style="width:4.5rem" inputmode="decimal" value="' + r.horas + '" aria-label="Horas por dia, linha ' + n + '" onfocus="this.select()" onchange="sbrEdita(' + i + ',\'horas\',this.value)"></td>'
-          + '<td class="v">' + fN(r.pts * r.dias * r.horas, 0) + '</td>'
-          + '<td><button type="button" class="btn claro" aria-label="Apagar a linha ' + n + '" onclick="sbrRemove(' + i + ')">🗑️</button></td></tr>'; }).join('')
-      + '</tbody></table></div>';
-  } else h += '<p>Nenhuma participação ainda.</p>';
-  h += '<div class="botoes" style="margin-top:10px"><button type="button" class="btn" onclick="sbrAdd()">➕ Adicionar participação</button></div>';
-  if(sem) h += nota('atencao', '🔴', '<b>' + sem + (sem === 1 ? ' linha está' : ' linhas estão') + ' sem código.</b> Essa linha não entra na divisão até ter um código.');
-  h += '</section>';
-
-  h += '<section class="painel" aria-label="Barco fornecedor"><h3><span class="ic" aria-hidden="true">🚤</span>Barco (fornecedor)</h3>'
-    + '<p style="margin:6px 0 10px">Quem fornece o barco e a tripulação recebe uma parte da sobra <b>só se for cooperado</b>. O dono recebe a sua parte; o dono que também trabalha recebe a parte do dono <i>e</i> a da tripulação; o tripulante cooperado recebe pela tripulação, na proporção de dias × horas. Quem não é cooperado não recebe nada, e a parte dele volta para os demais cooperados.</p>'
-    + '<div class="cad-lista">'
-    + '<label class="cad-campo"><span>Parte do valor para o barco (%)</span><input type="text" inputmode="decimal" class="inp" value="' + fN(B.pct, 0) + '" onfocus="this.select()" onchange="sbrBarCfg(\'pct\',this.value)" aria-label="Parte do valor para o barco, em porcento"></label>'
-    + '<label class="cad-campo"><span>Dessa parte, a do dono (%)</span><input type="text" inputmode="decimal" class="inp" value="' + fN(B.dono, 0) + '" onfocus="this.select()" onchange="sbrBarCfg(\'dono\',this.value)" aria-label="Parte do dono do barco, em porcento da parte do barco"></label>'
-    + '</div>'
-    + '<p style="margin:8px 0 0">Para o barco: <b>R$ ' + fN(T.Bp.pool, 2) + '</b> (dono R$ ' + fN(T.Bp.parteDono, 2) + ', tripulação R$ ' + fN(T.Bp.parteTrip, 2) + '). Esses valores são propostas iniciais, para a equipe decidir em assembleia.</p>';
-  if(B.linhas.length){
-    h += '<div class="rolagem"><table class="tab tab-lin"><thead><tr><th>Código</th><th>Função no barco</th><th>Cooperado?</th><th class="v">Dias</th><th class="v">Horas/dia</th><th class="v">Dias × h</th><th><span class="sr">Apagar</span></th></tr></thead><tbody>'
-      + B.linhas.map((r, i) => { const n = i + 1;
-          return '<tr><td><input class="inp" style="min-width:5.5rem" value="' + esc(r.cod) + '" maxlength="30" aria-label="Código do barco, linha ' + n + '" onchange="sbrBarEdita(' + i + ',\'cod\',this.value)"></td>'
-          + '<td><select class="sel" style="min-width:10.5rem" aria-label="Função no barco, linha ' + n + '" onchange="sbrBarEdita(' + i + ',\'funcao\',this.value)">'
-          + SBR_FUNCOES.map(([k, t]) => '<option value="' + k + '"' + (r.funcao === k ? ' selected' : '') + '>' + t + '</option>').join('') + '</select></td>'
-          + '<td><select class="sel" style="min-width:9rem" aria-label="É cooperado, linha ' + n + '" onchange="sbrBarEdita(' + i + ',\'coop\',this.value)"><option value="sim"' + (r.coop ? ' selected' : '') + '>Sim</option><option value="nao"' + (!r.coop ? ' selected' : '') + '>Não (não recebe)</option></select></td>'
-          + '<td class="v"><input class="inp" style="width:4.5rem" inputmode="decimal" value="' + r.dias + '" aria-label="Dias no barco, linha ' + n + '" onfocus="this.select()" onchange="sbrBarEdita(' + i + ',\'dias\',this.value)"></td>'
-          + '<td class="v"><input class="inp" style="width:4.5rem" inputmode="decimal" value="' + r.horas + '" aria-label="Horas por dia no barco, linha ' + n + '" onfocus="this.select()" onchange="sbrBarEdita(' + i + ',\'horas\',this.value)"></td>'
-          + '<td class="v">' + fN((r.dias || 0) * (r.horas || 0), 0) + '</td>'
-          + '<td><button type="button" class="btn claro" aria-label="Apagar a linha do barco ' + n + '" onclick="sbrBarRemove(' + i + ')">🗑️</button></td></tr>'; }).join('')
-      + '</tbody></table></div>';
-  } else h += '<p>Nenhum dono nem tripulante lançado ainda.</p>';
-  h += '<div class="botoes" style="margin-top:10px"><button type="button" class="btn" onclick="sbrBarAdd()">➕ Adicionar pessoa do barco</button></div>';
-  if(semB) h += nota('atencao', '🔴', '<b>' + semB + (semB === 1 ? ' pessoa do barco está' : ' pessoas do barco estão') + ' sem código.</b> Essa linha não recebe até ter um código.');
-  h += '</section>';
-
-  h += '<section class="painel" aria-label="Resultado"><h3><span class="ic" aria-hidden="true">📊</span>Resultado</h3>';
-  if(!lista.length){
-    h += '<p>Coloquem as participações com um código para ver a divisão nos três modelos.</p>';
-  } else {
-    h += '<div class="cartoes">'
-      + cartao('👥', 'Cooperados', String(lista.length), T.totN + (T.totN === 1 ? ' participação' : ' participações') + ' fora do barco')
-      + cartao('💰', 'Valor a dividir', 'R$ ' + fN(V, 2), 'mesmo total nos três modelos')
-      + cartao('🚤', 'Parte do barco', 'R$ ' + fN(T.Bp.usado, 2), 'só para quem é cooperado') + '</div>';
-    h += '<div class="rolagem"><table class="tab tab-lin"><thead><tr><th>Código</th><th class="v">Partic.</th><th class="v">Barco</th><th class="v">A · igualitário</th><th class="v">B · por participação</th><th class="v">C · ponderado</th></tr></thead><tbody>'
-      + lista.map(o => '<tr><td>' + esc(o.cod) + '</td><td class="v">' + o.n + '</td><td class="v">R$ ' + fN(o.bar, 2) + '</td><td class="v">R$ ' + fN(o.A, 2) + '</td><td class="v">R$ ' + fN(o.B, 2) + '</td><td class="v"><b>R$ ' + fN(o.C, 2) + '</b></td></tr>').join('')
-      + '<tr class="tot"><td>Total</td><td class="v">' + T.totN + '</td><td class="v">R$ ' + fN(T.Bp.usado, 2) + '</td><td class="v">R$ ' + fN(somaA, 2) + '</td><td class="v">R$ ' + fN(somaB, 2) + '</td><td class="v">R$ ' + fN(somaC, 2) + '</td></tr>'
-      + '</tbody></table></div>';
-    const confere = Math.abs(somaA - V) < 0.01 && Math.abs(somaB - V) < 0.01 && Math.abs(somaC - V) < 0.01;
-    h += '<p class="dica">' + (confere ? '✅ Conferido: nos três modelos, a soma dá exatamente o valor a dividir.' : (T.semDestino ? '⚠️ Sobra sem destino: há valor, mas nenhum cooperado fora do barco. Lancem as participações.' : '⚠️ Falta valor a dividir: informem o total acima.')) + '</p>';
-  }
-  h += nota('', '📘', '<b>Os três modelos.</b> <b>A · igualitário:</b> o valor é dividido igualmente entre os cooperados, não importa quanto cada um participou. '
-    + '<b>B · por participação:</b> proporcional ao número de participações, sem olhar pontos, dias nem horas. '
-    + '<b>C · ponderado:</b> proporcional à soma de pontos × dias × horas de cada cooperado: mede esforço e complexidade. '
-    + 'O barco é a mesma parte nos três modelos e sai antes da divisão.')
-    + nota('', '📰', '<b>Referência.</b> Os sete princípios do cooperativismo (OCB) — entre eles a <b>participação econômica dos membros</b>, que é a base da devolução das sobras a quem opera com a cooperativa — estão explicados para a aquicultura em: '
-    + 'AFONSO, A. M. <a href="https://www.aquaculturebrasil.com/coluna/222/o-cooperativismo-pode-auxiliar-a-cadeia-ranicola" target="_blank" rel="noopener"><i>O cooperativismo pode auxiliar a cadeia ranícola?</i></a> Aquaculture Brasil, 26 jan. 2022. '
-    + 'Os modelos A, B e C e os pontos das atividades não vêm do artigo: são propostas para a equipe discutir.') + '</section>';
-
-  h += '<section class="painel" aria-label="Simulações salvas"><h3><span class="ic" aria-hidden="true">💾</span>Simulações salvas</h3>'
-    + '<div class="botoes" style="margin:0 0 10px"><input type="text" class="inp" id="sbr-nome" maxlength="60" placeholder="Nome da simulação, ex.: Sobras 2026 com pesos novos" aria-label="Nome da simulação" style="flex:1;min-width:14rem">'
-    + '<button type="button" class="btn" onclick="sbrSalvarSim()">💾 Salvar esta simulação</button></div>';
-  const salvas = SBR.salvas || [];
-  if(!salvas.length) h += '<p>Nenhuma simulação salva ainda.</p>';
-  else h += '<div class="cad-lista">' + salvas.map((s, i) => '<div class="cad-item"><h5>' + esc(s.nome) + '<small>' + (CC_TIPOS.find(t => t[0] === s.un) || ['', '', s.un, ''])[2] + ' · ' + esc(s.data) + ' · R$ ' + fN(s.valor, 2) + ' · ' + s.linhas.length + (s.linhas.length === 1 ? ' participação' : ' participações') + '</small></h5>'
-    + '<div class="botoes"><button type="button" class="btn claro" onclick="sbrAbre(' + i + ')">📂 Abrir</button><button type="button" class="btn claro" onclick="sbrApagaSim(' + i + ')">🗑️ Apagar</button></div></div>').join('') + '</div>';
-  h += '</section>';
-
-  h += '<div class="botoes" style="margin-top:12px"><button type="button" class="btn claro" onclick="sbrLimpa()">' + (COM.sbrLimpar ? '⚠️ Toque de novo para apagar esta tipologia' : '🧹 Apagar esta tipologia') + '</button></div>' + aviso;
-
-  h += nota('lei', '⚖️', '<b>Quem escolhe o modelo é a assembleia.</b> A lei manda devolver as sobras «proporcionalmente às operações realizadas pelo associado», salvo deliberação em contrário da assembleia geral (Lei 5.764/71, art. 4º, VII). '
-    + 'Por isso, o modelo B é o que mais se aproxima da regra; o A e o C precisam de aprovação expressa em assembleia (art. 44, II), e a decisão vai para o estatuto ou para a ata. '
-    + '<b>Atenção:</b> participação não é o mesmo que operação. Se a operação for a entrega de peixe, o correto é medir o volume entregue, como já faz a aba de cada unidade. '
-    + '<b>O barco</b> é um contrato de fornecimento ou de arrendamento, não uma operação do cooperado: pagá-lo com a sobra precisa estar previsto no estatuto e aprovado em assembleia, e a equipe deve confirmar com o jurídico a relação com o dono e a tripulação e os encargos trabalhistas e previdenciários. '
-    + 'Esta aba só simula: não aprova nada.');
+function resultadoSobras(){
+  const V = sbValor(), M = sbModeloDe(SB.modelo), R = sbConta(V.v, SB.modelo), T3 = sbTres(V.v), nC = SB.coops.length;
+  const av = COM.sbAviso; COM.sbAviso = null;
+  const semH = R.L.filter(l => !(l.h > 0)).map(l => l.c.q), lst = a => a.length > 6 ? a.slice(0, 6).join(', ') + ' e mais ' + (a.length - 6) : lista(a.slice());
+  let ver, sub = '', fala, sinal = '🤝';
+  if(!(V.v > 0)){ sinal = '🔴'; ver = V.F && V.bruto < 0 ? 'A unidade escolhida fecha o mês no vermelho: não há sobras para dividir.' : 'Digitem o valor a dividir no passo 1 ou tragam as sobras de uma aba.';
+    sub = V.F && V.bruto < 0 ? 'Na cooperativa, a perda é coberta pelo Fundo de Reserva e, se ele não bastar, rateada entre os cooperados (Lei 5.764/71, art. 89).' : ''; fala = ver; }
+  else if(!nC){ sinal = '👥'; ver = 'Coloquem quem trabalha na lista «Quem trabalha», mais abaixo.'; fala = ver; }
+  else if(!R.ok){ sinal = '⏱️'; ver = 'Ninguém tem horas registradas: ' + (SB.modelo === 'horas' ? 'pelas horas' : 'pelas horas e pelos pontos') + ', não há como dividir.';
+    sub = 'Anotem as horas em «Quem fez o quê no mês» ou escolham «Igual para todos».'; fala = ver + ' ' + sub; }
+  else if(SB.modelo === 'igual'){ const vs = R.L.map(l => l.v), mn = Math.min(...vs), mx = Math.max(...vs);
+    ver = (mx - mn < 0.005 ? 'Cada um dos ' + nC + ' cooperados recebe ' + R2(mx) : 'Cada um dos ' + nC + ' cooperados recebe ' + R2(mn) + ' ou ' + R2(mx)) + '.';
+    sub = 'Igual para todos: ' + R2(V.v) + ' ÷ ' + nC + (mx - mn < 0.005 ? '' : ' — os centavos que sobram da divisão vão para os primeiros da lista, para a soma fechar') + '.';
+    fala = 'Igual para todos: cada um dos ' + nC + ' cooperados recebe ' + falaR(mx) + '.'; }
+  else { const hora = V.v / R.H, ph = V.v / R.W, top = R.L.slice().sort((a, b) => b.v - a.v)[0];
+    ver = SB.modelo === 'horas' ? 'Cada hora trabalhada vale ' + R2(hora) + '.' : 'Cada ponto × hora vale ' + R2(ph) + '.';
+    sub = SB.modelo === 'horas' ? R2(V.v) + ' ÷ ' + sbH(R.H) + ' horas de todos. Quem mais recebe: ' + esc(top.c.q) + ', com ' + R2(top.v) + '.'
+      : R2(V.v) + ' ÷ ' + fN(R.W) + ' pontos × horas de todos. Uma hora numa atividade de 10 pontos vale ' + R2(10 * ph) + '. Quem mais recebe: ' + esc(top.c.q) + ', com ' + R2(top.v) + '.';
+    fala = (SB.modelo === 'horas' ? 'Pelas horas trabalhadas, cada hora vale ' + falaR(hora) : 'Pelas horas e pelos pontos, cada ponto vezes hora vale ' + falaR(ph)) + '. Quem mais recebe é ' + top.c.q + ', com ' + falaR(top.v) + '.'; }
+  let h = '<section class="resultado" aria-label="Resultado da divisão"><div class="veredito"><span class="sinal" aria-hidden="true">' + sinal + '</span><div>' + ver
+    + '<small>' + M[1] + ' ' + M[2] + (sub ? ' · ' + sub : '') + '</small></div>' + ouvir('res-sob', fala) + '</div>';
+  const pos = R.L.filter(l => l.v > 0), mx = pos.length ? pos.reduce((a, b) => b.v > a.v ? b : a) : null, mn = pos.length ? pos.reduce((a, b) => b.v < a.v ? b : a) : null;
+  const Rc = v => v >= 100000 ? R0(v) : R2(v);   /* nos cartões, valor grande sem centavos (a tabela traz os centavos) */
+  h += '<div class="cartoes sob-cartoes">' + cartao('💰', 'Valor a dividir', Rc(V.v), esc(V.txt))
+    + cartao('👥', 'Quem recebe', R.ok ? R.nRec + ' de ' + nC : '—', R.ok && R.nRec < nC ? (nC - R.nRec) + ' sem horas registradas não recebem' : 'cooperados da lista', R.ok && R.nRec < nC ? 'amarelo' : '')
+    + cartao('🔝', 'Maior parte', mx && R.ok ? Rc(mx.v) : '—', mx && R.ok ? esc(mx.c.q) + (mx.c.f ? ' · ' + esc(mx.c.f) : '') : '')
+    + cartao('🔻', 'Menor parte', mn && R.ok ? Rc(mn.v) : '—', mn && R.ok ? esc(mn.c.q) + (mn.c.f ? ' · ' + esc(mn.c.f) : '') : '') + '</div>';
+  const pede = k => COM.sbConfirma === 'r' + k;
+  h += '<div class="botoes" id="sob-acoes" style="margin-top:14px"><input type="text" class="inp sob-nome" id="sob-nome" maxlength="60" placeholder="Nome da simulação (opcional)" aria-label="Nome da simulação, opcional">'
+    + '<button type="button" class="btn sob-salvar" onclick="sbGuardar()">💾 Salvar esta simulação</button>'
+    + '<button type="button" class="btn zap" onclick="sbWhats()">📲 Mandar no WhatsApp</button>'
+    + '<button type="button" class="btn claro" onclick="sbCopia()">📋 Copiar o resumo</button>'
+    + '<button type="button" class="btn claro" onclick="sbPlanilha()">⬇️ Planilha (Excel)</button>'
+    + '<button type="button" class="btn claro" onclick="sbRecomeca(\'exemplo\')">' + (pede('exemplo') ? '⚠️ Toque de novo para voltar ao exemplo' : '↺ Voltar ao exemplo') + '</button>'
+    + '<button type="button" class="btn claro" onclick="sbRecomeca(\'zero\')">' + (pede('zero') ? '⚠️ Toque de novo para apagar as listas' : '🧹 Limpar e começar do zero') + '</button></div>'
+    + (av ? '<p class="sob-aviso" role="status">' + av + '</p>' : '') + '</section>';
+  if(!nC) return h;
+  /* quanto cada um recebe */
+  const maxV = Math.max(0.01, ...R.L.map(l => l.v));
+  h += '<section class="painel" id="sob-tab" aria-label="Quanto cada um recebe"><h3><span class="ic" aria-hidden="true">📋</span>Quanto cada um recebe — ' + M[2].toLowerCase() + '</h3>'
+    + '<div class="rolagem"><table class="tab sob-res"><thead><tr><th>Quem</th><th class="v">Recebe</th><th class="v">Parte</th><th class="v">Total de horas</th><th class="v">Pontos × horas</th></tr></thead><tbody>'
+    + R.L.map(l => '<tr><td><b>' + esc(l.c.q) + '</b>' + (l.c.f ? '<small class="sob-fn">' + esc(l.c.f) + '</small>' : '') + '</td>'
+      + '<td class="v num"><b>' + R2(l.v) + '</b><span class="sob-barra" aria-hidden="true"><i style="width:' + (100 * l.v / maxV).toFixed(1) + '%"></i></span></td><td class="v num">' + (R.ok ? fP(R.total > 0 ? l.v / R.total : 0, 1) : '—') + '</td>'
+      + '<td class="v num">' + sbH(l.h) + '</td><td class="v num">' + fN(l.w) + '</td></tr>').join('')
+    + '<tr class="tot"><td>Total</td><td class="v num">' + R2(R.L.reduce((s, l) => s + Math.round(l.v * 100), 0) / 100) + '</td><td class="v num">' + (R.ok ? '100%' : '—') + '</td><td class="v num">' + sbH(R.H) + '</td><td class="v num">' + fN(R.W) + '</td></tr></tbody></table></div>';
+  if(R.ok && semH.length && SB.modelo !== 'igual') h += nota('atencao', '⚠️', '<b>' + esc(lst(semH)) + (semH.length > 1 ? ' não têm' : ' não tem') + ' horas registradas</b> e, ' + (SB.modelo === 'horas' ? 'pelas horas' : 'pelas horas e pelos pontos') + ', não ' + (semH.length > 1 ? 'recebem' : 'recebe') + ' nada. Confiram o registro antes de levar à assembleia.');
+  if(R.ok && semH.length && SB.modelo === 'igual') h += nota('atencao', '⚠️', 'Igual para todos: <b>' + esc(lst(semH)) + '</b> ' + (semH.length > 1 ? 'recebem' : 'recebe') + ' a mesma parte, mesmo sem horas registradas no mês.');
+  /* as três formas lado a lado */
+  const col = k => T3[k].ok;
+  h += '<h4 class="cad-sub" id="sob-comp">⚖️ As três formas lado a lado — para a assembleia comparar</h4>'
+    + '<div class="rolagem"><table class="tab sob-comp"><thead><tr><th>Quem</th>' + SB_MODELOS.map(([k, ic, t]) => '<th class="v' + (k === SB.modelo ? ' esc' : '') + '">' + ic + ' ' + t + '</th>').join('') + '</tr></thead><tbody>'
+    + T3.igual.L.map((l, i) => '<tr><td>' + esc(l.c.q) + '</td>' + SB_MODELOS.map(([k]) => '<td class="v num' + (k === SB.modelo ? ' esc' : '') + '">' + (col(k) ? R2(T3[k].L[i].v) : '—') + '</td>').join('') + '</tr>').join('')
+    + '<tr class="tot"><td>Total</td>' + SB_MODELOS.map(([k]) => '<td class="v num' + (k === SB.modelo ? ' esc' : '') + '">' + (col(k) ? R2(T3[k].total) : '—') + '</td>').join('') + '</tr></tbody></table></div>'
+    + '<p class="dica">Os centavos fecham: em cada coluna, a soma é o valor dividido. A coluna escolhida está marcada; toquem em outra forma, no passo 2, para trocar.</p></section>';
   return h; }
+
+function secoesSobras(){
+  const pede = t => COM.sbConfirma === 'h' + t;
+  let hist = SB.hist.length ? '<p class="dica" style="margin:0 0 6px">Guardadas só neste aparelho, da mais nova para a mais antiga (até ' + SB_LIM.hist + ').</p>'
+    + SB.hist.map(e => { const M = sbModeloDe(e.modelo);
+        return '<details class="mini sob-hist"><summary>' + (e.nome ? '🏷️ ' + esc(e.nome) + ' · ' : '') + '📅 ' + esc(e.quando) + ' · ' + R2(e.total) + ' · ' + M[1] + ' ' + M[2] + ' · ' + e.L.length + (e.L.length === 1 ? ' cooperado' : ' cooperados') + '</summary><div class="corpo-mini">'
+          + '<p>Valor a dividir: <b>' + R2(e.total) + '</b> — ' + esc(e.txt) + '.</p>'
+          + '<div class="rolagem"><table class="tab"><thead><tr><th>Quem</th><th>Função</th><th class="v">Total de horas</th><th class="v">Recebe</th></tr></thead><tbody>'
+          + e.L.map(l => '<tr><td>' + esc(l.q) + '</td><td>' + esc(l.f || '') + '</td><td class="v num">' + sbH(+l.h || 0) + '</td><td class="v num"><b>' + R2(+l.v || 0) + '</b></td></tr>').join('') + '</tbody></table></div>'
+          + '<div class="botoes" style="margin-top:8px">' + (e.snap ? '<button type="button" class="btn" onclick="sbHistAbre(' + e.t + ')">📂 Abrir esta na tela</button>' : '')
+          + '<button type="button" class="btn claro" onclick="sbCopia(' + e.t + ')">📋 Copiar esta</button>'
+          + '<button type="button" class="btn claro" onclick="sbHistTira(' + e.t + ')">' + (pede(e.t) ? '⚠️ Toque de novo para apagar' : '🗑️ Apagar esta') + '</button></div></div></details>'; }).join('')
+    : '<p>Nenhuma simulação salva ainda. Depois de fazer a conta, toquem em «💾 Salvar esta simulação».</p>';
+  let h = secao('sob-hist', '🗂️', 'Simulações salvas — ' + SB.hist.length, null, hist, false);
+  h += secao('sob-lei', '⚖️', 'O que diz a lei sobre a divisão das sobras', null,
+      nota('lei', '🏦', '<b>Antes de dividir, os fundos.</b> Das sobras do ano, pelo menos 10% vão para o Fundo de Reserva e 5% para o FATES (Lei 5.764/71, art. 28, I e II). A assembleia pode criar outros fundos (art. 28, § 1º), como o caixa de 10% da aba Beneficiamento. As sobras líquidas trazidas das abas já descontam o Fundo de Reserva e o FATES.')
+    + nota('lei', '🗳️', '<b>Quem decide é a assembleia.</b> Todo ano, nos três primeiros meses depois do fim do exercício, a Assembleia Geral Ordinária decide o destino das sobras (art. 44, II). Esta aba prepara a proposta; a decisão vai para a ata.')
+    + nota('lei', '📏', '<b>A regra da lei: na proporção do que cada um fez.</b> As sobras voltam ao cooperado na proporção das operações que ele fez com a cooperativa — numa unidade de trabalho, o trabalho de cada um —, salvo decisão em contrário da assembleia (art. 4º, VII). «Pelas horas» e «pelas horas e pelos pontos» seguem essa regra. «Igual para todos» precisa de decisão da assembleia.')
+    + nota('atencao', '⚖️', '<b>Ponto em que os juristas divergem.</b> O Código Civil diz que a cooperativa distribui os resultados na proporção do valor das operações de cada sócio (art. 1.094, VII) e não repete a exceção da Lei 5.764/71. Para uma parte dos juristas, a divisão igual, sem ligação com o trabalho, não pode ser a regra de sempre; para outra, a assembleia pode decidir assim, caso a caso. O caminho seguro: escrever a forma de dividir no estatuto ou no regimento interno, aprovar em assembleia e registrar na ata.')
+    + nota('', '⭐', '<b>Os pontos e o registro das horas.</b> Os pontos de cada atividade, com o critério (dificuldade, risco, responsabilidade), devem estar no regimento interno, aprovados em assembleia. O registro das horas deve ser conferido e assinado todo mês — a cartilha desta aba traz a ficha. Quem não concordar com o registro pede a correção à diretoria; se não resolver, leva à assembleia, que é quem decide.')
+    + nota('', '💵', '<b>Sobras não são a retirada.</b> A retirada — a renda do mês, de R$ 2.000 na maior parte dos estudos — já está nos gastos de cada aba. As sobras são o que fica a mais, depois de pagar tudo. Na cooperativa de trabalho, a retirada não pode ser menor que o piso da categoria ou, sem piso, que o salário mínimo, na proporção das horas trabalhadas (Lei 12.690/2012, art. 7º, I): mais um motivo para registrar as horas.')
+    + nota('alerta', '📉', '<b>E se faltar dinheiro?</b> Se o ano fechar no vermelho, a perda é coberta pelo Fundo de Reserva; se ele não bastar, é rateada entre os cooperados, na proporção dos serviços que usaram (art. 89).')
+    + nota('', '🪪', '<b>Só cooperado matriculado recebe.</b> Entra na divisão quem está no Livro de Matrícula da cooperativa (art. 22, I, e art. 23) — veja a aba Cadastro de cooperados. Por isso esta aba usa o nº de matrícula, e não o nome.'), false);
+  return h; }
+
+/* ---------- tutorial, guia e cartilha da aba ---------- */
+ABAS_GUIA.sobras = ['🤝', 'Divisão das sobras', 'entre quem trabalha'];
+TUT.sobras = [
+  { alvo: '.cab', t: 'Para que serve esta aba', x: 'Aqui a cooperativa simula como dividir as sobras entre quem trabalha: igual para todos, pelas horas trabalhadas ou pelas horas e pelos pontos de cada atividade. Os nomes não entram: só o número de matrícula ou um apelido. O botão Ouvir lê a tela em voz alta.' },
+  { alvo: '#sob-valor', t: 'Passo 1: quanto vai ser dividido', x: 'Digitem o valor ou toquem numa unidade para trazer as sobras da aba dela. As sobras líquidas já tiraram 10% do Fundo de Reserva e 5% do FATES. Na UBP-M, vem só a parte de quem trabalha na unidade. Escolham se o valor é do mês ou do ano.' },
+  { alvo: '#sob-modelo', t: 'Passo 2: como dividir', x: 'Igual para todos: cada cooperado recebe a mesma parte. Pelas horas: quem trabalhou mais horas recebe mais. Pelas horas e pelos pontos: cada hora vale os pontos da atividade.' },
+  { alvo: '.resultado', t: 'O resultado', x: 'A frase diz quanto cada um recebe ou quanto vale uma hora. Os cartões mostram o valor dividido, quem recebe, a maior e a menor parte. Salvar guarda a simulação neste aparelho; WhatsApp, Copiar e Planilha levam o resultado para o grupo.' },
+  { alvo: '#sob-tab', t: 'Quanto cada um recebe', x: 'Para cada cooperado: as horas, os pontos vezes horas, quanto recebe e a parte do total. A soma fecha com o valor dividido, centavo por centavo. Embaixo, as três formas lado a lado, para a assembleia comparar.' },
+  { sec: 'sob-coops', t: 'Quem trabalha', x: 'Uma linha para cada cooperado: o número de matrícula ou um apelido e a função. Sem nome completo, sem CPF e sem telefone. Novo cooperado põe mais uma linha; a lixeira tira, com dois toques.' },
+  { sec: 'sob-ativs', t: 'As atividades e os pontos', x: 'Cada atividade tem os seus pontos: mais pontos para o trabalho mais pesado, de mais risco ou de mais responsabilidade. Quem decide os pontos é a assembleia, e eles vão para o regimento interno.' },
+  { sec: 'sob-parts', t: 'Quem fez o quê no mês', x: 'Para cada cooperado, a atividade, os dias trabalhados e as horas por dia. A ferramenta faz o total de horas e os pontos vezes horas. Quem não tem registro não recebe nas formas pelas horas.' },
+  { sec: 'sob-hist', t: 'Simulações salvas', x: 'Cada simulação salva fica aqui, com o nome, a data, o valor e a forma de dividir. Toquem numa delas para ver a divisão, abrir de novo na tela, copiar ou apagar.' },
+  { sec: 'sob-lei', t: 'O que diz a lei', x: 'Os fundos saem antes. Quem decide a divisão é a assembleia, todo ano. A lei manda dividir na proporção do que cada um fez, a não ser que a assembleia decida outra forma — e há juristas que divergem sobre a divisão igual.' },
+  { alvo: '.guia', t: 'Para levar para a comunidade', x: 'A cartilha desta aba pode ser impressa e levada à assembleia, com a ficha do registro das horas do mês.' } ];
+function cartSobras(){
+  const V = sbValor(), M0 = sbModeloDe(SB.modelo), R = sbTres(V.v), pg = [];
+  pg.push(cCapa('sobras', ['As três formas de dividir as sobras: igual para todos, pelas horas e pelas horas e pontos', 'Como contar as horas e os pontos de cada atividade', 'A ficha do registro do mês, para copiar', 'O que diz a lei: os fundos, a assembleia e a proporção do trabalho', 'Como usar a aba, passo a passo'],
+    'Exemplo da tela: <b>' + R2(V.v) + '</b> para dividir (' + esc(V.txt) + '), entre <b>' + SB.coops.length + (SB.coops.length === 1 ? ' cooperado' : ' cooperados') + '</b>, com ' + SB.ativs.length + ' atividades e ' + SB.parts.length + ' registros de horas. Forma escolhida na tela: <b>' + M0[2].toLowerCase() + '</b>.'));
+  const tot = k => R[k].ok ? '<b>' + R2(R[k].total) + '</b>' : '—', vl = (k, i) => R[k].ok ? R2(R[k].L[i].v) : '—';
+  const L1 = R.igual.L.slice(0, 16).map((l, i) => [esc(l.c.q) + (l.c.f ? ' <small>' + esc(l.c.f) + '</small>' : ''), sbH(l.h) + ' h', vl('igual', i), vl('horas', i), vl('pontos', i)]);
+  if(R.igual.L.length > 16) L1.push(['… e mais ' + (R.igual.L.length - 16) + ' na tela', '', '', '', '']);
+  L1.push(['<b>Total</b>', sbH(R.igual.H) + ' h', tot('igual'), tot('horas'), tot('pontos')]);
+  pg.push(cCab(1, '⚖️', 'As três formas de dividir', 'Lição 1')
+    + cIdeia('As <b>sobras</b> são o que fica depois de pagar tudo. A cooperativa guarda os fundos e divide o resto entre os cooperados. Quanto cada um recebe depende da forma de dividir.')
+    + cCaixa('🧮 As três contas', '<p>🟰 <b>Igual para todos</b> = valor ÷ número de cooperados<br>⏱️ <b>Pelas horas</b> = valor × horas da pessoa ÷ horas de todos<br>⭐ <b>Pelas horas e pelos pontos</b> = valor × (pontos × horas da pessoa) ÷ (pontos × horas de todos)</p>', 'cinza')
+    + cCaixa('👀 Com os números da tela', cTab(['Quem', 'Horas', '🟰 Igual', '⏱️ Horas', '⭐ Horas e pontos'], L1, -1))
+    + cVez(['R$ 6.000 para 3 cooperados, igual para todos. Cada um recebe R$ ' + cBr,
+            'Ana trabalhou 100 horas e Bia, 200 horas. R$ 6.000 pelas horas: Ana R$ ' + cBr + ' e Bia R$ ' + cBr,
+            'Ana: 100 horas numa atividade de 10 pontos. Bia: 100 horas numa de 5 pontos. R$ 6.000 pelas horas e pelos pontos: Ana R$ ' + cBr + ' e Bia R$ ' + cBr]));
+  const A = {}; SB.ativs.forEach(a => { A[a.id] = a; }); const C = {}; SB.coops.forEach(c => { C[c.id] = c; });
+  const PP = SB.parts.filter(p => C[p.c] && A[p.a]), L2 = PP.slice(0, 14).map(p => ['<b>' + esc(C[p.c].q) + '</b> · ' + esc(A[p.a].n), sbIn(A[p.a].p), sbIn(p.d) + ' × ' + sbIn(p.h), sbH(p.d * p.h), fN(p.d * p.h * A[p.a].p)]);
+  if(PP.length > 14) L2.push(['… e mais ' + (PP.length - 14) + ' registros na tela', '', '', '', '']);
+  L2.push(['<b>Total</b>', '', '', '<b>' + sbH(R.horas.H) + '</b>', '<b>' + fN(R.pontos.W) + '</b>']);
+  pg.push(cCab(2, '🗓️', 'Horas e pontos: o registro do mês', 'Lição 2')
+    + cIdeia('Para dividir pelas horas, cada um precisa ter as horas anotadas: <b>dias trabalhados × horas por dia</b>. Para dividir pelos pontos, cada hora é multiplicada pelos <b>pontos da atividade</b>.')
+    + cCaixa('👀 O registro que está na tela', PP.length ? cTab(['Quem · atividade', 'Pontos', 'Dias × horas por dia', 'Horas', 'Pontos × horas'], L2, -1) : '<p>Ainda não há registro de horas na tela.</p>')
+    + (V.v > 0 && R.horas.H > 0 ? cCaixa('💡 Quanto vale uma hora', '<p>Pelas horas: ' + R2(V.v) + ' ÷ ' + sbH(R.horas.H) + ' horas = <b>' + R2(V.v / R.horas.H) + '</b> por hora.' + (R.pontos.W > 0 ? ' Pelas horas e pelos pontos: ' + R2(V.v) + ' ÷ ' + fN(R.pontos.W) + ' = <b>' + R2(V.v / R.pontos.W) + '</b> por ponto × hora — uma hora numa atividade de 10 pontos vale ' + R2(10 * V.v / R.pontos.W) + '.' : '') + '</p>', 'cinza') : '')
+    + cCaixa('⚖️ O que diz a lei', '<p>Antes de dividir, pelo menos 10% para o Fundo de Reserva e 5% para o FATES (Lei 5.764/71, art. 28). Quem decide a divisão é a assembleia, todo ano (art. 44, II). A regra da lei é dividir na proporção do que cada um fez com a cooperativa, salvo decisão em contrário da assembleia (art. 4º, VII).</p>', 'cinza')
+    + cVez(['Trabalhou 20 dias, 6 horas por dia. Total de horas: ' + cBr, 'Atividade de 12 pontos, 150 horas no mês. Pontos × horas: ' + cBr]));
+  pg.push(cCab('', '📝', 'Registro de participação do mês — ficha para copiar', 'Preencher todo mês e assinar')
+    + '<p class="c-fer">Cooperativa: ' + cBr + ' Unidade: ' + cBr + ' Mês e ano: ' + cBr + '</p>'
+    + cTab(['Nº de matrícula', 'Atividade', 'Pontos', 'Dias trabalhados', 'Horas por dia', 'Total de horas', 'Assinatura'], Array.from({ length: 16 }, () => ['', '', '', '', '', '', '']), null, 'branco')
+    + '<p class="c-fer">Conferido por: ' + cBr + ' Data: ____/____/________ · Depois, coloquem as horas na aba Divisão das sobras, em «Quem fez o quê no mês».</p>');
+  pg.push(cComoUsar('sobras'));
+  pg.push(cCab('', '✅', 'Respostas', 'Confira o que você respondeu')
+    + '<ol class="c-resp"><li>Lição 1: R$ 2.000 · Ana R$ 2.000 e Bia R$ 4.000 · Ana R$ 4.000 e Bia R$ 2.000 (Ana tem 1.000 pontos × horas; Bia, 500)</li><li>Lição 2: 120 horas · 1.800 pontos × horas</li></ol>'
+    + cCaixa('📖 Palavras que usamos', '<p><b>Sobras</b>: o que fica depois de pagar tudo; na cooperativa, voltam para os cooperados. <b>Sobras líquidas</b>: as sobras depois do Fundo de Reserva (10%) e do FATES (5%). '
+      + '<b>Retirada</b>: a renda do mês do cooperado, que já está nos gastos. <b>Assembleia</b>: a reunião dos cooperados, que decide a divisão. <b>Pontos</b>: o peso de cada atividade. <b>Ponto × hora</b>: as horas vezes os pontos da atividade. '
+      + '<b>Livro de Matrícula</b>: a lista oficial dos cooperados da cooperativa.</p>', 'cinza'));
+  return pg; }
+CART_FN.sobras = cartSobras;
 
 /* ---------- partida da Rev. 17: a meta e a errata usam os valores do ESTUDO (antes de qualquer troca) ---------- */
 ['upa', 'ubp', 'upm', 'upp', 'ubm', 'upale', 'ups', 'uprfc'].forEach(un => { META0[un] = isolar(() => { st.un = un; st.ocup = 100; return calc().sobras; }); });
