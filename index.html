@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quanto custa o nosso peixe? — Rev. 27 Comunidade</title>
+<title>Quanto custa o nosso peixe? — Rev. 28 Comunidade</title>
 <style>
 /* ================================================================
-   REV. 27 COMUNIDADE — versão para pescadores e aquicultores
+   REV. 28 COMUNIDADE — versão para pescadores e aquicultores
    Mesmo motor de cálculo da Rev. 14 técnica. Muda a apresentação:
    letras grandes, ícones, frases simples, botão de ouvir.
    ================================================================ */
@@ -289,6 +289,7 @@ input[type=range].trilho{width:100%;height:44px;accent-color:var(--boia);margin:
 .parte .regra{display:block;font-size:.82rem;color:var(--tinta2);margin:0 0 2px}
 .parte.fica{background:var(--espuma)}
 .parte.fica b{color:var(--mar)}
+.rot-b{align-self:center;font-weight:700;margin-right:4px}
 
 /* ano */
 .ano{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:10px;margin-top:12px}
@@ -742,7 +743,7 @@ h5.upp-sub{margin:14px 0 0;font-size:1.05rem;color:var(--mar)}
       <span class="logo" aria-hidden="true">🐟</span>
       <div>
         <h1>Quanto custa o nosso peixe?</h1>
-        <p>Custo de 1 kg, preço de venda e sobras — ferramenta da comunidade · PEA Pescarte · Rev. 27</p>
+        <p>Custo de 1 kg, preço de venda e sobras — ferramenta da comunidade · PEA Pescarte · Rev. 28</p>
       </div>
     </div>
     <div class="util">
@@ -781,7 +782,7 @@ h5.upp-sub{margin:14px 0 0;font-size:1.05rem;color:var(--mar)}
   <details>
     <summary>Para o técnico — o que esta versão mostra e o que ela esconde</summary>
     <ul>
-      <li>O motor de cálculo é o da Rev. 14 técnica. A versão da comunidade muda a apresentação; a Rev. 15 acrescentou o mix de produtos da UBP-M; a Rev. 16 acrescentou a aba da UPM e as contribuições do Grupo Beneficiamento; a Rev. 17 acrescentou as devolutivas dos grupos (encontros de 6 a 8/11/2026) e o tutorial e a cartilha de cada aba; a Rev. 18 acrescentou a aba da UPP Rio das Ostras (produtos prontos), que na Rev. 18.1 passou a seguir a «DRE Projetada» da planilha; a Rev. 19 acrescentou a aba da UBM Arraial do Cabo (beneficiamento de mariscos); a Rev. 20 acrescentou a UPA de 38 postos de Carapebus e os municípios de cada tipologia; a Rev. 21 acrescentou a aba da UPALE Carapebus (produção de alevinos); a Rev. 22 acrescentou a aba da UPS Armação dos Búzios (sementes de moluscos); a Rev. 23 acrescentou a aba da UPRFC Campos dos Goytacazes (fábrica de ração, farinha e tratamento de conchas); a Rev. 24 leva a perda da aba Minha pescaria até 100%, com cores, divide as sobras da UBP-M em 40% · 40% · 10% · 10% e faz a capacidade da UPA seguir a densidade, com tanques de 6 em 6, e deixa a fábrica de farinha só com peixe; a Rev. 25 deixa escolher quanto de cada tamanho de tilápia vender e calcula o melhor mix; a Rev. 27 divide as sobras da UBP-M em cima do que cada um entregou; a Rev. 26 pôs o desenho de cada espécie no mix da UBP-M, com o nome falado, e mostra no celular os mesmos nomes de aba do computador. As extensões do motor na Rev. 16 (alíquota por produto, rateio da estrutura por peso, base do PIS e do encargo da folha, receita acessória fixa) só valem para quem as declara: nenhum número das outras abas muda.</li>
+      <li>O motor de cálculo é o da Rev. 14 técnica. A versão da comunidade muda a apresentação; a Rev. 15 acrescentou o mix de produtos da UBP-M; a Rev. 16 acrescentou a aba da UPM e as contribuições do Grupo Beneficiamento; a Rev. 17 acrescentou as devolutivas dos grupos (encontros de 6 a 8/11/2026) e o tutorial e a cartilha de cada aba; a Rev. 18 acrescentou a aba da UPP Rio das Ostras (produtos prontos), que na Rev. 18.1 passou a seguir a «DRE Projetada» da planilha; a Rev. 19 acrescentou a aba da UBM Arraial do Cabo (beneficiamento de mariscos); a Rev. 20 acrescentou a UPA de 38 postos de Carapebus e os municípios de cada tipologia; a Rev. 21 acrescentou a aba da UPALE Carapebus (produção de alevinos); a Rev. 22 acrescentou a aba da UPS Armação dos Búzios (sementes de moluscos); a Rev. 23 acrescentou a aba da UPRFC Campos dos Goytacazes (fábrica de ração, farinha e tratamento de conchas); a Rev. 24 leva a perda da aba Minha pescaria até 100%, com cores, divide as sobras da UBP-M em 40% · 40% · 10% · 10% e faz a capacidade da UPA seguir a densidade, com tanques de 6 em 6, e deixa a fábrica de farinha só com peixe; a Rev. 25 deixa escolher quanto de cada tamanho de tilápia vender e calcula o melhor mix; a Rev. 27 divide as sobras da UBP-M em cima do que cada um entregou (na Rev. 28, sem parte sem dono); a Rev. 26 pôs o desenho de cada espécie no mix da UBP-M, com o nome falado, e mostra no celular os mesmos nomes de aba do computador. As extensões do motor na Rev. 16 (alíquota por produto, rateio da estrutura por peso, base do PIS e do encargo da folha, receita acessória fixa) só valem para quem as declara: nenhum número das outras abas muda.</li>
       <li>Mix da UBP-M (Rev. 15): cada linha (espécie, produto, % do total, rendimento, preço pago ao pescador, preço de venda) é resumida por grupo — camarão e peixe — em kg que entram, venda por kg que entra (Σ % × rendimento × preço de venda) e compra média; o motor recebe esses três números. Com o mix do estudo, os resultados são idênticos aos da Rev. 14.</li>
       <li>Valores sugeridos do mix: Projeção Econômica da UBP-M Cabo Frio/Macaé (Rev. 1) — preço de compra por espécie, preço de venda por produto, rendimentos (camarão inteiro 100%, sem cabeça 68%, filé com cauda 55%, filé fresco 45%, filé congelado 66%; peixe em filé 43%, inteiro limpo 84%) e CMS (17,55 t para 156 t de peixe, a R$ 12,00/kg). Onde o estudo não dá preço para a forma escolhida (filé × inteiro), o sugerido é o preço equivalente: a mesma venda por kg que entra. A capacidade segue em 220 t/mês (22 dias úteis), como na Rev. 14; a planilha usa 26 dias.</li>
       <li>Preço mínimo de venda de cada produto do mix = (compra + embalagem + parte dos gastos do mês por kg que entra − créditos − CMS líquida) ÷ ((1 − alíquota) × rendimento).</li>
@@ -795,6 +796,7 @@ h5.upp-sub{margin:14px 0 0;font-size:1.05rem;color:var(--mar)}
       <li>UPM Arraial do Cabo (Rev. 16): Projeção Econômica UPM Rev. 18 (Anexos 1, 3, 4, 6 e 7) e EVTEAS UPM Rev. 2 (dez/2024). Mês-tipo = 1/12 do ano cheio de colheita (meses 7 a 18 da DRE): com a OCB fora, 12 meses-tipo reproduzem a coluna «acumulado últimos 12 meses» (sobras de R$ 2.869.963,34) com diferença menor que R$ 1 no ano. Vieira e ostra por dúzia, mexilhão por kg.</li>
       <li>UPM — escolhas da ferramenta: embalagem (R$ 67.070,40 no ano) repartida na proporção das vendas; estrutura (pessoal, combustível, manutenção, depreciação, OCB) rateada pelas longlines de cada marisco (36 · 20 · 16), não por unidade vendida; combustível, manutenção, EPI, refeições e laboratório como gastos fixos (o manejo é diário com qualquer colheita); sementes, embalagem, mexilhoneiras, limpeza e energia como gastos que crescem com a colheita. PIS de 1% sobre a folha total e encargo de 9% só sobre a cooperada, como no Anexo 4. ICMS de 20% na vieira e na ostra e de 7% no mexilhão, mais 0,65% de PIS. OCB com cooperativista e taxa de manutenção, sobre o investimento fixo (R$ 6.553.799,53). Fundos separados sobre o resultado do ano (a planilha separa mês a mês).</li>
       <li>UPM — «Quando entra o dinheiro?»: as quantidades do ano repartidas mês a mês no ritmo da DRE (vieira em 5 meses, ostra em 6, mexilhão em todos, com meses de meia colheita; sementes compradas no 7º mês da lista). A soma dos 12 meses é igual a 12 meses-tipo.</li>
+      <li>Rev. 28 — divisão em cima do que cada um entregou, sem sobra sem dono: em cada lote, a parte de quem não entregou nele é dividida entre quem entregou, na mesma proporção das porcentagens — lote do mar: 40 : 40 (50% quem beneficia, 50% o pescador); lote da tilápia: 40 : 10 : 10 (66,7% quem beneficia, 16,7% a tilápia, 16,7% os alevinos) ou, no «mesmo padrão», 40 : 20 : 20 (50%, 25%, 25%). A opção «fica na cooperativa» (Rev. 27) continua num botão.</li>
       <li>Rev. 27 — sobras da UBP-M em 40 · 40 · 10 · 10 em cima do que cada um entregou: as sobras líquidas são separadas em dois lotes pelos kg que entram (tilápia = linha «Tilápia» do mix, 9% do peixe e 5,4% do total no estudo; o resto é peixe e camarão); quem beneficia recebe 40% das sobras todas, o pescador 40% do lote do mar, a tilápia 10% e os alevinos 10% do lote da tilápia; no modo «mesmo padrão do pescador e do beneficiador», a tilápia e os alevinos dividem os 40% do lote da tilápia (20% + 20%); a parte de quem não entregou em cada lote fica na cooperativa, para a assembleia decidir (art. 44, II). O modo «sobre o total» (Rev. 24) continua como opção. A divisão dos lotes pelos kg (e não pela margem de cada produto) é escolha declarada.</li>
       <li>Rev. 25 — mix de tamanhos da UPA: o produtor escolhe a porcentagem dos kg de cada tamanho (600 g, 800 g, 1 kg, 1,2 kg e 1,5 kg); 100% da capacidade continua igual (44.000 kg ou 76.000 kg em Carapebus). Ração, alevinos e preço entram pela média pesada pelos kg; o número de peixes usa o peso médio harmônico (1 ÷ Σ sᵢ/pesoᵢ). O melhor mix maximiza as sobras do mês com a soma de 100% e o máximo que o mercado leva de cada tamanho; como os gastos fixos não mudam com o mix, as sobras são lineares nas porcentagens e a solução que enche primeiro o tamanho de maior sobra é exata. Preço de cada tamanho e máximo do mercado: R$ 10,00 e 100% até que a comunidade digite os seus.</li>
       <li>Rev. 24 — escolhas declaradas. (1) Minha pescaria: perda de 0% a 100%; 0% aparece como «zero perda» (Rev. 24.1); as cores (verde até 5%, amarelo em 10%, laranja em 20%, vermelho a partir de 30%) são um aviso, não uma regra; com 100% não há preço justo e os gastos da saída aparecem como prejuízo. (2) UBP-M: sobras líquidas divididas em 40% (cooperados que trabalham na unidade) · 40% (quem entrega peixe e camarão) · 10% (quem entrega tilápia) · 10% (alevinos que viraram as tilápias beneficiadas), editáveis; a regra antiga (⅓ · ⅓ · ⅓) continua como botão. Kg de tilápia = linha «Tilápia» do mix (5,4% no estudo); peixe e camarão = o resto do mix, incluindo o camarão-cinza de cativeiro (1,2%); milheiros de alevinos = kg de tilápia ÷ peso do peixe da aba Criação de tilápia ÷ 1.000 (um alevino por tilápia beneficiada, sem contar a mortalidade); só os kg de cooperados entram (ato não cooperado, art. 87). Até a Rev. 23, o grupo da aquicultura usava a produção da UPA (44.000 kg), e não a tilápia que entra na UBP-M. (3) UPA: 100% da capacidade = módulos × 1 tanque despescado por mês × 50 m³ × 40 kg/m³ (2.000 kg), para qualquer tamanho de peixe (até a Rev. 23 a produção caía com o peixe maior, pelos dias a mais no tanque). Tanques de 6 em 6: cada módulo soma 1 família (retirada do estudo), 2.000 kg por mês, 1.500 m² de área mínima, o frete por kg e o investimento de 6 tanques, decantadores, filtros, bombas, recirculação e tela (UPA de 22 postos: Tabela 4 do estudo, R$ 126.616,23 por módulo; Carapebus: Anexo 1 da planilha, R$ 117.260,51), com depreciação em 10 anos, manutenção de 3% e seguro de 1% ao ano e OCB sobre o investimento. Energia, água, galpão e terreno não mudam. Peixe que fica mais de 6 meses no tanque (1 kg ou mais) pede mais de 6 tanques por módulo para manter a despesca mensal: a tela avisa. (4) UPRFC: a farinha e o óleo de camarão saem do modelo (pedido da equipe). Só peixe: 8.580 kg de resíduo de peixe por dia = 100% (1.973,4 kg de farinha e 858 kg de óleo por dia, 22 dias), o ano todo, sem efeito do defeso do camarão; lenha, água e efluente na proporção do resíduo processado (8.580 ÷ 17.380 = 49%); retiradas, veículos, seguro, manutenção, energia, investimento e depreciação como no estudo (o estudo não separa a linha do camarão). A conta da planilha, com camarão e com o defeso, fica como botão de comparação no passo 2.</li>
@@ -972,7 +974,7 @@ const DATA = {
        44, II). Quantidades: kg do mix — a tilápia é a linha «Tilápia»,
        o resto é peixe e camarão; milheiros de alevinos = kg de tilápia
        ÷ peso do peixe da aba Criação de tilápia ÷ 1.000.            */
-    sobrasDRE:{ modo:'entregue', grupos:[   /* Rev. 27 — cada grupo em cima do que entregou */
+    sobrasDRE:{ modo:'entregue', resto:'dividir', grupos:[   /* Rev. 27 — cada grupo em cima do que entregou */
       { id:'benef', nome:'Cooperados beneficiadores — trabalho na unidade',
         pct:40, base:'pessoas', qtd:null, auto:'coop', rot:'cooperados na unidade' },
       { id:'mar',   nome:'Cooperados que entregam peixe e camarão',
@@ -2537,15 +2539,20 @@ function sobrasCalc(c){
      ou «mesmo padrão do pescador»; sem modo, a regra antiga: porcentagem do total */
   const modo=(un==='ubp'&&S.modo)||'total', qg=id=>{ const g=S.grupos.find(x=>x.id===id); return g? ((g.qtd==null)? sobrasAuto(un,c,g) : Math.max(0,g.qtd)) : 0; };
   let lotes=null;
-  if(modo!=='total'){ const kM=qg('mar'), kT=qg('aqui'), fT=(kM+kT)>0? kT/(kM+kT) : 0; lotes={ fT, mar:base*(1-fT), til:base*fT }; }
   const div=Math.max(100,soma), P=id=>{ const g=S.grupos.find(x=>x.id===id); return g? Math.max(0,g.pct)/div : 0; };
+  if(modo!=='total'){ const kM=qg('mar'), kT=qg('aqui'), fT=(kM+kT)>0? kT/(kM+kT) : 0;
+    /* Rev. 28 — o peso de cada grupo em cada lote; com resto «dividir», a parte de quem não entregou
+       num lote vai para quem entregou nele, na mesma proporção (40 : 40 no mar; 40 : 10 : 10 na tilápia) */
+    const pb=P('benef'), pm=P('mar'), pa=P('aqui'), pl=P('alev');
+    const wa= modo==='padrao'? pm*(pa+pl>0? pa/(pa+pl) : 0) : pa, wl= modo==='padrao'? pm*(pa+pl>0? pl/(pa+pl) : 0) : pl;
+    const div2=S.resto==='coop', nM=div2? 1 : (pb+pm||1), nT=div2? 1 : (pb+wa+wl||1);
+    const w={ mar:{ benef:pb/nM, mar:pm/nM }, til:{ benef:pb/nT, aqui:wa/nT, alev:wl/nT } };
+    lotes={ fT, mar:base*(1-fT), til:base*fT, w }; }
   const grupos=S.grupos.map(g=>{
     const pct=Math.max(0,g.pct), frac= soma>0? pct/soma : 0;
     const auto=(g.qtd==null), qtd= auto? sobrasAuto(un,c,g) : Math.max(0,g.qtd);
     let valor=base*frac;
-    if(lotes){ const pb=P('benef'), pm=P('mar'), pa=P('aqui'), pl=P('alev'), pal=(g.id==='aqui'? pa : pl);
-      valor= g.id==='benef'? base*pb : g.id==='mar'? lotes.mar*pm
-           : modo==='padrao'? lotes.til*pm*(pa+pl>0? pal/(pa+pl) : 0) : lotes.til*pal; }
+    if(lotes){ const W=lotes.w; valor= g.id==='benef'? lotes.mar*W.mar.benef + lotes.til*W.til.benef : g.id==='mar'? lotes.mar*W.mar.mar : lotes.til*(W.til[g.id]||0); }
     const pctOp=(OPZ&&OPZ.pct)? OPZ.pct[g.id] : null;
     return Object.assign({},g,{ pct, frac, auto, qtd, valor,
       unit: qtd>0? valor/qtd : null,
@@ -4629,7 +4636,7 @@ function whatsComunidade(){
     + '\nQuilos vendáveis: ' + pescKgApp(R.vendavel) + '\nPreço mínimo: ' + fB2(R.minimo) + '/kg' + '\nPreço sugerido: ' + fB2(R.sugerido) + '/kg'
     + (R.benefKg > 0 ? '\n\n*Se for beneficiado* (+' + fB2(R.benefKg) + '/kg de mão de obra, energia, água, ingredientes, higienização e embalagem)'
         + '\nPreço mínimo integrado: ' + fB2(R.minimoInt) + '/kg' + '\nPreço sugerido integrado: ' + fB2(R.sugeridoInt) + '/kg' : '')
-    + '\n\nCalculado com as contas do app Preço Justo — Pescador (Pescarte).' + '\nConferido na ferramenta da comunidade — Rev. 27.';
+    + '\n\nCalculado com as contas do app Preço Justo — Pescador (Pescarte).' + '\nConferido na ferramenta da comunidade — Rev. 28.';
   COM.msgPesc = ''; window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank', 'noopener'); }
 
 function resultadoPescador(){
@@ -5479,7 +5486,7 @@ if(HAS_DOM) document.addEventListener('keydown', e => { if(!COM.tut) return; if(
    a tela nunca mostram valores diferentes.
    ================================================================ */
 COM.cart = null;
-const CART_REV = 'Rev. 27';
+const CART_REV = 'Rev. 28';
 /* PDFs prontos, com os valores do estudo, publicados na pasta cartilhas/ do site (só aparecem quando a ferramenta é aberta pela internet) */
 const CART_ARQ = { upa: 'Cartilha_aba_Criacao_de_tilapia', ubp: 'Cartilha_aba_Beneficiamento', upm: 'Cartilha_aba_Criacao_de_mariscos', pescador: 'Cartilha_aba_Minha_pescaria', barco: 'Cartilha_aba_Barco_de_pesca' }, CART_PDF_DATA = '11/11/2026';
 const cartNoSite = () => HAS_DOM && /^https?:$/.test(location.protocol);
@@ -8237,7 +8244,8 @@ const pjTxt = R => R.vendavel > 0 ? R2(R.sugerido) : '— (nada para vender)';
 const DIV_UBP = { benef:['👷', 'Beneficiadores', 'Cooperados que trabalham na UBP-M'], mar:['🎣', 'Peixe e camarão', 'Quem entrega peixe e camarão'],
                   aqui:['🐟', 'Tilápia', 'Quem entrega tilápia'], alev:['🐣', 'Alevinos', 'Alevinos que viraram tilápia beneficiada'] };
 const DIV_REGRAS = { proposta:{ benef:40, mar:40, aqui:10, alev:10 }, terco:{ benef:100 / 3, mar:100 / 3, aqui:100 / 3, alev:0 } };
-function divGarante(){ const S = st.sobras.ubp; if(!S || !S.grupos.some(g => g.id === 'alev')) st.sobras.ubp = clone(DATA.ubp.sobrasDRE); if(!st.sobras.ubp.modo) st.sobras.ubp.modo = 'entregue'; return st.sobras.ubp; }
+function divGarante(){ const S = st.sobras.ubp; if(!S || !S.grupos.some(g => g.id === 'alev')) st.sobras.ubp = clone(DATA.ubp.sobrasDRE); if(!st.sobras.ubp.modo) st.sobras.ubp.modo = 'entregue'; if(!st.sobras.ubp.resto) st.sobras.ubp.resto = 'dividir'; return st.sobras.ubp; }
+function ubpResto(k){ const S = divGarante(); S.resto = k; desenharTela(); }
 function ubpRegra(k){ const S = divGarante(), R = DIV_REGRAS[k]; if(!R) return; S.grupos.forEach(g => { if(g.id in R) g.pct = R[g.id]; });
   Object.keys(COM.erro).forEach(e => { if(/^div-/.test(e)) delete COM.erro[e]; }); desenharTela(); }
 const ubpRegraAtual = (S, k) => S.grupos.every(g => Math.abs(g.pct - (DIV_REGRAS[k][g.id] || 0)) < 0.05);
@@ -8280,6 +8288,9 @@ function divisaoHTML(c){
     + (modo === 'total' ? ' — aqui, sobre o total das sobras.' : ' — <b>cada grupo em cima do que entregou</b>.') + ' A assembleia pode mudar as porcentagens e o modo:</p>';
   h += '<div class="botoes" style="margin:6px 0 6px">' + DIV_MODOS.map(([k, e, t]) =>
       '<button type="button" class="op" aria-pressed="' + (modo === k) + '" onclick="ubpModo(\'' + k + '\')"><span class="e" aria-hidden="true">' + e + '</span>' + t + '</button>').join('') + '</div>';
+  if(modo !== 'total') h += '<div class="botoes" style="margin:0 0 6px"><span class="rot-b">A parte de quem não entregou num lote:</span>'
+    + [['dividir', '🤝', 'Dividir entre quem entregou no lote'], ['coop', '🏦', 'Fica na cooperativa']].map(([k, e, t]) =>
+      '<button type="button" class="op" aria-pressed="' + ((S.resto || 'dividir') === k) + '" onclick="ubpResto(\'' + k + '\')"><span class="e" aria-hidden="true">' + e + '</span>' + t + '</button>').join('') + '</div>';
   h += '<div class="botoes" style="margin:0 0 10px">'
     + [['proposta', '🤝', '40 · 40 · 10 · 10 — regra proposta'], ['terco', '↩️', '⅓ · ⅓ · ⅓ — regra antiga, sem os alevinos']].map(([k, e, t]) =>
       '<button type="button" class="op" aria-pressed="' + ubpRegraAtual(S, k) + '" onclick="ubpRegra(\'' + k + '\')"><span class="e" aria-hidden="true">' + e + '</span>' + t + '</button>').join('') + '</div>';
@@ -8291,13 +8302,14 @@ function divisaoHTML(c){
   if(!S.haSobras) return h + nota('alerta', '🔴', 'Neste cenário não há sobras para dividir no mês.');
   if(L) h += '<p style="margin:12px 0 4px">As sobras líquidas do mês (' + R0(S.base) + ') vêm de dois lotes, pelos kg que entram na fábrica: '
     + '<b>🎣 peixe e camarão</b>, ' + fN(100 * (1 - L.fT), 1) + '% dos kg — ' + R0(L.mar) + '; e <b>🐟 tilápia</b>, ' + fN(100 * L.fT, 1) + '% dos kg — ' + R0(L.til) + '. '
-    + (modo === 'padrao' ? 'No lote da tilápia, quem produziu a tilápia recebe os mesmos ' + fN(G('mar').pct, 0) + '% do pescador, divididos entre a tilápia e os alevinos.' : 'Cada grupo recebe a sua porcentagem só do lote que entregou.') + '</p>';
+    + (modo === 'padrao' ? 'No lote da tilápia, quem produziu a tilápia recebe os mesmos ' + fN(G('mar').pct, 0) + '% do pescador, divididos entre a tilápia e os alevinos.' : 'Cada grupo recebe a sua porcentagem só do lote que entregou.')
+    + (S.resto === 'coop' ? ' A parte de quem não entregou num lote fica na cooperativa.' : ' A parte de quem não entregou num lote é dividida entre quem entregou nele, na mesma proporção — e assim as sobras são divididas inteiras.') + '</p>';
   else h += '<p style="margin:12px 0 0">As sobras líquidas do mês (' + R0(S.base) + ') ficam assim:</p>';
+  const pL = x => fN(100 * x, Math.abs(100 * x - Math.round(100 * x)) < 0.05 ? 0 : 1) + '%';
   const regra = g => modo === 'total' ? fN(100 * g.frac, 1) + '% do total'
-    : g.id === 'benef' ? fN(g.pct, 0) + '% de tudo — trabalhou nos dois lotes'
-    : g.id === 'mar' ? fN(g.pct, 0) + '% do lote do peixe e camarão'
-    : modo === 'padrao' ? pctT(g) + ' do total — ' + fN(G('mar').pct * g.pct / Math.max(1e-9, G('aqui').pct + G('alev').pct), 0) + '% do lote da tilápia'
-    : fN(g.pct, 0) + '% do lote da tilápia';
+    : g.id === 'benef' ? pL(L.w.mar.benef) + ' do lote do mar e ' + pL(L.w.til.benef) + ' do lote da tilápia'
+    : g.id === 'mar' ? pL(L.w.mar.mar) + ' do lote do peixe e camarão'
+    : pL(L.w.til[g.id] || 0) + ' do lote da tilápia';
   h += '<div class="partes">';
   S.grupos.forEach(g => { const U = divUnid(g, s);
     h += '<div class="parte"><div class="ic" aria-hidden="true">' + DIV_UBP[g.id][0] + '</div><h5>' + DIV_UBP[g.id][2] + '</h5><small class="regra">' + regra(g) + '</small><b>' + R0(g.valor) + '</b><span class="det">por mês — ' + U.det + '</span></div>'; });
