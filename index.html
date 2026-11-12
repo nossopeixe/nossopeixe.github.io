@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quanto custa o nosso peixe? — Rev. 36 Comunidade</title>
+<title>Quanto custa o nosso peixe? — Rev. 37 Comunidade</title>
 <style>
 /* ================================================================
-   REV. 36 COMUNIDADE — versão para pescadores e aquicultores
+   REV. 37 COMUNIDADE — versão para pescadores e aquicultores
    Mesmo motor de cálculo da Rev. 14 técnica. Muda a apresentação:
    letras grandes, ícones, frases simples, botão de ouvir.
    ================================================================ */
@@ -736,6 +736,21 @@ h5.upp-sub{margin:14px 0 0;font-size:1.05rem;color:var(--mar)}
 }
 .tab-lin td:first-child{min-width:9.5rem}
 @media (max-width:600px){.tab-lin{font-size:.86rem}.tab-lin th,.tab-lin td{padding:7px 4px}.tab-lin td:first-child{min-width:7.2rem}}
+/* Rev. 37 — a lista de cooperados com os nomes (simulação, só neste aparelho) */
+.ccn-lista{margin:8px 0 0;padding-left:2.2rem;display:grid;gap:6px}
+.ccn-lista li::marker{font-weight:700;color:var(--mar)}
+.ccn-l{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.ccn-inp{flex:1;min-width:0;max-width:24rem}
+.ccn-caixa{margin-top:12px;border:2px solid var(--linha);border-radius:14px;padding:10px 14px;background:#fff}
+.ccn-caixa h4{margin:0 0 4px}
+.ccn-caixa h4 small{display:block;font-weight:400;color:var(--tinta2);font-size:.85rem}
+.ccn-caixa.grande{padding:16px 20px}
+.ccn-caixa.grande h4{font-size:1.7rem}
+.ccn-caixa.grande .ccn-lista{display:block;columns:2 15rem;column-gap:2.4rem;font-size:1.5rem;line-height:1.35}
+.ccn-caixa.grande .ccn-lista li{break-inside:avoid;margin:0 0 .4rem}
+.ccn-n{font-weight:700;overflow-wrap:anywhere}
+#ccn .inp{text-align:left}
+#ccn-coop,#ccn-nome{width:100%;max-width:100%;box-sizing:border-box}
 /* Rev. 32 — cadastro de cooperados */
 .cad-passos{margin:10px 0 6px;padding-left:1.5rem;display:grid;gap:8px;line-height:1.45}
 .cad-sub{margin:16px 0 6px;color:var(--mar);font-size:1.08rem}
@@ -804,7 +819,7 @@ details.sob-hist{margin-top:8px}
       <span class="logo" aria-hidden="true">🐟</span>
       <div>
         <h1>Quanto custa o nosso peixe?</h1>
-        <p>Custo de 1 kg, preço de venda e sobras — ferramenta da comunidade · PEA Pescarte · Rev. 36</p>
+        <p>Custo de 1 kg, preço de venda e sobras — ferramenta da comunidade · PEA Pescarte · Rev. 37</p>
       </div>
     </div>
     <div class="util">
@@ -859,6 +874,7 @@ details.sob-hist{margin-top:8px}
       <li>UPM Arraial do Cabo (Rev. 16): Projeção Econômica UPM Rev. 18 (Anexos 1, 3, 4, 6 e 7) e EVTEAS UPM Rev. 2 (dez/2024). Mês-tipo = 1/12 do ano cheio de colheita (meses 7 a 18 da DRE): com a OCB fora, 12 meses-tipo reproduzem a coluna «acumulado últimos 12 meses» (sobras de R$ 2.869.963,34) com diferença menor que R$ 1 no ano. Vieira e ostra por dúzia, mexilhão por kg.</li>
       <li>UPM — escolhas da ferramenta: embalagem (R$ 67.070,40 no ano) repartida na proporção das vendas; estrutura (pessoal, combustível, manutenção, depreciação, OCB) rateada pelas longlines de cada marisco (36 · 20 · 16), não por unidade vendida; combustível, manutenção, EPI, refeições e laboratório como gastos fixos (o manejo é diário com qualquer colheita); sementes, embalagem, mexilhoneiras, limpeza e energia como gastos que crescem com a colheita. PIS de 1% sobre a folha total e encargo de 9% só sobre a cooperada, como no Anexo 4. ICMS de 20% na vieira e na ostra e de 7% no mexilhão, mais 0,65% de PIS. OCB com cooperativista e taxa de manutenção, sobre o investimento fixo (R$ 6.553.799,53). Fundos separados sobre o resultado do ano (a planilha separa mês a mês).</li>
       <li>UPM — «Quando entra o dinheiro?»: as quantidades do ano repartidas mês a mês no ritmo da DRE (vieira em 5 meses, ostra em 6, mexilhão em todos, com meses de meia colheita; sementes compradas no 7º mês da lista). A soma dos 12 meses é igual a 12 meses-tipo.</li>
+      <li>Rev. 37 — aba «Cadastro de cooperados»: (1) um grupo por <b>cooperativa</b>, pelo Painel PGTRs — 21 PGTRs e 18 cooperativas; ficam juntas COOPAACAR (UPA e UPALE de Carapebus), COOPEAPRO (UPA e UPP de Rio das Ostras) e COOPMAB (UPM e UPS de Armação dos Búzios), e cada grupo mostra o nome da cooperativa (ou «a informar»); o que estava marcado em cada unidade passa para o grupo da cooperativa. (2) <b>A lista de cooperados com os nomes</b>, em simulação: escolhe-se a cooperativa e digita-se só o nome — sem CPF, RG, telefone, endereço ou documento (números de documento são recusados) —; a lista fica salva só neste aparelho, com a tela grande para o grupo se ver, a conta do mínimo de 20 pessoas (Lei 5.764/71, art. 6º, I), copiar a lista, levar o número para o quadro e apagar tudo do aparelho. Nome é dado pessoal (LGPD, art. 5º, I): só de quem concordou. A lista oficial continua sendo o Livro de Matrícula da cooperativa.</li>
       <li>Rev. 36 — na «Divisão das sobras», tudo passa a ser do <b>ano</b>: as sobras são apuradas no fim do exercício social e a assembleia geral ordinária decide o destino nos três primeiros meses do ano seguinte (Lei 5.764/71, art. 44, II; fundos sobre as sobras líquidas do exercício, art. 28). O valor trazido de uma aba é sempre o do ano (o mês da aba × 12) — sai a opção «do mês» —, os botões das abas mostram as sobras do ano, e o registro de horas passa a ser o do ano («Quem fez o quê no ano», a soma das fichas dos 12 meses). As proporções da divisão não mudam.</li>
       <li>Rev. 35 — na «Divisão das sobras»: (1) <b>atividades por tipologia</b> — escolher a tipologia traz a lista de atividades dela com pontos de partida (UPA: povoar o tanque, alimentar o peixe, monitorar a água, despescar...; nas demais unidades, as etapas de cada processo; na UBP-M ficam as cinco do exemplo, com os mesmos pontos), e é essa lista que aparece em «Quem fez o quê no mês»; as atividades com horas registradas ficam. (2) <b>O barco (fornecedor)</b>: uma parte do valor (20%, editável) sai antes da divisão; dela, a do dono (50%, editável) e o resto da tripulação, por dias × horas. Só recebe quem é cooperado (está em «Quem trabalha»): o dono recebe a parte do dono, o dono e tripulante recebe as duas, o tripulante recebe pela tripulação; quem não é cooperado não recebe, e a parte dele volta para a divisão. A parte do barco é a mesma nas três formas, entra no resumo, na planilha e nas simulações salvas. (3) <b>Referência</b>: os princípios do cooperativismo (OCB) em Afonso, «O cooperativismo pode auxiliar a cadeia ranícola?», Aquaculture Brasil, 2022, no lugar da menção ao Firebase. Os pontos e as porcentagens são proposta: quem decide é a assembleia.</li>
       <li>Rev. 34 — a aba «Sobras» vira «Divisão das sobras», com a parametrização do protótipo UBP_Sobras_SFI (CoopManager): cooperados (nº de matrícula ou apelido e função — sem nomes, como combinado na Rev. 32), atividades com pontos, registro de participação (dias trabalhados × horas por dia) e três formas de dividir — igual para todos (a forma padrão, como no protótipo), pelas horas trabalhadas (o «por participação» do protótipo divide pelas horas, e não pelo número de participações, como estava na Rev. 33) e pelas horas × pontos da atividade. Com o exemplo do protótipo (5 cooperados, 5 atividades, 5 registros, R$ 10.000,00), reproduz os valores dele nas três formas. Os centavos vão pelo maior resto: a soma é sempre o valor dividido. O valor pode ser digitado ou vir das abas — as sobras líquidas do mês (depois de 10% de Fundo de Reserva e 5% de FATES) ou, na UBP-M, a parte de quem trabalha na unidade pela divisão escolhida na aba Beneficiamento —, do mês ou do ano (× 12), e acompanha o que mudar na aba. Salvar (até 30 simulações), copiar, WhatsApp, planilha CSV com as três formas, tutorial e cartilha da aba. Notas da Lei 5.764/71 (arts. 4º, VII; 22; 28; 44, II; 89), do Código Civil (art. 1.094, VII — ponto em que os juristas divergem) e da Lei 12.690/2012 (art. 7º, I). As participações guardadas na Rev. 33 são trazidas automaticamente. Tudo fica só no aparelho. Os números das outras abas não mudam.</li>
@@ -4715,7 +4731,7 @@ function whatsComunidade(){
     + '\nQuilos vendáveis: ' + pescKgApp(R.vendavel) + '\nPreço mínimo: ' + fB2(R.minimo) + '/kg' + '\nPreço sugerido: ' + fB2(R.sugerido) + '/kg'
     + (R.benefKg > 0 ? '\n\n*Se for beneficiado* (+' + fB2(R.benefKg) + '/kg de mão de obra, energia, água, ingredientes, higienização e embalagem)'
         + '\nPreço mínimo integrado: ' + fB2(R.minimoInt) + '/kg' + '\nPreço sugerido integrado: ' + fB2(R.sugeridoInt) + '/kg' : '')
-    + '\n\nCalculado com as contas do app Preço Justo — Pescador (Pescarte).' + '\nConferido na ferramenta da comunidade — Rev. 36.';
+    + '\n\nCalculado com as contas do app Preço Justo — Pescador (Pescarte).' + '\nConferido na ferramenta da comunidade — Rev. 37.';
   COM.msgPesc = ''; window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank', 'noopener'); }
 
 function resultadoPescador(){
@@ -5565,7 +5581,7 @@ if(HAS_DOM) document.addEventListener('keydown', e => { if(!COM.tut) return; if(
    a tela nunca mostram valores diferentes.
    ================================================================ */
 COM.cart = null;
-const CART_REV = 'Rev. 36';
+const CART_REV = 'Rev. 37';
 /* PDFs prontos, com os valores do estudo, publicados na pasta cartilhas/ do site (só aparecem quando a ferramenta é aberta pela internet) */
 const CART_ARQ = { upa: 'Cartilha_aba_Criacao_de_tilapia', ubp: 'Cartilha_aba_Beneficiamento', upm: 'Cartilha_aba_Criacao_de_mariscos', pescador: 'Cartilha_aba_Minha_pescaria', barco: 'Cartilha_aba_Barco_de_pesca' }, CART_PDF_DATA = '11/11/2026';
 const cartNoSite = () => HAS_DOM && /^https?:$/.test(location.protocol);
@@ -8838,9 +8854,28 @@ const CC_CHAVE = 'nossopeixe.cooperados.v1';
 let CCD = {};
 try { CCD = JSON.parse(localStorage.getItem(CC_CHAVE) || '{}') || {}; } catch(e){ CCD = {}; }
 COM.ccAviso = null; COM.ccLimpar = false;
+/* Rev. 37 — o que estava marcado na segunda unidade de uma cooperativa passa para o grupo da cooperativa */
+setTimeout(() => { let mudou = false;
+  ccGrupos().forEach(g => g.ids.slice(1).forEach(id => { if(CCD[id]){ const r = CCD[g.id] || (CCD[g.id] = {}); Object.keys(CCD[id]).forEach(k => { if(r[k] == null || r[k] === '') r[k] = CCD[id][k]; }); delete CCD[id]; mudou = true; } }));
+  if(mudou) ccSalva(); }, 0);
 function ccSalva(){ try { localStorage.setItem(CC_CHAVE, JSON.stringify(CCD)); } catch(e){} }
-/* um grupo por tipologia e município (a UPM de Arraial do Cabo tem duas unidades) */
-function ccGrupos(){ const out = [];
+/* Rev. 37 — as cooperativas pelo Painel PGTRs (acompanhamento-empreendimentos.vercel.app, 12/11/2026): 21 PGTRs e 18 cooperativas.
+   Três cooperativas reúnem duas unidades: COOPAACAR (UPA e UPALE de Carapebus), COOPEAPRO (UPA e UPP de Rio das Ostras)
+   e COOPMAB (UPM e UPS de Armação dos Búzios). Onde o painel ainda não traz o nome da cooperativa: «a informar». */
+const CC_COOP = {
+  'ubp|Cabo Frio': 'COOPACAF', 'ubp|Campos dos Goytacazes': 'COOPESCA', 'ubp|Macaé': 'COOPAMAC', 'ubp|São Francisco de Itabapoana': 'COOPEASFI',
+  'upa22|Arraial do Cabo': 'COOPAMASS', 'upa22|Campos dos Goytacazes': 'COOPACAMP', 'upa22|Quissamã': 'COOPEBBR', 'upa22|Rio das Ostras': 'COOPEAPRO',
+  'upa38|Carapebus': 'COOPAACAR', 'upale|Carapebus': 'COOPAACAR', 'upp|Rio das Ostras': 'COOPEAPRO',
+  'upm|Armação dos Búzios': 'COOPMAB', 'ups|Armação dos Búzios': 'COOPMAB',
+  'upm|Arraial do Cabo — unidade 1': 'COOPEMAR', 'upm|Arraial do Cabo — unidade 2': 'COOPEMAJUP' };
+/* um grupo por cooperativa: as unidades (tipologia e município) da mesma cooperativa ficam juntas */
+function ccGrupos(){ const out = [], porCoop = {};
+  ccPgtrs().forEach(p => { const coop = CC_COOP[p.id] || '', g = coop && porCoop[coop];
+    if(g){ g.ids.push(p.id); g.membros.push(p); g.ic += p.ic; g.sig += ' + ' + p.sig; g.nome += ' + ' + p.nome.charAt(0).toLowerCase() + p.nome.slice(1); return; }
+    const n = Object.assign({}, p, { ids: [p.id], membros: [p], coop }); if(coop) porCoop[coop] = n; out.push(n); });
+  return out; }
+/* as unidades, uma por tipologia e município (a UPM de Arraial do Cabo tem duas) — 21, como no painel */
+function ccPgtrs(){ const out = [];
   CC_TIPOS.forEach(([k, ic, sig, nome]) => (MUNIS[k] || []).forEach(m => {
     const dois = /\(duas unidades\)/.test(m), base = m.replace(/\s*\(duas unidades\)/, '');
     (dois ? [base + ' — unidade 1', base + ' — unidade 2'] : [base]).forEach(mm => out.push({ id: k + '|' + mm, k, ic, sig, nome, mun: mm })); }));
@@ -8858,20 +8893,20 @@ function ccLimpa(){ if(!COM.ccLimpar){ COM.ccLimpar = true; desenharTela(); retu
 
 /* ---------- as mensagens ---------- */
 function ccMsgPedido(){
-  const tip = CC_TIPOS.map(([k, ic, sig, nome]) => '• ' + sig + ', ' + nome.charAt(0).toLowerCase() + nome.slice(1) + ': ' + lista((MUNIS[k] || []).slice())).join('\n');
+  const tip = ccGrupos().map(g => '• ' + (g.coop || 'cooperativa a informar') + ' — ' + g.sig + ', ' + g.mun).join('\n');
   return 'Olá, pessoal! 👋\n'
-    + 'Para organizar o *cadastro de cooperados* do Pescarte, peço a cada grupo três informações — *sem nomes por enquanto*. Para cada tipologia, em cada município:\n\n'
+    + 'Para organizar o *cadastro de cooperados* do Pescarte, peço a cada grupo três informações — *sem nomes por enquanto*. Para cada cooperativa (são 18, pelo Painel PGTRs — três delas reúnem duas unidades):\n\n'
     + '1️⃣ Em que pé está: *em conversa*, *cooperativa em formação* ou *cooperativa formada* (com CNPJ)?\n'
     + '2️⃣ Já tem uma pessoa responsável com acesso para fazer o cadastro dos cooperados? (Só a função: presidente, secretário(a)…)\n'
     + '3️⃣ Quantos cooperados tem hoje? (Só o número.)\n\n'
     + 'Para facilitar, respondam numa linha, neste formato:\n'
-    + 'Tipologia e município — situação — responsável: sim ou não (função) — nº de cooperados\n\n'
-    + 'Tipologias e municípios:\n' + tip + '\n\n'
+    + 'Cooperativa e município — situação — responsável: sim ou não (função) — nº de cooperados\n\n'
+    + 'Cooperativas e unidades:\n' + tip + '\n\n'
     + 'Os nomes, o CPF e o telefone de cada cooperado só entram depois, quando a cooperativa estiver formada: a pessoa responsável preenche a ficha de matrícula da cooperativa (Lei 5.764/71, art. 23), e os dados ficam com a cooperativa. Obrigado! 🐟'; }
 function ccMsgResumo(){
   const G = ccGrupos(), T = ccTotais(G);
   const L = G.filter(g => CCD[g.id]).map(g => { const r = CCD[g.id];
-    return '• ' + g.sig + ' ' + g.mun + ' — ' + (r.sit ? CC_SIT_TXT[r.sit] : 'situação não informada')
+    return '• ' + (g.coop ? g.coop + ' (' + g.sig + ')' : g.sig) + ' ' + g.mun + ' — ' + (r.sit ? CC_SIT_TXT[r.sit] : 'situação não informada')
       + ' — responsável com acesso: ' + (r.resp === 'sim' ? 'sim' : r.resp === 'nao' ? 'ainda não' : 'não informado')
       + ' — ' + (r.n != null ? r.n + (r.n === 1 ? ' cooperado' : ' cooperados') : 'nº de cooperados não informado'); });
   return '*Cadastro de cooperados — situação em ' + hojeTxt() + '* (sem nomes)\n\n'
@@ -8928,14 +8963,100 @@ function ccFicha(){ const w = window.open('', '_blank');
   w.document.open(); w.document.write(ccFichaDoc()); w.document.close(); }
 
 /* ---------- a tela ---------- */
+/* ---------- Rev. 37 — a lista de cooperados com os nomes (simulação) ----------
+   Só o nome: sem CPF, RG, telefone, endereço ou documento. Fica salva só neste aparelho (localStorage),
+   para o grupo se ver na tela; não vai para a internet nem para outro aparelho. */
+const CCN_CHAVE = 'nossopeixe.cooperados.nomes.v1', CCN_MAX = 300;
+let CCN = {};
+try { CCN = JSON.parse(localStorage.getItem(CCN_CHAVE) || '{}') || {}; } catch(e){ CCN = {}; }
+if(!CCN || typeof CCN !== 'object' || Array.isArray(CCN)) CCN = {};
+COM.ccnG = null; COM.ccnAviso = null; COM.ccnTira = null; COM.ccnApaga = false; COM.ccnGrande = false;
+let ccnSeq = Date.now();
+function ccnSalva(){ try { localStorage.setItem(CCN_CHAVE, JSON.stringify(CCN)); return true; } catch(e){ return false; } }
+const ccnLista = id => Array.isArray(CCN[id]) ? CCN[id] : (CCN[id] = []);
+const ccnConta = id => Array.isArray(CCN[id]) ? CCN[id].length : 0;
+function ccnGrupo(){ const G = ccGrupos(); return G.find(g => g.id === COM.ccnG) || G.find(g => ccnConta(g.id)) || G[0]; }
+const ccnLimpo = v => String(v == null ? '' : v).replace(/\s+/g, ' ').trim().slice(0, 60);
+const ccnDoc = n => /\d{3}/.test(n);   /* três algarismos seguidos: parece CPF, RG ou telefone */
+const ccnRot = g => (g.coop || 'Cooperativa a informar') + ' — ' + g.sig + ', ' + g.mun;
+function ccnHora(){ const d = new Date(), z = v => String(v).padStart(2, '0'); return z(d.getHours()) + ':' + z(d.getMinutes()); }
+function ccnEscolhe(id){ COM.ccnG = id; COM.ccnTira = null; COM.ccnApaga = false; desenharTela(); }
+function ccnFoco(){ setTimeout(() => { const e = HAS_DOM && document.getElementById('ccn-nome'); if(e) e.focus(); }, 0); }
+function ccnAdd(){ const g = ccnGrupo(), el = HAS_DOM && document.getElementById('ccn-nome'), n = ccnLimpo(el ? el.value : '');
+  COM.ccnG = g.id; COM.ccnTira = null; COM.ccnApaga = false;
+  if(!n){ COM.ccnAviso = '✍️ Digitem o nome antes de tocar em «Pôr na lista».'; desenharTela(); ccnFoco(); return; }
+  if(ccnDoc(n)){ COM.ccnAviso = '🚫 Só o nome — sem CPF, RG, telefone ou outro número de documento.'; desenharTela(); ccnFoco(); return; }
+  const L = ccnLista(g.id);
+  if(L.some(x => x.n.toLocaleLowerCase('pt-BR') === n.toLocaleLowerCase('pt-BR'))){ COM.ccnAviso = '⚠️ «' + esc(n) + '» já está na lista.'; desenharTela(); ccnFoco(); return; }
+  if(L.length >= CCN_MAX){ COM.ccnAviso = '⚠️ A lista chegou a ' + CCN_MAX + ' nomes.'; desenharTela(); return; }
+  L.push({ id: ++ccnSeq, n });
+  COM.ccnAviso = ccnSalva() ? '✅ ' + esc(n) + ' está na lista — ' + L.length + (L.length === 1 ? ' pessoa' : ' pessoas') + '. Salvo neste aparelho.'
+    : '⚠️ Este navegador não deixou salvar (janela anônima?). A lista some quando a página for fechada.';
+  desenharTela(); ccnFoco(); }
+function ccnEdita(el, gid, id){ const x = ccnLista(gid).find(y => y.id === id); if(!x) return; const n = ccnLimpo(el.value);
+  if(!n || ccnDoc(n)){ el.value = x.n; if(n){ COM.ccnAviso = '🚫 Só o nome — sem número de documento.'; desenharTela(); } return; }
+  x.n = n; el.value = n; ccnSalva(); }
+function ccnTira(gid, id){ if(COM.ccnTira !== id){ COM.ccnTira = id; desenharTela(); return; }
+  CCN[gid] = ccnLista(gid).filter(x => x.id !== id); COM.ccnTira = null; ccnSalva(); desenharTela(); }
+function ccnGuardar(){ const g = ccnGrupo(), n = ccnConta(g.id);
+  COM.ccnAviso = ccnSalva() ? '💾 Lista salva neste aparelho às ' + ccnHora() + ': ' + n + (n === 1 ? ' pessoa' : ' pessoas') + ' em ' + esc(g.coop || g.sig + ' ' + g.mun) + '. Ela continua aqui quando a página for aberta de novo neste aparelho.'
+    : '⚠️ Este navegador não deixou salvar (janela anônima?). A lista some quando a página for fechada.';
+  desenharTela(); }
+function ccnUsarN(gid){ const r = CCD[gid] || (CCD[gid] = {}); r.n = ccnConta(gid); ccSalva(); COM.ccLimpar = false;
+  COM.ccnAviso = '📊 No quadro «Em que pé está cada cooperativa», esta cooperativa agora tem ' + r.n + (r.n === 1 ? ' cooperado' : ' cooperados') + ' (só o número vai para o resumo).'; desenharTela(); }
+function ccnTexto(g){ const L = ccnLista(g.id);
+  return '*Lista de cooperados — ' + ccnRot(g) + '*\n' + L.map((x, i) => (i + 1) + '. ' + x.n).join('\n')
+    + '\n\n' + L.length + (L.length === 1 ? ' pessoa' : ' pessoas') + ' · simulação de ' + hojeTxt() + ' (o número na lista não é o nº de matrícula)'; }
+function ccnCopia(){ const t = ccnTexto(ccnGrupo());
+  const ok = () => { COM.ccnAviso = '✅ Lista copiada. Antes de colar num grupo, confiram se todos concordaram em aparecer nela.'; desenharTela(); };
+  const velho = () => { try { const a = document.createElement('textarea'); a.value = t; a.setAttribute('readonly', ''); a.style.position = 'fixed'; a.style.opacity = '0';
+      document.body.appendChild(a); a.select(); const r = document.execCommand('copy'); a.remove(); if(!r) throw 0; ok(); }
+    catch(e){ COM.ccnAviso = '⚠️ Não deu para copiar sozinho neste navegador.'; desenharTela(); } };
+  if(navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(t).then(ok, velho); else velho(); }
+function ccnGrandeTroca(){ COM.ccnGrande = !COM.ccnGrande; COM.ccnTira = null; desenharTela();
+  if(COM.ccnGrande){ const e = HAS_DOM && document.getElementById('ccn-caixa'); if(e) e.scrollIntoView({ block: 'start' }); } }
+function ccnApagaTudo(){ if(!COM.ccnApaga){ COM.ccnApaga = true; desenharTela(); return; }
+  CCN = {}; ccnSalva(); COM.ccnApaga = false; COM.ccnTira = null; COM.ccnAviso = '🧹 Todos os nomes foram apagados deste aparelho.'; desenharTela(); }
+function ccnHTML(){
+  const G = ccGrupos(), g = ccnGrupo(), L = ccnLista(g.id), n = L.length, av = COM.ccnAviso; COM.ccnAviso = null;
+  const total = G.reduce((s, x) => s + ccnConta(x.id), 0), comNomes = G.filter(x => ccnConta(x.id)).length, gid = esc(g.id);
+  let h = '<section class="painel" id="ccn" aria-label="A lista de cooperados"><h3><span class="ic" aria-hidden="true">👥</span>A lista de cooperados — simulação com os nomes</h3>'
+    + '<p style="margin:6px 0 10px">Escolham a cooperativa, digitem o nome de cada pessoa e toquem em «Pôr na lista». <b>Só o nome</b> — sem CPF, RG, telefone, endereço ou documento. '
+    + 'A lista fica <b>salva só neste aparelho</b>, para o grupo se ver na tela; ela não vai para a internet nem aparece em outro celular.</p>'
+    + '<div class="cad-lista"><label class="cad-campo"><span>Cooperativa</span><select class="sel" id="ccn-coop" onchange="ccnEscolhe(this.value)">'
+    + G.map(x => { const k = ccnConta(x.id); return '<option value="' + esc(x.id) + '"' + (x.id === g.id ? ' selected' : '') + '>' + esc(ccnRot(x)) + (k ? ' · ' + k : '') + '</option>'; }).join('')
+    + '</select></label>'
+    + '<label class="cad-campo"><span>Nome da pessoa</span><input type="text" class="inp" id="ccn-nome" maxlength="60" autocomplete="off" placeholder="ex.: Maria da Silva" onkeydown="if(event.key===\'Enter\'){event.preventDefault();ccnAdd()}" aria-label="Nome da pessoa"></label></div>'
+    + '<div class="botoes" style="margin-top:10px"><button type="button" class="btn" onclick="ccnAdd()">➕ Pôr na lista</button>'
+    + '<button type="button" class="btn claro" onclick="ccnGuardar()">💾 Salvar a lista</button></div>'
+    + (av ? '<p class="cad-aviso" role="status">' + av + '</p>' : '');
+  h += '<div class="ccn-caixa' + (COM.ccnGrande ? ' grande' : '') + '" id="ccn-caixa"><h4 class="cad-sub"><span aria-hidden="true">' + g.ic + '</span> ' + esc(g.coop || 'Cooperativa a informar') + '<small>' + esc(g.sig + ' · ' + g.mun) + ' — ' + g.nome + '</small></h4>';
+  if(n) h += '<ol class="ccn-lista">' + L.map(x => { const pede = COM.ccnTira === x.id;
+      return '<li>' + (COM.ccnGrande ? '<span class="ccn-n">' + esc(x.n) + '</span>'
+        : '<span class="ccn-l"><input type="text" class="inp ccn-inp" maxlength="60" value="' + esc(x.n) + '" aria-label="Nome na lista" onchange="ccnEdita(this,\'' + gid + '\',' + x.id + ')">'
+          + '<button type="button" class="btn claro sob-x' + (pede ? ' pede' : '') + '" onclick="ccnTira(\'' + gid + '\',' + x.id + ')" aria-label="' + esc((pede ? 'Toque de novo para tirar ' : 'Tirar ') + x.n) + '">' + (pede ? '⚠️ Toque de novo' : '🗑️') + '</button></span>') + '</li>'; }).join('') + '</ol>';
+  else h += '<p>Ninguém na lista desta cooperativa ainda.</p>';
+  h += '<p class="dica"><b>' + n + (n === 1 ? ' pessoa' : ' pessoas') + '</b> · ' + (n >= CC_MIN ? '✅ passa do mínimo de ' + CC_MIN : 'faltam ' + (CC_MIN - n) + ' para o mínimo de ' + CC_MIN) + ' pessoas da cooperativa (Lei 5.764/71, art. 6º, I). O número na lista é só a ordem: não é o nº de matrícula.</p></div>';
+  h += '<div class="botoes" style="margin-top:10px">'
+    + (n ? '<button type="button" class="btn" onclick="ccnGrandeTroca()">' + (COM.ccnGrande ? '✏️ Voltar a editar' : '👀 Mostrar a lista grande, para todos verem') + '</button>'
+      + '<button type="button" class="btn claro" onclick="ccnCopia()">📋 Copiar a lista</button>'
+      + '<button type="button" class="btn claro" onclick="ccnUsarN(\'' + gid + '\')">📊 Levar o número (' + n + ') para o quadro</button>' : '')
+    + (total ? '<button type="button" class="btn claro" onclick="ccnApagaTudo()">' + (COM.ccnApaga ? '⚠️ Toque de novo para apagar ' + total + (total === 1 ? ' nome' : ' nomes') : '🧹 Apagar todos os nomes deste aparelho') + '</button>' : '') + '</div>'
+    + (total ? '<p class="dica">Neste aparelho: ' + total + (total === 1 ? ' nome' : ' nomes') + ' em ' + comNomes + (comNomes === 1 ? ' cooperativa' : ' cooperativas') + '.</p>' : '')
+    + nota('lei', '🔒', '<b>Nome é dado pessoal</b> (LGPD, art. 5º, I). Ponham na lista só quem concordou em aparecer nela (art. 7º, I, e art. 8º) e só o nome — nada de documento (art. 6º, III). '
+      + 'A lista fica neste aparelho; se o celular ou o computador for usado por outras pessoas, apaguem no fim. Esta lista é uma simulação: a lista oficial é o Livro de Matrícula da cooperativa (Lei 5.764/71, arts. 22 e 23), com a ficha mais abaixo.')
+    + '</section>';
+  return h; }
+
 function telaCadastro(){
   const G = ccGrupos(), T = ccTotais(G), av = COM.ccAviso; COM.ccAviso = null;
   const aviso = q => av && av.q === q ? '<p class="cad-aviso" role="status">' + av.t + '</p>' : '';
-  let h = cabecalho('🪪', 'Cadastro de cooperados', 'Cada tipologia é trabalhada com o seu grupo, uma de cada vez. <b>Os nomes ainda não entram:</b> só quando a cooperativa estiver formada e tiver uma pessoa responsável com acesso para fazer o cadastro. Por enquanto, esta aba prepara o pedido ao grupo da supervisão e acompanha em que pé está cada grupo — sem nomes.', 'cab-cad');
+  let h = cabecalho('🪪', 'Cadastro de cooperados', 'Cada cooperativa é trabalhada com o seu grupo, uma de cada vez. São <b>18 cooperativas</b> para os 21 PGTRs do Painel PGTRs: três reúnem duas unidades — COOPAACAR (UPA e UPALE de Carapebus), COOPEAPRO (UPA e UPP de Rio das Ostras) e COOPMAB (UPM e UPS de Armação dos Búzios). <b>A lista com os nomes</b> pode ser simulada aqui: só o nome, salvo só neste aparelho. O pedido à supervisão e o quadro de cada cooperativa seguem sem nomes.', 'cab-cad');
 
+  h += ccnHTML();   /* Rev. 37 */
   h += '<section class="painel" aria-label="Como fazer o pedido"><h3><span class="ic" aria-hidden="true">📨</span>Como fazer o pedido — em três passos</h3>'
     + '<ol class="cad-passos">'
-    + '<li><b>🌱 Agora, sem nomes.</b> No grupo da supervisão, pedir a cada tipologia, em cada município: em que pé está, se já tem uma pessoa responsável com acesso e quantos cooperados tem — só o número. A mensagem está pronta aqui embaixo.</li>'
+    + '<li><b>🌱 Agora, sem nomes.</b> No grupo da supervisão, pedir a cada cooperativa: em que pé está, se já tem uma pessoa responsável com acesso e quantos cooperados tem — só o número. A mensagem está pronta aqui embaixo.</li>'
     + '<li><b>🛠️ Quando a cooperativa estiver formada.</b> A pessoa responsável, indicada pela diretoria como manda o estatuto, recebe a planilha modelo ou a ficha em branco e cadastra cada cooperado. É o Livro de Matrícula da cooperativa, que pode ser feito em fichas (Lei 5.764/71, art. 22, I e parágrafo único).</li>'
     + '<li><b>✅ Os dados ficam com a cooperativa.</b> Para a supervisão vai o resumo: quantos cooperados e de que função. Se o projeto precisar dos nomes, eles vão por um canal com acesso restrito — nunca por este site, que é aberto a todos.</li></ol>'
     + '<h4 class="cad-sub">💬 A mensagem para o grupo da supervisão</h4>'
@@ -8943,9 +9064,9 @@ function telaCadastro(){
     + '<div class="botoes" style="margin-top:10px"><button type="button" class="btn" onclick="ccCopia(\'pedido\')">📋 Copiar a mensagem</button>'
     + '<button type="button" class="btn claro" onclick="ccWhats(\'pedido\')">💬 Abrir no WhatsApp</button></div>' + aviso('pedido') + '</section>';
 
-  h += '<section class="painel" aria-label="Em que pé está cada grupo"><h3><span class="ic" aria-hidden="true">📊</span>Em que pé está cada grupo — sem nomes</h3>'
+  h += '<section class="painel" aria-label="Em que pé está cada grupo"><h3><span class="ic" aria-hidden="true">📊</span>Em que pé está cada cooperativa — sem nomes</h3>'
     + '<p style="margin:6px 0 0">Conforme as respostas chegarem, marquem aqui. Fica guardado <b>só neste aparelho</b>; para mandar para alguém, usem «Copiar o resumo».</p>'
-    + '<div class="cartoes">' + cartao('📍', 'Grupos informados', T.inf + ' de ' + T.grupos, 'uma tipologia em cada município')
+    + '<div class="cartoes">' + cartao('📍', 'Cooperativas informadas', T.inf + ' de ' + T.grupos, 'uma por cooperativa, pelo Painel PGTRs')
     + cartao('✅', 'Cooperativas formadas', String(T.formada), T.formacao + ' em formação · ' + T.conversa + ' em conversa')
     + cartao('🔑', 'Com pessoa responsável', String(T.resp), 'que já pode fazer o cadastro')
     + cartao('👥', 'Cooperados informados', fN(T.n), T.comN ? 'em ' + T.comN + (T.comN === 1 ? ' grupo' : ' grupos') : 'nenhum número ainda') + '</div>'
@@ -8953,7 +9074,7 @@ function telaCadastro(){
         const sel = (campo, ops, v, rot) => '<label class="cad-campo"><span>' + rot + '</span><select class="sel" id="cad-' + campo + '-' + i + '" onchange="ccMuda(' + i + ',\'' + campo + '\',this.value)">'
           + ops.map(([k, t]) => '<option value="' + k + '"' + ((v || '') === k ? ' selected' : '') + '>' + t + '</option>').join('') + '</select></label>';
         const min = n == null ? '' : n >= CC_MIN ? '<small class="pos">✅ passa do mínimo de ' + CC_MIN + '</small>' : '<small class="neg">faltam ' + (CC_MIN - n) + ' para o mínimo de ' + CC_MIN + '</small>';
-        return '<div class="cad-item' + (r.sit === 'formada' ? ' ok' : '') + '"><h5><span aria-hidden="true">' + g.ic + '</span> ' + g.sig + ' · ' + esc(g.mun) + '<small>' + g.nome + '</small></h5>'
+        return '<div class="cad-item' + (r.sit === 'formada' ? ' ok' : '') + '"><h5><span aria-hidden="true">' + g.ic + '</span> ' + esc(g.coop || g.sig) + ' · ' + esc(g.mun) + '<small>' + (g.coop ? g.sig + ' — ' : 'cooperativa a informar · ') + g.nome + '</small></h5>'
           + sel('sit', CC_SIT, r.sit, 'Situação') + sel('resp', CC_RESP, r.resp, 'Pessoa responsável com acesso')
           + '<label class="cad-campo"><span>Quantos cooperados (só o número)</span><span class="cad-n"><input type="text" inputmode="numeric" class="inp" id="cad-n-' + i + '" value="' + (n != null ? n : '') + '" placeholder="—" aria-label="Quantos cooperados: ' + g.sig + ' ' + esc(g.mun) + '" onchange="ccMuda(' + i + ',\'n\',this.value)" onfocus="this.select()">' + min + '</span></label></div>'; }).join('') + '</div>'
     + '<h4 class="cad-sub">📤 O resumo para mandar de volta</h4>'
@@ -8981,8 +9102,8 @@ function telaCadastro(){
     + '<button type="button" class="btn claro" onclick="ccFicha()">🖨️ Ficha em branco para imprimir</button></div>' + aviso('ficha')
     + nota('atencao', '🚫', '<b>O que não pedir.</b> Religião, cor ou raça, saúde, filiação partidária ou sindical: são dados pessoais sensíveis (LGPD, art. 5º, II, e art. 11) e não servem para o cadastro. Pedir só o necessário (art. 6º, III).'), false);
 
-  h += secao('cad-lei', '🔒', 'Por que os nomes não entram neste site', null,
-      nota('lei', '⚖️', 'Este site é aberto: qualquer pessoa com o endereço vê o que está nele. Nome, CPF, telefone e endereço são dados pessoais (Lei 13.709/2018 — LGPD, art. 5º, I). '
+  h += secao('cad-lei', '🔒', 'Os nomes, a internet e a LGPD', null,
+      nota('lei', '⚖️', 'Este site é aberto: qualquer pessoa com o endereço vê o que está nele. Nome, CPF, telefone e endereço são dados pessoais (Lei 13.709/2018 — LGPD, art. 5º, I). Por isso, os nomes da simulação da lista ficam guardados <b>só no aparelho</b> em que foram digitados — no navegador — e não vão para a internet nem para outros aparelhos; e o site não pede documento nenhum. '
       + 'Quem guarda o cadastro é a cooperativa, a controladora dos dados (art. 5º, VI). A base legal é a obrigação do Livro de Matrícula (art. 7º, II, com a Lei 5.764/71, arts. 22 e 23) e a adesão do próprio cooperado (art. 7º, V). '
       + 'A cooperativa precisa pedir só o necessário (art. 6º, III), dizer ao cooperado para que servem os dados (art. 9º), guardá-los com segurança (art. 46) e mostrar ou corrigir quando ele pedir (art. 18). '
       + 'Se o projeto Pescarte receber os nomes, também passa a tratar dados pessoais e responde junto (art. 42): por isso, só por canal com acesso restrito e com um combinado por escrito do que será feito com eles. Vazamento pode render advertência e multa da ANPD (art. 52).')
@@ -9325,7 +9446,7 @@ function sbBarNum(el, id, campo){ const b = SB.barco.L.find(x => x.id === id); i
 function sbBarTira(id){ if(COM.sbConfirma !== 'b' + id){ COM.sbConfirma = 'b' + id; desenharTela(); return; }
   COM.sbConfirma = null; SB.barco.L = SB.barco.L.filter(x => x.id !== id); sbSalva(); desenharTela(); }
 function sbCoopsHTML(){
-  return '<p class="dica" style="margin:0 0 6px">Uma linha para cada cooperado: o <b>nº de matrícula ou um apelido</b> e a função. <b>Sem nome completo, sem CPF e sem telefone</b> — os nomes não entram neste site (aba Cadastro de cooperados).</p>'
+  return '<p class="dica" style="margin:0 0 6px">Uma linha para cada cooperado: o <b>nº de matrícula ou um apelido</b> e a função. <b>Sem nome completo, sem CPF e sem telefone</b> — a lista com os nomes fica na aba Cadastro de cooperados, só neste aparelho.</p>'
     + (SB.coops.length ? '<div class="rolagem"><table class="tab sob-tab"><thead><tr><th>Quem</th><th>Função</th><th class="v">Total de horas</th><th><span class="oculto">Tirar</span></th></tr></thead><tbody>'
       + SB.coops.map(c => '<tr><td data-r="Quem"><input class="inp sob-txt" type="text" id="sob-q-' + c.id + '" maxlength="30" value="' + esc(c.q) + '" aria-label="Nº de matrícula ou apelido" onchange="sbTxt(this,\'c\',' + c.id + ',\'q\')"></td>'
         + '<td data-r="Função"><input class="inp sob-txt sob-larga" type="text" maxlength="40" value="' + esc(c.f) + '" placeholder="ex.: filetadora" aria-label="Função de ' + esc(c.q) + '" onchange="sbTxt(this,\'c\',' + c.id + ',\'f\')"></td>'
