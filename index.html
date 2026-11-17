@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quanto custa o nosso peixe? — Rev. 43 Comunidade</title>
+<title>Quanto custa o nosso peixe? — Rev. 44 Comunidade</title>
 <style>
 /* ================================================================
-   REV. 43 COMUNIDADE — versão para pescadores e aquicultores
+   REV. 44 COMUNIDADE — versão para pescadores e aquicultores
    Mesmo motor de cálculo da Rev. 14 técnica. Muda a apresentação:
    letras grandes, ícones, frases simples, botão de ouvir.
    ================================================================ */
@@ -40,9 +40,11 @@ button{cursor:pointer}
 .marca h1{font-size:1.5rem;font-weight:700}
 .marca p{margin:2px 0 0;color:#BFD9E8;font-size:.9rem}
 .util{display:flex;gap:6px;flex-wrap:wrap}
-.util button{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);color:#fff;
+.util button,.util a{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);color:#fff;
   border-radius:10px;padding:8px 12px;font-size:.95rem;min-height:44px}
-.util button:hover{background:rgba(255,255,255,.22)}
+.util a{display:inline-flex;align-items:center;text-decoration:none;font-weight:700;background:rgba(255,255,255,.2)}
+.util button:hover,.util a:hover{background:rgba(255,255,255,.3)}
+.util a[hidden]{display:none}
 
 /* ---------- abas ---------- */
 .abas{max-width:1240px;margin:14px auto 0;display:grid;grid-template-columns:repeat(13,minmax(0,1fr));gap:4px}
@@ -495,7 +497,7 @@ body{padding-bottom:calc(min(100vw - 24px, 496px) * .1211 + 18px + env(safe-area
   .abas button b{font-size:.72rem;text-align:center;line-height:1.15;overflow-wrap:normal;hyphens:manual}
   .abas .longo{display:inline} .abas .curto{display:none}   /* Rev. 26 — os mesmos nomes do computador */
   .marca p{font-size:.8rem}
-  .util button{min-height:40px;padding:6px 10px}
+  .util button,.util a{min-height:40px;padding:6px 10px}
   .bal-braco{left:24%;right:24%}
   .prato .caixa .det{font-size:.7rem}
   .abas button small{display:none}
@@ -824,13 +826,14 @@ details.sob-hist{margin-top:8px}
       <span class="logo" aria-hidden="true">🐟</span>
       <div>
         <h1>Quanto custa o nosso peixe?</h1>
-        <p>Custo de 1 kg, preço de venda e sobras — ferramenta da comunidade · PEA Pescarte · Rev. 43</p>
+        <p>Custo de 1 kg, preço de venda e sobras — ferramenta da comunidade · PEA Pescarte · Rev. 44</p>
       </div>
     </div>
     <div class="util">
       <button type="button" onclick="mudarLetra(-1)" aria-label="Diminuir as letras">A−</button>
       <button type="button" onclick="mudarLetra(1)" aria-label="Aumentar as letras">A+</button>
       <button type="button" onclick="imprimir()">🖨️ Imprimir</button>
+      <a id="bt-baixar-tudo" href="index.html" download="Quanto_custa_o_nosso_peixe_Rev44_completo.html" hidden title="Baixar a ferramenta completa num arquivo só, para usar sem internet">⬇️ Baixar tudo (HTML)</a>
     </div>
   </div>
   <nav class="abas" role="tablist" aria-label="Telas da ferramenta">
@@ -879,6 +882,7 @@ details.sob-hist{margin-top:8px}
       <li>UPM Arraial do Cabo (Rev. 16): Projeção Econômica UPM Rev. 18 (Anexos 1, 3, 4, 6 e 7) e EVTEAS UPM Rev. 2 (dez/2024). Mês-tipo = 1/12 do ano cheio de colheita (meses 7 a 18 da DRE): com a OCB fora, 12 meses-tipo reproduzem a coluna «acumulado últimos 12 meses» (sobras de R$ 2.869.963,34) com diferença menor que R$ 1 no ano. Vieira e ostra por dúzia, mexilhão por kg.</li>
       <li>UPM — escolhas da ferramenta: embalagem (R$ 67.070,40 no ano) repartida na proporção das vendas; estrutura (pessoal, combustível, manutenção, depreciação, OCB) rateada pelas longlines de cada marisco (36 · 20 · 16), não por unidade vendida; combustível, manutenção, EPI, refeições e laboratório como gastos fixos (o manejo é diário com qualquer colheita); sementes, embalagem, mexilhoneiras, limpeza e energia como gastos que crescem com a colheita. PIS de 1% sobre a folha total e encargo de 9% só sobre a cooperada, como no Anexo 4. ICMS de 20% na vieira e na ostra e de 7% no mexilhão, mais 0,65% de PIS. OCB com cooperativista e taxa de manutenção, sobre o investimento fixo (R$ 6.553.799,53). Fundos separados sobre o resultado do ano (a planilha separa mês a mês).</li>
       <li>UPM — «Quando entra o dinheiro?»: as quantidades do ano repartidas mês a mês no ritmo da DRE (vieira em 5 meses, ostra em 6, mexilhão em todos, com meses de meia colheita; sementes compradas no 7º mês da lista). A soma dos 12 meses é igual a 12 meses-tipo.</li>
+      <li>Rev. 44 — <b>a ferramenta completa para baixar</b>: o botão «⬇️ Baixar tudo (HTML)», no topo, e o painel na aba Aprender baixam o «Quanto custa o nosso peixe?» inteiro num arquivo só (as 13 abas, tutoriais, cartilhas, caderno da saída), que funciona sem internet. A apresentação da oficina ganha a versão em <b>PowerPoint (.pptx)</b>, com transições, notas de quem apresenta e a <b>régua de logos do PEA Pescarte em todos os slides</b> (também no HTML). No slide das 30 marés, o eixo vai de 200 a 1.300 kg e <b>o 240 aparece na ponta da cauda</b> da curva, junto com as outras 4 primeiras marés.</li>
       <li>Rev. 43 — na aba <b>Aprender</b>, a <b>apresentação da oficina</b> para abrir e baixar: 31 slides num arquivo HTML só, que funciona sem internet, com notas para quem apresenta e botão para salvar em PDF. Os números foram conferidos nesta versão (UPA de 22 postos, UBP-M, tamanho do peixe, defeso a 20% no ano da fábrica). Slide novo: <b>30 marés e a curva normal</b> — com 6 marés, a de 900 kg parecia fora da curva; com 30, a média fica perto de 1.000 kg e o 900 está dentro da curva. E dois slides novos sobre a ferramenta de hoje: as 13 abas e as sobras do ano (quem decide e como dividir).</li>
       <li>Rev. 42 — na «Divisão das sobras», sai <b>Auxiliar administrativo(a)</b> das funções de todas as tipologias. Quem já tinha essa função continua com ela, marcada «(fora da lista)».</li>
       <li>Rev. 41 — na «Divisão das sobras», o <b>motorista e a entrega do peixe não entram como cooperado</b>: saem das funções e das atividades de todas as tipologias (na UPA, «Motorista e entrega do peixe» e «Transporte e entrega do peixe»; nas outras, «Expedição e entrega» vira «Expedição», o trabalho de separar e carregar os pedidos dentro da unidade; na UPALE, a despesca fica sem a entrega). E saem <b>Secretário(a)</b> e <b>Diretor(a) administrativo-financeiro(a)</b> da direção, em todas as tipologias: ficam Presidente, Conselheiro(a) de administração e Conselheiro(a) fiscal. Quem já tinha uma função que saiu continua com ela, marcada «(fora da lista)».</li>
@@ -4742,7 +4746,7 @@ function whatsComunidade(){
     + '\nQuilos vendáveis: ' + pescKgApp(R.vendavel) + '\nPreço mínimo: ' + fB2(R.minimo) + '/kg' + '\nPreço sugerido: ' + fB2(R.sugerido) + '/kg'
     + (R.benefKg > 0 ? '\n\n*Se for beneficiado* (+' + fB2(R.benefKg) + '/kg de mão de obra, energia, água, ingredientes, higienização e embalagem)'
         + '\nPreço mínimo integrado: ' + fB2(R.minimoInt) + '/kg' + '\nPreço sugerido integrado: ' + fB2(R.sugeridoInt) + '/kg' : '')
-    + '\n\nCalculado com as contas do app Preço Justo — Pescador (Pescarte).' + '\nConferido na ferramenta da comunidade — Rev. 43.';
+    + '\n\nCalculado com as contas do app Preço Justo — Pescador (Pescarte).' + '\nConferido na ferramenta da comunidade — Rev. 44.';
   COM.msgPesc = ''; window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank', 'noopener'); }
 
 function resultadoPescador(){
@@ -4924,6 +4928,7 @@ function telaAprender(){
     + '<p style="margin:8px 0 12px">18 páginas em folha A4: 11 lições com exemplos da UPA, da UBP-M e da pescaria, a ficha «Minha saída de pesca» para copiar, exercícios, atividades em grupo, as palavras que usamos e as respostas. <b>Versão de ' + CARTILHA_DATA + '</b> — a data está na capa.</p>'
     + '<div class="botoes"><button type="button" class="btn" onclick="abrirCartilha()">🖨️ Abrir a cartilha em PDF para imprimir (' + CARTILHA_DATA + ')</button>'
     + '<button type="button" class="btn claro" onclick="baixarCartilha()">⬇️ Baixar a cartilha (PDF, ' + CARTILHA_DATA + ')</button></div>' + errataHTML() + '</section>';
+  h += baixarTudoHTML();
   h += apresHTML();
   h += guiasHTML();
   h += secao('apr-conta', '🧮', 'A conta do custo de 1 kg', null, contaExemplo(), true);
@@ -5593,19 +5598,31 @@ if(HAS_DOM) document.addEventListener('keydown', e => { if(!COM.tut) return; if(
    a tela nunca mostram valores diferentes.
    ================================================================ */
 COM.cart = null;
-const CART_REV = 'Rev. 43';
+const CART_REV = 'Rev. 44';
 /* PDFs prontos, com os valores do estudo, publicados na pasta cartilhas/ do site (só aparecem quando a ferramenta é aberta pela internet) */
 const CART_ARQ = { upa: 'Cartilha_aba_Criacao_de_tilapia', ubp: 'Cartilha_aba_Beneficiamento', upm: 'Cartilha_aba_Criacao_de_mariscos', pescador: 'Cartilha_aba_Minha_pescaria', barco: 'Cartilha_aba_Barco_de_pesca' }, CART_PDF_DATA = '11/11/2026';
 const cartNoSite = () => HAS_DOM && /^https?:$/.test(location.protocol);
 /* Rev. 43: a apresentação da oficina — um arquivo HTML só, na pasta apresentacao/ do site */
-const APRES_ARQ = 'apresentacao/Apresentacao_oficina_Quanto_custa_o_nosso_peixe.html', APRES_REV = 'Rev. 43';
+const APRES_ARQ = 'apresentacao/Apresentacao_oficina_Quanto_custa_o_nosso_peixe.html', APRES_REV = 'Rev. 44';
 const apresURL = () => (cartNoSite() ? '' : 'https://nossopeixe.github.io/') + APRES_ARQ;
+const APRES_PPTX = 'apresentacao/Apresentacao_oficina_Quanto_custa_o_nosso_peixe.pptx';   /* Rev. 44 */
+const apresPPTX = () => (cartNoSite() ? '' : 'https://nossopeixe.github.io/') + APRES_PPTX;
+/* Rev. 44: a ferramenta inteira é este arquivo — no site, o botão baixa o index.html; fora do site, quem abriu já tem o arquivo completo */
+function baixarTudoHTML(){
+  return '<section class="painel nao-imprimir" aria-label="Baixar a ferramenta completa"><h3><span class="ic" aria-hidden="true">💾</span>A ferramenta completa num arquivo só (HTML)</h3>'
+    + '<p style="margin:8px 0 12px">Todo o «Quanto custa o nosso peixe?» — as 13 abas, os tutoriais com o botão 🔊 Ouvir, as cartilhas para imprimir, o caderno da saída, o cadastro e a divisão das sobras — está <b>num arquivo HTML só</b>, de cerca de 2,5 MB. '
+    + 'Baixem uma vez, guardem no celular ou no computador e abram no navegador: <b>funciona sem internet</b>. O que cada um digitar fica guardado só naquele aparelho.</p>'
+    + (cartNoSite() ? '<div class="botoes"><a class="btn" href="index.html" download="Quanto_custa_o_nosso_peixe_' + CART_REV.replace('. ', '') + '_completo.html">⬇️ Baixar a ferramenta completa (HTML, ' + CART_REV + ')</a></div>'
+      + '<p class="dica">Para ter a versão mais nova, baixem de novo pelo site. A apresentação da oficina (logo abaixo) é um arquivo à parte.</p>'
+      : '<p class="dica">✅ Este aparelho já está com o arquivo completo (' + CART_REV + '). Para pegar uma versão mais nova, abram nossopeixe.github.io com internet.</p>')
+    + '</section>'; }
 function apresHTML(){
   return '<section class="painel nao-imprimir" aria-label="Apresentação da oficina"><h3><span class="ic" aria-hidden="true">🖥️</span>Apresentação da oficina — slides para projetar</h3>'
     + '<p style="margin:8px 0 12px">«Quanto custa o nosso peixe? Da conta do mês ao preço justo»: <b>31 slides</b> com os números desta versão (' + APRES_REV + '), notas para quem apresenta e, no fim, as 13 abas e a divisão das sobras do ano. '
-    + 'Novo: <b>30 marés e a curva normal</b> — com mais anotações, a maré de 900 kg fica dentro da curva. É <b>um arquivo só</b> (HTML): abre em qualquer navegador, no computador ou no celular, e funciona sem internet depois de baixado.</p>'
+    + 'Novo: <b>30 marés e a curva normal</b> — com mais anotações, a maré de 900 kg fica dentro da curva. É <b>um arquivo só</b> (HTML): abre em qualquer navegador, no computador ou no celular, e funciona sem internet depois de baixado. A versão em <b>PowerPoint</b> tem os mesmos 31 slides, com transições, a régua de logos do PEA Pescarte em todos e as notas de quem apresenta.</p>'
     + '<div class="botoes"><a class="btn" href="' + apresURL() + '" target="_blank" rel="noopener">▶️ Abrir a apresentação</a>'
-    + '<a class="btn claro" href="' + apresURL() + '" download="Apresentacao_oficina_Quanto_custa_o_nosso_peixe_' + APRES_REV.replace('. ', '') + '.html">⬇️ Baixar a apresentação (HTML)</a></div>'
+    + '<a class="btn claro" href="' + apresURL() + '" download="Apresentacao_oficina_Quanto_custa_o_nosso_peixe_' + APRES_REV.replace('. ', '') + '.html">⬇️ Baixar a apresentação (HTML)</a>'
+    + '<a class="btn claro" href="' + apresPPTX() + '" download="Apresentacao_oficina_Quanto_custa_o_nosso_peixe_' + APRES_REV.replace('. ', '') + '.pptx">📊 Baixar em PowerPoint (.pptx)</a></div>'
     + '<p class="dica">Para passar: setas ← → do teclado, os botões ◀ ▶ ou deslizar o dedo. <b>N</b> mostra as notas, <b>F</b> põe em tela cheia, ☰ lista os slides e 🖨️ salva em PDF (um slide por página).' + (cartNoSite() ? '' : ' Para abrir ou baixar, é preciso internet.') + '</p></section>'; }
 const cartPDF = (aba, rot) => cartNoSite() ? '<a class="btn claro" href="cartilhas/' + CART_ARQ[aba] + '.pdf" target="_blank" rel="noopener" download="' + CART_ARQ[aba] + '_' + CART_PDF_DATA.split('/').reverse().join('-') + '.pdf">' + rot + '</a>' : '';
 const hojeTxt = () => { const d = new Date(), z = n => String(n).padStart(2, '0'); return z(d.getDate()) + '/' + z(d.getMonth() + 1) + '/' + d.getFullYear(); };
@@ -9793,6 +9810,7 @@ function errataHTML(){ const E = ERRATA, g = fechar([E.cu, E.imp], 2), sp = fech
 /* ---------------- início ---------------- */
 if(HAS_DOM && document.getElementById('tela')){
   aplicarLetra(); irPara('upa');
+  if(cartNoSite()){ const b = document.getElementById('bt-baixar-tudo'); if(b) b.hidden = false; }   /* Rev. 44 */
   window.addEventListener('beforeprint', () => document.querySelectorAll('details.secao').forEach(d => { d.dataset.era = d.open ? '1' : '0'; d.open = true; }));
   window.addEventListener('afterprint', () => document.querySelectorAll('details.secao').forEach(d => { if(d.dataset.era) d.open = d.dataset.era === '1'; }));
 }
